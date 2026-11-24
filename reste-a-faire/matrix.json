@@ -1,0 +1,839 @@
+{
+  "outil": "matrix",
+  "generated": "2026-10-26",
+  "updated": "2026-11-24",
+  "branch": "main",
+  "origine": {
+    "depot": "Yhumiii27/Matrix",
+    "fichier": "docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md",
+    "commit": "4c6b688",
+    "reprise": "écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris"
+  },
+  "echelle_effort": "S quelques jours, M une à deux semaines, L plus (échelle de Matrix)",
+  "categories": {
+    "ecarts_marche": "Écarts avec le marché (lot 6)",
+    "decisions": "Décisions ouvertes",
+    "mise_en_service": "Mise en service sur le serveur commun",
+    "demandes_outils": "Demandes des autres outils",
+    "alignement_norma": "Alignement sur Norma (audit du 24 novembre 2026)"
+  },
+  "history": [
+    {
+      "date": "2026-10-26",
+      "text": "Analyse comparative avec les catalogues de données du commerce : écarts E-01 à E-15."
+    },
+    {
+      "date": "2026-11-10",
+      "text": "M-14 et M-16 tranchées ; E-05 fait, E-15 écarté."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Repris dans le reste à faire global de Norma 1.2.0 (commit 4c6b688) ; écarts de l’audit Norma ajoutés (MX-N…)."
+    }
+  ],
+  "items": [
+    {
+      "id": "MX-E01",
+      "title": "Source unique des référentiels",
+      "description": "Les saisies restent dans `/data/edition.json` : aucune écriture vers PostgreSQL (vérifié par recherche dans le code). Les outils qui lisent `matrix.pub_sites`, `pub_filiales`, `pub_zones` (D14, D15, D17, D21) ne voient pas ce que Matrix saisit. Écrire les référentiels dans le schéma `matrix` avec le rôle `matrix_app` (droit d'écriture à accorder sur ces seules tables) et garder `edition.json` comme repli hors serveur.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "bloquant_production",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 29/10/2026 : `outils/referentiels-pg.mjs`, écriture dans le schéma `matrix` à chaque enregistrement, alignement au démarrage, écarts signalés (`README.md`)."
+      },
+      "aliases": [
+        "E-01"
+      ],
+      "details": {
+        "niveau_marche": "standard"
+      }
+    },
+    {
+      "id": "MX-E02",
+      "title": "Authentification nominative",
+      "description": "L'identifiant est déclaratif, non vérifié : le journal n'est pas fiable. Pas de rôle appliqué (toute personne connectée modifie tout), pas de limitation des tentatives. Brancher Entra ID (OpenID Connect), lire les rôles dans les groupes, bloquer après n échecs.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "bloquant_production",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 05/11/2026 (M-06 : Entra ID) : `outils/entra.mjs` (OpenID Connect avec PKCE, openid-client), rôles applicatifs Administrateur et Lecture appliqués côté serveur (403 pour une modification en lecture), refus sans rôle, nom Microsoft dans le journal, session signée par `MATRIX_SESSION_SECRET` ; limitation des tentatives déjà en place pour le mot de passe des scripts. Reste : inscrire l'application dans le tenant."
+      },
+      "aliases": [
+        "E-02"
+      ],
+      "details": {
+        "niveau_marche": "standard"
+      }
+    },
+    {
+      "id": "MX-E03",
+      "title": "Tests automatisés et intégration continue",
+      "description": "`node --test` sur le collecteur (parseurs), `edition.mjs` (validation des référentiels), `sante.mjs` (règles) et la sonde sur un service `postgres:16` doté du socle ; workflow GitHub Actions qui rejoue les scripts de `infra/postgres/` et `droits.verifier()`.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "bloquant_production",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 30/10/2026 : 28 tests `node --test` (`test/`), workflow `.github/workflows/ci.yml` (image du socle démarrée, `scripts/ci-socle.sh`, tests avec base)."
+      },
+      "aliases": [
+        "E-03"
+      ],
+      "details": {
+        "niveau_marche": "qualité"
+      }
+    },
+    {
+      "id": "MX-E04",
+      "title": "Persistance applicative en base avec verrouillage",
+      "description": "Pas de verrou : deux modifications simultanées se perdent. Les tables `applications`, `declarations`, `tables_catalogue`, `colonnes`, `doublons`, `decisions`, `historique_schemas`, `journal` du § 4 ne sont pas créées. Migrations de Matrix (migrateur du § 4.3 d'`architecture-postgres.md`, `DB_SCHEMA = 'matrix'`), puis bascule écran par écran, JSON en repli sans serveur.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "bloquant_production",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "L",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 01/11/2026 (documentation, décisions, journal) : `partage/15-matrix-edition.sql` (`matrix.documentation`, `decisions_doublons`, `journal` en ajout seul) ; `outils/edition-pg.mjs` : une transaction par modification, ligne verrouillée, version contrôlée (une modification préparée sur une version dépassée est refusée, code 409, au lieu d'écraser la précédente), entrée de journal dans la même transaction ; reprise d'`edition.json` au premier démarrage, `edition.json` devenu copie locale et repli sans serveur. Le catalogue vient déjà de la lecture du serveur (E-14) ; l'historique des …"
+      },
+      "aliases": [
+        "E-04"
+      ],
+      "details": {
+        "niveau_marche": "standard"
+      }
+    },
+    {
+      "id": "MX-E05",
+      "title": "Alertes de changement de schéma ; analyse d'impact",
+      "description": "Personne n'est prévenu : il faut ouvrir Matrix. À chaque événement de l'historique, calculer l'impact (vues `pub_` qui exposent la table, outils qui les lisent d'après `matrix.liens`, écrans d'après `usages.json`) et l'envoyer par e-mail ou Teams (webhook). Canal et destinataires : M-14.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 10/11/2026 (M-14 : e-mail par Microsoft 365) : `outils/alertes.mjs`, à chaque lecture du serveur commun un message à la DSI par Microsoft Graph (inscription Entra ID de Matrix, permission Mail.Send) : tables et colonnes supprimées ou structure changée hors migration, avec l'impact (vues `pub_` qui les lisent d'après le lignage, lecteurs autorisés), demandes d'accès en attente, incidents de qualité ouverts ; chaque alerte une seule fois (`data/alertes.json`) ; état dans `/api/sante`. Les ajouts de tables ou de colonnes restent dans l'historique, sans message."
+      },
+      "aliases": [
+        "E-05"
+      ],
+      "details": {
+        "niveau_marche": "avancé (DataHub Actions, OpenMetadata)"
+      }
+    },
+    {
+      "id": "MX-E06",
+      "title": "Diff de schéma avant/après lisible par table ; suivi des migrations appliquées",
+      "description": "Un changement de type, de nullité ou de clé n'est pas vu ; pas de vue « avant / après » d'une table ; les migrations appliquées ne sont ni lues ni rapprochées de la structure : un `ALTER` passé hors migration (drift) est invisible.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 31/10/2026 : différence détaillée (type, nullité, défaut, clé, unicités, clés étrangères) avec avant et après, onglet « Historique » de chaque table ; journal des migrations lu par la sonde, changement hors migration signalé (« Santé › Migrations »)."
+      },
+      "aliases": [
+        "E-06"
+      ],
+      "details": {
+        "niveau_marche": "avancé (Dataedo, Flyway drift)"
+      }
+    },
+    {
+      "id": "MX-E07",
+      "title": "Lignage colonne à colonne et graphe des flux générés automatiquement",
+      "description": "Rien n'est déduit : un flux réel (vue `pub_` + lien autorisé) n'apparaît dans le graphe que si quelqu'un l'a saisi. Lire la définition des vues (`pg_rewrite` / `pg_get_viewdef`) pour relier chaque colonne publiée à sa colonne source, croiser avec `matrix.liens`, et marquer les flux saisis « confirmés » ou « non observés ».",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 31/10/2026 : lignage lu sur le serveur (`pg_depend` + définition, `outils/lignage.mjs`), colonne publiée ← colonne source dans la fiche de chaque table ; flux saisis marqués observés ou non, flux observés non décrits listés. Le graphe des flux reste celui de `data/flux.json`."
+      },
+      "aliases": [
+        "E-07"
+      ],
+      "details": {
+        "niveau_marche": "standard (DataHub, OpenMetadata)"
+      }
+    },
+    {
+      "id": "MX-E08",
+      "title": "Glossaire métier ; colonnes sensibles pilotées en base",
+      "description": "Pas de glossaire (un terme défini une fois, relié aux colonnes qui le portent, avec un propriétaire) ; la sensibilité n'est pas lue depuis la base. Dépend de M-04 (qui documente).",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 02/11/2026 (sensibilité) : la sonde lit `droits.colonnes_sensibles`, gardée dans `/data/sensibles.json`, qui fait foi à la place de la liste du dépôt (le champ `sensibles` du catalogue dit laquelle). Glossaire fait le 04/11/2026 (M-04 : la DSI seule) : écran « Glossaire métier », `matrix.glossaire` (`partage/17`), termes reliés aux colonnes et montrés dans la fiche des tables."
+      },
+      "aliases": [
+        "E-08"
+      ],
+      "details": {
+        "niveau_marche": "standard"
+      }
+    },
+    {
+      "id": "MX-E09",
+      "title": "Qualité des données",
+      "description": "Aucun test sur le contenu. Règles déclarées par table (dernière écriture attendue, colonnes non nulles, unicité, plage de valeurs), exécutées par la sonde avec `matrix_lecture` en nommant les colonnes (jamais `SELECT *`, § 11), résultats dans l'état de santé, incidents ouverts et clos.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "L",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 02/11/2026 : `data/regles-qualite.json` (fraîcheur, valeurs vides, unicité, plage, valeurs admises ; 12 règles de départ), `outils/qualite.mjs` exécuté par la sonde (lecture seule, 15 s par règle, colonnes sensibles jamais lues), incidents ouverts et clos (`/data/incidents-qualite.json`), onglet « Qualité des données » de l'écran Santé, `GET /api/qualite`. Saisie des règles dans l'écran faite le 04/11/2026 (M-04) : `matrix.regles_qualite` (`partage/17`), écran Santé › Qualité des données."
+      },
+      "aliases": [
+        "E-09"
+      ],
+      "details": {
+        "niveau_marche": "standard (OpenMetadata, Soda, dbt tests)"
+      }
+    },
+    {
+      "id": "MX-E10",
+      "title": "Workflow de demande d'accès",
+      "description": "L'outil demandeur ne peut pas demander lui-même (API avec son jeton) ; personne n'est notifié d'une demande ni d'une décision ; l'application reste un script hors Matrix (choix M-13 : Matrix n'a aucun droit d'administration). Garder ce choix ou laisser Matrix poser le droit : M-15.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 02/11/2026 : `POST /api/demandes` (jeton de l'outil, motif obligatoire, jamais de rétrogradation d'un lien autorisé), `GET /api/demandes?outil=` (statut et droit posé), module `integration/demander-acces.mjs` ; la demande arrive dans « Liens entre outils » (compteur) et le journal ; application immédiate depuis M-18 (`matrix_gestion`). Notification par e-mail ou Teams : attend M-14."
+      },
+      "aliases": [
+        "E-10"
+      ],
+      "details": {
+        "niveau_marche": "avancé (Collibra, Atlan)"
+      }
+    },
+    {
+      "id": "MX-E11",
+      "title": "Affichage de `journal_unifie` et `rex_unifie` ; écran pour `matrix.correspondances`",
+      "description": "Aucun écran ne les lit : le journal unifié (D18), le REX (D22) et les correspondances d'identifiants (D01, D02, D14) ne se consultent qu'en SQL.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 30/10/2026 : écrans « Journal unifié », « Retours d’expérience » et « Correspondances » (décisions comprises), `outils/consultation.mjs`, API `/api/journal`, `/api/rex`, `/api/correspondances`."
+      },
+      "aliases": [
+        "E-11"
+      ],
+      "details": {
+        "niveau_marche": "interne"
+      }
+    },
+    {
+      "id": "MX-E12",
+      "title": "Export ; API de lecture du catalogue",
+      "description": "Pas d'export du catalogue, pas de dictionnaire imprimable, pas de diagramme ER par outil, pas d'API `GET /api/catalogue` que les outils ou un agent pourraient lire.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 31/10/2026 : `outils/export.mjs` ; menu « Exporter » de la Bibliothèque (CSV des tables et des colonnes, dictionnaire HTML imprimable, diagramme ER Mermaid, pour la sélection en cours) ; `GET /api/catalogue/tables[/:outil/:table]` et `GET /api/export/…`, structure seulement."
+      },
+      "aliases": [
+        "E-12"
+      ],
+      "details": {
+        "niveau_marche": "standard (SchemaSpy, Dataedo, dbt docs)"
+      }
+    },
+    {
+      "id": "MX-E13",
+      "title": "Recherche plein texte ; popularité",
+      "description": "Les descriptions, commentaires et noms de domaine ne sont pas cherchés ; aucune mesure d'usage (`pg_stat_user_tables.seq_scan`, `idx_scan`, lue par la sonde) pour classer les tables les plus lues.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 31/10/2026 : `outils/recherche.mjs` (noms, colonnes, commentaires, descriptions, documentation, domaines, flux ; sans accents ; pertinence et raison) ; lectures lues par la sonde, tri « Plus lues » et bloc de l’accueil."
+      },
+      "aliases": [
+        "E-13"
+      ],
+      "details": {
+        "niveau_marche": "standard (Amundsen, Alation)"
+      }
+    },
+    {
+      "id": "MX-E14",
+      "title": "Collecte robuste",
+      "description": "Les parseurs restent la source par défaut et cassent au premier changement de format ; `Function()` exécute du code d'un autre dépôt. Inverser l'ordre (serveur, puis déclaration, puis code), réserver les parseurs au mode hors serveur, retirer `Function()`.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Fait le 31/10/2026 : `outils/litteral.mjs` remplace `Function()` ; priorité serveur, déclaration, code, embarqué ; migrations suivies jusqu’aux `ALTER COLUMN` et `RENAME COLUMN` (7 colonnes corrigées), instructions inconnues signalées ; colonnes fermées par le serveur marquées sensibles."
+      },
+      "aliases": [
+        "E-14"
+      ],
+      "details": {
+        "niveau_marche": "robustesse"
+      }
+    },
+    {
+      "id": "MX-E15",
+      "title": "IA",
+      "description": "Proposer une description à partir des colonnes, des commentaires et des usages, validée avant enregistrement (jamais écrite seule) ; serveur MCP en lecture seule sur le catalogue, les liens et la santé, derrière l'authentification de E-02. Opportunité à trancher : M-16.",
+      "category": "ecarts_marche",
+      "kind": "ecart",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "L",
+      "sources": [
+        "docs/proposition.md § 6, lot 6 (analyse comparative du 25 oct. 2026)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": null,
+        "note": "Écarté le 10/11/2026 (M-16 : « Non, pas d'IA pour l'instant ») : aucune donnée du catalogue ne sort de Matrix ; la question pourra être reposée."
+      },
+      "aliases": [
+        "E-15"
+      ],
+      "details": {
+        "niveau_marche": "différenciant (Atlan, OpenMetadata MCP)"
+      }
+    },
+    {
+      "id": "MX-M03",
+      "title": "Confirmer le remplacement de Lucca par Cursus",
+      "description": "Décision M-03 / D06 provisoire : tout est préparé comme si Cursus remplaçait Lucca (docs/remplacement-lucca.md), rien n’est retiré tant que ce n’est pas confirmé.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/decisions.md, « Questions ouvertes »",
+        "docs/proposition.md § 7"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "M-03"
+      ]
+    },
+    {
+      "id": "MX-P06",
+      "title": "TLS pour Power BI",
+      "description": "Question ouverte citée par la fiche de mise en service : TLS de la connexion de Power BI au serveur commun.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "docs/mise-en-service.md § 8"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "P-06"
+      ]
+    },
+    {
+      "id": "MX-S01",
+      "title": "Mise en service : appliquer les demandes à traiter de l’écran Publications",
+      "description": "Lignes 6.1 à 6.13 de la fiche de mise en service (liens d’écriture et publications de Vigie D12 / D13, Crucible M-21, M-19 de Vigie et Codex, Codex CX-01, Cursus lot 16), puis le contrôle final (§ 7) et le passage à FAITE des demandes (§ 8).",
+      "category": "mise_en_service",
+      "kind": "mise_en_production",
+      "priority": "bloquant_production",
+      "status": "non_commence",
+      "waiting_on": "Session sur le serveur commun (Administrateur de Matrix)",
+      "effort": null,
+      "sources": [
+        "docs/mise-en-service.md § 6 à § 8"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-R01",
+      "title": "M-14 · Rôle de lecture bi_reader pour Power BI (AR-042)",
+      "description": "Demande de Arche → Matrix du 2026-10-31, statut ACCEPTÉE (02/11/2026, à la demande du propriétaire dans la session de Matrix. Fait : rôle `bi_reader` dans le socle (`init/01` à `03` : connexion si `BI_READER_PASSWORD` est fourni, transactions en lecture seule, requête bornée à 2 minutes, aucun héritage) ; lecteur admis par le registre des liens, `90-droits.sql` et `droits.verifier()` (rien d'autre que `SELECT` sur les vues `pub_` accordées, `USAGE` seulement là où il lit) ; liens vers `arche.pub_capex`, `pub_besoins_machines`, `pub_rampup`, `pub_rex_v2` et `pub_journal` préparés dans `data/publications-depot.json` et décidés dans l'écran « Publications » (pas `arche.pub_rex`). Reste : exposer le serveur à Power BI en TLS (question P-06, configuration du serveur) et ranger `BI_READER_PASSWORD` dans le coffre de la DSI ; la demande passera à FAITE une fois les liens autorisés sur le serveur en service)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-10-31 (Arche → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (02/11/2026, à la demande du propriétaire dans la session de Matrix. Fait : rôle `bi_reader` dans le socle (`init/01` à `03` : connexion si `BI_READER_PASSWORD` est fourni, transactions en lecture seule, requête bornée à 2 minutes, aucun héritage) ; lecteur admis par le registre des liens, `90-droits.sql` et `droits.verifier()` (rien d'autre que `SELECT` sur les vues `pub_` accordées, `USAGE` seulement là où il lit) ; liens vers `arche.pub_capex`, `pub_besoins_machines`, `pub_rampup`, `pub_rex_v2` et `pub_journal` préparés dans `data/publications-depot.json` et décidés dans l'écran « …"
+      }
+    },
+    {
+      "id": "MX-R02",
+      "title": "M-15 · Publication vigie.pub_etudes_securite et lien de lecture d'arche_app (AR-033)",
+      "description": "Demande de Arche → Matrix du 2026-11-01, statut ACCEPTÉE (01/11/2026 ; 02/11/2026 : traitée par l'écran « Publications » plutôt que par la convention de `90-droits.sql`. (1) la publication `vigie.pub_etudes_securite` figure dans `data/publications-depot.json` comme « attendue », avec son contrat (`data/contrats/vigie.pub_etudes_securite.json`) ; sa définition s'écrira dans l'écran quand Vigie tiendra les études (VG-01 à VG-05). (2) le lien `arche_app` → `vigie.pub_etudes_securite` est préparé dans le même dépôt : demande inscrite au registre depuis l'écran tant que la vue n'existe pas, autorisée dès qu'elle existe. La demande passera alors à FAITE)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-01 (Arche → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (01/11/2026 ; 02/11/2026 : traitée par l'écran « Publications » plutôt que par la convention de `90-droits.sql`. (1) la publication `vigie.pub_etudes_securite` figure dans `data/publications-depot.json` comme « attendue », avec son contrat (`data/contrats/vigie.pub_etudes_securite.json`) ; sa définition s'écrira dans l'écran quand Vigie tiendra les études (VG-01 à VG-05). (2) le lien `arche_app` → `vigie.pub_etudes_securite` est préparé dans le même dépôt : demande inscrite au registre depuis l'écran tant que la vue n'existe pas, autorisée dès qu'elle existe. La demande passera …"
+      }
+    },
+    {
+      "id": "MX-R03",
+      "title": "Lecture Power BI des vues de Keystone (M-14) et recopie de pub_projets (colonne categorie, migrations 0070-0071)",
+      "description": "Demande de Keystone → Matrix du 2026-11-01, statut ACCEPTÉE (01/11/2026 ; 02/11/2026 : traitée par l'écran « Publications ». (2) `keystone.pub_projets` avec `categorie` est préparée dans `data/publications-depot.json` (définition identique à `0071_project_category_share`) et s'enregistre au registre des publications depuis l'écran ; plus de copie dans `30-keystone.sql` (lot M17-3), qui contrôle toujours `projects.category`. (1) les liens `bi_reader` vers les 9 vues demandées sont préparés dans le même dépôt et s'autorisent depuis l'écran (rôle `bi_reader` créé, demande M-14 d'Arche). La demande passera à FAITE une fois les liens autorisés sur le serveur en service)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-01 (Keystone → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (01/11/2026 ; 02/11/2026 : traitée par l'écran « Publications ». (2) `keystone.pub_projets` avec `categorie` est préparée dans `data/publications-depot.json` (définition identique à `0071_project_category_share`) et s'enregistre au registre des publications depuis l'écran ; plus de copie dans `30-keystone.sql` (lot M17-3), qui contrôle toujours `projects.category`. (1) les liens `bi_reader` vers les 9 vues demandées sont préparés dans le même dépôt et s'autorisent depuis l'écran (rôle `bi_reader` créé, demande M-14 d'Arche). La demande passera à FAITE une fois les liens autorisés …"
+      }
+    },
+    {
+      "id": "MX-R04",
+      "title": "Publications et liens de lecture pour les personnes (D01) et les présences prévues sur site",
+      "description": "Demande de Vigie → Matrix du 2026-11-04, statut ACCEPTÉE (05/11/2026, accord du propriétaire dans la session de Matrix. Préparé dans `data/publications-depot.json`, bloc « Demandes à traiter » de l'écran Publications : (1) `cursus.pub_salaries` D01 v2, contrat `data/contrats/cursus.pub_salaries-d01-v2.json`, colonnes `categorie`, `entreprise`, `email` ajoutées en fin quand Cursus les aura créées et validées ; (2) `cursus.pub_presences_prevues` « attendue », contrat de 9 colonnes `data/contrats/cursus.pub_presences_prevues.json` ; (3) lien `vigie_app` → `cursus.pub_presences_prevues` (demande inscrite tant que la vue n'existe pas) ; le lien `vigie_app` → `cursus.pub_salaries` existe déjà (convention). Passera à FAITE une fois les deux publications appliquées sur le serveur en service)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-04 (Vigie → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (05/11/2026, accord du propriétaire dans la session de Matrix. Préparé dans `data/publications-depot.json`, bloc « Demandes à traiter » de l'écran Publications : (1) `cursus.pub_salaries` D01 v2, contrat `data/contrats/cursus.pub_salaries-d01-v2.json`, colonnes `categorie`, `entreprise`, `email` ajoutées en fin quand Cursus les aura créées et validées ; (2) `cursus.pub_presences_prevues` « attendue », contrat de 9 colonnes `data/contrats/cursus.pub_presences_prevues.json` ; (3) lien `vigie_app` → `cursus.pub_presences_prevues` (demande inscrite tant que la vue n'existe pas) ; le lien …"
+      }
+    },
+    {
+      "id": "MX-R05",
+      "title": "Lien d'exécution de keystone_app sur vigie.pub_signaler_avancement_nc (D13, CV-08)",
+      "description": "Demande de Vigie → Matrix du 2026-11-05, statut ACCEPTÉE (06/11/2026, accord du propriétaire dans la session de Matrix. Lien `execution` keystone_app → `vigie.pub_signaler_avancement_nc` préparé dans `data/publications-depot.json` : bloc « Demandes à traiter » de l'écran Publications, bouton « Autoriser », qui l'inscrit au registre `matrix.liens` et l'applique par `droits.accorder_execution`. Essayé sur un PostgreSQL 16 avec la migration 0026 de Vigie : keystone_app dépose une demande (appel répété : même numéro), n'écrit jamais dans `vigie.inbound_requests`, et un rôle sans lien est refusé. Passera à FAITE une fois autorisé sur le serveur en service, après la migration 0026)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-05 (Vigie → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (06/11/2026, accord du propriétaire dans la session de Matrix. Lien `execution` keystone_app → `vigie.pub_signaler_avancement_nc` préparé dans `data/publications-depot.json` : bloc « Demandes à traiter » de l'écran Publications, bouton « Autoriser », qui l'inscrit au registre `matrix.liens` et l'applique par `droits.accorder_execution`. Essayé sur un PostgreSQL 16 avec la migration 0026 de Vigie : keystone_app dépose une demande (appel répété : même numéro), n'écrit jamais dans `vigie.inbound_requests`, et un rôle sans lien est refusé. Passera à FAITE une fois autorisé sur le serveur …"
+      }
+    },
+    {
+      "id": "MX-R06",
+      "title": "Publication de l'état des demandes reçues (D13, CV-08)",
+      "description": "Demande de Vigie → Matrix du 2026-11-05, statut ACCEPTÉE (06/11/2026, accord du propriétaire dans la session de Matrix. Publication `vigie.pub_demandes_recues` définie dans `data/publications-depot.json` (mode SQL, 11 colonnes du contrat « Demandes reçues v1 », `data/contrats/vigie.pub_demandes_recues.json`, filtre `caller = session_user`, ni payload ni `acknowledged_*`) et lien de lecture keystone_app ; l'écran Publications les enregistre et les applique. Essayé avec la migration 0026 : Keystone ne voit que ses demandes, un autre lecteur autorisé n'en voit aucune. Passera à FAITE une fois appliquée sur le serveur en service, après le lien d'exécution)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-05 (Vigie → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (06/11/2026, accord du propriétaire dans la session de Matrix. Publication `vigie.pub_demandes_recues` définie dans `data/publications-depot.json` (mode SQL, 11 colonnes du contrat « Demandes reçues v1 », `data/contrats/vigie.pub_demandes_recues.json`, filtre `caller = session_user`, ni payload ni `acknowledged_*`) et lien de lecture keystone_app ; l'écran Publications les enregistre et les applique. Essayé avec la migration 0026 : Keystone ne voit que ses demandes, un autre lecteur autorisé n'en voit aucune. Passera à FAITE une fois appliquée sur le serveur en service, après le lien …"
+      }
+    },
+    {
+      "id": "MX-R07",
+      "title": "M-21 · Publication vigie.pub_suspensions_essais et lien de lecture de crucible_app (V-2, R-7)",
+      "description": "Demande de Crucible → Matrix du 2026-11-05, statut ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Publication définie dans `data/publications-depot.json`, en mode SQL, avec le contrat demandé (11 colonnes, dans l'ordre : `data/contrats/vigie.pub_suspensions_essais.json`) et le lien de lecture `crucible_app`, déjà dans la convention. `maj_le` vaut la création de l'activité ou la dernière entrée de son journal, car `site_activities` n'a pas de date de modification. `WITH (security_barrier)` : posé désormais sur toutes les publications appliquées par Matrix. Essayée sur la chaîne 0000 à 0029 de Vigie. Seules les activités extérieures non annulées dans une zone `essais` ou `atex` sont publiées : une activité interne, annulée, ou dans une autre zone n'y figure pas. crucible_app la lit, mais pas `vigie.site_activities`. Limite : seule une activité rattachée à une zone (`zone_id`) est publiée ; une activité tracée sur la carte sans zone choisie n'apparaît pas. Passera à FAITE une fois appliquée sur le serveur en service : « Enregistrer », « Appliquer » et « Autoriser » dans l'écran Publications)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-05 (Crucible → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Publication définie dans `data/publications-depot.json`, en mode SQL, avec le contrat demandé (11 colonnes, dans l'ordre : `data/contrats/vigie.pub_suspensions_essais.json`) et le lien de lecture `crucible_app`, déjà dans la convention. `maj_le` vaut la création de l'activité ou la dernière entrée de son journal, car `site_activities` n'a pas de date de modification. `WITH (security_barrier)` : posé désormais sur toutes les publications appliquées par Matrix. Essayée sur la chaîne 0000 à 0029 de Vigie. Seules les activités …"
+      }
+    },
+    {
+      "id": "MX-R08",
+      "title": "Liens d'exécution des fonctions de D12 (lot 5 livré le 05/11/2026, CV-06, CV-08)",
+      "description": "Demande de Vigie → Matrix du 2026-11-06, statut ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `execution` sont préparés dans `data/publications-depot.json`, bloc « Demandes à traiter » de l'écran Publications : bouton « Autoriser », qui les inscrit au registre `matrix.liens` et les applique par `droits.accorder_execution`. Essayé sur un PostgreSQL 16 avec la chaîne de migrations 0000 à 0029 de Vigie : codex_app obtient le numéro ECR-2026-001, rendu à l'identique si la demande est répétée ; keystone_app dépose un avancement d'ECO ; chaque rôle est refusé sur la fonction de l'autre et sur `vigie.inbound_requests`. Passera à FAITE une fois autorisé sur le serveur en service, après la migration 0029)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-06 (Vigie → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `execution` sont préparés dans `data/publications-depot.json`, bloc « Demandes à traiter » de l'écran Publications : bouton « Autoriser », qui les inscrit au registre `matrix.liens` et les applique par `droits.accorder_execution`. Essayé sur un PostgreSQL 16 avec la chaîne de migrations 0000 à 0029 de Vigie : codex_app obtient le numéro ECR-2026-001, rendu à l'identique si la demande est répétée ; keystone_app dépose un avancement d'ECO ; chaque rôle est refusé sur la fonction de l'autre et sur …"
+      }
+    },
+    {
+      "id": "MX-R09",
+      "title": "Appliquer les quatre publications de D12 sur les tables de Vigie (lot 5 livré le 05/11/2026)",
+      "description": "Demande de Vigie → Matrix du 2026-11-06, statut ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Les quatre définitions de `data/publications-depot.json` restent inchangées ; elles ont été enregistrées puis appliquées par le code de Matrix sur la chaîne 0000 à 0029 de Vigie, sans erreur : 21, 7, 10 et 21 colonnes, lecteurs de la convention keystone_app et matrix_app, plus codex_app pour `pub_demandes_modification`. Notes du dépôt mises à jour. Le bandeau « À NE PAS JOUER » de `partage/60-vigie-ecr-eco.sql` est remplacé par « NE PLUS JOUER », et non retiré : rejoué après la migration 0029, ce fichier créerait `vigie.external_progress`, inconnue de Vigie ; il reste comme trace de la spécification. Passera à FAITE une fois appliquée sur le serveur en service, après la migration 0029 : « Enregistrer » puis « Appliquer » dans l'écran Publications)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-06 (Vigie → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (07/11/2026, accord du propriétaire dans la session de Matrix. Les quatre définitions de `data/publications-depot.json` restent inchangées ; elles ont été enregistrées puis appliquées par le code de Matrix sur la chaîne 0000 à 0029 de Vigie, sans erreur : 21, 7, 10 et 21 colonnes, lecteurs de la convention keystone_app et matrix_app, plus codex_app pour `pub_demandes_modification`. Notes du dépôt mises à jour. Le bandeau « À NE PAS JOUER » de `partage/60-vigie-ecr-eco.sql` est remplacé par « NE PLUS JOUER », et non retiré : rejoué après la migration 0029, ce fichier créerait …"
+      }
+    },
+    {
+      "id": "MX-R10",
+      "title": "Lien de lecture de codex_app sur arche.pub_capex (CX-01 d'Arche, D-29 de Codex)",
+      "description": "Demande de Codex → Matrix du 2026-11-09, statut ACCEPTÉE (09/11/2026, accord du propriétaire dans la session de Matrix. Lien `lecture` codex_app → `arche.pub_capex` préparé dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, ligne 6.11 de `docs/mise-en-service.md`. Les sept colonnes lues par Codex existent dans la vue (migrations 0005 et 0024 d'Arche). Le droit porte sur toute la vue : Codex peut aussi lire `sponsor_nom`, `sponsor_email`, `chef_projet_nom` et `chef_projet_email`, déjà lues par keystone_app, matrix_app et bi_reader et non classées sensibles ; le propriétaire l'a accepté le 09/11/2026. Tant qu'Arche n'est pas reprise par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisé sur le serveur en service : `has_table_privilege('codex_app', 'arche.pub_capex', 'SELECT')`)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-09 (Codex → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (09/11/2026, accord du propriétaire dans la session de Matrix. Lien `lecture` codex_app → `arche.pub_capex` préparé dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, ligne 6.11 de `docs/mise-en-service.md`. Les sept colonnes lues par Codex existent dans la vue (migrations 0005 et 0024 d'Arche). Le droit porte sur toute la vue : Codex peut aussi lire `sponsor_nom`, `sponsor_email`, `chef_projet_nom` et `chef_projet_email`, déjà lues par keystone_app, matrix_app et bi_reader et non classées sensibles ; le propriétaire l'a accepté …"
+      }
+    },
+    {
+      "id": "MX-R11",
+      "title": "Liens de lecture de cursus_app sur codex.pub_types_document et codex.pub_documents (lot 16 de Cursus : documents stockés dans Codex)",
+      "description": "Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur commun (docs/mise-en-service.md § 6)",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y …"
+      }
+    },
+    {
+      "id": "MX-N01",
+      "title": "Interface par chaînes sources et sélecteur FR / EN",
+      "description": "Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-N02",
+      "title": "Icônes Phosphor",
+      "description": "Icônes dessinées à la main au lieu de Phosphor (REGLES § 7).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-N03",
+      "title": "Formulaires en panneau latéral",
+      "description": "Formulaires ouverts dans la page (REGLES § 7).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-N04",
+      "title": "Variables d’environnement toutes validées au démarrage",
+      "description": "Variables d’environnement validées seulement en partie (REGLES § 9).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-N05",
+      "title": "Modulus, Clavis et Matrix dans les listes d’outils",
+      "description": "Modulus (et Clavis / Matrix pour certaines listes) absents des listes d’outils de serveur.mjs, outils/*.mjs et infra/postgres/ ; le rôle modulus_app n’existe pas.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MX-N06",
+      "title": "Délégation de Claude conforme à REGLES § 10",
+      "description": "docs/delegation-claude.md est plus large que REGLES § 10 (fusion seule, rôles et droits du serveur commun).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Matrix#95 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    }
+  ]
+}

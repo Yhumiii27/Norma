@@ -12,3 +12,5 @@ jobs:
         with:
           node-version: 22
       - run: npm test
+      - name: RESTE-A-FAIRE.md à jour
+        run: npm run reste-a-faire && git diff --exit-code RESTE-A-FAIRE.md
