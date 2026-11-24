@@ -57,6 +57,10 @@
     {
       "date": "2026-11-24",
       "text": "Vigie#43 fusionnée : VG-N03, VG-N05, VG-N06, VG-N07 faits, VG-N01 en cours (coque traduite, écrans à faire) ; coque Norma 2.x en revue (Vigie#44) : VG-N08 en cours."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait."
     }
   ],
   "items": [
@@ -9927,9 +9931,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
+        "state": "fait",
         "delivery": "Vigie#44",
-        "note": "Coque alignée sur Norma 2.x : PR Vigie#44 ouverte, pas encore fusionnée au 24 nov. 2026."
+        "note": "Coque commune Norma 2.1 appliquée (Vigie#44, 24/11/2026)."
       }
     }
   ]
