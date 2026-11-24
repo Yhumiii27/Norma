@@ -2,23 +2,23 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 24 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 739 faits, 78 en cours, 265 à faire, sur 1082 points.
+**Avancement** : 739 faits, 79 en cours, 274 à faire, sur 1092 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
-| [Keystone](#keystone) | 138 | 28 | 51 | 217 | 14 | 20 | 2026-11-24 |
-| [Codex](#codex) | 57 | 13 | 70 | 140 | 0 | 54 | 2026-11-24 |
-| [Vigie](#vigie) | 282 | 8 | 75 | 365 | 6 | 37 | 2026-11-24 |
-| [Cursus](#cursus) | 174 | 0 | 21 | 195 | 1 | 0 | 2026-11-24 |
-| [Arche](#arche) | 42 | 10 | 4 | 56 | 3 | 3 | 2026-11-24 |
-| [Crucible](#crucible) | 26 | 4 | 7 | 37 | 1 | 1 | 2026-11-24 |
-| [Clavis](#clavis) | 1 | 3 | 19 | 23 | 0 | 9 | 2026-11-24 |
-| [Matrix](#matrix) | 15 | 11 | 9 | 35 | 1 | 2 | 2026-11-24 |
-| [Modulus](#modulus) | 0 | 1 | 7 | 8 | 0 | 0 | 2026-11-24 |
-| [Norma (socle)](#norma) | 4 | 0 | 2 | 6 | 0 | 0 | 2026-11-24 |
-| **Total** | **739** | **78** | **265** | **1082** | | | |
+| [Keystone](#keystone) | 138 | 28 | 52 | 218 | 14 | 20 | 2026-11-24 |
+| [Codex](#codex) | 57 | 13 | 71 | 141 | 0 | 54 | 2026-11-24 |
+| [Vigie](#vigie) | 282 | 8 | 76 | 366 | 6 | 37 | 2026-11-24 |
+| [Cursus](#cursus) | 174 | 0 | 22 | 196 | 1 | 0 | 2026-11-24 |
+| [Arche](#arche) | 42 | 10 | 5 | 57 | 3 | 3 | 2026-11-24 |
+| [Crucible](#crucible) | 26 | 4 | 8 | 38 | 1 | 1 | 2026-11-24 |
+| [Clavis](#clavis) | 1 | 3 | 20 | 24 | 0 | 9 | 2026-11-24 |
+| [Matrix](#matrix) | 15 | 11 | 10 | 36 | 1 | 2 | 2026-11-24 |
+| [Modulus](#modulus) | 0 | 1 | 8 | 9 | 0 | 0 | 2026-11-24 |
+| [Norma (socle)](#norma) | 4 | 1 | 2 | 7 | 0 | 0 | 2026-11-24 |
+| **Total** | **739** | **79** | **274** | **1092** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -26,7 +26,7 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 
 ## Keystone
 
-138 faits, 28 en cours, 51 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+138 faits, 28 en cours, 52 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (16 restants, 15 faits)
 
@@ -344,7 +344,7 @@ Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Reti
 
 Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P1 · Relance fournisseurs et inspections usine (à valider) ; R-160 P2 · Conformité CE et dossier technique machine (à valider) ; R-162 P4 · Exposition de change par projet et alertes de couverture (à valider).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (3 restants)
 
 - **R-N01 · Tables déclarées dans le schéma keystone (pgSchema(...).table(...))** — *Prochaine étape · non commencé*  
   Les tables sont déclarées avec pgTable et le migrateur réécrit "public". en "keystone". au lieu de pgSchema(...).table(...) (REGLES § 4).
@@ -352,12 +352,15 @@ Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P
 - **R-N02 · Contraintes de format en base pour chaque colonne** — *Prochaine étape · partiel*  
   Contraintes de format partielles : environ 58 check() pour environ 130 tables (REGLES § 4 : domaine d’un état, forme d’un code, nom non vide).
   *Sources : PR Keystone#81 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **R-N03 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="codex"></a>
 
 ## Codex
 
-57 faits, 13 en cours, 70 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+57 faits, 13 en cours, 71 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -629,7 +632,7 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
   Option 1 : signer avec une identité stable, choisie par une variable (`CODEX_SIGN_IDENTITY`). Ce peut être un certificat de signature de code auto-signé, créé une fois dans le Trousseau (Assistant de certification), ou un Developer ID si l'utilisateur en a un. Si l'identité est absente, le script revient à la signature ad hoc. Aucun certificat ni aucune clé ne doit entrer dans le dépôt : `.gitignore` exclut déjà `*.p12` et `*.cer`. Option 2, à envisager en complément : demander l'emplacement de téléchargement par `NSSavePanel`, dont le choix par l'utilisateur vaut autorisation, au lieu d'écrire en silence dans `~/Downloads`. Le certificat doit être créé par l'utilisateur sur son Mac.
   *Attend : Une session sur macOS (app Mac, T-02) · Sources : docs/reste-a-faire.md, point 129 (Demande une session sur macOS › App Mac)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (6 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
 
 - **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · non commencé*  
   Interface par clés (src/lib/i18n.ts) et non par chaînes sources en anglais traduites (REGLES § 2).
@@ -649,12 +652,15 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
 - **CX-N06 · Retirer le correctif local des textes atténués** — *Prochaine étape · non commencé*  
   Correctif local de contraste des textes atténués en clair dans src/app/globals.css ; corrigé dans Norma 1.0.2 : reprendre la copie et retirer le correctif.
   *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CX-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="vigie"></a>
 
 ## Vigie
 
-282 faits, 8 en cours, 75 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+282 faits, 8 en cours, 76 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
 ### Tableau de bord, échéances et navigation (3 restants, 16 faits)
 
@@ -964,7 +970,7 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
 
 Faits : VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (8 restants)
 
 - **VG-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
   Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
@@ -987,12 +993,15 @@ Faits : VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-0
 - **VG-N07 · Recherche de pages ⌘K** — *Prochaine étape · non commencé*  
   Pas de recherche de pages ⌘K (REGLES § 7).
   *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **VG-N08 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="cursus"></a>
 
 ## Cursus
 
-174 faits, 0 en cours, 21 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+174 faits, 0 en cours, 22 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -1100,7 +1109,7 @@ Faits : CU-168 Créer une CI GitHub Actions et figer la version de Node ; CU-169
 
 Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU-179 Protéger npm run reset-demo contre l'effacement d'une base réelle ; CU-180 Résoudre les chemins de l'interface et de la base depuis le code ; CU-181 Fournir un packaging serveur (Docker ou systemd) ; CU-182 Versionner les migrations de schéma ; CU-183 Charger les données par périmètre et ne renvoyer que ce qui change ; CU-184 Structurer les logs et répondre en JSON aux erreurs ; CU-185 Ajouter un point de santé /api/health ; CU-186 Activer la compression et un cache long sur les fichiers statiques ; CU-187 Gérer l'arrêt propre et le délai d'attente SQLite ; CU-188 Découper le bundle client par écran ; CU-189 Retirer du dépôt les deux archives zip de la maquette.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (4 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (5 restants)
 
 - **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
@@ -1114,12 +1123,15 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 - **CU-N04 · Formulaires en panneau latéral** — *Prochaine étape · non commencé*  
   Les formulaires s’ouvrent en dialogues centrés, pas en panneau latéral (REGLES § 7).
   *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CU-N05 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="arche"></a>
 
 ## Arche
 
-42 faits, 10 en cours, 4 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+42 faits, 10 en cours, 5 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (3 restants, 8 faits)
 
@@ -1201,7 +1213,7 @@ Faits : AR-035 Ramp-up : saisie journalière, TRS, 30 jours continus, 6 mois ; v
 
 Faits : AR-001 Cadrage de la livraison 0.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (3 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (4 restants)
 
 - **AR-N01 · Contraintes de format en base pour chaque colonne** — *Prochaine étape · non commencé*  
   Un seul check() pour 74 tables (REGLES § 4).
@@ -1212,12 +1224,15 @@ Faits : AR-001 Cadrage de la livraison 0.
 - **AR-N03 · Composants et police pris dans norma/charte** — *Prochaine étape · non commencé*  
   src/components/ds et src/fonts restent des copies locales : les prendre dans norma/charte (@norma/charte/ds, fonts/inter).
   *Sources : PR Arche#59 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **AR-N04 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="crucible"></a>
 
 ## Crucible
 
-26 faits, 4 en cours, 7 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+26 faits, 4 en cours, 8 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (1 restants, 4 faits)
 
@@ -1278,7 +1293,7 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 
 Faits : CR-001 Cadrage (livraison 0).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (5 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (6 restants)
 
 - **CR-N01 · Contraintes de format en base pour chaque colonne** — *Prochaine étape · non commencé*  
   Une seule contrainte CHECK pour 62 tables (drizzle/0032_roles_from_clavis.sql) ; les colonnes d’état ne sont typées qu’en TypeScript ($type<…>()) (REGLES § 4).
@@ -1295,12 +1310,15 @@ Faits : CR-001 Cadrage (livraison 0).
 - **CR-N05 · Importer norma/charte/touch.css** — *Prochaine étape · non commencé*  
   touch.css de la charte n’est pas importé ; Crucible a ses propres règles tactiles dans le CSS de ses composants (REGLES § 7).
   *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CR-N06 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="clavis"></a>
 
 ## Clavis
 
-1 faits, 3 en cours, 19 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+1 faits, 3 en cours, 20 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
 ### Gestion des droits (proposition du 24 nov. 2026) (4 restants, 1 faits)
 
@@ -1361,7 +1379,7 @@ Faits : CL-LB Lot B — Rôles multiples.
   Registre des applications publié et lu par les autres outils.
   *Sources : CLAUDE.md, « Next »*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (6 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
 
 - **CL-N01 · Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page** — *Prochaine étape · non commencé*  
   Le sélecteur FR / EN (et donc le bouton d’affichage) est dans la barre latérale, pas dans l’en-tête de page (REGLES § 7).
@@ -1381,12 +1399,15 @@ Faits : CL-LB Lot B — Rôles multiples.
 - **CL-N06 · Installation directe sans Docker** — *Prochaine étape · non commencé*  
   Déploiement documenté par Docker / Coolify (Dockerfile, deploy/compose.yaml) ; REGLES § 9 renvoie à l’installation directe (guide de Matrix).
   *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CL-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="matrix"></a>
 
 ## Matrix
 
-15 faits, 11 en cours, 9 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+15 faits, 11 en cours, 10 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1443,7 +1464,7 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (6 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
 
 - **MX-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
   Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
@@ -1463,12 +1484,15 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
 - **MX-N06 · Délégation de Claude conforme à REGLES § 10** — *Prochaine étape · non commencé*  
   docs/delegation-claude.md est plus large que REGLES § 10 (fusion seule, rôles et droits du serveur commun).
   *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **MX-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
+  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
 <a id="modulus"></a>
 
 ## Modulus
 
-0 faits, 1 en cours, 7 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
+0 faits, 1 en cours, 8 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
 
 ### Livraisons du plan (8 restants)
 
@@ -1497,13 +1521,23 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
   Keystone et Arche ne lisent plus que Modulus pour le catalogue ; retrait de l'écran de saisie de Keystone
   *Attend : Livraison précédente ; Keystone, Arche, Matrix · Sources : docs/PLAN.md, livraison 7*
 
+### Alignement Norma (1 restants)
+
+- **MO-N01 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Construire la livraison 1 sur la coque commune de Norma 2.0 (charte/COQUE.md : AppShell, PageHeader, PrefsStack).
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+
 <a id="norma"></a>
 
 ## Norma (socle)
 
-4 faits, 0 en cours, 2 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+4 faits, 1 en cours, 2 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
-### Socle commun (règles, charte, registre, dépendances) (0 restants, 2 faits)
+### Socle commun (règles, charte, registre, dépendances) (1 restants, 2 faits)
+
+- **NO-007 · Coque commune des outils (Norma 2.0)** — *Prochaine étape · partiel · effort L* · **en cours (Norma 2.0.0)**  
+  Audit du design des outils et contrat de coque : places et mesures communes (barre latérale, en-tête de page, actions, barre d'outils, panneau latéral, barre supérieure), paire langue / affichage empilée de même taille, jetons de l'échelle des textes, composants charte/ds et classes charte/coque.css.
+  *Avancement : Contrat et composants livrés ; reprise par chaque outil (points <outil>-N… « Coque commune Norma 2.0 »). · Sources : Demande du propriétaire, 24 nov. 2026, charte/COQUE.md, charte/AUDIT-2026-11-24.md*
 
 Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus.
 
@@ -1525,21 +1559,31 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-24 — **Keystone** : Clavis : le titre affiché suit le rôle accordé dans clavis.pub_acces (il gardait celui de la connexion) — trouvé à la répétition de l'installation.
 - 2026-11-24 — **Keystone** : Norma 1.0.0 adopté (copie norma/, contrôle npm run norma:check en CI, CLAUDE.md importe norma/REGLES.md) ; charte et police Inter lues dans norma/charte (build sans réseau) ; bouton d'affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, data-theme posé au rendu).
 - 2026-11-24 — **Keystone** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit b24fd0d) ; écarts de l’audit Norma ajoutés (R-N…).
+- 2026-11-24 — **Keystone** : Audit du design de Norma 2.0 : point R-N03 (coque commune).
 - 2026-11-24 — **Codex** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4296c52) ; écarts de l’audit Norma ajoutés (CX-N…).
+- 2026-11-24 — **Codex** : Audit du design de Norma 2.0 : point CX-N07 (coque commune).
 - 2026-11-24 — **Vigie** : Repris dans le reste à faire global de Norma 1.2.0 (commit 58217b0) ; écarts de l’audit Norma ajoutés (VG-N…).
+- 2026-11-24 — **Vigie** : Audit du design de Norma 2.0 : point VG-N08 (coque commune).
 - 2026-11-24 — **Cursus** : Repris dans le reste à faire global de Norma 1.2.0 (commit e6203e5) ; écarts de l’audit Norma ajoutés (CU-N…).
+- 2026-11-24 — **Cursus** : Audit du design de Norma 2.0 : point CU-N05 (coque commune).
 - 2026-11-24 — **Arche** : Une seule base : avec ARCHE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation d'Arche) ; lecture impossible = refus.
 - 2026-11-24 — **Arche** : Norma 1.0.0 : copie du socle commun (norma/, npm run norma:check en CI), Next.js 16.4.6, charte lue dans norma/charte/nocturne.css et bouton d'affichage sombre / clair (cookie epc2i-theme) à droite du sélecteur FR / EN ; audit des règles communes. AR-038 en cours.
 - 2026-11-24 — **Arche** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit bc15602) ; écarts de l’audit Norma ajoutés (AR-N…).
+- 2026-11-24 — **Arche** : Audit du design de Norma 2.0 : point AR-N04 (coque commune).
 - 2026-11-24 — **Crucible** : Une seule base : avec CRUCIBLE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation de Crucible) ; lecture impossible = refus.
 - 2026-11-24 — **Crucible** : Norma 1.0.0 adopté : copie du socle commun dans norma/ (règles, charte, registre, dépendances), contrôlée en CI (npm run norma:check), CLAUDE.md importe @norma/REGLES.md ; feuille Nocturne prise dans norma/charte ; bouton d’affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, thème posé par le serveur sur <html>, sombre par défaut).
 - 2026-11-24 — **Crucible** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit c8a1afa) ; écarts de l’audit Norma ajoutés (CR-N…).
+- 2026-11-24 — **Crucible** : Audit du design de Norma 2.0 : point CR-N06 (coque commune).
 - 2026-11-24 — **Clavis** : Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d).
 - 2026-11-24 — **Clavis** : Lot A (mise en service) construit, PR Clavis#13 en brouillon ; lot B fusionné (PR Clavis#12).
+- 2026-11-24 — **Clavis** : Audit du design de Norma 2.0 : point CL-N07 (coque commune).
 - 2026-11-24 — **Matrix** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4c6b688) ; écarts de l’audit Norma ajoutés (MX-N…).
+- 2026-11-24 — **Matrix** : Audit du design de Norma 2.0 : point MX-N07 (coque commune).
 - 2026-11-24 — **Modulus** : Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa).
+- 2026-11-24 — **Modulus** : Audit du design de Norma 2.0 : point MO-N01 (coque commune).
 - 2026-11-24 — **Norma (socle)** : Norma 1.0.0 à 1.1.0 : règles communes, charte Nocturne (sombre et clair), registre, dépendances, copie et contrôle.
 - 2026-11-24 — **Norma (socle)** : Norma 1.2.0 : questionnaire du responsable produit et reste à faire global de la solution dans le socle ; reprise des listes des neuf outils.
+- 2026-11-24 — **Norma (socle)** : Norma 2.0.0 : audit du design et coque commune (NO-007).
 - 2026-11-23 — **Keystone** : Connexion centrale par Clavis : personne créée depuis le jeton (KEYSTONE_PERSONS_FROM_TOKEN, Yhumiii27/Keystone#78) ; rôle et ouverture de Keystone lus dans clavis.pub_acces à la connexion et à chaque requête (KEYSTONE_ACCESS_FROM_CLAVIS).
 - 2026-11-23 — **Clavis** : Lot 1 et connexion centrale (jalon B) livrés.
 - 2026-11-10 — **Keystone** : Questionnaire des décisions en attente (38 réponses) appliqué : portail client retiré, planning (import MS Project / GanttProject, date de situation, gel du vendredi, références), P1, P2, P4 et P8 lancées, P7 abandonnée ; nouveaux points R-212 à R-215.
@@ -1572,13 +1616,3 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-02 — **Keystone** : R-168 : avant / après et motif dans tout le journal d’audit, garde-fou de couverture. R-171 : nettoyage du code (reste client_communications, attend D-5).
 - 2026-11-02 — **Arche** : Le responsable produit confirme la réponse par défaut de N-26 à N-38 : toutes les questions de DECISIONS.md sont tranchées ; restent les données D-1 à D-8.
 - 2026-11-02 — **Crucible** : Livraison 15 (CR-083, « lance le prochain point ») : API REST en lecture des systèmes de bancs, événements par déclencheurs, webhooks signés. X-17 ajoutée (défaut appliqué). 409 tests.
-- 2026-11-02 — **Crucible** : Livraison 16 (CR-081, « fait les prochains points ») : résultats d’essais rattachés à la réservation, références Codex et lien ELN. X-18 ajoutée (défaut appliqué). 419 tests.
-- 2026-11-02 — **Crucible** : Livraison 17 (CR-074, « fait les prochains points ») : refacturation interne, tarifs datés par moyen et entité, relevé mensuel exportable. X-19 ajoutée (défaut appliqué). 427 tests.
-- 2026-11-02 — **Crucible** : Livraison 18 (CR-076, « fait les prochains points ») : consommables et stock, lots et péremption, décompte à la fin de l’essai, alertes. X-20 ajoutée (défaut appliqué). 436 tests.
-- 2026-11-02 — **Crucible** : Livraison 19 (CR-082, « fait les prochains points ») : téléphone (menu en tiroir) et hors ligne (Mon planning, démarrages et fins gardés puis envoyés). X-21 ajoutée (défaut appliqué). 438 tests, 5 parcours.
-- 2026-11-01 — **Keystone** : Cadrage des lots R-195 à R-209 (questionnaire) : lancés R-196, R-201, R-203, R-205, R-206, R-208, puis R-204 ; R-195 et Power BI par Matrix ; plus tard R-197, R-200, R-202, R-207, R-209.
-- 2026-11-01 — **Keystone** : R-195 fait : la vue pub_jalons existe déjà (0038) et Matrix l’accorde à Crucible.
-- 2026-11-01 — **Keystone** : R-196 et R-201 faits : catégorie R&D des projets ; tâches récurrentes.
-- 2026-11-01 — **Keystone** : R-205, R-206, R-208 faits ; R-203 : tableaux de bord configurables faits, Power BI attend Matrix et la DSI.
-- 2026-11-01 — **Keystone** : R-204 lancé : planning multi-niveaux (codes d’activité, plannings fournisseurs).
-- 2026-11-01 — **Keystone** : R-204 fait : planning multi-niveaux (codes d’activité, plannings fournisseurs consolidés).
