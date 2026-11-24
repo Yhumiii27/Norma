@@ -1,5 +1,10 @@
 # Norma — journal des versions
 
+## 1.0.1 — 24 novembre 2026
+
+- `charte/ds/Segmented.module.css` : une option à icône seule (bouton d'affichage) a la même hauteur qu'une option
+  texte (FR / EN) ; constaté par l'alignement d'Arche, qui l'avait compensé localement.
+
 ## 1.0.0 — 24 novembre 2026
 
 Première version, à la demande du propriétaire (un dépôt pour le socle commun plutôt qu'une copie par outil).
