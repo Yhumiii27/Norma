@@ -2,7 +2,7 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 24 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 803 faits, 88 en cours, 212 à faire, sur 1103 points.
+**Avancement** : 804 faits, 87 en cours, 212 à faire, sur 1103 points.
 
 ## Sommaire
 
@@ -10,7 +10,7 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 |---|---:|---:|---:|---:|---:|---:|---|
 | [Keystone](#keystone) | 140 | 28 | 51 | 219 | 14 | 20 | 2026-11-24 |
 | [Codex](#codex) | 63 | 14 | 65 | 142 | 0 | 54 | 2026-11-24 |
-| [Vigie](#vigie) | 297 | 15 | 54 | 366 | 6 | 29 | 2026-11-24 |
+| [Vigie](#vigie) | 298 | 14 | 54 | 366 | 6 | 29 | 2026-11-24 |
 | [Cursus](#cursus) | 176 | 2 | 19 | 197 | 1 | 0 | 2026-11-24 |
 | [Arche](#arche) | 46 | 10 | 1 | 57 | 3 | 3 | 2026-11-24 |
 | [Crucible](#crucible) | 32 | 4 | 2 | 38 | 1 | 1 | 2026-11-24 |
@@ -19,7 +19,7 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 | [Modulus](#modulus) | 1 | 0 | 8 | 9 | 0 | 0 | 2026-11-24 |
 | [Vector](#vector) | 2 | 1 | 5 | 8 | 0 | 0 | 2026-11-24 |
 | [Norma (socle)](#norma) | 6 | 1 | 0 | 7 | 0 | 0 | 2026-11-24 |
-| **Total** | **803** | **88** | **212** | **1103** | | | |
+| **Total** | **804** | **87** | **212** | **1103** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -647,7 +647,7 @@ Faits : CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formul
 
 ## Vigie
 
-297 faits, 15 en cours, 54 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+298 faits, 14 en cours, 54 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
 ### Tableau de bord, échéances et navigation (1 restants, 18 faits)
 
@@ -927,7 +927,7 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
 
 Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-09 Communication et sensibilisation ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 5 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 6 faits)
 
 - **VG-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours (Vigie#43)**  
   Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
@@ -935,11 +935,8 @@ Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances
 - **VG-N04 · Tables déclarées dans le schéma vigie** — *Prochaine étape · non commencé*  
   Tables en pgTable réécrites vers « vigie » par le migrateur au lieu de pgSchema(...).table(...) (REGLES § 4).
   *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **VG-N08 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L* · **en cours (Vigie#44)**  
-  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Avancement : Coque alignée sur Norma 2.x : PR Vigie#44 ouverte, pas encore fusionnée au 24 nov. 2026. · Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
-Faits : VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K.
+Faits : VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="cursus"></a>
 
@@ -1418,7 +1415,7 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 - **NO-007 · Coque commune des outils (Norma 2.0)** — *Prochaine étape · partiel · effort L* · **en cours (Norma 2.0.0)**  
   Audit du design des outils et contrat de coque : places et mesures communes (barre latérale, en-tête de page, actions, barre d'outils, panneau latéral, barre supérieure), paire langue / affichage empilée de même taille, jetons de l'échelle des textes, composants charte/ds et classes charte/coque.css.
-  *Avancement : Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par Clavis, Matrix, Arche, Crucible, Vector, Codex, Cursus, Keystone ; restent Vigie (Vigie#44 ouverte) et Modulus (MO-N01, pas encore d’interface). · Sources : Demande du propriétaire, 24 nov. 2026, charte/COQUE.md, charte/AUDIT-2026-11-24.md*
+  *Avancement : Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par les neuf outils dotés d’une interface (Vigie#44 fusionnée le 24 nov. 2026) ; reste Modulus (MO-N01, pas encore d’interface). · Sources : Demande du propriétaire, 24 nov. 2026, charte/COQUE.md, charte/AUDIT-2026-11-24.md*
 
 Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus.
 
@@ -1445,6 +1442,7 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Vigie** : Audit du design de Norma 2.0 : point VG-N08 (coque commune).
 - 2026-11-24 — **Vigie** : Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42).
 - 2026-11-24 — **Vigie** : Vigie#43 fusionnée : VG-N03, VG-N05, VG-N06, VG-N07 faits, VG-N01 en cours (coque traduite, écrans à faire) ; coque Norma 2.x en revue (Vigie#44) : VG-N08 en cours.
+- 2026-11-24 — **Vigie** : Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait.
 - 2026-11-24 — **Cursus** : Repris dans le reste à faire global de Norma 1.2.0 (commit e6203e5) ; écarts de l’audit Norma ajoutés (CU-N…).
 - 2026-11-24 — **Cursus** : Audit du design de Norma 2.0 : point CU-N05 (coque commune).
 - 2026-11-24 — **Cursus** : Contraintes du schéma (Cursus#44, en CI) ; connecteurs rangés par outil (#43) ; journal en ajout seul en attente du responsable produit (conflit avec la purge RGPD).
@@ -1491,4 +1489,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-09 — **Vigie** : Réponses du service QHSE : paquets R1 à R3.
 - 2026-11-09 — **Crucible** : M-21 acceptée par Matrix (Yhumiii27/Matrix#82) : publication vigie.pub_suspensions_essais définie avec le contrat que lit la livraison 22 ; reste son application sur le serveur en service.
 - 2026-11-09 — **Crucible** : Revue de qualité des livraisons 15 à 22 (docs/REVUE-L15-L22.md) : 8 corrections — copie hors ligne effacée à la déconnexion, enregistrements hors ligne liés à leur compte, prévision des consommables, sorties de stock par lot, jours de Paris dans l’API, signalements Vigie sans doublon. 458 tests.
-- 2026-11-08 — **Arche** : Le responsable produit accepte le serveur commun déjà en service pour Arche ; EXPLOITATION.md § 4.1 : partage selon M-18 (reprise des vues par Matrix) et liens à ouvrir.

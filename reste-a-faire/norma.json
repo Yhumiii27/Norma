@@ -185,7 +185,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Norma 2.0.0",
-        "note": "Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par Clavis, Matrix, Arche, Crucible, Vector, Codex, Cursus, Keystone ; restent Vigie (Vigie#44 ouverte) et Modulus (MO-N01, pas encore d’interface)."
+        "note": "Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par les neuf outils dotés d’une interface (Vigie#44 fusionnée le 24 nov. 2026) ; reste Modulus (MO-N01, pas encore d’interface)."
       }
     }
   ]
