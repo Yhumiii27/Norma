@@ -2,7 +2,7 @@
 
 ## 1.0.2 — 24 novembre 2026
 
-- `nocturne.css` : en thème clair, `.text-muted` et `.card-meta` à 68 % du texte (3,7:1 → 5,2:1, seuil AA) ; relevé par
+- `nocturne.css` : en thème clair, `figcaption`, `.text-muted` et `.card-meta` à 68 % du texte (3,7:1 → 5,2:1, seuil AA) ; relevé par
   l'a11y de Codex (plus de 400 violations en clair).
 - `charte/README.md` : contraste en clair (rampe neutre inversée : texte en neutral-400 ou plus foncé).
 
