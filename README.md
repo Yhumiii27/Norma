@@ -6,7 +6,7 @@ Modulus) vit ici, une seule fois :
 | Chemin | Contenu |
 | --- | --- |
 | `REGLES.md` | règles communes (langues, dépôts, PostgreSQL commun, échanges entre outils, Clavis, charte, dépendances, exploitation, ce que Claude fait seul) |
-| `charte/` | charte graphique Nocturne : CSS, composants React de base, police Inter, conventions d'écran |
+| `charte/` | charte graphique Nocturne : CSS, composants React de base, police Inter, **coque commune** (`COQUE.md`, `coque.css`), conventions d'écran |
 | `registre/outils.json` | outils, schémas, rôles PostgreSQL, ports, connexion par Clavis |
 | `dependances.json` | versions minimales, bibliothèques autorisées, interdites, dérogations |
 | `outils/norma.mjs` | copie du socle dans un outil et contrôle de cette copie |

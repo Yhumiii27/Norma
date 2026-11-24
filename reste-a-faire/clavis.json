@@ -24,6 +24,10 @@
     {
       "date": "2026-11-24",
       "text": "Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Audit du design de Norma 2.0 : point CL-N07 (coque commune)."
     }
   ],
   "items": [
@@ -518,6 +522,27 @@
       "sources": [
         "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
         "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N07",
+      "title": "Coque commune Norma 2.0 (langue et affichage à la même place)",
+      "description": "Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md",
+        "norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)"
       ],
       "evidence": [],
       "progress": {
