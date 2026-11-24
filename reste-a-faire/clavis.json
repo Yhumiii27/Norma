@@ -36,6 +36,10 @@
     {
       "date": "2026-11-24",
       "text": "Lots A, B, C, D fusionnés (Clavis#12, #13, #14 ; DR-1 à DR-6 par défaut, transport des e-mails inactif en attente de la DSI), lot E en partie ; écarts de l’audit Norma corrigés (#14) ; coque Norma 2.0 (#15)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Clavis#15) : CL-N07 fait."
     }
   ],
   "items": [
@@ -545,7 +549,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -555,8 +559,8 @@
       "evidence": [],
       "progress": {
         "state": "fait",
-        "delivery": "PR Clavis#15",
-        "note": "Coque commune Norma 2.0 (Clavis#15)."
+        "delivery": "Clavis#15",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
       }
     }
   ]

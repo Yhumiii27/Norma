@@ -236,6 +236,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit Norma : AR-N01 à AR-N03 faits (Arche#61, #62) ; coque Norma 2.0 en cours (Arche#63 ouverte)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Arche#63) : AR-N04 fait."
     }
   ],
   "items": [
@@ -1488,7 +1492,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -1497,9 +1501,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "PR Arche#63",
-        "note": "Coque commune Norma 2.0 : PR Arche#63 ouverte."
+        "state": "fait",
+        "delivery": "Arche#63",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
       }
     }
   ]

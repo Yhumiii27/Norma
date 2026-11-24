@@ -194,6 +194,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit Norma : CR-N01 à CR-N05 faits (Crucible#47, #48) ; coque Norma 2.0 en cours."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Crucible#49) : CR-N06 fait."
     }
   ],
   "items": [
@@ -1011,7 +1015,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -1020,9 +1024,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Reprise de la coque en cours (session en cours, pas encore de PR fusionnée)."
+        "state": "fait",
+        "delivery": "Crucible#49",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
       }
     }
   ]

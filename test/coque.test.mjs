@@ -113,3 +113,39 @@ test('la coque est distribuée aux outils et documentée', () => {
   assert.match(lire('REGLES.md'), /COQUE\.md/);
   assert.ok(existsSync(path.join(racine, 'charte/AUDIT-2026-11-24.md')));
 });
+
+// Norma 2.2 — retours des outils pendant l'alignement.
+const lum = (hex) => {
+  const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+};
+const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+const palette = (bloc) => Object.fromEntries([...bloc.matchAll(/--(color-[a-z0-9-]+):\s*(#[0-9a-f]{6})\b/gi)].map((m) => [m[1], m[2]]));
+const sombre = palette(/^:root \{([\s\S]*?)\n\}/m.exec(nocturne)[1]);
+const clair = { ...sombre, ...palette(/:root\[data-theme="light"\] \{([\s\S]*?)\n\}/.exec(nocturne)[1]) };
+
+test('en-tête passé à la ligne : seconde ligne à droite, bloc du titre à gauche', () => {
+  const h = regle('.coque-header');
+  assert.match(h, /flex-wrap: wrap;/);
+  assert.match(h, /justify-content: flex-end;/);
+  assert.match(regle('.coque-header-left'), /margin-right: auto;/);
+});
+
+test('indication ⌘K : contraste AA (4,5:1) sur la surface et le fond, affichages sombre et clair', () => {
+  const kbd = regle('.coque-kbd');
+  const [, jeton] = /\bcolor: var\(--(color-[a-z0-9-]+)\)/.exec(kbd);
+  for (const [nom, t] of Object.entries({ sombre, clair })) {
+    for (const fond of ['color-surface', 'color-bg']) {
+      assert.ok(t[jeton] && t[fond], `--${jeton} et --${fond} définies (${nom})`);
+      const r = ratio(t[jeton], t[fond]);
+      assert.ok(r >= 4.5, `⌘K --${jeton} sur --${fond} (${nom}) : ${r.toFixed(2)}:1`);
+    }
+  }
+});
+
+test('≤ 1024 px : une seule cloche visible quand la barre supérieure la porte', () => {
+  assert.match(coque, /@media \(max-width: 1024px\) \{[\s\S]*?\.coque:has\(\.coque-topbar \.coque-bell\) \.coque-header \.coque-bell \{ display: none; \}/);
+  const doc = lire('charte/COQUE.md');
+  assert.match(doc, /Une seule cloche visible/);
+  assert.match(doc, /justify-content: flex-end/);
+});

@@ -50,6 +50,10 @@
     {
       "date": "2026-11-24",
       "text": "Écarts de l’audit Norma CX-N02 à CX-N06 corrigés (Codex#34) ; i18n en cours (~1850 t.key) ; coque Norma 2.0 en cours."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Codex#35) : CX-N07 fait ; CX-N08 ajouté (CLAUDE.md cite encore ThemeToggle.tsx)."
     }
   ],
   "items": [
@@ -3612,7 +3616,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "L",
       "sources": [
@@ -3621,10 +3625,31 @@
       ],
       "evidence": [],
       "progress": {
+        "state": "fait",
+        "delivery": "Codex#35",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "category": "alignement_norma",
+      "kind": "documentation",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": "Reprise de la coque en cours (session en cours, pas encore de PR fusionnée)."
-      }
+        "note": ""
+      },
+      "id": "CX-N08",
+      "title": "CLAUDE.md cite encore ThemeToggle.tsx supprimé (#35)",
+      "description": "Depuis l'alignement sur la coque commune (Codex#35), src/components/shell/ThemeToggle.tsx n'existe plus (paire langue / affichage de la coque, PrefsStack) ; la section « Conventions » du CLAUDE.md de Codex le cite encore comme bouton d'affichage. Corriger le texte pour renvoyer à la coque (norma/charte/COQUE.md § 4).",
+      "sources": [
+        "Codex#35 (coque commune, 24 nov. 2026)",
+        "CLAUDE.md de Codex, « Conventions », affichage sombre / clair"
+      ]
     }
   ]
 }

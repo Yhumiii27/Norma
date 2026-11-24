@@ -53,6 +53,10 @@
     {
       "date": "2026-11-24",
       "text": "Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Vigie#43 fusionnée : VG-N03, VG-N05, VG-N06, VG-N07 faits, VG-N01 en cours (coque traduite, écrans à faire) ; coque Norma 2.x en revue (Vigie#44) : VG-N08 en cours."
     }
   ],
   "items": [
@@ -9776,9 +9780,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "Vigie#43",
+        "note": "Coque traduite (chaînes sources et sélecteur FR / EN) ; les écrans restent à traduire."
       }
     },
     {
@@ -9809,7 +9813,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -9818,9 +9822,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Vigie#43",
+        "note": "Fusionné (Vigie#43)."
       }
     },
     {
@@ -9851,7 +9855,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -9860,9 +9864,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Vigie#43",
+        "note": "Fusionné (Vigie#43)."
       }
     },
     {
@@ -9872,7 +9876,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -9881,9 +9885,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Vigie#43",
+        "note": "Fusionné (Vigie#43)."
       }
     },
     {
@@ -9893,7 +9897,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -9902,9 +9906,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Vigie#43",
+        "note": "Fusionné (Vigie#43)."
       }
     },
     {
@@ -9923,9 +9927,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "Vigie#44",
+        "note": "Coque alignée sur Norma 2.x : PR Vigie#44 ouverte, pas encore fusionnée au 24 nov. 2026."
       }
     }
   ]

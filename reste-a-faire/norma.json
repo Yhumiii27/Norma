@@ -31,6 +31,10 @@
     {
       "date": "2026-11-24",
       "text": "Norma 2.1.0 : Vector inscrit au registre ; NO-005 fait, NO-006 en cours (reste Keystone)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Norma 2.2.0 : retours des outils sur la coque (en-tête passé à la ligne aligné à droite, ⌘K lisible en affichage clair, une seule cloche ≤ 1024 px) ; NO-006 fait ; NO-007 en cours (restent Vigie et Modulus)."
     }
   ],
   "items": [
@@ -143,7 +147,7 @@
       "category": "adoption",
       "kind": "reprise",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "Reprise de Norma 1.2.0 dans chaque outil (PR par outil)",
       "effort": "S",
       "sources": [
@@ -152,9 +156,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "PR des outils",
-        "note": "Fait pour Arche, Crucible, Modulus, Codex, Matrix, Vigie, Cursus (et Clavis) ; reste Keystone (aucune PR d’adoption de Norma 1.2.0 fusionnée)."
+        "state": "fait",
+        "delivery": "Keystone#83",
+        "note": "Tous les outils renvoient au reste à faire global (Keystone, le dernier, par Keystone#83)."
       }
     },
     {
@@ -181,7 +185,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Norma 2.0.0",
-        "note": "Contrat et composants livrés ; reprise par chaque outil (points <outil>-N… « Coque commune Norma 2.0 »)."
+        "note": "Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par Clavis, Matrix, Arche, Crucible, Vector, Codex, Cursus, Keystone ; restent Vigie (Vigie#44 ouverte) et Modulus (MO-N01, pas encore d’interface)."
       }
     }
   ]

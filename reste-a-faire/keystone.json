@@ -354,6 +354,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point R-N03 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Keystone#84) : R-N03 fait ; contraintes de format en base et renvoi à la liste globale fusionnés (Keystone#83) : R-N02 fait ; R-N04 ajouté (écran Plan à 390 px)."
     }
   ],
   "items": [
@@ -6544,9 +6548,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Keystone#83",
+        "note": "Contraintes de format en base fusionnées (Keystone#83)."
       }
     },
     {
@@ -6556,7 +6560,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -6565,10 +6569,31 @@
       ],
       "evidence": [],
       "progress": {
+        "state": "fait",
+        "delivery": "Keystone#84",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "category": "ergonomie_i18n_accessibilite",
+      "kind": "ergonomie",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "progress": {
         "state": "a_faire",
         "delivery": null,
         "note": ""
-      }
+      },
+      "id": "R-N04",
+      "title": "Écran Plan : filtres par code d'activité en pleine largeur et défilement horizontal à 390 px (ligne Date de référence)",
+      "description": "Relevé pendant l'alignement sur la coque commune (Keystone#84) : sur l'écran Plan, les filtres par code d'activité prennent toute la largeur, et à 390 px la ligne « Date de référence » fait défiler la page horizontalement. Ramener les filtres dans la barre d'outils (FilterBar, passage à la ligne) et faire tenir la ligne de la date de référence à 390 px.",
+      "sources": [
+        "Keystone#84 (coque commune, 24 nov. 2026)",
+        "norma/charte/COQUE.md § 1 et § 5"
+      ]
     }
   ]
 }
