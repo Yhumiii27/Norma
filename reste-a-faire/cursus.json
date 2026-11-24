@@ -45,6 +45,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point CU-N05 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Contraintes du schéma (Cursus#44, en CI) ; connecteurs rangés par outil (#43) ; journal en ajout seul en attente du responsable produit (conflit avec la purge RGPD)."
     }
   ],
   "items": [
@@ -4430,9 +4434,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Cursus#44",
+        "note": "PR Cursus#44 ouverte, pas encore fusionnée (CI)."
       },
       "details": {
         "preuves": "server/src/db.ts:10-49, :79 · shared/domain.ts:101"
@@ -4454,9 +4458,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
-        "note": ""
+        "note": "Chaînes sources et sélecteur FR / EN : reprise commencée."
       }
     },
     {
@@ -4487,8 +4491,8 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
-      "waiting_on": "",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Choix du responsable produit : purge RGPD du journal par un rôle dédié ?",
       "effort": null,
       "sources": [
         "PR Cursus#42 (audit Norma 1.0, 24 nov. 2026)",
@@ -4498,7 +4502,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Conflit avec la purge RGPD du journal (appliquerConservation, regrouper, marquerPaie, reprendreJournal font UPDATE / DELETE). Choix proposé : purge par un rôle dédié, le rôle de l’application n’ayant plus que l’ajout."
       }
     },
     {
@@ -4517,9 +4521,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
-        "note": ""
+        "note": "Formulaires en panneau latéral : reprise commencée."
       }
     },
     {

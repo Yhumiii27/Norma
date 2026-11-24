@@ -1,6 +1,6 @@
 {
   "name": "norma",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "Socle commun de la suite EPC2I : règles, charte, registre, dépendances",
   "type": "module",

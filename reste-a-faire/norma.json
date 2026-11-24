@@ -27,6 +27,10 @@
     {
       "date": "2026-11-24",
       "text": "Norma 2.0.0 : audit du design et coque commune (NO-007)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Norma 2.1.0 : Vector inscrit au registre ; NO-005 fait, NO-006 en cours (reste Keystone)."
     }
   ],
   "items": [
@@ -127,9 +131,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR des outils",
+        "note": "Arche, Crucible et Modulus construisent leur questionnaire avec le modèle de Norma."
       }
     },
     {
@@ -148,9 +152,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR des outils",
+        "note": "Fait pour Arche, Crucible, Modulus, Codex, Matrix, Vigie, Cursus (et Clavis) ; reste Keystone (aucune PR d’adoption de Norma 1.2.0 fusionnée)."
       }
     },
     {
