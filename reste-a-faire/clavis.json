@@ -1,0 +1,530 @@
+{
+  "outil": "clavis",
+  "generated": "2026-11-24",
+  "updated": "2026-11-24",
+  "branch": "main",
+  "origine": {
+    "depot": "Yhumiii27/Clavis",
+    "fichier": "docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)",
+    "commit": "097b49d",
+    "reprise": "un item par lot, par décision et par point de la suite ; aucun n’est commencé"
+  },
+  "echelle_effort": "non estimé",
+  "categories": {
+    "droits": "Gestion des droits (proposition du 24 nov. 2026)",
+    "decisions": "Décisions à prendre",
+    "suite": "Suite prévue",
+    "alignement_norma": "Alignement sur Norma (audit du 24 novembre 2026)"
+  },
+  "history": [
+    {
+      "date": "2026-11-23",
+      "text": "Lot 1 et connexion centrale (jalon B) livrés."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d)."
+    }
+  ],
+  "items": [
+    {
+      "id": "CL-LA",
+      "title": "Lot A — Mise en service",
+      "description": "mot de passe provisoire envoyé par e-mail (Graph ou SMTP, à choisir avec la DSI) ; déblocage, réinitialisation, « fermer toutes les sessions » ; écran d'import de l'annuaire avec aperçu des écarts ; départ en un geste ; journal consultable et exportable ; motif obligatoire pour une élévation ou un retrait",
+      "category": "droits",
+      "kind": "proposition",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Accord du propriétaire, lot par lot (rien n’est construit avant)",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 4, lot A"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "lot A"
+      ]
+    },
+    {
+      "id": "CL-LB",
+      "title": "Lot B — Rôles multiples",
+      "description": "`person_roles`, périmètres, échéances, copie d'un collègue, profils modifiables, écarts au profil, vue matricielle (personnes × outils), modifications en lot ; colonnes `roles` et `perimetre` demandées à Matrix",
+      "category": "droits",
+      "kind": "proposition",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Accord du propriétaire, lot par lot (rien n’est construit avant)",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 4, lot B"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "lot B"
+      ]
+    },
+    {
+      "id": "CL-LC",
+      "title": "Lot C — Sécurité",
+      "description": "revue périodique des accès par les managers ; incompatibilités de rôles (séparation des tâches) ; comptes dormants ; double authentification des administrateurs ; politique de mot de passe",
+      "category": "droits",
+      "kind": "proposition",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Accord du propriétaire, lot par lot (rien n’est construit avant)",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 4, lot C"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "lot C"
+      ]
+    },
+    {
+      "id": "CL-LD",
+      "title": "Lot D — Paramétrage",
+      "description": "écran des applications (état, client de connexion, rotation du secret) ; tableau de bord ; comptes de service ; administrateurs « gestionnaire d'accès » limités à un service ou un site",
+      "category": "droits",
+      "kind": "proposition",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Accord du propriétaire, lot par lot (rien n’est construit avant)",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 4, lot D"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "lot D"
+      ]
+    },
+    {
+      "id": "CL-LE",
+      "title": "Lot E — Plus tard",
+      "description": "demandes d'accès en libre-service (manager puis IT) ; arrivée planifiée d'après Cursus ; notification des outils à chaque changement",
+      "category": "droits",
+      "kind": "proposition",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Accord du propriétaire, lot par lot (rien n’est construit avant)",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 4, lot E"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "lot E"
+      ]
+    },
+    {
+      "id": "CL-DR1",
+      "title": "Copier les droits d'un collègue : ajouter ou remplacer par défaut ?",
+      "description": "Copier les droits d'un collègue : ajouter ou remplacer par défaut ? Réponse par défaut : ajouter (aperçu des deux).",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-1"
+      ]
+    },
+    {
+      "id": "CL-DR2",
+      "title": "Une élévation (administrateur, direction) demande-t-elle une seconde validation ?",
+      "description": "Une élévation (administrateur, direction) demande-t-elle une seconde validation ? Réponse par défaut : non, motif obligatoire et journal.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-2"
+      ]
+    },
+    {
+      "id": "CL-DR3",
+      "title": "Revue des accès : fréquence et qui valide ?",
+      "description": "Revue des accès : fréquence et qui valide ? Réponse par défaut : semestrielle, par le manager direct, IT en relance.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-3"
+      ]
+    },
+    {
+      "id": "CL-DR4",
+      "title": "Comptes dormants : seuil ?",
+      "description": "Comptes dormants : seuil ? Réponse par défaut : 90 jours sans connexion → alerte, 120 → fermeture proposée.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-4"
+      ]
+    },
+    {
+      "id": "CL-DR5",
+      "title": "Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ?",
+      "description": "Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ? Réponse par défaut : dans Clavis pour le CSE ; secouriste et auditeur restent des titres de Cursus.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-5"
+      ]
+    },
+    {
+      "id": "CL-DR6",
+      "title": "Double authentification : pour qui ?",
+      "description": "Double authentification : pour qui ? Réponse par défaut : administrateurs de Clavis d'abord, puis tous les comptes à droits élevés.",
+      "category": "decisions",
+      "kind": "question_ouverte",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Responsable produit",
+      "effort": null,
+      "sources": [
+        "docs/PROPOSITION-DROITS.md § 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "DR-6"
+      ]
+    },
+    {
+      "id": "CL-S01",
+      "title": "Connexion de Keystone et de Codex par Clavis",
+      "description": "Keystone et Codex se connectent par Clavis (Codex n’a pas encore de vraie connexion).",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-S02",
+      "title": "Écran d’import CSV de l’annuaire",
+      "description": "Import de l’annuaire depuis un fichier par un écran (aujourd’hui en ligne de commande, npm run directory:import).",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-S03",
+      "title": "Lecture de Microsoft Graph",
+      "description": "Lecture de l’annuaire Microsoft (User.Read.All, lecture seule : personnes et manager).",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-S04",
+      "title": "Envoi des mots de passe provisoires",
+      "description": "Envoi par e-mail du mot de passe provisoire ; transport à choisir avec la DSI (Graph Mail.Send ou SMTP) — à rappeler au propriétaire.",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "Choix du transport avec la DSI",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-S05",
+      "title": "Connexion centrale de Keystone, Codex et Matrix",
+      "description": "Keystone, Codex et Matrix passent par le fournisseur OpenID Connect de Clavis.",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-S06",
+      "title": "Registre des applications lu par les autres outils",
+      "description": "Registre des applications publié et lu par les autres outils.",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "CLAUDE.md, « Next »"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N01",
+      "title": "Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page",
+      "description": "Le sélecteur FR / EN (et donc le bouton d’affichage) est dans la barre latérale, pas dans l’en-tête de page (REGLES § 7).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N02",
+      "title": "Recherche de pages ⌘K",
+      "description": "L’en-tête de page de Clavis n’a pas de recherche de pages ⌘K (REGLES § 7).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N03",
+      "title": "Boîte aux lettres REQUESTS.md",
+      "description": "Pas de REQUESTS.md à la racine du dépôt (REGLES § 3).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N04",
+      "title": "Police Inter de la charte",
+      "description": "src/fonts/inter.ts livre 2 sous-ensembles avec un repli system-ui ; norma/charte/fonts/inter.ts en livre 7 avec « Inter Fallback ».",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N05",
+      "title": "Composants pris dans @norma/charte/ds",
+      "description": "src/components/ds/ est une copie des composants de Norma ; les importer de @norma/charte/ds.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "CL-N06",
+      "title": "Installation directe sans Docker",
+      "description": "Déploiement documenté par Docker / Coolify (Dockerfile, deploy/compose.yaml) ; REGLES § 9 renvoie à l’installation directe (guide de Matrix).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#10 (audit Norma 1.0, 24 nov. 2026)",
+        "norma/REGLES.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "outil": "modulus",
+  "generated": "2026-11-24",
+  "updated": "2026-11-24",
+  "branch": "main",
+  "origine": {
+    "depot": "Yhumiii27/Modulus",
+    "fichier": "docs/PLAN.md",
+    "commit": "44784fa",
+    "reprise": "une livraison du plan = un item"
+  },
+  "echelle_effort": "non estimé",
+  "categories": {
+    "livraisons": "Livraisons du plan"
+  },
+  "history": [
+    {
+      "date": "2026-11-24",
+      "text": "Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa)."
+    }
+  ],
+  "items": [
+    {
+      "id": "MO-L0",
+      "title": "Livraison 0 — Cadrage",
+      "description": "spécification `docs/spec/00`–`06`, décisions, plan, demandes aux autres outils",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Lecture du cadrage par le propriétaire",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 0"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": null,
+        "note": "Cadrage en cours (24 nov. 2026) : rien n’est construit avant que le propriétaire ait lu le cadrage et répondu ou accepté les défauts."
+      }
+    },
+    {
+      "id": "MO-L1",
+      "title": "Livraison 1 — Plateforme",
+      "description": "socle copié de Clavis (adapté par Crucible / Arche), charte `@norma/charte` (thèmes sombre et clair), PostgreSQL seul, schéma `modulus`, connexion par Clavis et droits lus dans `clavis.pub_acces` (rôles Modulus à ajouter dans Clavis), journal d'audit, horloge, jeu de démonstration, CI",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "prochaine_etape",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; Norma 1.0, demande Clavis C-1",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 1"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L2",
+      "title": "Livraison 2 — Catalogue, BOM, prix",
+      "description": "types, machines et versions, options et règles, BOM préfaites et deltas, budgets par poste, grilles de prix datées et validation, reprise du catalogue de Keystone (import journalisé), requêtes de référence des vues K-01 v2 et options",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; D-5, D-6, D-7 ; Matrix pour les vues",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 2"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L3",
+      "title": "Livraison 3 — Affaires et offres",
+      "description": "affaires, lignes de configuration (configurateur avec règles), offres figées, revue d'offre, PDF déposé dans Codex, pipeline",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; D-2, D-3, D-4, D-8",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 3"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L4",
+      "title": "Livraison 4 — Cotation des options",
+      "description": "questionnaires types, demandes (affaire ou API pour Arche), qualification, chiffrage, réponse, cas proches, vue `pub_cotations` (K-02 repris)",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; D-1, D-10, D-11 ; Arche (bascule)",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 4"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L5",
+      "title": "Livraison 5 — Commande et retour de projet",
+      "description": "commande, configuration vendue et avenants, vue pour Keystone, retour du coût réel et du REX",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; D-9 ; Keystone (création du projet, vue des coûts réels)",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 5"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L6",
+      "title": "Livraison 6 — Savoir-faire",
+      "description": "niveaux calculés, carte, fiche de preuves, propositions d'entrée au catalogue, alertes",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; D-12",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 6"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "MO-L7",
+      "title": "Livraison 7 — Transition achevée",
+      "description": "Keystone et Arche ne lisent plus que Modulus pour le catalogue ; retrait de l'écran de saisie de Keystone",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Livraison précédente ; Keystone, Arche, Matrix",
+      "effort": null,
+      "sources": [
+        "docs/PLAN.md, livraison 7"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "outil": "norma",
+  "generated": "2026-11-24",
+  "updated": "2026-11-24",
+  "branch": "main",
+  "origine": { "depot": "Yhumiii27/Norma", "fichier": "reste-a-faire/norma.json", "commit": null, "reprise": "tenu directement dans Norma" },
+  "echelle_effort": "S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines",
+  "categories": {
+    "socle": "Socle commun (règles, charte, registre, dépendances)",
+    "outils_communs": "Outils communs (questionnaire, reste à faire)",
+    "adoption": "Reprise par les outils"
+  },
+  "history": [
+    { "date": "2026-11-24", "text": "Norma 1.0.0 à 1.1.0 : règles communes, charte Nocturne (sombre et clair), registre, dépendances, copie et contrôle." },
+    { "date": "2026-11-24", "text": "Norma 1.2.0 : questionnaire du responsable produit et reste à faire global de la solution dans le socle ; reprise des listes des neuf outils." }
+  ],
+  "items": [
+    { "id": "NO-001", "title": "Règles communes, charte, registre et dépendances", "description": "REGLES.md, charte Nocturne (thèmes sombre et clair, composants ds/, police Inter locale), registre des outils, dependances.json, norma.mjs copier / verifier.", "category": "socle", "kind": "socle", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "", "effort": "M", "sources": ["CHANGELOG.md 1.0.0 à 1.1.0"], "evidence": [], "progress": { "state": "fait", "delivery": "1.0.0 – 1.1.0", "note": "Copie adoptée par les neuf outils (PR du 24 nov. 2026)." } },
+    { "id": "NO-002", "title": "Textes secondaires AA en thème clair et dépendances de Matrix et Cursus", "description": "Corrections relevées par l’audit des outils : textes atténués à 68 % en clair (Codex), cytoscape et rolldown autorisées (Matrix, Cursus), ports de Cursus nommés d’après leur usage.", "category": "socle", "kind": "correctif", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "", "effort": "S", "sources": ["CHANGELOG.md 1.0.2, 1.0.3"], "evidence": [], "progress": { "state": "fait", "delivery": "1.0.2 – 1.0.3", "note": "" } },
+    { "id": "NO-003", "title": "Questionnaire du responsable produit dans le socle", "description": "Modèle commun outils/questionnaire (build.mjs sans dépendance, page.template.html Nocturne sombre et clair), paramétré par scripts/questionnaire/config.json et questions.json de chaque outil ; réponses dans la base de l’artefact, collection answers (mêmes champs qu’avant : celles d’Arche et de Crucible restent lues).", "category": "outils_communs", "kind": "socle", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "", "effort": "S", "sources": ["Demande du propriétaire, 24 nov. 2026", "outils/questionnaire/"], "evidence": [], "progress": { "state": "fait", "delivery": "1.2.0", "note": "" } },
+    { "id": "NO-004", "title": "Reste à faire global de la solution", "description": "Un fichier par outil dans reste-a-faire/ (schéma commun SCHEMA.md), générateur outils/reste-a-faire/build.mjs (RESTE-A-FAIRE.md et page .artifacts/reste-a-faire.html), reprise des listes des neuf outils et des écarts de l’audit Norma.", "category": "outils_communs", "kind": "socle", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "", "effort": "M", "sources": ["Demande du propriétaire, 24 nov. 2026", "reste-a-faire/"], "evidence": [], "progress": { "state": "fait", "delivery": "1.2.0", "note": "" } },
+    { "id": "NO-005", "title": "Arche, Crucible et Modulus passent au questionnaire commun", "description": "Chaque outil écrit scripts/questionnaire/config.json (titre, sous-titre, introduction, décisions déjà prises, groupes, sortie), garde questions.json, remplace son build et son modèle de page par node norma/outils/questionnaire/build.mjs (script npm questionnaire:page) et supprime ses copies locales.", "category": "adoption", "kind": "reprise", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "Reprise de Norma 1.2.0 dans chaque outil (PR par outil)", "effort": "S", "sources": ["README.md, « Questionnaire du responsable produit »"], "evidence": [], "progress": { "state": "a_faire", "delivery": null, "note": "" } },
+    { "id": "NO-006", "title": "Les outils pointent vers le reste à faire global", "description": "Keystone, Arche et Crucible retirent docs/reste-a-developper.json, docs/RESTE-A-DEVELOPPER.md et scripts/remaining-work/ (npm run remaining:page) ; Codex, Vigie et Cursus remplacent leur document par un renvoi ; Matrix, Clavis et Modulus aussi. Leur CLAUDE.md renvoie à reste-a-faire/<outil>.json de Norma et à la page globale.", "category": "adoption", "kind": "reprise", "priority": "prochaine_etape", "status": "non_commence", "waiting_on": "Reprise de Norma 1.2.0 dans chaque outil (PR par outil)", "effort": "S", "sources": ["REGLES.md § 3", "README.md, « Reste à faire de la solution »"], "evidence": [], "progress": { "state": "a_faire", "delivery": null, "note": "" } }
+  ]
+}

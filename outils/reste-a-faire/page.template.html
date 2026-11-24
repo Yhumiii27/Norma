@@ -1,0 +1,176 @@
+<title>Reste à faire EPC2I</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Reste à faire de la solution (modèle commun de Norma, outils/reste-a-faire). En tête : une carte par outil (comptes,
+   barre d'avancement ; un clic filtre l'outil), puis les filtres (recherche, outil, état, priorité), puis les points
+   groupés par outil et par catégorie, chacun dépliable. Couleurs : Nocturne (outils/pages/nocturne-page.css). */
+__NOCTURNE__
+.tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 10px; }
+.tool { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; color: var(--text); font: inherit; cursor: pointer; display: grid; gap: 6px; min-width: 0; }
+.tool[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.tool .n { font-weight: 600; }
+.tool .k { font: 500 12px var(--font-data); color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--raise); overflow: hidden; display: flex; }
+.bar > i { display: block; height: 100%; }
+.bar > i.f { background: var(--ok); } .bar > i.c { background: var(--warn); }
+.total { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.big { font: 600 22px var(--font-data); font-variant-numeric: tabular-nums; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12.5px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 8px 0; }
+.filters input[type=search], .filters select { background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; min-width: 0; }
+.filters input[type=search] { flex: 1 1 220px; }
+.seg { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.shown { color: var(--muted); font-size: 12.5px; margin-left: auto; }
+.tool-h { margin: 12px 0 0; font-size: 18px; font-weight: 600; }
+.tool-meta { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; }
+.cat-h { margin: 8px 0 0; font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+.list { display: grid; gap: 8px; }
+details.it { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0; min-width: 0; }
+details.it > summary { list-style: none; cursor: pointer; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+details.it > summary::-webkit-details-marker { display: none; }
+details.it[open] > summary { border-bottom: 1px solid var(--line); }
+.id { font: 500 12px var(--font-data); color: var(--accent); white-space: nowrap; }
+.tt { font-weight: 600; flex: 1 1 280px; min-width: 0; overflow-wrap: anywhere; }
+.it.done .tt { color: var(--muted); font-weight: 500; }
+.body { padding: 10px 14px 14px; display: grid; gap: 8px; overflow-wrap: anywhere; }
+.body p { margin: 0; }
+.meta { color: var(--muted); font-size: 12.5px; }
+.meta b { color: var(--text); font-weight: 500; }
+.more { justify-self: start; }
+.hist { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 12px 16px; }
+.hist summary { cursor: pointer; font-weight: 600; }
+.hist ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Suite EPC2I · Norma · mis à jour le __UPDATED__</div>
+    <h1>Reste à faire de la solution</h1>
+    <p class="lede">Tous les points de tous les outils, tenus dans Norma (reste-a-faire/&lt;outil&gt;.json). Chaque outil met à jour son fichier après chaque développement ; cette page en est produite par npm run reste-a-faire. Choisissez un outil, un état ou une priorité, ou cherchez un mot ou un identifiant.</p>
+  </header>
+
+  <section class="total" aria-label="Avancement global">
+    <span class="big" id="tot"></span>
+    <div class="legend"><span><i style="background:var(--ok)"></i>fait</span><span><i style="background:var(--warn)"></i>en cours</span><span><i style="background:var(--raise)"></i>à faire</span></div>
+  </section>
+
+  <section class="tools" id="tools" aria-label="Outils"></section>
+
+  <div class="filters" role="toolbar" aria-label="Filtrer les points">
+    <input type="search" id="q" placeholder="Rechercher (mot, identifiant)…" aria-label="Rechercher">
+    <select id="fo" aria-label="Outil"></select>
+    <span class="seg" id="fe" role="group" aria-label="État"></span>
+    <select id="fp" aria-label="Priorité"></select>
+    <span class="shown" id="shown" aria-live="polite"></span>
+  </div>
+
+  <div id="list" class="list"></div>
+
+  <details class="hist">
+    <summary>Dernières mises à jour</summary>
+    <ul id="hist"></ul>
+  </details>
+</div>
+
+<script>
+const OUTILS = __OUTILS__;
+const ITEMS = __ITEMS__;
+const HIST = __HISTORIQUE__;
+const LIB = __LIBELLES__;
+const PAGE = 150;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const fold = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const byCode = Object.fromEntries(OUTILS.map((o) => [o.code, o]));
+const PORD = Object.keys(LIB.priorites);
+for (const x of ITEMS) x.k = fold([x.id, x.t, x.d, x.n, x.w, ...(x.a || []), ...(x.src || [])].join(' '));
+
+const state = { q: '', o: 'all', e: 'open', p: 'all', limit: PAGE };
+try { Object.assign(state, JSON.parse(localStorage.getItem('raf-filtres') || '{}'), { limit: PAGE }); } catch (_) {}
+const remember = () => { try { localStorage.setItem('raf-filtres', JSON.stringify({ o: state.o, e: state.e, p: state.p })); } catch (_) {} };
+
+function counts(xs) { const c = { total: xs.length, fait: 0, en_cours: 0, a_faire: 0 }; for (const x of xs) c[x.g]++; return c; }
+const bar = (c) => `<div class="bar" aria-hidden="true"><i class="f" style="width:${100 * c.fait / (c.total || 1)}%"></i><i class="c" style="width:${100 * c.en_cours / (c.total || 1)}%"></i></div>`;
+
+function renderTotals() {
+  const c = counts(ITEMS);
+  $('tot').textContent = `${c.fait} faits · ${c.en_cours} en cours · ${c.a_faire} à faire · ${c.total} points`;
+  $('tools').innerHTML = OUTILS.map((o) => {
+    const k = counts(ITEMS.filter((x) => x.o === o.code));
+    return `<button type="button" class="tool" data-o="${o.code}" aria-pressed="${state.o === o.code}" aria-label="${esc(o.nom)} : ${k.fait} faits, ${k.en_cours} en cours, ${k.a_faire} à faire">
+      <span class="n">${esc(o.nom)}</span>${bar(k)}<span class="k">${k.fait} fait · ${k.en_cours} cours · ${k.a_faire} à faire</span></button>`;
+  }).join('');
+  $('tools').querySelectorAll('.tool').forEach((b) => b.addEventListener('click', () => { state.o = state.o === b.dataset.o ? 'all' : b.dataset.o; state.limit = PAGE; remember(); syncControls(); render(); }));
+}
+
+function renderControls() {
+  $('fo').innerHTML = `<option value="all">Tous les outils</option>` + OUTILS.map((o) => `<option value="${o.code}">${esc(o.nom)}</option>`).join('');
+  $('fp').innerHTML = `<option value="all">Toutes priorités</option>` + PORD.map((p) => `<option value="${p}">${esc(LIB.priorites[p])}</option>`).join('');
+  const etats = [['open', 'Restants'], ['a_faire', 'À faire'], ['en_cours', 'En cours'], ['fait', 'Faits'], ['all', 'Tous']];
+  $('fe').innerHTML = etats.map(([k, l]) => `<button type="button" class="chip" data-e="${k}">${l}</button>`).join('');
+  $('fe').querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { state.e = b.dataset.e; state.limit = PAGE; remember(); syncControls(); render(); }));
+  $('fo').addEventListener('change', (e) => { state.o = e.target.value; state.limit = PAGE; remember(); syncControls(); render(); });
+  $('fp').addEventListener('change', (e) => { state.p = e.target.value; state.limit = PAGE; remember(); render(); });
+  let t = null;
+  $('q').addEventListener('input', (e) => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; state.limit = PAGE; render(); }, 150); });
+  syncControls();
+}
+function syncControls() {
+  if (!byCode[state.o]) state.o = 'all';
+  $('fo').value = state.o; $('fp').value = state.p;
+  $('fe').querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.e === state.e)));
+  $('tools').querySelectorAll('.tool').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.o === state.o)));
+}
+
+function matches(x) {
+  if (state.o !== 'all' && x.o !== state.o) return false;
+  if (state.e === 'open' ? x.g === 'fait' : state.e !== 'all' && x.g !== state.e) return false;
+  if (state.p !== 'all' && x.p !== state.p) return false;
+  const q = fold(state.q.trim());
+  return !q || q.split(/\s+/).every((w) => x.k.includes(w));
+}
+
+function itemHtml(x) {
+  const etat = x.g === 'fait' ? '<span class="tag ok">fait</span>' : x.g === 'en_cours' ? '<span class="tag warn">en cours</span>' : '<span class="tag">à faire</span>';
+  const pri = x.g !== 'fait' && x.p === 'bloquant_production' ? `<span class="tag bad">${esc(LIB.priorites[x.p])}</span>` : `<span class="tag">${esc(LIB.priorites[x.p])}</span>`;
+  const meta = [`<b>Statut</b> ${esc(LIB.statuts[x.s])}`, x.e ? `<b>Effort</b> ${esc(x.e)}` : '', x.l ? `<b>Livraison</b> ${esc(x.l)}` : '', x.a.length ? `<b>Alias</b> ${esc(x.a.join(', '))}` : ''].filter(Boolean).join(' · ');
+  return `<details class="it ${x.g === 'fait' ? 'done' : ''}"><summary><span class="id">${esc(x.id)}</span><span class="tt">${esc(x.t)}</span>${pri}${etat}</summary>
+    <div class="body"><p>${esc(x.d)}</p>
+    ${x.n ? `<p class="meta"><b>Avancement</b> ${esc(x.n)}</p>` : ''}
+    ${x.w ? `<p class="meta"><b>Attend</b> ${esc(x.w)}</p>` : ''}
+    <p class="meta">${meta}</p>
+    <p class="meta"><b>Sources</b> ${esc(x.src.join(' ; '))}</p></div></details>`;
+}
+
+function render() {
+  const shown = ITEMS.filter(matches);
+  $('shown').textContent = `${shown.length} point${shown.length > 1 ? 's' : ''} affiché${shown.length > 1 ? 's' : ''}`;
+  if (!shown.length) { $('list').innerHTML = '<p class="empty">Aucun point dans ce filtre.</p>'; return; }
+  let html = '', n = 0;
+  for (const o of OUTILS) {
+    const xs = shown.filter((x) => x.o === o.code);
+    if (!xs.length || n >= state.limit) continue;
+    const k = counts(xs);
+    html += `<h2 class="tool-h">${esc(o.nom)}</h2><p class="tool-meta">${k.total} point${k.total > 1 ? 's' : ''} dans ce filtre · mis à jour le ${esc(o.updated)}${o.origine.fichier ? ` · source ${esc(o.origine.depot || '')} ${esc(o.origine.fichier)}` : ''}${o.echelle ? ` · effort : ${esc(o.echelle)}` : ''}</p>`;
+    for (const [cat, lib] of Object.entries(o.categories)) {
+      const ys = xs.filter((x) => x.c === cat).sort((a, b) => (a.g === 'fait') - (b.g === 'fait') || PORD.indexOf(a.p) - PORD.indexOf(b.p) || a.id.localeCompare(b.id));
+      if (!ys.length || n >= state.limit) continue;
+      const take = ys.slice(0, state.limit - n);
+      n += take.length;
+      html += `<h3 class="cat-h">${esc(lib)} (${ys.length})</h3>` + take.map(itemHtml).join('');
+    }
+  }
+  if (shown.length > n) html += `<button type="button" class="chip more" id="more">Afficher ${Math.min(PAGE, shown.length - n)} de plus (${shown.length - n} restants)</button>`;
+  $('list').innerHTML = html;
+  $('more')?.addEventListener('click', () => { state.limit += PAGE; render(); });
+}
+
+$('hist').innerHTML = HIST.map((h) => `<li>${esc(h.date)} — <b>${esc(h.nom)}</b> : ${esc(h.text)}</li>`).join('');
+renderTotals();
+renderControls();
+render();
+</script>

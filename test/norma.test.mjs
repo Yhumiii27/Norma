@@ -54,3 +54,10 @@ test('le registre et les dépendances sont du JSON valide, codes uniques', () =>
   assert.equal(new Set(ports).size, ports.length, 'un port n’appartient qu’à un outil');
   JSON.parse(readFileSync(path.join(racine, 'dependances.json'), 'utf8'));
 });
+
+test('copier distribue le modèle de questionnaire et la palette des pages', () => {
+  const dir = outil();
+  for (const f of ['norma/outils/questionnaire/build.mjs', 'norma/outils/questionnaire/page.template.html', 'norma/outils/pages/nocturne-page.css'])
+    assert.ok(readFileSync(path.join(dir, f), 'utf8').length > 0, f);
+  assert.deepEqual(verifier(dir), []);
+});
