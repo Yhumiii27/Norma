@@ -2,7 +2,7 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 24 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 738 faits, 75 en cours, 269 à faire, sur 1082 points.
+**Avancement** : 739 faits, 78 en cours, 265 à faire, sur 1082 points.
 
 ## Sommaire
 
@@ -14,11 +14,11 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 | [Cursus](#cursus) | 174 | 0 | 21 | 195 | 1 | 0 | 2026-11-24 |
 | [Arche](#arche) | 42 | 10 | 4 | 56 | 3 | 3 | 2026-11-24 |
 | [Crucible](#crucible) | 26 | 4 | 7 | 37 | 1 | 1 | 2026-11-24 |
-| [Clavis](#clavis) | 0 | 0 | 23 | 23 | 0 | 10 | 2026-11-24 |
+| [Clavis](#clavis) | 1 | 3 | 19 | 23 | 0 | 9 | 2026-11-24 |
 | [Matrix](#matrix) | 15 | 11 | 9 | 35 | 1 | 2 | 2026-11-24 |
 | [Modulus](#modulus) | 0 | 1 | 7 | 8 | 0 | 0 | 2026-11-24 |
 | [Norma (socle)](#norma) | 4 | 0 | 2 | 6 | 0 | 0 | 2026-11-24 |
-| **Total** | **738** | **75** | **269** | **1082** | | | |
+| **Total** | **739** | **78** | **265** | **1082** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -1300,16 +1300,13 @@ Faits : CR-001 Cadrage (livraison 0).
 
 ## Clavis
 
-0 faits, 0 en cours, 23 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+1 faits, 3 en cours, 19 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
-### Gestion des droits (proposition du 24 nov. 2026) (5 restants)
+### Gestion des droits (proposition du 24 nov. 2026) (4 restants, 1 faits)
 
-- **CL-LA · Lot A — Mise en service** — *À décider · attend le responsable produit*  
+- **CL-LA · Lot A — Mise en service** — *À décider · partiel* · **en cours (Lot A (PR Clavis#13, brouillon))**  
   mot de passe provisoire envoyé par e-mail (Graph ou SMTP, à choisir avec la DSI) ; déblocage, réinitialisation, « fermer toutes les sessions » ; écran d'import de l'annuaire avec aperçu des écarts ; départ en un geste ; journal consultable et exportable ; motif obligatoire pour une élévation ou un retrait
-  *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot A*
-- **CL-LB · Lot B — Rôles multiples** — *À décider · attend le responsable produit*  
-  `person_roles`, périmètres, échéances, copie d'un collègue, profils modifiables, écarts au profil, vue matricielle (personnes × outils), modifications en lot ; colonnes `roles` et `perimetre` demandées à Matrix
-  *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot B*
+  *Avancement : Construit et vérifié sur la branche : envoi par CLAVIS_MAIL_TRANSPORT none \| file (Graph ou SMTP non construit, DSI), réinitialisation, déblocage, fermer toutes les sessions, départ en un geste et son annulation, motif pour désactiver, écran d’import avec aperçu des écarts, journal filtrable et export CSV. · Attend : Fusion de la PR Clavis#13 ; moyen d’envoi des e-mails à choisir avec la DSI · Sources : docs/PROPOSITION-DROITS.md § 4, lot A*
 - **CL-LC · Lot C — Sécurité** — *À décider · attend le responsable produit*  
   revue périodique des accès par les managers ; incompatibilités de rôles (séparation des tâches) ; comptes dormants ; double authentification des administrateurs ; politique de mot de passe
   *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot C*
@@ -1319,6 +1316,8 @@ Faits : CR-001 Cadrage (livraison 0).
 - **CL-LE · Lot E — Plus tard** — *Plus tard · attend le responsable produit*  
   demandes d'accès en libre-service (manager puis IT) ; arrivée planifiée d'après Cursus ; notification des outils à chaque changement
   *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot E*
+
+Faits : CL-LB Lot B — Rôles multiples.
 
 ### Décisions à prendre (6 restants)
 
@@ -1346,15 +1345,15 @@ Faits : CR-001 Cadrage (livraison 0).
 - **CL-S01 · Connexion de Keystone et de Codex par Clavis** — *Prochaine étape · non commencé*  
   Keystone et Codex se connectent par Clavis (Codex n’a pas encore de vraie connexion).
   *Sources : CLAUDE.md, « Next »*
-- **CL-S02 · Écran d’import CSV de l’annuaire** — *Prochaine étape · non commencé*  
+- **CL-S02 · Écran d’import CSV de l’annuaire** — *Prochaine étape · non commencé* · **en cours (Lot A (PR Clavis#13, brouillon))**  
   Import de l’annuaire depuis un fichier par un écran (aujourd’hui en ligne de commande, npm run directory:import).
-  *Sources : CLAUDE.md, « Next »*
+  *Avancement : Écran /directory/import avec aperçu (créées, mises à jour, absentes, écarts), puis import. · Sources : CLAUDE.md, « Next »*
 - **CL-S03 · Lecture de Microsoft Graph** — *Prochaine étape · non commencé*  
   Lecture de l’annuaire Microsoft (User.Read.All, lecture seule : personnes et manager).
   *Sources : CLAUDE.md, « Next »*
-- **CL-S04 · Envoi des mots de passe provisoires** — *Prochaine étape · non commencé*  
+- **CL-S04 · Envoi des mots de passe provisoires** — *Prochaine étape · partiel* · **en cours (Lot A (PR Clavis#13, brouillon))**  
   Envoi par e-mail du mot de passe provisoire ; transport à choisir avec la DSI (Graph Mail.Send ou SMTP) — à rappeler au propriétaire.
-  *Attend : Choix du transport avec la DSI · Sources : CLAUDE.md, « Next »*
+  *Avancement : Envoi derrière CLAVIS_MAIL_TRANSPORT none (défaut, affiché une fois) \| file (.eml, essais) ; Graph Mail.Send ou SMTP inactif tant que la DSI n’a pas choisi. · Attend : Choix du transport avec la DSI · Sources : CLAUDE.md, « Next »*
 - **CL-S05 · Connexion centrale de Keystone, Codex et Matrix** — *Prochaine étape · non commencé*  
   Keystone, Codex et Matrix passent par le fournisseur OpenID Connect de Clavis.
   *Sources : CLAUDE.md, « Next »*
@@ -1536,6 +1535,7 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-24 — **Crucible** : Norma 1.0.0 adopté : copie du socle commun dans norma/ (règles, charte, registre, dépendances), contrôlée en CI (npm run norma:check), CLAUDE.md importe @norma/REGLES.md ; feuille Nocturne prise dans norma/charte ; bouton d’affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, thème posé par le serveur sur <html>, sombre par défaut).
 - 2026-11-24 — **Crucible** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit c8a1afa) ; écarts de l’audit Norma ajoutés (CR-N…).
 - 2026-11-24 — **Clavis** : Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d).
+- 2026-11-24 — **Clavis** : Lot A (mise en service) construit, PR Clavis#13 en brouillon ; lot B fusionné (PR Clavis#12).
 - 2026-11-24 — **Matrix** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4c6b688) ; écarts de l’audit Norma ajoutés (MX-N…).
 - 2026-11-24 — **Modulus** : Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa).
 - 2026-11-24 — **Norma (socle)** : Norma 1.0.0 à 1.1.0 : règles communes, charte Nocturne (sombre et clair), registre, dépendances, copie et contrôle.
@@ -1582,4 +1582,3 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-01 — **Keystone** : R-205, R-206, R-208 faits ; R-203 : tableaux de bord configurables faits, Power BI attend Matrix et la DSI.
 - 2026-11-01 — **Keystone** : R-204 lancé : planning multi-niveaux (codes d’activité, plannings fournisseurs).
 - 2026-11-01 — **Keystone** : R-204 fait : planning multi-niveaux (codes d’activité, plannings fournisseurs consolidés).
-- 2026-11-01 — **Arche** : AR-033 lancé : connecteur Vigie des études de sécurité des procédés côté Arche (contrat, miroir, jalons HS pris de Vigie, alerte des recommandations en retard) ; demandes à Vigie et à Matrix à déposer.
