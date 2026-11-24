@@ -54,5 +54,8 @@ langue FR / EN**, dans l'en-tête de chaque outil (propriétaire, 24 novembre 20
 - Le bouton : `ds/ThemeToggle.tsx` (icônes lune / soleil, libellés « Dark display » / « Light display » à traduire
   « Affichage sombre » / « Affichage clair », groupe « Display » → « Affichage »), posé à droite du sélecteur de langue.
   Il change l'attribut et le cookie dans le navigateur, sans aller-retour au serveur.
+- **Contraste en clair** : la rampe neutre est inversée ; un texte en `--color-neutral-500` ou plus clair ne fait que
+  3,9:1 sur blanc (sous 4,5:1) : pour du texte, prendre `--color-neutral-400` ou plus foncé (100 à 400 en clair), ou les
+  classes `.text-muted` / `.card-meta` de la charte. Vérifier chaque écran avec l'a11y de l'outil dans les deux thèmes.
 - Un outil sans React (Matrix) ou avec sa propre feuille (Codex, Vigie, Cursus) applique la même convention : même
   cookie, même attribut, mêmes valeurs claires.
