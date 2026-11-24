@@ -1,5 +1,11 @@
 # Norma — journal des versions
 
+## 1.0.2 — 24 novembre 2026
+
+- `nocturne.css` : en thème clair, `figcaption`, `.text-muted` et `.card-meta` à 68 % du texte (3,7:1 → 5,2:1, seuil AA) ; relevé par
+  l'a11y de Codex (plus de 400 violations en clair).
+- `charte/README.md` : contraste en clair (rampe neutre inversée : texte en neutral-400 ou plus foncé).
+
 ## 1.0.1 — 24 novembre 2026
 
 - `charte/ds/Segmented.module.css` : une option à icône seule (bouton d'affichage) a la même hauteur qu'une option
