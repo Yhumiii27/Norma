@@ -56,7 +56,7 @@ Un seul modèle pour tous les outils (plus de copie d'un outil à l'autre). Dans
 ## Reste à faire de la solution
 
 Une seule liste pour toute la suite, ici : `reste-a-faire/<outil>.json` (et `norma.json` pour le socle), schéma
-`reste-a-faire/SCHEMA.md`. `npm run reste-a-faire` contrôle chaque fichier et produit `RESTE-A-FAIRE.md` (sommaire par
+`reste-a-faire/SCHEMA.md`. Page publiée : https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf. `npm run reste-a-faire` contrôle chaque fichier et produit `RESTE-A-FAIRE.md` (sommaire par
 outil, puis les points par outil et catégorie) et `.artifacts/reste-a-faire.html` (page autonome : filtres par outil, état,
 priorité, recherche, compteurs), republiée à la même adresse d'artefact. Après chaque développement, la session de l'outil
 met à jour son fichier ici et ouvre la PR de Norma (REGLES.md § 3). Les listes propres des outils sont remplacées par un

@@ -44,7 +44,7 @@ Dépôts, rôles PostgreSQL, ports et variables de connexion : `norma/registre/o
 - **Reste à faire de la solution** : une seule liste, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma
   `reste-a-faire/SCHEMA.md`). Après chaque développement : mettre à jour le fichier de l'outil dans Norma (état des points,
   ligne d'historique, `updated`), lancer `npm run reste-a-faire` dans Norma, ouvrir la PR de Norma, puis republier la page
-  globale `.artifacts/reste-a-faire.html` à la même adresse d'artefact (lien donné par le propriétaire). Un outil ne tient
+  globale `.artifacts/reste-a-faire.html` à la même adresse d’artefact, https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf. Un outil ne tient
   plus de liste propre : sa documentation renvoie à celle de Norma.
 - **Questionnaire du responsable produit** : par le modèle de Norma (`node norma/outils/questionnaire/build.mjs`, réglé par
   `scripts/questionnaire/config.json` et `questions.json` de l'outil) ; les réponses (base de l'artefact, collection
