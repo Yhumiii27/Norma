@@ -53,6 +53,10 @@
     {
       "date": "2026-11-24",
       "text": "Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait."
     }
   ],
   "items": [
@@ -9923,9 +9927,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "fait",
         "delivery": null,
-        "note": ""
+        "note": "Coque commune Norma 2.1 appliquée (Vigie#44, 24/11/2026)."
       }
     }
   ]
