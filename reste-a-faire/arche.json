@@ -232,6 +232,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point AR-N04 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Audit Norma : AR-N01 à AR-N03 faits (Arche#61, #62) ; coque Norma 2.0 en cours (Arche#63 ouverte)."
     }
   ],
   "items": [
@@ -1430,9 +1434,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Arche#61",
+        "note": "Contraintes de format en base (Arche#61)."
       }
     },
     {
@@ -1451,9 +1455,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Arche#61",
+        "note": "Installation directe sans Docker documentée."
       }
     },
     {
@@ -1472,9 +1476,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Arche#62",
+        "note": "Composants et police pris dans norma/charte (Arche#62)."
       }
     },
     {
@@ -1493,9 +1497,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Arche#63",
+        "note": "Coque commune Norma 2.0 : PR Arche#63 ouverte."
       }
     }
   ]

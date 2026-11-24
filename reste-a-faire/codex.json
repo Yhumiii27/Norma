@@ -46,6 +46,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point CX-N07 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Écarts de l’audit Norma CX-N02 à CX-N06 corrigés (Codex#34) ; i18n en cours (~1850 t.key) ; coque Norma 2.0 en cours."
     }
   ],
   "items": [
@@ -3491,9 +3495,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
-        "note": ""
+        "note": "Coque passée aux chaînes sources ; environ 1850 appels t.key restent à reprendre."
       }
     },
     {
@@ -3512,9 +3516,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Codex#34",
+        "note": "Écart de l’audit Norma corrigé (Codex#34)."
       }
     },
     {
@@ -3533,9 +3537,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Codex#34",
+        "note": "Écart de l’audit Norma corrigé (Codex#34)."
       }
     },
     {
@@ -3554,9 +3558,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Codex#34",
+        "note": "Écart de l’audit Norma corrigé (Codex#34)."
       }
     },
     {
@@ -3575,9 +3579,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Codex#34",
+        "note": "Écart de l’audit Norma corrigé (Codex#34)."
       }
     },
     {
@@ -3596,9 +3600,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Codex#34",
+        "note": "Écart de l’audit Norma corrigé (Codex#34)."
       }
     },
     {
@@ -3619,7 +3623,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reprise de la coque en cours (session en cours, pas encore de PR fusionnée)."
       }
     }
   ]

@@ -190,6 +190,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point CR-N06 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Audit Norma : CR-N01 à CR-N05 faits (Crucible#47, #48) ; coque Norma 2.0 en cours."
     }
   ],
   "items": [
@@ -911,9 +915,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Crucible#47",
+        "note": "Contraintes de format en base (Crucible#47)."
       }
     },
     {
@@ -932,9 +936,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Crucible#48",
+        "note": "Fait dans Crucible#48."
       }
     },
     {
@@ -953,9 +957,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Crucible#48",
+        "note": "Fait dans Crucible#48."
       }
     },
     {
@@ -974,9 +978,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Crucible#48",
+        "note": "Fait dans Crucible#48."
       }
     },
     {
@@ -995,9 +999,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Crucible#48",
+        "note": "Fait dans Crucible#48."
       }
     },
     {
@@ -1018,7 +1022,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reprise de la coque en cours (session en cours, pas encore de PR fusionnée)."
       }
     }
   ]

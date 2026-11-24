@@ -33,6 +33,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point MX-N07 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Écarts de l’audit Norma corrigés (Matrix#96, #98 ; scripts du serveur commun #99) ; coque Norma 2.0 (#100) ; i18n en cours (~650 chaînes)."
     }
   ],
   "items": [
@@ -729,9 +733,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
-        "note": ""
+        "note": "Coque traduite ; environ 650 chaînes restent à passer par l’i18n."
       }
     },
     {
@@ -750,9 +754,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#98",
+        "note": "Écart de l’audit Norma corrigé (Matrix#98)."
       }
     },
     {
@@ -771,9 +775,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#98",
+        "note": "Écart de l’audit Norma corrigé (Matrix#98)."
       }
     },
     {
@@ -792,9 +796,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#96",
+        "note": "Variables d’environnement toutes validées au démarrage (Matrix#96)."
       }
     },
     {
@@ -813,9 +817,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#98",
+        "note": "Fait pour l’application ; scripts du serveur commun faits dans Matrix#99, application sur le serveur réel en attente du « validé »."
       }
     },
     {
@@ -834,9 +838,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#98",
+        "note": "Écart de l’audit Norma corrigé (Matrix#98)."
       }
     },
     {
@@ -855,9 +859,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Matrix#100",
+        "note": "Coque commune Norma 2.0 (Matrix#100)."
       }
     }
   ]

@@ -49,6 +49,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point VG-N08 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42)."
     }
   ],
   "items": [
@@ -531,9 +535,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « recherche tous modules » : champ « Rechercher… » de la barre latérale (bureau et tiroir du téléphone), page `/recherche?q=` ouverte à tout rôle (écran `search`, `ROLE_ROUTES`). Référence (EV-, AC-/A-, PP-, permis, CS-, ES-, MC-, ECO/ECR, documents de Codex, avis DGI…) ou intitulé, au moins 2 caractères, 20 résultats par module (« Voir dans l'écran » quand l'écran a sa propre recherche : événements, actions, veille, documents). Chaque module est cherché dans ce que charge son propre écran pour la personne (`src/lib/data/search.ts` : …"
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "TDB-18"
@@ -559,9 +563,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "TDB-19"
@@ -2740,7 +2744,7 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
         "note": ""
       },
@@ -2932,7 +2936,7 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
         "note": ""
       },
@@ -3123,9 +3127,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "PRV-22"
@@ -3150,7 +3154,7 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
         "note": "◐ Partiel (11/11/2026, paquet R2) — réponse du 09/11/2026 (alerte d'accueil sécurité, veto du service QSSE) : intervenants d'un plan (`prevention_plan_workers`, migration 0033 : personnes lues dans Cursus, intérimaires « I… » et extérieurs « E… » compris ; ajout et retrait motivé par l'encadrement de la prévention), accueil sécurité d'après les titres suivis marqués « accueil sécurité » (`training_titles.safety_induction`, « Suivre / attributs du titre ») et titres requis de la personne, lus dans les titres détenus de Cursus (`workerCheck`, `src/lib/rules/workers.ts`) ; avertissement non …"
       },
@@ -3177,9 +3181,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « Oui » : carte des sites du tableau de bord sous « Tous les sites » (`loadSitesMap`, `src/components/dashboard/SitesMap.tsx`) : sites suivis actifs du périmètre placés d'après la latitude et la longitude de `matrix.pub_sites` (lues à l'affichage, `readMatrixSiteCoordinates`), contour simplifié de la France métropolitaine en SVG sans service externe (`src/lib/rules/sites-map.ts`), indicateurs calculés (événements ouverts, actions en retard, jours sans accident avec arrêt, plans de prévention ouverts) ; tableau des mêmes indicateurs en …"
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "PRV-24"
@@ -3912,9 +3916,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "fait",
         "delivery": null,
-        "note": "✅ Livré (31/10/2026, classe 1, lot B) — sans action QSE (réponses du service QHSE du 15/10/2026 : les recyclages relèvent du service RH) : « Session collective » (barre de la matrice) et « Recyclage groupé » (vue « À prévoir », salariés de la prévision d'un titre, à rattraper ou expirant sous 3 mois cochés d'office, `groupRenewalCandidates`) enregistrent une session (`training_sessions` : titre, date, échéance, organisme, catégories) et une formation par participant (`qualifications.session_id`) dans une seule transaction (`saveTrainingSession`, `src/server/skills.ts`) : mêmes règles qu'une …"
+        "note": "Sans objet : retirée par la décision CV-01 (sessions tenues par Cursus)."
       },
       "aliases": [
         "HAB-06"
@@ -5910,9 +5914,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "◐ Partiel (11/11/2026, paquet R2) — réponse du 09/11/2026 « pas d'envoi, mais un PDF du rapport d'audit une fois enregistré » : bouton « Télécharger le rapport d'audit (PDF) » d'un élément réalisé du programme (hors revue de direction), route `/audits/rapport/<id>` (pdf-lib, polices standard WinAnsi : texte français complet, autres signes remplacés ; `src/lib/audit-report-pdf.ts`) : élément, type, site, auditeur, constats et actions (numéro seul hors périmètre) ; mêmes lecteurs que l'écran Audits (Salarié : 403), élément visible du site sélectionné. Reste : identité de l'entreprise (logo, …"
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Rapport PDF livré (paquet R2) ; logo de l’entreprise manquant (à fournir), pas d’envoi au client."
       },
       "aliases": [
         "AUD-39"
@@ -5937,9 +5941,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "AUD-40"
@@ -6612,7 +6616,7 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
         "note": ""
       },
@@ -6639,7 +6643,7 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
         "note": ""
       },
@@ -7179,9 +7183,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "fait",
         "delivery": null,
-        "note": ""
+        "note": "Sans objet : caduc (D01, décision CV-10 : personnes lues dans Cursus)."
       },
       "aliases": [
         "IMP-02"
@@ -9393,9 +9397,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « sur Vigie avec un accès spécifique pour les membres du CSE » : registre par site `/evenements/registre-dgi` (`dgi_notices`, migration 0033 ; impression `/evenements/registre-dgi/imprimer`) : avis daté (date et heure, postes, nature et cause du danger, travailleurs exposés, représentant du CSE, événement lié facultatif) consigné et signé par un membre du CSE (ou recopié par l'animateur QHSE puis signé), mesures de l'employeur et clôture par l'animateur QHSE, annulation motivée, journal `dgi_notice`. Lecteurs : animateur QHSE, direction …"
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "CNF-01"
@@ -9609,9 +9613,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « dans Vigie, feuille d'émargement envoyée aux participants » : vue « Causeries sécurité » de l'écran Prévention (`/prevention?vue=causeries&causerie=CS-…`, tables `safety_talks` et `safety_talk_participants`, migration 0033) : date, site, thème, animateur, durée, participants (personnes de Cursus), notes ; saisie et annulation motivée par l'encadrement de la prévention ; « Envoyer la feuille d'émargement » : notification de la cloche et e-mail (transport `VIGIE_MAIL_TRANSPORT` ; « aucun » : cloche seulement, dit à l'envoi) aux …"
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Livré (paquets R2 / R3), constaté dans Vigie#41."
       },
       "aliases": [
         "CNF-09"
@@ -9793,9 +9797,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Vigie#41",
+        "note": "Connexion par Clavis, droits lus dans clavis.pub_acces (Vigie#41)."
       }
     },
     {

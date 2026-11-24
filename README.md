@@ -1,7 +1,7 @@
 # Norma — socle commun de la suite EPC2I
 
 Ce qui doit être identique dans tous les outils (Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis, Matrix,
-Modulus) vit ici, une seule fois :
+Modulus, Vector) vit ici, une seule fois :
 
 | Chemin | Contenu |
 | --- | --- |

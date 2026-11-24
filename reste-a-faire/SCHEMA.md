@@ -22,7 +22,7 @@ la page au moindre écart).
 
 | Champ | Contenu |
 | --- | --- |
-| `id` | identifiant stable, unique dans le fichier : `R-…` (Keystone), `AR-…` (Arche), `CR-…` (Crucible), `CX-nnn` (point n de Codex ; `CX-R…` demande reçue), `VG-<réf>` (référence de Vigie, ex. `VG-TDB-03`), `CU-nnn` (Cursus, ordre du document), `MX-…` (Matrix : `E..` écart, `M..` décision, `R..` demande, `S..` mise en service), `CL-…` (Clavis), `MO-L<n>` (livraison de Modulus), `NO-…` (Norma) ; `<préfixe>-Nnn` pour un écart de l'audit Norma. Ne se réutilise jamais. |
+| `id` | identifiant stable, unique dans le fichier : `R-…` (Keystone), `AR-…` (Arche), `CR-…` (Crucible), `CX-nnn` (point n de Codex ; `CX-R…` demande reçue), `VG-<réf>` (référence de Vigie, ex. `VG-TDB-03`), `CU-nnn` (Cursus, ordre du document), `MX-…` (Matrix : `E..` écart, `M..` décision, `R..` demande, `S..` mise en service), `CL-…` (Clavis), `MO-L<n>` (livraison de Modulus), `VE-L<n>` (livraison de Vector), `NO-…` (Norma) ; `<préfixe>-Nnn` pour un écart de l'audit Norma. Ne se réutilise jamais. |
 | `title`, `description` | ce qu'il faut faire, tiré du document d'origine |
 | `category` | une clé de `categories` |
 | `kind` | nature, libre (`fonction`, `integration`, `decision_a_appliquer`, `alignement_norma`…) |

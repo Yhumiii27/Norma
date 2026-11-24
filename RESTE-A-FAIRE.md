@@ -2,23 +2,24 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 24 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 739 faits, 79 en cours, 274 à faire, sur 1092 points.
+**Avancement** : 790 faits, 89 en cours, 221 à faire, sur 1100 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
 | [Keystone](#keystone) | 138 | 28 | 52 | 218 | 14 | 20 | 2026-11-24 |
-| [Codex](#codex) | 57 | 13 | 71 | 141 | 0 | 54 | 2026-11-24 |
-| [Vigie](#vigie) | 282 | 8 | 76 | 366 | 6 | 37 | 2026-11-24 |
-| [Cursus](#cursus) | 174 | 0 | 22 | 196 | 1 | 0 | 2026-11-24 |
-| [Arche](#arche) | 42 | 10 | 5 | 57 | 3 | 3 | 2026-11-24 |
-| [Crucible](#crucible) | 26 | 4 | 8 | 38 | 1 | 1 | 2026-11-24 |
-| [Clavis](#clavis) | 1 | 3 | 20 | 24 | 0 | 9 | 2026-11-24 |
-| [Matrix](#matrix) | 15 | 11 | 10 | 36 | 1 | 2 | 2026-11-24 |
-| [Modulus](#modulus) | 0 | 1 | 8 | 9 | 0 | 0 | 2026-11-24 |
-| [Norma (socle)](#norma) | 4 | 1 | 2 | 7 | 0 | 0 | 2026-11-24 |
-| **Total** | **739** | **79** | **274** | **1092** | | | |
+| [Codex](#codex) | 62 | 14 | 65 | 141 | 0 | 54 | 2026-11-24 |
+| [Vigie](#vigie) | 293 | 13 | 60 | 366 | 6 | 29 | 2026-11-24 |
+| [Cursus](#cursus) | 174 | 3 | 19 | 196 | 1 | 0 | 2026-11-24 |
+| [Arche](#arche) | 45 | 11 | 1 | 57 | 3 | 3 | 2026-11-24 |
+| [Crucible](#crucible) | 31 | 4 | 3 | 38 | 1 | 1 | 2026-11-24 |
+| [Clavis](#clavis) | 19 | 1 | 4 | 24 | 0 | 0 | 2026-11-24 |
+| [Matrix](#matrix) | 21 | 12 | 3 | 36 | 1 | 2 | 2026-11-24 |
+| [Modulus](#modulus) | 1 | 0 | 8 | 9 | 0 | 0 | 2026-11-24 |
+| [Vector](#vector) | 1 | 1 | 6 | 8 | 0 | 0 | 2026-11-24 |
+| [Norma (socle)](#norma) | 5 | 2 | 0 | 7 | 0 | 0 | 2026-11-24 |
+| **Total** | **790** | **89** | **221** | **1100** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -360,7 +361,7 @@ Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P
 
 ## Codex
 
-57 faits, 13 en cours, 71 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+62 faits, 14 en cours, 65 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -632,49 +633,30 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
   Option 1 : signer avec une identité stable, choisie par une variable (`CODEX_SIGN_IDENTITY`). Ce peut être un certificat de signature de code auto-signé, créé une fois dans le Trousseau (Assistant de certification), ou un Developer ID si l'utilisateur en a un. Si l'identité est absente, le script revient à la signature ad hoc. Aucun certificat ni aucune clé ne doit entrer dans le dépôt : `.gitignore` exclut déjà `*.p12` et `*.cer`. Option 2, à envisager en complément : demander l'emplacement de téléchargement par `NSSavePanel`, dont le choix par l'utilisateur vaut autorisation, au lieu d'écrire en silence dans `~/Downloads`. Le certificat doit être créé par l'utilisateur sur son Mac.
   *Attend : Une session sur macOS (app Mac, T-02) · Sources : docs/reste-a-faire.md, point 129 (Demande une session sur macOS › App Mac)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 5 faits)
 
-- **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · non commencé*  
+- **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · non commencé* · **en cours**  
   Interface par clés (src/lib/i18n.ts) et non par chaînes sources en anglais traduites (REGLES § 2).
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CX-N02 · Icônes Phosphor** — *Prochaine étape · non commencé*  
-  Icônes SVG maison (src/components/ui/Icon.tsx) au lieu de Phosphor (REGLES § 7).
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CX-N03 · Recherche de pages ⌘K** — *Prochaine étape · non commencé*  
-  Pas de recherche de pages ⌘K (REGLES § 7).
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CX-N04 · Formulaires en panneau latéral** — *Prochaine étape · non commencé*  
-  Formulaires en dialogues centrés et non en panneaux latéraux fermés au succès (REGLES § 7).
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CX-N05 · Un dossier par connecteur** — *Prochaine étape · non commencé*  
-  Connecteurs dans src/lib/keystone.ts, vigie.ts, matrix.ts et non dans src/server/integrations/<outil>/ (REGLES § 5).
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CX-N06 · Retirer le correctif local des textes atténués** — *Prochaine étape · non commencé*  
-  Correctif local de contraste des textes atténués en clair dans src/app/globals.css ; corrigé dans Norma 1.0.2 : reprendre la copie et retirer le correctif.
-  *Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : Coque passée aux chaînes sources ; environ 1850 appels t.key restent à reprendre. · Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CX-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
   Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+  *Avancement : Reprise de la coque en cours (session en cours, pas encore de PR fusionnée). · Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+
+Faits : CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formulaires en panneau latéral ; CX-N05 Un dossier par connecteur ; CX-N06 Retirer le correctif local des textes atténués.
 
 <a id="vigie"></a>
 
 ## Vigie
 
-282 faits, 8 en cours, 76 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+293 faits, 13 en cours, 60 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
-### Tableau de bord, échéances et navigation (3 restants, 16 faits)
+### Tableau de bord, échéances et navigation (1 restants, 18 faits)
 
 - **VG-TDB-03 · Saisie mensuelle des heures travaillées (base du TF1/TG)** — *À décider · attend le responsable produit · effort M*  
   hours_worked n'est rempli que par le seed (10/2025-09/2026). Ajouter saveHoursWorked (site, mois, requireApprover), une fenêtre depuis le KPI TF1 et un signal « heures de M-1 non saisies ».
   *Attend : Levée du report « aucune saisie/import » · Sources : docs/RESTE-A-FAIRE.md § 3 (Tableau de bord, échéances et navigation), TDB-03*
-- **VG-TDB-18 · Recherche globale dans l'en-tête** — *À décider · attend le responsable produit · effort M*  
-  Recherche par référence ou intitulé, filtrée par site et droits, vers les liens profonds existants. Hors maquette.
-  *Avancement : ✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « recherche tous modules » : champ « Rechercher… » de la barre latérale (bureau et tiroir du téléphone), page `/recherche?q=` ouverte à tout rôle (écran `search`, `ROLE_ROUTES`). Référence (EV-, AC-/A-, PP-, permis, CS-, ES-, MC-, ECO/ECR, documents de Codex, avis DGI…) ou intitulé, au moins 2 caractères, 20 résultats par module (« Voir dans l'écran » quand l'écran a sa propre recherche : événements, actions, veille, documents). Chaque module est cherché dans ce que charge son propre écran pour la personne (`src/lib/data/search.ts` : … · Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 3 (Tableau de bord, échéances et navigation), TDB-18*
-- **VG-TDB-19 · Tableaux de bord configurables** — *À décider · attend le responsable produit · effort L*  
-  Tableaux de bord configurables par le QHSE et la direction : choix des indicateurs (KPI existants de `src/lib/dashboard-rules.ts`, statistiques d'ACT-29, taux de conformité de la veille, contrôles et habilitations), période, site ou périmètre, disposition enregistrée par personne ou par rôle ; les KPI restent calculés, jamais stockés. Niveau marché : avancé (BlueKanGo, SafetyCulture) ; état dans le code : KPI fixes du tableau de bord, exports CSV seulement. Le connecteur Power BI fait l'objet d'INT-19, la carte des sites de PRV-24. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer. Livré au paquet R3 (12/11/2026, migration 0034) : `dashboard_layouts`, catalogue `src/lib/dashboard-cards.ts`, cartes calculées par `src/lib/data/dashboard-cards.ts`, éditeur « Personnaliser » du tableau de bord (§ 19 bis).
-  *Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 3 (Tableau de bord, échéances et navigation), TDB-19*
 
-Faits : VG-TDB-01 Destinataires des alertes : un animateur QHSE par site, tiré des données ; VG-TDB-02 Échéances masquées pour un responsable sans accès à l'écran source ; VG-TDB-04 TF1/TG : fenêtre de 12 mois, mois manquants et « — » sans heures ; VG-TDB-05 « Mes échéances » consolidées tous sites ; VG-TDB-06 Notifications d'information (réaffectation d'une action, suite d'un signalement) ; VG-TDB-07 État lu : clé avec date d'échéance et gravité, retards triés par ancienneté ; VG-TDB-08 Archivage d'un site : avertir des éléments encore ouverts ; VG-TDB-09 Traçabilité des sites : journaliser la règle Seveso / PP et afficher l'historique ; VG-TDB-10 Purge des états lus et commentaire de schéma obsolète ; VG-TDB-11 Marquer lue une échéance ouverte depuis À faire ou le tableau de bord ; VG-TDB-12 Liens du tableau de bord vers des listes vraiment filtrées ; VG-TDB-13 Exactitude des KPI du tableau de bord ; VG-TDB-14 Carte « Veille réglementaire » après la date d'application ; VG-TDB-15 Indiquer le site en vue « Tous les sites » ; VG-TDB-16 Horizons d'échéances centralisés et groupes de À faire ; VG-TDB-17 Titres d'onglet du tableau de bord et de À faire.
+Faits : VG-TDB-01 Destinataires des alertes : un animateur QHSE par site, tiré des données ; VG-TDB-02 Échéances masquées pour un responsable sans accès à l'écran source ; VG-TDB-04 TF1/TG : fenêtre de 12 mois, mois manquants et « — » sans heures ; VG-TDB-05 « Mes échéances » consolidées tous sites ; VG-TDB-06 Notifications d'information (réaffectation d'une action, suite d'un signalement) ; VG-TDB-07 État lu : clé avec date d'échéance et gravité, retards triés par ancienneté ; VG-TDB-08 Archivage d'un site : avertir des éléments encore ouverts ; VG-TDB-09 Traçabilité des sites : journaliser la règle Seveso / PP et afficher l'historique ; VG-TDB-10 Purge des états lus et commentaire de schéma obsolète ; VG-TDB-11 Marquer lue une échéance ouverte depuis À faire ou le tableau de bord ; VG-TDB-12 Liens du tableau de bord vers des listes vraiment filtrées ; VG-TDB-13 Exactitude des KPI du tableau de bord ; VG-TDB-14 Carte « Veille réglementaire » après la date d'application ; VG-TDB-15 Indiquer le site en vue « Tous les sites » ; VG-TDB-16 Horizons d'échéances centralisés et groupes de À faire ; VG-TDB-17 Titres d'onglet du tableau de bord et de À faire ; VG-TDB-18 Recherche globale dans l'en-tête ; VG-TDB-19 Tableaux de bord configurables.
 
 ### Événements et signalement terrain (6 restants, 23 faits)
 
@@ -716,9 +698,9 @@ Faits : VG-EVT-01 Accident du travail : victime, circonstances et rubriques de l
 
 Faits : VG-ACT-01 Rattacher les actions Prévention, Documents et Environnement par un vrai lien ; VG-ACT-02 Rattacher une action existante depuis toutes les sources ; VG-ACT-03 Tracer les changements d'action faits par les autres modules ; VG-ACT-04 Historique de l'action : tous les champs modifiés ; VG-ACT-05 Motif obligatoire pour rouvrir une action clôturée ; VG-ACT-06 Champ Site des « Nouvelle action » ouvertes depuis les autres écrans ; VG-ACT-07 Sélecteur « Événement lié » : exclure les événements fermés aux actions ; VG-ACT-08 Origine Risques ou Revue de direction : choisir la source à la création ; VG-ACT-09 Report d'échéance motivé et échéance initiale conservée ; VG-ACT-10 Date, auteur et commentaire de réalisation ; VG-ACT-11 Fiabiliser saveAction (pilote, dates, longueurs) ; VG-ACT-12 Action issue d'une coactivité sans plan : origine non cliquable ; VG-ACT-13 Jugement « Efficacité insuffisante » et indépendance du vérificateur ; VG-ACT-14 Vérifications d'efficacité hors des échéances du pilote salarié ; VG-ACT-15 Filtre de statut et lien profond « en retard » ; VG-ACT-16 Indicateurs de performance du plan d'actions ; VG-ACT-17 Modèle de données des actions QSE (schéma et migration) ; VG-ACT-18 Listes et règles du domaine Actions ; VG-ACT-19 Reprise des actions existantes de Vigie ; VG-ACT-20 Formulaire « Créer une action » aligné sur Power Apps ; VG-ACT-21 Avancement et droits : QHSE et responsable ; VG-ACT-22 Encadrement hors QHSE et transitions faites par les autres écrans ; VG-ACT-23 Vérification d'efficacité et actions de suite ; VG-ACT-24 Fil de commentaires daté et signé ; VG-ACT-25 Preuves jointes par le responsable ; VG-ACT-26 Pointage et coûts ; VG-ACT-27 Vue générale et filtres ; VG-ACT-28 Adapter les écrans qui créent ou lisent des actions ; VG-ACT-30 Notification « Action confiée » dans la cloche ; VG-ACT-32 Rappel du mercredi dans Vigie ; VG-ACT-33 Rappel du mercredi par e-mail : contenu, planification, journal d'envoi ; VG-ACT-35 Numérotation unique, jamais réattribuée ; VG-ACT-36 Format des numéros AC-AA#### ; VG-ACT-37 Source des actions créées par Habilitations, Prévention, Environnement et audits fournisseurs ; VG-ACT-40 Tests de bout en bout et de migration de la refonte ; VG-ACT-29 Statistiques mensuelles ; VG-ACT-31 Avertir le QHSE des commentaires et preuves du responsable ; VG-ACT-38 Priorité proposée d'après le niveau de risque — sans objet ; VG-ACT-43 Escalade hiérarchique des actions en retard.
 
-### Prévention et carte du site (9 restants, 16 faits)
+### Prévention et carte du site (7 restants, 18 faits)
 
-- **VG-PRV-08 · Intervenants des permis reliés au personnel et aux habilitations** — *Prochaine étape · attend le responsable produit · effort M*  
+- **VG-PRV-08 · Intervenants des permis reliés au personnel et aux habilitations** — *Prochaine étape · attend le responsable produit · effort M* · **en cours**  
   performer est un texte libre : choisir les intervenants internes et contrôler leurs titres valides à la délivrance.
   *Attend : Niveaux d'habilitation ; Cursus · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-08*
 - **VG-PRV-04 · Traçabilité de la délivrance, de la check-list et de la clôture des permis** — *À décider · partiel · effort M* · **en cours**  
@@ -730,23 +712,17 @@ Faits : VG-ACT-01 Rattacher les actions Prévention, Documents et Environnement 
 - **VG-PRV-20 · Plans de prévention reçus des clients** — *À décider · attend le responsable produit · effort L*  
   Les interventions EPC2i chez les clients ne sont pas suivies.
   *Attend : Keystone · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-20*
-- **VG-PRV-22 · Consignations / isolations et opérations simultanées (SIMOPS)** — *À décider · attend le responsable produit · effort L*  
-  Module « Control of Work » : consignations et isolations (énergie, fluide, mécanique) rattachées à un permis ou à une intervention, avec points d'isolement, poseur, vérificateur et levée tracés ; visualisation des opérations simultanées (SIMOPS) sur la carte du site et dans le temps, à partir des activités et des permis en cours (extension de `detectConflicts`, PRV-10) ; vérification avant démarrage et à clôture (PRV-04). Niveau marché : avancé (Enablon, Quentic) ; état dans le code : permis feu et essai avec check-lists, coactivité sur la carte, ni isolations ni SIMOPS. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer. Livré au paquet R3 (12/11/2026, migration 0034) : table `lockouts`, règles `src/lib/rules/lockouts.ts`, vue `?vue=simops` (`src/lib/rules/simops.ts`) ; la carte du site reste celle de la coactivité (§ 19 bis).
-  *Attend : PRV-15 (permis de consignation) ; carte du site · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-22*
-- **VG-PRV-23 · Préqualification des entreprises extérieures et contrôle des prérequis avant accès au site** — *À décider · attend le responsable produit · effort L*  
+- **VG-PRV-23 · Préqualification des entreprises extérieures et contrôle des prérequis avant accès au site** — *À décider · attend le responsable produit · effort L* · **en cours**  
   Préqualification d'une entreprise extérieure (questionnaire, pièces, évaluation, validité) et contrôle automatique des prérequis d'un intervenant avant l'accès au site : accueil sécurité (induction) fait, titres exigés par le type d'intervention ou de permis en cours de validité (PRV-08), pièces de vigilance à jour (PRV-09) ; blocage ou écart tracé à la délivrance du permis ou à l'inspection commune. Niveau marché : avancé (Cority, Ideagen) ; état dans le code : annuaire des entreprises extérieures lié aux seuls plans de prévention. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer.
   *Avancement : ◐ Partiel (11/11/2026, paquet R2) — réponse du 09/11/2026 (alerte d'accueil sécurité, veto du service QSSE) : intervenants d'un plan (`prevention_plan_workers`, migration 0033 : personnes lues dans Cursus, intérimaires « I… » et extérieurs « E… » compris ; ajout et retrait motivé par l'encadrement de la prévention), accueil sécurité d'après les titres suivis marqués « accueil sécurité » (`training_titles.safety_induction`, « Suivre / attributs du titre ») et titres requis de la personne, lus dans les titres détenus de Cursus (`workerCheck`, `src/lib/rules/workers.ts`) ; avertissement non … · Attend : PRV-09 ; titres d'habilitation (HAB) · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-23*
-- **VG-PRV-24 · Carte des sites géolocalisée** — *À décider · attend le responsable produit · effort M*  
-  Carte des sites géolocalisée (fond de carte, un repère par site avec ses indicateurs : événements du mois, actions en retard, contrôles dépassés) en tête du tableau de bord sous « Tous les sites », avec lien vers le site ; coordonnées saisies dans « Gérer les sites » ; fond de carte servi sans dépendance externe si la CSP l'exige. Niveau marché : avancé (BlueKanGo, SafetyCulture) ; état dans le code : carte d'un seul site (plan importé), aucune géolocalisation. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer.
-  *Avancement : ✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « Oui » : carte des sites du tableau de bord sous « Tous les sites » (`loadSitesMap`, `src/components/dashboard/SitesMap.tsx`) : sites suivis actifs du périmètre placés d'après la latitude et la longitude de `matrix.pub_sites` (lues à l'affichage, `readMatrixSiteCoordinates`), contour simplifié de la France métropolitaine en SVG sans service externe (`src/lib/rules/sites-map.ts`), indicateurs calculés (événements ouverts, actions en retard, jours sans accident avec arrêt, plans de prévention ouverts) ; tableau des mêmes indicateurs en … · Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-24*
-- **VG-PRV-15 · Permis complémentaires : consignation, espace confiné, hauteur, fouille** — *Plus tard · attend le responsable produit · effort M*  
+- **VG-PRV-15 · Permis complémentaires : consignation, espace confiné, hauteur, fouille** — *Plus tard · attend le responsable produit · effort M* · **en cours**  
   Seuls permis de feu et d'essai existent.
   *Attend : Éléments à fournir (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-15*
 - **VG-PRV-18 · Signature à distance ou envoi du plan à l'entreprise extérieure** — *Plus tard · attend un système externe · effort L*  
   La signature EE est saisie en interne.
   *Attend : Messagerie ou signature électronique · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-18*
 
-Faits : VG-PRV-01 Écarts R. 4512-6 passés non comptés ; VG-PRV-02 Contenu réglementaire du plan incomplet (R. 4512-8 et R. 4512-9) ; VG-PRV-03 Fiche imprimable d'un permis et registre par période ; VG-PRV-06 Inspection commune « préalable » acceptée après le début des travaux ; VG-PRV-07 Signataires du plan et date de signature EU ; VG-PRV-09 Dossier entreprise extérieure : pièces de vigilance, intervenants, accueil ; VG-PRV-10 Situations de coactivité : état « maîtrisée » ; VG-PRV-11 Cohérence plan, permis et activités après modification ; VG-PRV-12 Carte du site : journal, annulation plutôt que suppression, sites archivés ; VG-PRV-13 Cumul des heures d'une entreprise extérieure sur 12 mois ; VG-PRV-14 Filtres projet et entreprise, accès direct à la fiche entreprise ; VG-PRV-16 Validité des permis : durée maximale et prolongation ; VG-PRV-17 Interventions longues : inspections et réunions périodiques ; VG-PRV-19 Échéances de coactivité sans personne concernée ; VG-PRV-21 Clôture d'un plan après un écart R. 4512-6 : mesures immédiates hors actions QSE ; VG-PRV-25 Mouvements à venir pour le poste de garde (arrivées et départs des intérimaires et des extérieurs déclarés dans Cursus).
+Faits : VG-PRV-01 Écarts R. 4512-6 passés non comptés ; VG-PRV-02 Contenu réglementaire du plan incomplet (R. 4512-8 et R. 4512-9) ; VG-PRV-03 Fiche imprimable d'un permis et registre par période ; VG-PRV-06 Inspection commune « préalable » acceptée après le début des travaux ; VG-PRV-07 Signataires du plan et date de signature EU ; VG-PRV-09 Dossier entreprise extérieure : pièces de vigilance, intervenants, accueil ; VG-PRV-10 Situations de coactivité : état « maîtrisée » ; VG-PRV-11 Cohérence plan, permis et activités après modification ; VG-PRV-12 Carte du site : journal, annulation plutôt que suppression, sites archivés ; VG-PRV-13 Cumul des heures d'une entreprise extérieure sur 12 mois ; VG-PRV-14 Filtres projet et entreprise, accès direct à la fiche entreprise ; VG-PRV-16 Validité des permis : durée maximale et prolongation ; VG-PRV-17 Interventions longues : inspections et réunions périodiques ; VG-PRV-19 Échéances de coactivité sans personne concernée ; VG-PRV-21 Clôture d'un plan après un écart R. 4512-6 : mesures immédiates hors actions QSE ; VG-PRV-22 Consignations / isolations et opérations simultanées (SIMOPS) ; VG-PRV-24 Carte des sites géolocalisée ; VG-PRV-25 Mouvements à venir pour le poste de garde (arrivées et départs des intérimaires et des extérieurs déclarés dans Cursus).
 
 ### Risques / DUERP (1 restants, 19 faits)
 
@@ -756,11 +732,8 @@ Faits : VG-PRV-01 Écarts R. 4512-6 passés non comptés ; VG-PRV-02 Contenu ré
 
 Faits : VG-DUE-01 Mise à disposition du DUERP aux salariés, anciens salariés et instances ; VG-DUE-02 PAPRIPACT : programme annuel de prévention ; VG-DUE-03 Transmission de chaque version au SPST et dépôt sur le portail ; VG-DUE-04 Annulation d'une action : détachement absent de l'historique du risque ; VG-DUE-05 Unités sur un site archivé déplacées en silence ; VG-DUE-06 Historique des unités en vigueur et des versions jamais affiché ; VG-DUE-07 Réévaluation après accident et mise à jour du DUERP déclenchée ; VG-DUE-09 Pièces jointes : DUERP signé par version et justificatifs des risques ; VG-DUE-10 Contenu d'une version figé à la validation ; VG-DUE-11 Vue imprimable du document unique ; VG-DUE-12 Rattachement non tracé entre deux risques au même danger ; VG-DUE-13 Unités homonymes indiscernables sous « Tous les sites » ; VG-DUE-14 Déplacement d'un risque : rang et site des actions ; VG-DUE-15 Validateur sorti de l'effectif ; VG-DUE-16 Matrice G × P accessible et filtrante ; VG-DUE-17 Vue d'ensemble du DUERP toutes unités ; VG-DUE-18 Suggestions de familles de dangers ; VG-DUE-19 Mesures liées aux contrôles, documents et habilitations ; VG-DUE-20 Unités de travail reliées aux zones du plan de site.
 
-### Habilitations et formations (5 restants, 16 faits)
+### Habilitations et formations (4 restants, 17 faits)
 
-- **VG-HAB-06 · ⊘ Session de formation collective et recyclage groupé (livrée le 31/10/2026, retirée le 04/11/2026 : CV-01, sessions tenues par Cursus)** — *Prochaine étape · non commencé · effort L*  
-  Saisie multi-salariés et action partagée (A-205).
-  *Avancement : ✅ Livré (31/10/2026, classe 1, lot B) — sans action QSE (réponses du service QHSE du 15/10/2026 : les recyclages relèvent du service RH) : « Session collective » (barre de la matrice) et « Recyclage groupé » (vue « À prévoir », salariés de la prévision d'un titre, à rattraper ou expirant sous 3 mois cochés d'office, `groupRenewalCandidates`) enregistrent une session (`training_sessions` : titre, date, échéance, organisme, catégories) et une formation par participant (`qualifications.session_id`) dans une seule transaction (`saveTrainingSession`, `src/server/skills.ts`) : mêmes règles qu'une … · Attend : ACT-20 · Sources : docs/RESTE-A-FAIRE.md § 8 (Habilitations et formations), HAB-06*
 - **VG-HAB-08 · Date d'entrée, contrat et formation sécurité à l'embauche** — *Prochaine étape · attend un système externe · effort M*  
   Ajouter date d'entrée, type de contrat, poste à risques ; générer l'accueil sécurité (L. 4141-2) et la formation renforcée CDD/intérim (L. 4154-2).
   *Attend : Cursus · Sources : docs/RESTE-A-FAIRE.md § 8 (Habilitations et formations), HAB-08*
@@ -774,7 +747,7 @@ Faits : VG-DUE-01 Mise à disposition du DUERP aux salariés, anciens salariés 
   Suivre la déclaration de dérogation, valable 3 ans (R. 4153-40).
   *Attend : Cursus · Sources : docs/RESTE-A-FAIRE.md § 8 (Habilitations et formations), HAB-20*
 
-Faits : VG-HAB-01 Contrôle des fichiers côté navigateur dans « Enregistrer une formation » (⊘ saisie retirée le 04/11/2026, CV-01) ; VG-HAB-03 Journal des habilitations : compléter et afficher ; VG-HAB-04 Les anciens recyclages perdent leur lien vers l'habilitation ; VG-HAB-05 Sortie d'un salarié : responsabilités ouvertes et échéances postérieures ; VG-HAB-21 Habilitations et formations en consultation seule pour le service QHSE (données du RH) ; VG-HAB-09 Prévision des recyclages à 12 mois et plan de formation ; VG-HAB-10 Niveaux, catégories CACES et prérequis entre titres (soldé le 04/11/2026 : prérequis lus dans Cursus ; portée abandonnée par défaut, CV-04 ; aptitude médicale : HAB-02) ; VG-HAB-11 Vue Salarié : lien mort vers l'action de recyclage ; VG-HAB-12 Droits sur les titres suivis communs à tous les sites (04/11/2026 : création et renommage retirés, titre suivi choisi dans le catalogue de Cursus) ; VG-HAB-13 Efficacité des formations et sensibilisation (ISO §7.2-7.3) (04/11/2026 : évaluation à froid retirée, tenue par Cursus ; sensibilisation gardée) ; VG-HAB-14 Vue Salarié : habilitations filtrées par le site ; VG-HAB-15 Réordonnancement des titres suivis ; VG-HAB-16 Matrice : filtre par titre, site visible, colonne figée ; VG-HAB-17 Lien profond : filtres mémorisés écrasés et messages imprécis ; VG-HAB-18 Indicateurs de compétences dans la revue (04/11/2026 : sans les formations évaluées) ; VG-HAB-19 Vue Salarié : titres archivés et dépôt de son attestation (04/11/2026 : dépôt sans objet dans Vigie, attestations tenues par Cursus).
+Faits : VG-HAB-01 Contrôle des fichiers côté navigateur dans « Enregistrer une formation » (⊘ saisie retirée le 04/11/2026, CV-01) ; VG-HAB-03 Journal des habilitations : compléter et afficher ; VG-HAB-04 Les anciens recyclages perdent leur lien vers l'habilitation ; VG-HAB-05 Sortie d'un salarié : responsabilités ouvertes et échéances postérieures ; VG-HAB-06 ⊘ Session de formation collective et recyclage groupé (livrée le 31/10/2026, retirée le 04/11/2026 : CV-01, sessions tenues par Cursus) ; VG-HAB-21 Habilitations et formations en consultation seule pour le service QHSE (données du RH) ; VG-HAB-09 Prévision des recyclages à 12 mois et plan de formation ; VG-HAB-10 Niveaux, catégories CACES et prérequis entre titres (soldé le 04/11/2026 : prérequis lus dans Cursus ; portée abandonnée par défaut, CV-04 ; aptitude médicale : HAB-02) ; VG-HAB-11 Vue Salarié : lien mort vers l'action de recyclage ; VG-HAB-12 Droits sur les titres suivis communs à tous les sites (04/11/2026 : création et renommage retirés, titre suivi choisi dans le catalogue de Cursus) ; VG-HAB-13 Efficacité des formations et sensibilisation (ISO §7.2-7.3) (04/11/2026 : évaluation à froid retirée, tenue par Cursus ; sensibilisation gardée) ; VG-HAB-14 Vue Salarié : habilitations filtrées par le site ; VG-HAB-15 Réordonnancement des titres suivis ; VG-HAB-16 Matrice : filtre par titre, site visible, colonne figée ; VG-HAB-17 Lien profond : filtres mémorisés écrasés et messages imprécis ; VG-HAB-18 Indicateurs de compétences dans la revue (04/11/2026 : sans les formations évaluées) ; VG-HAB-19 Vue Salarié : titres archivés et dépôt de son attestation (04/11/2026 : dépôt sans objet dans Vigie, attestations tenues par Cursus).
 
 ### Veille et contrôles (3 restants, 17 faits)
 
@@ -790,7 +763,7 @@ Faits : VG-HAB-01 Contrôle des fichiers côté navigateur dans « Enregistrer u
 
 Faits : VG-VEI-01 Pilote, responsable ou site effacés en silence ; VG-VEI-02 Réserves sans action de levée absentes des échéances ; VG-VEI-03 Échéance figée d'une exigence suivie par des contrôles ; VG-VEI-04 Rattachements d'actions absents du journal des exigences et contrôles ; VG-VEI-05 Écart ou réserve dont l'action est clôturée : relancer pour boucler ; VG-VEI-06 Exigence jugée sur le seul site sélectionné ; VG-VEI-07 Rattachement explicite d'une exigence à un indicateur (linkedTo) ; VG-VEI-08 Pièces jointes à compléter ou retirer après coup ; VG-VEI-09 Modifier « Dernier contrôle » contourne l'historique ; VG-VEI-10 Applicabilité par site et référence du texte ; VG-VEI-11 Résultat du contrôle réalisé ; VG-VEI-12 Indicateurs calculés : registre des déchets et certification ISO 9001 ; VG-VEI-13 Filtres, recherche et tri ; VG-VEI-14 Métrologie : étalonnage des équipements de mesure ; VG-VEI-15 Registre de sécurité consolidé et observations des organismes ; VG-VEI-16 Annulation d'une évaluation saisie par erreur ; VG-VEI-18 Périodicité de réévaluation propre à chaque exigence.
 
-### Audits et revue de direction (5 restants, 35 faits)
+### Audits et revue de direction (3 restants, 37 faits)
 
 - **VG-AUD-32 · Archiver les enregistrements figés en PDF et dans Documents maîtrisés** — *À décider · attend le responsable produit · effort M*  
   Archiver en PDF, et dans les documents maîtrisés, le dossier de revue et les versions DUERP figés.
@@ -801,14 +774,8 @@ Faits : VG-VEI-01 Pilote, responsable ou site effacés en silence ; VG-VEI-02 R�
 - **VG-AUD-38 · Éditeur de check-lists d'audit : logique conditionnelle, scoring, photos annotées** — *À décider · attend le responsable produit · effort L*  
   Éditeur de modèles de check-lists d'audit (sections, questions, types de réponse, logique conditionnelle « si non, alors… », pondération et scoring, seuils de conformité, photos annotées et pièces par question), versions du modèle, exécution rattachée à l'élément du programme et constats créés depuis les réponses non conformes. Niveau marché : standard (SafetyCulture / Mitti, BlueKanGo) ; état dans le code : programme d'audit et constats, sans éditeur de check-lists. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer.
   *Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 10 (Audits et revue de direction), AUD-38*
-- **VG-AUD-39 · Rapport d'audit PDF à l'identité de l'entreprise, envoyé au client** — *À décider · attend le responsable produit · effort M*  
-  Rapport d'audit PDF généré côté serveur à l'identité de l'entreprise (logo, en-têtes, score, constats, photos, signatures), archivé comme pièce de l'audit (et dans Documents maîtrisés selon AUD-32), envoyé au client ou à l'entreprise auditée par le canal d'INT-04 ou téléchargé. Niveau marché : standard (SafetyCulture / Mitti, BlueKanGo) ; état dans le code : aucune génération PDF (impression navigateur seulement). Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer.
-  *Avancement : ◐ Partiel (11/11/2026, paquet R2) — réponse du 09/11/2026 « pas d'envoi, mais un PDF du rapport d'audit une fois enregistré » : bouton « Télécharger le rapport d'audit (PDF) » d'un élément réalisé du programme (hors revue de direction), route `/audits/rapport/<id>` (pdf-lib, polices standard WinAnsi : texte français complet, autres signes remplacés ; `src/lib/audit-report-pdf.ts`) : élément, type, site, auditeur, constats et actions (numéro seul hors périmètre) ; mêmes lecteurs que l'écran Audits (Salarié : 403), élément visible du site sélectionné. Reste : identité de l'entreprise (logo, … · Attend : AUD-38 ; compte d'envoi (ACT-34) pour l'envoi · Sources : docs/RESTE-A-FAIRE.md § 10 (Audits et revue de direction), AUD-39*
-- **VG-AUD-40 · Auto-diagnostic ISO 45001 / 14001 : grille, écarts et preuves** — *À décider · attend le responsable produit · effort L*  
-  Grille d'auto-évaluation par référentiel (ISO 45001, ISO 14001, et ISO 9001 déjà suivi par la certification) : exigences du référentiel, niveau de conformité par exigence, écarts, preuves jointes, plan d'actions rattaché (source « Audit interne »), synthèse pour la revue de direction et le contexte (CNF-05). Niveau marché : différenciant (BlueKanGo) ; état dans le code : revue de direction et contexte, sans grille d'auto-évaluation. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer. Livré au paquet R3 (12/11/2026, migration 0034) : tables `assessment_requirements`, `self_assessments`, `self_assessment_lines`, vue `?vue=auto-evaluation` de l'écran Audits, règles `src/lib/rules/self-assessment.ts` (§ 19 bis).
-  *Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 10 (Audits et revue de direction), AUD-40*
 
-Faits : VG-AUD-01 Lier programme d'audit et revues de direction par reviewId ; VG-AUD-02 Accès en lecture aux audits pour leurs responsables ; VG-AUD-03 Reporter ou annuler un élément du programme ; VG-AUD-04 Contributeurs de revue sans accès à l'écran Audits ; VG-AUD-05 Section 1 du dossier : décisions sans action et actions annulées ; VG-AUD-06 Dossier figé calculé à la clôture, pas à la séance ; VG-AUD-07 Supprimer le libellé d'audit codé en dur ; VG-AUD-08 Cycle de certification : renouvellement, suspension, historique ; VG-AUD-09 Types de constat : écart majeur, observation, délai de réponse ; VG-AUD-10 Journaliser les changements du programme faits par la revue ; VG-AUD-11 Contrôles de saisie des constats ; VG-AUD-12 Rattacher une action d'une autre revue la déplace ; VG-AUD-13 Objectifs QHSE mesurables reliés aux indicateurs ; VG-AUD-14 Contrôles avant clôture et visa ; VG-AUD-15 Visa de la direction possible par l'animateur QHSE ; VG-AUD-16 Échéances : décisions sans suite, prochaine revue non planifiée ; VG-AUD-17 Pièces jointes de la revue ; VG-AUD-18 Compléter les échéances du programme ; VG-AUD-19 Lien profond vers un référentiel ; VG-AUD-20 Audits hors programme en vrais audits ; VG-AUD-21 Plusieurs éléments par ligne et par mois ; VG-AUD-22 Rattacher programme, constats et certifications à un site ; VG-AUD-23 Règle « revue de direction » trop large ; VG-AUD-24 Gestion des lignes et reconduction annuelle ; VG-AUD-25 Rétablir un constat annulé ; VG-AUD-26 Impression du programme annuel ; VG-AUD-27 Auditeur interne lié à une personne ; VG-AUD-28 Plusieurs actions par constat ; VG-AUD-29 Liste des constats : filtres et audits sans constat ; VG-AUD-30 Revue annulée : échéance du programme ; VG-AUD-31 Contrôles de dates et de doublons ; VG-AUD-33 Constats des audits fournisseurs dans la section Fournisseurs ; VG-AUD-34 Rectificatif d'une revue clôturée ; VG-AUD-35 Carte de revue : perception client et ressources ; VG-AUD-36 Décision de revue abandonnée ou reformulée après la séance : statut, motif, ancien libellé.
+Faits : VG-AUD-01 Lier programme d'audit et revues de direction par reviewId ; VG-AUD-02 Accès en lecture aux audits pour leurs responsables ; VG-AUD-03 Reporter ou annuler un élément du programme ; VG-AUD-04 Contributeurs de revue sans accès à l'écran Audits ; VG-AUD-05 Section 1 du dossier : décisions sans action et actions annulées ; VG-AUD-06 Dossier figé calculé à la clôture, pas à la séance ; VG-AUD-07 Supprimer le libellé d'audit codé en dur ; VG-AUD-08 Cycle de certification : renouvellement, suspension, historique ; VG-AUD-09 Types de constat : écart majeur, observation, délai de réponse ; VG-AUD-10 Journaliser les changements du programme faits par la revue ; VG-AUD-11 Contrôles de saisie des constats ; VG-AUD-12 Rattacher une action d'une autre revue la déplace ; VG-AUD-13 Objectifs QHSE mesurables reliés aux indicateurs ; VG-AUD-14 Contrôles avant clôture et visa ; VG-AUD-15 Visa de la direction possible par l'animateur QHSE ; VG-AUD-16 Échéances : décisions sans suite, prochaine revue non planifiée ; VG-AUD-17 Pièces jointes de la revue ; VG-AUD-18 Compléter les échéances du programme ; VG-AUD-19 Lien profond vers un référentiel ; VG-AUD-20 Audits hors programme en vrais audits ; VG-AUD-21 Plusieurs éléments par ligne et par mois ; VG-AUD-22 Rattacher programme, constats et certifications à un site ; VG-AUD-23 Règle « revue de direction » trop large ; VG-AUD-24 Gestion des lignes et reconduction annuelle ; VG-AUD-25 Rétablir un constat annulé ; VG-AUD-26 Impression du programme annuel ; VG-AUD-27 Auditeur interne lié à une personne ; VG-AUD-28 Plusieurs actions par constat ; VG-AUD-29 Liste des constats : filtres et audits sans constat ; VG-AUD-30 Revue annulée : échéance du programme ; VG-AUD-31 Contrôles de dates et de doublons ; VG-AUD-33 Constats des audits fournisseurs dans la section Fournisseurs ; VG-AUD-34 Rectificatif d'une revue clôturée ; VG-AUD-35 Carte de revue : perception client et ressources ; VG-AUD-36 Décision de revue abandonnée ou reformulée après la séance : statut, motif, ancien libellé ; VG-AUD-39 Rapport d'audit PDF à l'identité de l'entreprise, envoyé au client ; VG-AUD-40 Auto-diagnostic ISO 45001 / 14001 : grille, écarts et preuves.
 
 ### Documents et environnement (7 restants, 17 faits)
 
@@ -838,10 +805,10 @@ Faits : VG-DOC-01 Document : propriétaire sorti ou site archivé remplacé ; VG
 
 ### Intégrations (14 restants, 6 faits)
 
-- **VG-INT-01 · Socle commun des connecteurs (◐ lectures par vues livrées le 03/11/2026, M-02 lot 0 ; écritures reçues par fonction `pub_` et boîte de réception le 05/11/2026, lot 3)** — *Bloquant production · attend un système externe · effort L*  
+- **VG-INT-01 · Socle commun des connecteurs (◐ lectures par vues livrées le 03/11/2026, M-02 lot 0 ; écritures reçues par fonction `pub_` et boîte de réception le 05/11/2026, lot 3)** — *Bloquant production · attend un système externe · effort L* · **en cours**  
   Client HTTP, journal de synchronisation, planification et écran « Connecteurs » communs à Keystone, Cursus et Trackdéchets.
   *Attend : Hébergement ; liens de lecture et d'exécution Matrix · Sources : docs/RESTE-A-FAIRE.md § 12 (Intégrations), INT-01*
-- **VG-INT-02 · Connecteur Keystone : projets et affectations (◐ par vues, M-02 D02 et D04, 03/11/2026 ; NC de projet D13, 05/11/2026)** — *Bloquant production · attend un système externe · effort L*  
+- **VG-INT-02 · Connecteur Keystone : projets et affectations (◐ par vues, M-02 D02 et D04, 03/11/2026 ; NC de projet D13, 05/11/2026)** — *Bloquant production · attend un système externe · effort L* · **en cours**  
   keystone_projects et les affectations ne sont alimentées que par le seed : les synchroniser depuis Keystone.
   *Attend : Keystone sur le serveur commun · Sources : docs/RESTE-A-FAIRE.md § 12 (Intégrations), INT-02*
 - **VG-INT-03 · Connecteur Cursus : personnel (lecture de `cursus.pub_salaries`, D01 ; matricule de site lu le 09/11/2026)** — *Bloquant production · attend un système externe · effort L* · **en cours**  
@@ -883,11 +850,8 @@ Faits : VG-DOC-01 Document : propriétaire sorti ou site archivé remplacé ; VG
 
 Faits : VG-INT-05 Projets Keystone référencés par identifiant (M-02 D02, 03/11/2026) ; VG-INT-06 Import PP par IA : coût ; VG-INT-09 Formations avec Cursus (04/11/2026, M-02 lot 2 : lecture seule, CV-01) ; VG-INT-13 Import PP par IA : appel long et configuration ; VG-INT-14 Import PP : plusieurs pages et HEIC ; VG-INT-18 Vue `pub_` des jalons de sécurité des procédés pour Keystone et l'application CAPEX.
 
-### Imports, exports et impression (7 restants, 2 faits)
+### Imports, exports et impression (6 restants, 3 faits)
 
-- **VG-IMP-02 · ~~Import du personnel Lucca~~ — caduc (D01, décision CV-10 : personnes lues dans Cursus)** — *Prochaine étape · non commencé · effort M*  
-  Caduc le 07/11/2026 (D01, décision CV-10 : toutes les personnes viennent de Cursus, bouton « Importer le personnel (Lucca · CSV) » retiré). Énoncé d'origine : Import CSV avec aperçu avant écriture.
-  *Sources : docs/RESTE-A-FAIRE.md § 13 (Imports, exports et impression), IMP-02*
 - **VG-IMP-01 · Import des heures travaillées** — *À décider · attend le responsable produit · effort M*  
   Import depuis la paie (le TF1/TG vaut 0 sans heures).
   *Attend : Levée du report · Sources : docs/RESTE-A-FAIRE.md § 13 (Imports, exports et impression), IMP-01*
@@ -907,7 +871,7 @@ Faits : VG-INT-05 Projets Keystone référencés par identifiant (M-02 D02, 03/1
   Régénérer le plan de prévention dans le format du formulaire importé (pdf-lib).
   *Attend : Levée du report · Sources : docs/RESTE-A-FAIRE.md § 13 (Imports, exports et impression), IMP-09*
 
-Faits : VG-IMP-04 Helper CSV commun ; VG-IMP-07 Impression des fiches événement et action.
+Faits : VG-IMP-02 ~~Import du personnel Lucca~~ — caduc (D01, décision CV-10 : personnes lues dans Cursus) ; VG-IMP-04 Helper CSV commun ; VG-IMP-07 Impression des fiches événement et action.
 
 ### Production et exploitation (1 restants, 14 faits)
 
@@ -947,20 +911,14 @@ Faits : VG-QUA-01 Intégration continue ; VG-QUA-02 typecheck sur un clone neuf 
 
 Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cibles, dictée ; VG-UX-03 Fenêtres modales ; VG-UX-04 Erreurs de formulaire accessibles ; VG-UX-05 Photos : galerie et allègement ; VG-UX-06 Mise en page tablette ; VG-UX-07 Liste puis fiche sur petit écran ; VG-UX-08 Carte du site tactile ; VG-UX-09 Contraste ; VG-UX-10 Icônes et infobulles ; VG-UX-11 Structure sémantique et clavier de la coque ; VG-UX-12 Uniformiser filtres et liens profonds ; VG-UX-13 Élément introuvable partout ; VG-UX-14 Retours d'état ; VG-UX-15 Dossier de revue sur téléphone ; VG-UX-16 Aide en ligne.
 
-### Conformité réglementaire transverse (6 restants, 8 faits)
+### Conformité réglementaire transverse (4 restants, 10 faits)
 
 - **VG-CNF-04 · Évaluation des fournisseurs** — *Prochaine étape · attend le responsable produit · effort L*  
   Fournisseurs comme entité évaluée (ISO 9001 §8.4) au lieu d'une simple origine de NC.
   *Attend : Éléments à fournir (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-04*
-- **VG-CNF-01 · Registre des dangers graves et imminents** — *À décider · attend le responsable produit · effort M*  
-  Registre DGI (L. 4131-1 et L. 4132-2) : type d'événement, salariés exposés, représentant du CSE, avis.
-  *Avancement : ✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « sur Vigie avec un accès spécifique pour les membres du CSE » : registre par site `/evenements/registre-dgi` (`dgi_notices`, migration 0033 ; impression `/evenements/registre-dgi/imprimer`) : avis daté (date et heure, postes, nature et cause du danger, travailleurs exposés, représentant du CSE, événement lié facultatif) consigné et signé par un membre du CSE (ou recopié par l'animateur QHSE puis signé), mesures de l'employeur et clôture par l'animateur QHSE, annulation motivée, journal `dgi_notice`. Lecteurs : animateur QHSE, direction … · Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-01*
 - **VG-CNF-06 · Produits chimiques** — *À décider · partiel · effort L* · **en cours**  
   Inventaire des produits, FDS et repérage des CMR.
   *Avancement : ◐ Décidé (09/11/2026) — réponse : produits chimiques, FDS et CMR tenus dans Seirich ; Vigie ne garde qu'un lien (statistiques et actions, source « Analyse de risque chimique »). Reste : forme du lien à préciser. · Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-06*
-- **VG-CNF-09 · Communication et sensibilisation** — *À décider · attend le responsable produit · effort M*  
-  Causeries et quarts d'heure sécurité avec participants.
-  *Avancement : ✅ Livré (11/11/2026, paquet R2) — réponse du 09/11/2026 « dans Vigie, feuille d'émargement envoyée aux participants » : vue « Causeries sécurité » de l'écran Prévention (`/prevention?vue=causeries&causerie=CS-…`, tables `safety_talks` et `safety_talk_participants`, migration 0033) : date, site, thème, animateur, durée, participants (personnes de Cursus), notes ; saisie et annulation motivée par l'encadrement de la prévention ; « Envoyer la feuille d'émargement » : notification de la cloche et e-mail (transport `VIGIE_MAIL_TRANSPORT` ; « aucun » : cloche seulement, dit à l'envoi) aux … · Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-09*
 - **VG-CNF-10 · EPI** — *À décider · attend le responsable produit · effort M*  
   Dotation des EPI par salarié.
   *Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-10*
@@ -968,15 +926,12 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
   Enquêtes de satisfaction en plus du texte libre de la revue.
   *Attend : Éléments à fournir (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 18 (Conformité réglementaire transverse), CNF-07*
 
-Faits : VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
+Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-09 Communication et sensibilisation ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (8 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (7 restants, 1 faits)
 
 - **VG-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
   Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
-  *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **VG-N02 · Connexion par Clavis et droits lus dans clavis.pub_acces** — *Prochaine étape · non commencé*  
-  Pas de connexion par Clavis ni de lecture de clavis.pub_acces (REGLES § 6).
   *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **VG-N03 · Journal d’audit en ajout seul par déclencheur** — *Prochaine étape · non commencé*  
   Le journal change_log n’a pas de déclencheur d’ajout seul (REGLES § 4).
@@ -997,11 +952,13 @@ Faits : VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-0
   Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
   *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
+Faits : VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces.
+
 <a id="cursus"></a>
 
 ## Cursus
 
-174 faits, 0 en cours, 22 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+174 faits, 3 en cours, 19 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -1103,26 +1060,26 @@ Faits : CU-168 Créer une CI GitHub Actions et figer la version de Node ; CU-169
 - **CU-190 · Application de bureau : base hors du dossier source et journaux conservés** — *Plus tard · non commencé · effort M*  
   La base RH est créée dans le dossier du projet (effacée par git clean) et le journal est vidé à chaque lancement. Placer la base dans Application Support et ouvrir le journal en ajout.
   *Sources : docs/RESTE_A_FAIRE.md, « Exploitation »*
-- **CU-191 · Déclarer clés étrangères et contraintes dans le schéma** — *Plus tard · non commencé · effort M*  
+- **CU-191 · Déclarer clés étrangères et contraintes dans le schéma** — *Plus tard · non commencé · effort M* · **en cours (PR Cursus#44)**  
   Aucune clé étrangère ni contrainte n'est déclarée : une référence orpheline ferait planter le chargement. Ajouter clés étrangères, CHECK et index. *Lot 7 : la production tourne sur le serveur PostgreSQL commun, dont les migrations (`server/migrations-pg/`) déclarent clés étrangères, CHECK et index. Reste éventuellement la base SQLite (démonstration, tests, application de bureau).* *Analyse comparative du 25/10/2026 : point de robustesse relevé pour l'application de bureau, dont la base SQLite reste sans clé étrangère ni CHECK : une référence orpheline (salarié supprimé, formation archivée) y fait échouer le chargement sans message exploitable. Priorité suggérée : 🟢 Souhaitable (P3), à traiter si l'application de bureau est conservée hors démonstration ; sinon documenter qu'elle n'est pas destinée à des données réelles.*
-  *Sources : docs/RESTE_A_FAIRE.md, « Exploitation »*
+  *Avancement : PR Cursus#44 ouverte, pas encore fusionnée (CI). · Sources : docs/RESTE_A_FAIRE.md, « Exploitation »*
 
 Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU-179 Protéger npm run reset-demo contre l'effacement d'une base réelle ; CU-180 Résoudre les chemins de l'interface et de la base depuis le code ; CU-181 Fournir un packaging serveur (Docker ou systemd) ; CU-182 Versionner les migrations de schéma ; CU-183 Charger les données par périmètre et ne renvoyer que ce qui change ; CU-184 Structurer les logs et répondre en JSON aux erreurs ; CU-185 Ajouter un point de santé /api/health ; CU-186 Activer la compression et un cache long sur les fichiers statiques ; CU-187 Gérer l'arrêt propre et le délai d'attente SQLite ; CU-188 Découper le bundle client par écran ; CU-189 Retirer du dépôt les deux archives zip de la maquette.
 
 ### Alignement sur Norma (audit du 24 novembre 2026) (5 restants)
 
-- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
+- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
-  *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : Chaînes sources et sélecteur FR / EN : reprise commencée. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CU-N02 · PostgreSQL seul** — *Prochaine étape · partiel*  
   SQLite (node:sqlite) reste le moteur par défaut, PostgreSQL en option ; les tests tournent sur SQLite, PostgreSQL seulement dans le job postgres (REGLES § 4).
   *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CU-N03 · Journal d’audit en ajout seul** — *Prochaine étape · non commencé*  
+- **CU-N03 · Journal d’audit en ajout seul** — *Prochaine étape · attend le responsable produit*  
   server/src/journal.ts (appliquerConservation) applique la conservation RGPD par UPDATE / DELETE : le journal n’est pas en ajout seul (REGLES § 4).
-  *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CU-N04 · Formulaires en panneau latéral** — *Prochaine étape · non commencé*  
+  *Avancement : Conflit avec la purge RGPD du journal (appliquerConservation, regrouper, marquerPaie, reprendreJournal font UPDATE / DELETE). Choix proposé : purge par un rôle dédié, le rôle de l’application n’ayant plus que l’ajout. · Attend : Choix du responsable produit : purge RGPD du journal par un rôle dédié ? · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CU-N04 · Formulaires en panneau latéral** — *Prochaine étape · non commencé* · **en cours**  
   Les formulaires s’ouvrent en dialogues centrés, pas en panneau latéral (REGLES § 7).
-  *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : Formulaires en panneau latéral : reprise commencée. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CU-N05 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
   Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
   *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
@@ -1131,7 +1088,7 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 
 ## Arche
 
-42 faits, 10 en cours, 5 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+45 faits, 11 en cours, 1 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (3 restants, 8 faits)
 
@@ -1213,26 +1170,19 @@ Faits : AR-035 Ramp-up : saisie journalière, TRS, 30 jours continus, 6 mois ; v
 
 Faits : AR-001 Cadrage de la livraison 0.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (4 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 3 faits)
 
-- **AR-N01 · Contraintes de format en base pour chaque colonne** — *Prochaine étape · non commencé*  
-  Un seul check() pour 74 tables (REGLES § 4).
-  *Sources : PR Arche#59 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **AR-N02 · Installation directe sans Docker** — *Prochaine étape · non commencé*  
-  Arche documente le kit Coolify / Docker ; REGLES § 9 renvoie à l’installation directe du guide de Matrix (docs/installation-directe.md).
-  *Sources : PR Arche#59 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **AR-N03 · Composants et police pris dans norma/charte** — *Prochaine étape · non commencé*  
-  src/components/ds et src/fonts restent des copies locales : les prendre dans norma/charte (@norma/charte/ds, fonts/inter).
-  *Sources : PR Arche#59 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **AR-N04 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+- **AR-N04 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M* · **en cours (PR Arche#63)**  
   Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+  *Avancement : Coque commune Norma 2.0 : PR Arche#63 ouverte. · Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+
+Faits : AR-N01 Contraintes de format en base pour chaque colonne ; AR-N02 Installation directe sans Docker ; AR-N03 Composants et police pris dans norma/charte.
 
 <a id="crucible"></a>
 
 ## Crucible
 
-26 faits, 4 en cours, 8 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+31 faits, 4 en cours, 3 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (1 restants, 4 faits)
 
@@ -1293,85 +1243,40 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 
 Faits : CR-001 Cadrage (livraison 0).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (6 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 5 faits)
 
-- **CR-N01 · Contraintes de format en base pour chaque colonne** — *Prochaine étape · non commencé*  
-  Une seule contrainte CHECK pour 62 tables (drizzle/0032_roles_from_clavis.sql) ; les colonnes d’état ne sont typées qu’en TypeScript ($type<…>()) (REGLES § 4).
-  *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CR-N02 · Un dossier par connecteur** — *Prochaine étape · non commencé*  
-  Les lectures de Keystone, Cursus et Vigie sont dans src/server/integrations/connectors.ts, pas dans src/server/integrations/<outil>/ (REGLES § 5).
-  *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CR-N03 · Rôles jamais pris dans le jeton** — *Prochaine étape · non commencé*  
-  CRUCIBLE_ROLES_FROM_TOKEN=on prend encore les rôles dans le jeton, ce que REGLES § 6 interdit.
-  *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CR-N04 · Installation directe sans Docker** — *Prochaine étape · non commencé*  
-  docs/EXPLOITATION.md ne décrit que Docker / Coolify, pas l’installation directe du guide de Matrix (REGLES § 9).
-  *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CR-N05 · Importer norma/charte/touch.css** — *Prochaine étape · non commencé*  
-  touch.css de la charte n’est pas importé ; Crucible a ses propres règles tactiles dans le CSS de ses composants (REGLES § 7).
-  *Sources : PR Crucible#45 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CR-N06 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
   Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+  *Avancement : Reprise de la coque en cours (session en cours, pas encore de PR fusionnée). · Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+
+Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dossier par connecteur ; CR-N03 Rôles jamais pris dans le jeton ; CR-N04 Installation directe sans Docker ; CR-N05 Importer norma/charte/touch.css.
 
 <a id="clavis"></a>
 
 ## Clavis
 
-1 faits, 3 en cours, 20 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+19 faits, 1 en cours, 4 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
-### Gestion des droits (proposition du 24 nov. 2026) (4 restants, 1 faits)
+### Gestion des droits (proposition du 24 nov. 2026) (1 restants, 4 faits)
 
-- **CL-LA · Lot A — Mise en service** — *À décider · partiel* · **en cours (Lot A (PR Clavis#13, brouillon))**  
-  mot de passe provisoire envoyé par e-mail (Graph ou SMTP, à choisir avec la DSI) ; déblocage, réinitialisation, « fermer toutes les sessions » ; écran d'import de l'annuaire avec aperçu des écarts ; départ en un geste ; journal consultable et exportable ; motif obligatoire pour une élévation ou un retrait
-  *Avancement : Construit et vérifié sur la branche : envoi par CLAVIS_MAIL_TRANSPORT none \| file (Graph ou SMTP non construit, DSI), réinitialisation, déblocage, fermer toutes les sessions, départ en un geste et son annulation, motif pour désactiver, écran d’import avec aperçu des écarts, journal filtrable et export CSV. · Attend : Fusion de la PR Clavis#13 ; moyen d’envoi des e-mails à choisir avec la DSI · Sources : docs/PROPOSITION-DROITS.md § 4, lot A*
-- **CL-LC · Lot C — Sécurité** — *À décider · attend le responsable produit*  
-  revue périodique des accès par les managers ; incompatibilités de rôles (séparation des tâches) ; comptes dormants ; double authentification des administrateurs ; politique de mot de passe
-  *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot C*
-- **CL-LD · Lot D — Paramétrage** — *À décider · attend le responsable produit*  
-  écran des applications (état, client de connexion, rotation du secret) ; tableau de bord ; comptes de service ; administrateurs « gestionnaire d'accès » limités à un service ou un site
-  *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot D*
-- **CL-LE · Lot E — Plus tard** — *Plus tard · attend le responsable produit*  
+- **CL-LE · Lot E — Plus tard** — *Plus tard · attend le responsable produit* · **en cours (PR Clavis#14)**  
   demandes d'accès en libre-service (manager puis IT) ; arrivée planifiée d'après Cursus ; notification des outils à chaque changement
-  *Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot E*
+  *Avancement : Partie interne faite (Clavis#14) ; le reste attend des systèmes ou décisions externes. · Attend : Accord du propriétaire, lot par lot (rien n’est construit avant) · Sources : docs/PROPOSITION-DROITS.md § 4, lot E*
 
-Faits : CL-LB Lot B — Rôles multiples.
+Faits : CL-LA Lot A — Mise en service ; CL-LB Lot B — Rôles multiples ; CL-LC Lot C — Sécurité ; CL-LD Lot D — Paramétrage.
 
-### Décisions à prendre (6 restants)
+### Décisions à prendre (0 restants, 6 faits)
 
-- **CL-DR1 · Copier les droits d'un collègue : ajouter ou remplacer par défaut ?** — *À décider · attend le responsable produit*  
-  Copier les droits d'un collègue : ajouter ou remplacer par défaut ? Réponse par défaut : ajouter (aperçu des deux).
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
-- **CL-DR2 · Une élévation (administrateur, direction) demande-t-elle une seconde validation ?** — *À décider · attend le responsable produit*  
-  Une élévation (administrateur, direction) demande-t-elle une seconde validation ? Réponse par défaut : non, motif obligatoire et journal.
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
-- **CL-DR3 · Revue des accès : fréquence et qui valide ?** — *À décider · attend le responsable produit*  
-  Revue des accès : fréquence et qui valide ? Réponse par défaut : semestrielle, par le manager direct, IT en relance.
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
-- **CL-DR4 · Comptes dormants : seuil ?** — *À décider · attend le responsable produit*  
-  Comptes dormants : seuil ? Réponse par défaut : 90 jours sans connexion → alerte, 120 → fermeture proposée.
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
-- **CL-DR5 · Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ?** — *À décider · attend le responsable produit*  
-  Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ? Réponse par défaut : dans Clavis pour le CSE ; secouriste et auditeur restent des titres de Cursus.
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
-- **CL-DR6 · Double authentification : pour qui ?** — *À décider · attend le responsable produit*  
-  Double authentification : pour qui ? Réponse par défaut : administrateurs de Clavis d'abord, puis tous les comptes à droits élevés.
-  *Attend : Responsable produit · Sources : docs/PROPOSITION-DROITS.md § 5*
+Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défaut ? ; CL-DR2 Une élévation (administrateur, direction) demande-t-elle une seconde validation ? ; CL-DR3 Revue des accès : fréquence et qui valide ? ; CL-DR4 Comptes dormants : seuil ? ; CL-DR5 Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ? ; CL-DR6 Double authentification : pour qui ?.
 
-### Suite prévue (6 restants)
+### Suite prévue (4 restants, 2 faits)
 
 - **CL-S01 · Connexion de Keystone et de Codex par Clavis** — *Prochaine étape · non commencé*  
   Keystone et Codex se connectent par Clavis (Codex n’a pas encore de vraie connexion).
   *Sources : CLAUDE.md, « Next »*
-- **CL-S02 · Écran d’import CSV de l’annuaire** — *Prochaine étape · non commencé* · **en cours (Lot A (PR Clavis#13, brouillon))**  
-  Import de l’annuaire depuis un fichier par un écran (aujourd’hui en ligne de commande, npm run directory:import).
-  *Avancement : Écran /directory/import avec aperçu (créées, mises à jour, absentes, écarts), puis import. · Sources : CLAUDE.md, « Next »*
 - **CL-S03 · Lecture de Microsoft Graph** — *Prochaine étape · non commencé*  
   Lecture de l’annuaire Microsoft (User.Read.All, lecture seule : personnes et manager).
   *Sources : CLAUDE.md, « Next »*
-- **CL-S04 · Envoi des mots de passe provisoires** — *Prochaine étape · partiel* · **en cours (Lot A (PR Clavis#13, brouillon))**  
-  Envoi par e-mail du mot de passe provisoire ; transport à choisir avec la DSI (Graph Mail.Send ou SMTP) — à rappeler au propriétaire.
-  *Avancement : Envoi derrière CLAVIS_MAIL_TRANSPORT none (défaut, affiché une fois) \| file (.eml, essais) ; Graph Mail.Send ou SMTP inactif tant que la DSI n’a pas choisi. · Attend : Choix du transport avec la DSI · Sources : CLAUDE.md, « Next »*
 - **CL-S05 · Connexion centrale de Keystone, Codex et Matrix** — *Prochaine étape · non commencé*  
   Keystone, Codex et Matrix passent par le fournisseur OpenID Connect de Clavis.
   *Sources : CLAUDE.md, « Next »*
@@ -1379,35 +1284,17 @@ Faits : CL-LB Lot B — Rôles multiples.
   Registre des applications publié et lu par les autres outils.
   *Sources : CLAUDE.md, « Next »*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
+Faits : CL-S02 Écran d’import CSV de l’annuaire ; CL-S04 Envoi des mots de passe provisoires.
 
-- **CL-N01 · Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page** — *Prochaine étape · non commencé*  
-  Le sélecteur FR / EN (et donc le bouton d’affichage) est dans la barre latérale, pas dans l’en-tête de page (REGLES § 7).
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N02 · Recherche de pages ⌘K** — *Prochaine étape · non commencé*  
-  L’en-tête de page de Clavis n’a pas de recherche de pages ⌘K (REGLES § 7).
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N03 · Boîte aux lettres REQUESTS.md** — *Prochaine étape · non commencé*  
-  Pas de REQUESTS.md à la racine du dépôt (REGLES § 3).
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N04 · Police Inter de la charte** — *Prochaine étape · non commencé*  
-  src/fonts/inter.ts livre 2 sous-ensembles avec un repli system-ui ; norma/charte/fonts/inter.ts en livre 7 avec « Inter Fallback ».
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N05 · Composants pris dans @norma/charte/ds** — *Prochaine étape · non commencé*  
-  src/components/ds/ est une copie des composants de Norma ; les importer de @norma/charte/ds.
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N06 · Installation directe sans Docker** — *Prochaine étape · non commencé*  
-  Déploiement documenté par Docker / Coolify (Dockerfile, deploy/compose.yaml) ; REGLES § 9 renvoie à l’installation directe (guide de Matrix).
-  *Sources : PR Clavis#10 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **CL-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
-  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 7 faits)
+
+Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page ; CL-N02 Recherche de pages ⌘K ; CL-N03 Boîte aux lettres REQUESTS.md ; CL-N04 Police Inter de la charte ; CL-N05 Composants pris dans @norma/charte/ds ; CL-N06 Installation directe sans Docker ; CL-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="matrix"></a>
 
 ## Matrix
 
-15 faits, 11 en cours, 10 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+21 faits, 12 en cours, 3 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1464,41 +1351,22 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (7 restants)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 6 faits)
 
-- **MX-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé*  
+- **MX-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours**  
   Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N02 · Icônes Phosphor** — *Prochaine étape · non commencé*  
-  Icônes dessinées à la main au lieu de Phosphor (REGLES § 7).
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N03 · Formulaires en panneau latéral** — *Prochaine étape · non commencé*  
-  Formulaires ouverts dans la page (REGLES § 7).
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N04 · Variables d’environnement toutes validées au démarrage** — *Prochaine étape · partiel*  
-  Variables d’environnement validées seulement en partie (REGLES § 9).
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N05 · Modulus, Clavis et Matrix dans les listes d’outils** — *Prochaine étape · non commencé*  
-  Modulus (et Clavis / Matrix pour certaines listes) absents des listes d’outils de serveur.mjs, outils/*.mjs et infra/postgres/ ; le rôle modulus_app n’existe pas.
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N06 · Délégation de Claude conforme à REGLES § 10** — *Prochaine étape · non commencé*  
-  docs/delegation-claude.md est plus large que REGLES § 10 (fusion seule, rôles et droits du serveur commun).
-  *Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-- **MX-N07 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort L*  
-  Appliquer la coque commune de Norma 2.0 (charte/COQUE.md) : barre latérale, en-tête de page, actions, barre d'outils, panneau latéral ; paire langue / affichage empilée de même taille en dernier à droite de l'en-tête de chaque page et de la barre supérieure. Liste des fichiers : charte/AUDIT-2026-11-24.md § 2.
-  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+  *Avancement : Coque traduite ; environ 650 chaînes restent à passer par l’i18n. · Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+
+Faits : MX-N02 Icônes Phosphor ; MX-N03 Formulaires en panneau latéral ; MX-N04 Variables d’environnement toutes validées au démarrage ; MX-N05 Modulus, Clavis et Matrix dans les listes d’outils ; MX-N06 Délégation de Claude conforme à REGLES § 10 ; MX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="modulus"></a>
 
 ## Modulus
 
-0 faits, 1 en cours, 8 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
+1 faits, 0 en cours, 8 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
 
-### Livraisons du plan (8 restants)
+### Livraisons du plan (7 restants, 1 faits)
 
-- **MO-L0 · Livraison 0 — Cadrage** — *Prochaine étape · partiel* · **en cours**  
-  spécification `docs/spec/00`–`06`, décisions, plan, demandes aux autres outils
-  *Avancement : Cadrage en cours (24 nov. 2026) : rien n’est construit avant que le propriétaire ait lu le cadrage et répondu ou accepté les défauts. · Attend : Lecture du cadrage par le propriétaire · Sources : docs/PLAN.md, livraison 0*
 - **MO-L1 · Livraison 1 — Plateforme** — *Prochaine étape · attend le responsable produit*  
   socle copié de Clavis (adapté par Crucible / Arche), charte `@norma/charte` (thèmes sombre et clair), PostgreSQL seul, schéma `modulus`, connexion par Clavis et droits lus dans `clavis.pub_acces` (rôles Modulus à ajouter dans Clavis), journal d'audit, horloge, jeu de démonstration, CI
   *Attend : Livraison précédente ; Norma 1.0, demande Clavis C-1 · Sources : docs/PLAN.md, livraison 1*
@@ -1521,17 +1389,54 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
   Keystone et Arche ne lisent plus que Modulus pour le catalogue ; retrait de l'écran de saisie de Keystone
   *Attend : Livraison précédente ; Keystone, Arche, Matrix · Sources : docs/PLAN.md, livraison 7*
 
+Faits : MO-L0 Livraison 0 — Cadrage.
+
 ### Alignement Norma (1 restants)
 
 - **MO-N01 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
   Construire la livraison 1 sur la coque commune de Norma 2.0 (charte/COQUE.md : AppShell, PageHeader, PrefsStack).
   *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
 
+<a id="vector"></a>
+
+## Vector
+
+1 faits, 1 en cours, 6 à faire. Source : Yhumiii27/vector, `docs/PLAN.md` ; reprise : une livraison du plan = un item. Effort : non estimé.
+
+### Livraisons du plan (6 restants, 1 faits)
+
+- **VE-L1 · Livraison 1 — Socle et interface** — *Prochaine étape · non commencé* · **en cours (L1)**  
+  socle Clavis, schéma, règles pures, tous les écrans sur données fictives, connecteurs simulés
+  *Avancement : Socle, schéma, règles, tous les écrans et connecteurs simulés construits sur la branche claude/quirky-brown-c7af5m ; PR à fusionner une fois la CI verte (DN-1 attendue pour le contrôle Norma). · Sources : docs/PLAN.md, livraison 1*
+- **VE-L2 · Livraison 2 — Demandes et colisage en vrai** — *Plus tard · non commencé*  
+  lectures réelles Keystone / Matrix, API pour Keystone
+  *Attend : Réponses au questionnaire · Sources : docs/PLAN.md, livraison 2*
+- **VE-L3 · Livraison 3 — Transport** — *Plus tard · non commencé*  
+  RFQ par e-mail, cours de change, annuaire réel
+  *Attend : Réponses au questionnaire · Sources : docs/PLAN.md, livraison 3*
+- **VE-L4 · Livraison 4 — Douane et documents** — *Plus tard · non commencé*  
+  PDF, dépôt Codex, pays et SH validés, LC
+  *Attend : Réponses au questionnaire · Sources : docs/PLAN.md, livraison 4*
+- **VE-L5 · Livraison 5 — Coûts, incidents, performance** — *Plus tard · non commencé*  
+  imputation, rapprochement, réclamations, note des transporteurs
+  *Attend : Réponses au questionnaire · Sources : docs/PLAN.md, livraison 5*
+- **VE-L6 · Livraison 6 — Intégrations** — *Plus tard · non commencé*  
+  Sage, suivi automatique, pub_editer, transition Keystone
+  *Attend : Réponses au questionnaire · Sources : docs/PLAN.md, livraison 6*
+
+Faits : VE-L0 Livraison 0 — Cadrage.
+
+### Alignement Norma (1 restants)
+
+- **VE-N01 · Coque commune Norma 2.0 (langue et affichage à la même place)** — *Prochaine étape · non commencé · effort M*  
+  Construire l'interface sur la coque commune de Norma 2.0 (charte/COQUE.md : AppShell, PageHeader, PrefsStack).
+  *Sources : norma/charte/COQUE.md, norma/charte/AUDIT-2026-11-24.md (audit du design, 24 nov. 2026)*
+
 <a id="norma"></a>
 
 ## Norma (socle)
 
-4 faits, 1 en cours, 2 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+5 faits, 2 en cours, 0 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Socle commun (règles, charte, registre, dépendances) (1 restants, 2 faits)
 
@@ -1545,14 +1450,13 @@ Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Texte
 
 Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste à faire global de la solution.
 
-### Reprise par les outils (2 restants)
+### Reprise par les outils (1 restants, 1 faits)
 
-- **NO-005 · Arche, Crucible et Modulus passent au questionnaire commun** — *Prochaine étape · non commencé · effort S*  
-  Chaque outil écrit scripts/questionnaire/config.json (titre, sous-titre, introduction, décisions déjà prises, groupes, sortie), garde questions.json, remplace son build et son modèle de page par node norma/outils/questionnaire/build.mjs (script npm questionnaire:page) et supprime ses copies locales.
-  *Attend : Reprise de Norma 1.2.0 dans chaque outil (PR par outil) · Sources : README.md, « Questionnaire du responsable produit »*
-- **NO-006 · Les outils pointent vers le reste à faire global** — *Prochaine étape · non commencé · effort S*  
+- **NO-006 · Les outils pointent vers le reste à faire global** — *Prochaine étape · non commencé · effort S* · **en cours (PR des outils)**  
   Keystone, Arche et Crucible retirent docs/reste-a-developper.json, docs/RESTE-A-DEVELOPPER.md et scripts/remaining-work/ (npm run remaining:page) ; Codex, Vigie et Cursus remplacent leur document par un renvoi ; Matrix, Clavis et Modulus aussi. Leur CLAUDE.md renvoie à reste-a-faire/<outil>.json de Norma et à la page globale.
-  *Attend : Reprise de Norma 1.2.0 dans chaque outil (PR par outil) · Sources : REGLES.md § 3, README.md, « Reste à faire de la solution »*
+  *Avancement : Fait pour Arche, Crucible, Modulus, Codex, Matrix, Vigie, Cursus (et Clavis) ; reste Keystone (aucune PR d’adoption de Norma 1.2.0 fusionnée). · Attend : Reprise de Norma 1.2.0 dans chaque outil (PR par outil) · Sources : REGLES.md § 3, README.md, « Reste à faire de la solution »*
+
+Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun.
 
 ## Mises à jour
 
@@ -1562,28 +1466,40 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-24 — **Keystone** : Audit du design de Norma 2.0 : point R-N03 (coque commune).
 - 2026-11-24 — **Codex** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4296c52) ; écarts de l’audit Norma ajoutés (CX-N…).
 - 2026-11-24 — **Codex** : Audit du design de Norma 2.0 : point CX-N07 (coque commune).
+- 2026-11-24 — **Codex** : Écarts de l’audit Norma CX-N02 à CX-N06 corrigés (Codex#34) ; i18n en cours (~1850 t.key) ; coque Norma 2.0 en cours.
 - 2026-11-24 — **Vigie** : Repris dans le reste à faire global de Norma 1.2.0 (commit 58217b0) ; écarts de l’audit Norma ajoutés (VG-N…).
 - 2026-11-24 — **Vigie** : Audit du design de Norma 2.0 : point VG-N08 (coque commune).
+- 2026-11-24 — **Vigie** : Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42).
 - 2026-11-24 — **Cursus** : Repris dans le reste à faire global de Norma 1.2.0 (commit e6203e5) ; écarts de l’audit Norma ajoutés (CU-N…).
 - 2026-11-24 — **Cursus** : Audit du design de Norma 2.0 : point CU-N05 (coque commune).
+- 2026-11-24 — **Cursus** : Contraintes du schéma (Cursus#44, en CI) ; connecteurs rangés par outil (#43) ; journal en ajout seul en attente du responsable produit (conflit avec la purge RGPD).
 - 2026-11-24 — **Arche** : Une seule base : avec ARCHE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation d'Arche) ; lecture impossible = refus.
 - 2026-11-24 — **Arche** : Norma 1.0.0 : copie du socle commun (norma/, npm run norma:check en CI), Next.js 16.4.6, charte lue dans norma/charte/nocturne.css et bouton d'affichage sombre / clair (cookie epc2i-theme) à droite du sélecteur FR / EN ; audit des règles communes. AR-038 en cours.
 - 2026-11-24 — **Arche** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit bc15602) ; écarts de l’audit Norma ajoutés (AR-N…).
 - 2026-11-24 — **Arche** : Audit du design de Norma 2.0 : point AR-N04 (coque commune).
+- 2026-11-24 — **Arche** : Audit Norma : AR-N01 à AR-N03 faits (Arche#61, #62) ; coque Norma 2.0 en cours (Arche#63 ouverte).
 - 2026-11-24 — **Crucible** : Une seule base : avec CRUCIBLE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation de Crucible) ; lecture impossible = refus.
 - 2026-11-24 — **Crucible** : Norma 1.0.0 adopté : copie du socle commun dans norma/ (règles, charte, registre, dépendances), contrôlée en CI (npm run norma:check), CLAUDE.md importe @norma/REGLES.md ; feuille Nocturne prise dans norma/charte ; bouton d’affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, thème posé par le serveur sur <html>, sombre par défaut).
 - 2026-11-24 — **Crucible** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit c8a1afa) ; écarts de l’audit Norma ajoutés (CR-N…).
 - 2026-11-24 — **Crucible** : Audit du design de Norma 2.0 : point CR-N06 (coque commune).
+- 2026-11-24 — **Crucible** : Audit Norma : CR-N01 à CR-N05 faits (Crucible#47, #48) ; coque Norma 2.0 en cours.
 - 2026-11-24 — **Clavis** : Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d).
 - 2026-11-24 — **Clavis** : Lot A (mise en service) construit, PR Clavis#13 en brouillon ; lot B fusionné (PR Clavis#12).
 - 2026-11-24 — **Clavis** : Audit du design de Norma 2.0 : point CL-N07 (coque commune).
+- 2026-11-24 — **Clavis** : Lots A, B, C, D fusionnés (Clavis#12, #13, #14 ; DR-1 à DR-6 par défaut, transport des e-mails inactif en attente de la DSI), lot E en partie ; écarts de l’audit Norma corrigés (#14) ; coque Norma 2.0 (#15).
 - 2026-11-24 — **Matrix** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4c6b688) ; écarts de l’audit Norma ajoutés (MX-N…).
 - 2026-11-24 — **Matrix** : Audit du design de Norma 2.0 : point MX-N07 (coque commune).
+- 2026-11-24 — **Matrix** : Écarts de l’audit Norma corrigés (Matrix#96, #98 ; scripts du serveur commun #99) ; coque Norma 2.0 (#100) ; i18n en cours (~650 chaînes).
 - 2026-11-24 — **Modulus** : Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa).
 - 2026-11-24 — **Modulus** : Audit du design de Norma 2.0 : point MO-N01 (coque commune).
+- 2026-11-24 — **Modulus** : Livraison 0 (cadrage) faite, réponses appliquées (Modulus#4) ; M-23 dans les scripts de Matrix (#99).
+- 2026-11-24 — **Vector** : Cadrage (L0) et socle + interface (L1) dans un dépôt local, en attente de création du dépôt GitHub.
+- 2026-11-24 — **Vector** : Livraison 1 construite : socle, schéma contraint, règles pures, 28 Server Functions, tous les écrans, connecteurs simulés.
+- 2026-11-24 — **Vector** : Inscrit au registre de Norma 2.1.0 (DN-1) ; repris dans le reste à faire global ; point VE-N01 (coque commune Norma 2.0).
 - 2026-11-24 — **Norma (socle)** : Norma 1.0.0 à 1.1.0 : règles communes, charte Nocturne (sombre et clair), registre, dépendances, copie et contrôle.
 - 2026-11-24 — **Norma (socle)** : Norma 1.2.0 : questionnaire du responsable produit et reste à faire global de la solution dans le socle ; reprise des listes des neuf outils.
 - 2026-11-24 — **Norma (socle)** : Norma 2.0.0 : audit du design et coque commune (NO-007).
+- 2026-11-24 — **Norma (socle)** : Norma 2.1.0 : Vector inscrit au registre ; NO-005 fait, NO-006 en cours (reste Keystone).
 - 2026-11-23 — **Keystone** : Connexion centrale par Clavis : personne créée depuis le jeton (KEYSTONE_PERSONS_FROM_TOKEN, Yhumiii27/Keystone#78) ; rôle et ouverture de Keystone lus dans clavis.pub_acces à la connexion et à chaque requête (KEYSTONE_ACCESS_FROM_CLAVIS).
 - 2026-11-23 — **Clavis** : Lot 1 et connexion centrale (jalon B) livrés.
 - 2026-11-10 — **Keystone** : Questionnaire des décisions en attente (38 réponses) appliqué : portail client retiré, planning (import MS Project / GanttProject, date de situation, gel du vendredi, références), P1, P2, P4 et P8 lancées, P7 abandonnée ; nouveaux points R-212 à R-215.
@@ -1604,15 +1520,3 @@ Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste
 - 2026-11-05 — **Keystone** : S-33 : alertes du portefeuille classées par urgence et importance. S-34 : glissement fournisseur remonté aux directeurs (durée 10 j.o. et impact 5 j.o. sur la fin du projet, réglables).
 - 2026-11-05 — **Codex** : Point 133 ajouté ; demandes d’Arche CX-01, CX-02, CX-07 faites.
 - 2026-11-05 — **Arche** : Démo alignée avec Keystone (sa demande du 4 nov., suite de K-14) : le four de CPX-APM-2025-01 est le projet APM-008 de Keystone (réponse RB-006, machine MCH-045 sur la ligne de ramp-up) ; SAT de RCF-019 prévue le 16 nov. (critère K3 de CPX-SAI-2026-01 rempli).
-- 2026-11-05 — **Crucible** : Livraison 21 (suite de CR-060, « continue ») : sites et filiales reliés au référentiel de Matrix (M-6 faite : site smc, filiale SMC). X-23 ajoutée (défaut appliqué). 441 tests.
-- 2026-11-05 — **Crucible** : V-2 validée et déposée à Matrix (M-19, publication vigie.pub_suspensions_essais, Yhumiii27/Matrix#73).
-- 2026-11-04 — **Keystone** : Questionnaire de suivi de la livraison 9 (28 questions, « recommandé ») appliqué : Gantt (refus avant la logique, filtre équipement), qualité du planning au portefeuille, seuils de dérive dans Paramètres, alerte de glissement fournisseur, ancien journal client supprimé (R-171 fait), vignette capacité, notification des tâches récurrentes ; demande déposée chez Arche (démo K-14).
-- 2026-11-04 — **Arche** : AR-033 : Vigie a traité VG-01 à VG-05 ; Arche préfixe le lien profond des études (chemin relatif) par l’adresse de Vigie ; reste M-15 (Matrix).
-- 2026-11-04 — **Crucible** : Livraison 20 (suite de CR-060, « on reprend ») : projets R&D lus dans Keystone (pub_projets, catégorie R&D) et salariés lus dans Cursus (pub_salaries). X-22 ajoutée (défaut appliqué). 440 tests.
-- 2026-11-03 — **Keystone** : R-211 fait : planning du portefeuille en trois catégories — en cours, pipeline, sous garantie (demande du responsable produit, PF-1).
-- 2026-11-02 — **Keystone** : Demandes Matrix M-17 et M-18 traitées : vues pub_ définies par Matrix (garde-fou sur les nouvelles migrations), échanges par vues pub_ et API, règles dans CLAUDE.md.
-- 2026-11-02 — **Keystone** : Demande d’Arche K-14 traitée (points 1 à 4) : démonstration alignée — trois CAPEX et le besoin du four dans la simulation, projet APM-008 en garantie (machine MCH-045, réponse RB-006), SAT de RCF-019 planifiée ; renommage de RCF-019 (point 5) non fait.
-- 2026-11-02 — **Keystone** : Livraison 9 : lots R-168 (avant / après et motif du journal d’audit) et R-171 (nettoyage du code) lancés.
-- 2026-11-02 — **Keystone** : R-168 : avant / après et motif dans tout le journal d’audit, garde-fou de couverture. R-171 : nettoyage du code (reste client_communications, attend D-5).
-- 2026-11-02 — **Arche** : Le responsable produit confirme la réponse par défaut de N-26 à N-38 : toutes les questions de DECISIONS.md sont tranchées ; restent les données D-1 à D-8.
-- 2026-11-02 — **Crucible** : Livraison 15 (CR-083, « lance le prochain point ») : API REST en lecture des systèmes de bancs, événements par déclencheurs, webhooks signés. X-17 ajoutée (défaut appliqué). 409 tests.

@@ -22,6 +22,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point MO-N01 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Livraison 0 (cadrage) faite, réponses appliquées (Modulus#4) ; M-23 dans les scripts de Matrix (#99)."
     }
   ],
   "items": [
@@ -40,9 +44,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": null,
-        "note": "Cadrage en cours (24 nov. 2026) : rien n’est construit avant que le propriétaire ait lu le cadrage et répondu ou accepté les défauts."
+        "state": "fait",
+        "delivery": "PR Modulus#4",
+        "note": "Cadrage livré, réponses du questionnaire appliquées (Modulus#4). M-23 : rôle et schéma modulus dans les scripts de Matrix (Matrix#99)."
       }
     },
     {

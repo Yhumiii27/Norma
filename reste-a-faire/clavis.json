@@ -32,6 +32,10 @@
     {
       "date": "2026-11-24",
       "text": "Audit du design de Norma 2.0 : point CL-N07 (coque commune)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Lots A, B, C, D fusionnés (Clavis#12, #13, #14 ; DR-1 à DR-6 par défaut, transport des e-mails inactif en attente de la DSI), lot E en partie ; écarts de l’audit Norma corrigés (#14) ; coque Norma 2.0 (#15)."
     }
   ],
   "items": [
@@ -50,9 +54,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Lot A (PR Clavis#13, brouillon)",
-        "note": "Construit et vérifié sur la branche : envoi par CLAVIS_MAIL_TRANSPORT none | file (Graph ou SMTP non construit, DSI), réinitialisation, déblocage, fermer toutes les sessions, départ en un geste et son annulation, motif pour désactiver, écran d’import avec aperçu des écarts, journal filtrable et export CSV."
+        "state": "fait",
+        "delivery": "PR Clavis#13",
+        "note": "Lot A fusionné (Clavis#13). Transport des e-mails inactif (CLAVIS_MAIL_TRANSPORT=none) tant que la DSI n’a pas choisi Graph Mail.Send ou SMTP."
       },
       "aliases": [
         "lot A"
@@ -74,8 +78,8 @@
       "evidence": [],
       "progress": {
         "state": "fait",
-        "delivery": "Lot B (PR Clavis#12, fusionnée le 24 nov. 2026)",
-        "note": "person_roles, catalogue des rôles, copie, profils modifiables, écarts, matrice, modifications en lot, tâche rights-expiry. Reste : site de rattachement lu à l’import, origine « demande » (lot E)."
+        "delivery": "PR Clavis#12",
+        "note": "Lot B fusionné (Clavis#12)."
       },
       "aliases": [
         "lot B"
@@ -96,9 +100,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Lot C (sécurité) fusionné (Clavis#14)."
       },
       "aliases": [
         "lot C"
@@ -119,9 +123,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Lot D (paramétrage) fusionné (Clavis#14)."
       },
       "aliases": [
         "lot D"
@@ -142,9 +146,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Clavis#14",
+        "note": "Partie interne faite (Clavis#14) ; le reste attend des systèmes ou décisions externes."
       },
       "aliases": [
         "lot E"
@@ -165,9 +169,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-1"
@@ -188,9 +192,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-2"
@@ -211,9 +215,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-3"
@@ -234,9 +238,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-4"
@@ -257,9 +261,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-5"
@@ -280,9 +284,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#12",
+        "note": "Réponse par défaut appliquée (Clavis#12, « je suis ok lance le tout »)."
       },
       "aliases": [
         "DR-6"
@@ -323,9 +327,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Lot A (PR Clavis#13, brouillon)",
-        "note": "Écran /directory/import avec aperçu (créées, mises à jour, absentes, écarts), puis import."
+        "state": "fait",
+        "delivery": "PR Clavis#13",
+        "note": "Écran /directory/import avec aperçu (Clavis#13)."
       }
     },
     {
@@ -363,9 +367,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Lot A (PR Clavis#13, brouillon)",
-        "note": "Envoi derrière CLAVIS_MAIL_TRANSPORT none (défaut, affiché une fois) | file (.eml, essais) ; Graph Mail.Send ou SMTP inactif tant que la DSI n’a pas choisi."
+        "state": "fait",
+        "delivery": "PR Clavis#13",
+        "note": "Envoi des mots de passe provisoires construit (Clavis#13) ; transport inactif (none) tant que la DSI n’a pas choisi Graph Mail.Send ou SMTP."
       }
     },
     {
@@ -424,9 +428,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -445,9 +449,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -466,9 +470,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -487,9 +491,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -508,9 +512,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -529,9 +533,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#14",
+        "note": "Écart de l’audit Norma corrigé (Clavis#14)."
       }
     },
     {
@@ -550,9 +554,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Clavis#15",
+        "note": "Coque commune Norma 2.0 (Clavis#15)."
       }
     }
   ]
