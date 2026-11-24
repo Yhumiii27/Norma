@@ -37,6 +37,10 @@
     {
       "date": "2026-11-24",
       "text": "Écarts de l’audit Norma corrigés (Matrix#96, #98 ; scripts du serveur commun #99) ; coque Norma 2.0 (#100) ; i18n en cours (~650 chaînes)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Matrix#100) : MX-N07 fait."
     }
   ],
   "items": [
@@ -850,7 +854,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "L",
       "sources": [
@@ -860,8 +864,8 @@
       "evidence": [],
       "progress": {
         "state": "fait",
-        "delivery": "PR Matrix#100",
-        "note": "Coque commune Norma 2.0 (Matrix#100)."
+        "delivery": "Matrix#100",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
       }
     }
   ]

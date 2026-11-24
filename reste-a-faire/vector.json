@@ -26,6 +26,10 @@
     {
       "date": "2026-11-24",
       "text": "Inscrit au registre de Norma 2.1.0 (DN-1) ; repris dans le reste à faire global ; point VE-N01 (coque commune Norma 2.0)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Vector#1) : VE-N01 fait."
     }
   ],
   "items": [
@@ -176,7 +180,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -185,9 +189,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Vector#1",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
       }
     }
   ]

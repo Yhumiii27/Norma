@@ -55,7 +55,8 @@ De haut en bas, padding 18 / 14 px, gap 14 px, bordure droite `--color-neutral-9
 
 1. **Marque** (`.coque-brand`) : carré de 26 px à bord d'accent avec halo et glyphe Phosphor de 15 px, puis le nom de
    l'outil, 16 px (`--text-brand`), poids 500. ≤ 1024 px : bouton × « Fermer le menu » à droite.
-2. **Recherche de pages ⌘K** (`PageSearch`, `.coque-pagesearch`) : champ 32 px, 12,5 px, loupe à gauche, `⌘K` à droite ;
+2. **Recherche de pages ⌘K** (`PageSearch`, `.coque-pagesearch`) : champ 32 px, 12,5 px, loupe à gauche, `⌘K` à droite
+   (`--color-neutral-400`, contraste AA dans les deux affichages, Norma 2.2) ;
    ⌘K / Ctrl+K y met le focus, Entrée ouvre la première page trouvée, Échap vide ; pendant la saisie les résultats
    (page + section) remplacent le menu. **Toujours juste sous la marque.**
 3. **Entrées fixes** (`NavList` + `NavEntry`) : Accueil, Mon travail… — 13 px, padding 7 / 8 px, rayon 8, icône 16 px,
@@ -74,7 +75,8 @@ le fil d'Ariane de l'en-tête, jamais à la place des éléments ci-dessus.
 
 ## 3. En-tête de page (`PageHeader`)
 
-Une ligne `.coque-header` (flex, `align-items: flex-end`, gap 16 px, passe à la ligne si besoin), **ordre fixe** :
+Une ligne `.coque-header` (flex, `align-items: flex-end`, `justify-content: flex-end`, gap 16 px, passe à la ligne si
+besoin), **ordre fixe** :
 
 | # | Élément | Mesures |
 | --- | --- | --- |
@@ -85,6 +87,12 @@ Une ligne `.coque-header` (flex, `align-items: flex-end`, gap 16 px, passe à la
 | 3 | **Actions de la page** (`actions`, `primary`, § 3.3) | boutons `sm` |
 | 4 | **Outils communs** (`HeaderTools`, ordre fixe) : date de situation · aide / assistant · cloche | date 12 px ; boutons-icônes nommés |
 | 5 | **Langue / affichage empilés** (`PrefsStack`, § 4) — **toujours le dernier élément, à l'extrémité droite** | 74 × 56 px |
+
+**Passage à la ligne** (Norma 2.2, relevé sur les en-têtes chargés de Crucible, Keystone et Vigie) : quand les éléments ne
+tiennent pas sur une ligne, la seconde ligne (recherche, actions, outils, date, cloche, paire langue / affichage) **reste
+alignée à droite** (`justify-content: flex-end`) ; le bloc du titre garde la gauche par sa marge automatique
+(`.coque-header-left { margin-right: auto }`), sur une ligne comme sur deux. Un outil ne remet pas
+`justify-content: flex-start` ni ne retire cette marge.
 
 Sous l'en-tête : le bandeau « Hors de mon espace · Lecture seule » (`outside`, `.coque-outside`, les actions disparaissent),
 puis la **barre d'outils de la page** (`toolbar`, § 5).
@@ -184,6 +192,10 @@ Sous l'en-tête, une seule ligne `.coque-toolbar` (gap 12 px, passe à la ligne)
 
 - `MobileTopBar`, premier élément de `<main>`, collante, fond 88 % flouté, bordure basse : **bouton « Menu »** (secondaire,
   icône liste) · glyphe + nom de l'outil · … · outils (cloche) · **paire langue / affichage** (dernier élément).
+- **Une seule cloche visible** (Norma 2.2) : ≤ 1024 px, quand la barre supérieure porte la cloche, celle de l'en-tête de page
+  est masquée (`coque.css` : `.coque:has(.coque-topbar .coque-bell) .coque-header .coque-bell { display: none }`) ; un outil
+  qui pose sa propre cloche lui donne la classe `.coque-bell` dans les deux places. Sans cloche dans la barre supérieure,
+  celle de l'en-tête reste.
 - Le bouton ouvre la barre latérale en tiroir (300 px, ombre `lg`, voile) ; la page derrière est inerte ; Échap, le voile, ×
   et tout lien suivi le ferment ; le focus revient au bouton. Élargir la fenêtre le ferme.
 

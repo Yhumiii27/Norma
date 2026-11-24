@@ -49,6 +49,10 @@
     {
       "date": "2026-11-24",
       "text": "Contraintes du schéma (Cursus#44, en CI) ; connecteurs rangés par outil (#43) ; journal en ajout seul en attente du responsable produit (conflit avec la purge RGPD)."
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Coque commune Norma 2.x fusionnée (Cursus#45) : CU-N05 fait ; contraintes du schéma fusionnées (Cursus#44) : CU-191 fait ; CU-N06 ajouté (tableau du tableau de bord RH à 390 px)."
     }
   ],
   "items": [
@@ -4426,7 +4430,7 @@
       "category": "exploitation",
       "kind": "tache",
       "priority": "plus_tard",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -4434,9 +4438,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "PR Cursus#44",
-        "note": "PR Cursus#44 ouverte, pas encore fusionnée (CI)."
+        "state": "fait",
+        "delivery": "Cursus#44",
+        "note": "Clés étrangères et contraintes déclarées dans le schéma, fusionné (Cursus#44)."
       },
       "details": {
         "preuves": "server/src/db.ts:10-49, :79 · shared/domain.ts:101"
@@ -4533,7 +4537,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "L",
       "sources": [
@@ -4542,10 +4546,31 @@
       ],
       "evidence": [],
       "progress": {
+        "state": "fait",
+        "delivery": "Cursus#45",
+        "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "category": "ergonomie_accessibilite",
+      "kind": "ergonomie",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "progress": {
         "state": "a_faire",
         "delivery": null,
         "note": ""
-      }
+      },
+      "id": "CU-N06",
+      "title": "Tableau de bord RH : un tableau déborde à 390 px",
+      "description": "Relevé pendant l'alignement sur la coque commune (Cursus#45) : sur téléphone (390 px), un tableau du tableau de bord RH dépasse la largeur de la page (défilement horizontal de la page). Le mettre dans un conteneur à défilement propre (TableScroll de la charte) ou en réduire les colonnes, pour qu'aucune page ne défile horizontalement.",
+      "sources": [
+        "Cursus#45 (coque commune, 24 nov. 2026)",
+        "norma/charte/COQUE.md § 1 et § 6 (tableaux dans TableScroll)"
+      ]
     }
   ]
 }
