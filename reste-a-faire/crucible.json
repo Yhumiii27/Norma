@@ -1,7 +1,7 @@
 {
   "outil": "crucible",
   "generated": "2026-10-22",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "claude/lucid-dirac-7bdq6x",
   "origine": {
     "depot": "Yhumiii27/Crucible",
@@ -198,6 +198,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Crucible#49) : CR-N06 fait."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Conteneur unique pour Coolify, derrière son authentification HTTP (Crucible#50 ; CR-007) ; logo de Norma 2.3.0 dans la coque et en favicon (Crucible#51, fusionnée)."
     }
   ],
   "items": [
@@ -343,7 +347,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Livraison 1",
-        "note": "Kit Coolify du serveur commun (deploy/compose.shared.yaml, EXPLOITATION.md § 4.1) essayé en local contre le socle de Matrix (rôle crucible_app posé à la main) : migrations, jeu de démonstration, santé, sauvegarde, authentification HTTP. Reste : rôle et partage côté Matrix (M-1 à M-5), mise en service dans Coolify, Entra réel."
+        "note": "Kit Coolify du serveur commun (deploy/compose.shared.yaml, EXPLOITATION.md § 4.1) essayé en local contre le socle de Matrix (rôle crucible_app posé à la main) : migrations, jeu de démonstration, santé, sauvegarde, authentification HTTP. Reste : rôle et partage côté Matrix (M-1 à M-5), mise en service dans Coolify, Entra réel. 25 nov. 2026 : conteneur unique derrière l’authentification HTTP de Coolify (deploy/start.sh, CRUCIBLE_SINGLE_CONTAINER, Crucible#50)."
       }
     },
     {

@@ -1,7 +1,7 @@
 {
   "outil": "cursus",
   "generated": "2026-10-10",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Cursus",
@@ -53,6 +53,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Cursus#45) : CU-N05 fait ; contraintes du schéma fusionnées (Cursus#44) : CU-191 fait ; CU-N06 ajouté (tableau du tableau de bord RH à 390 px)."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "CU-N03 fait : journal en ajout seul et purge par le rôle cursus_purge (Cursus#46, Matrix#101, décision M-24), active sur le serveur commun depuis le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Cursus#47, ouverte)."
     }
   ],
   "items": [
@@ -4495,8 +4499,8 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "bloque_attente_proprietaire",
-      "waiting_on": "Choix du responsable produit : purge RGPD du journal par un rôle dédié ?",
+      "status": "partiel",
+      "waiting_on": "",
       "effort": null,
       "sources": [
         "PR Cursus#42 (audit Norma 1.0, 24 nov. 2026)",
@@ -4504,9 +4508,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Conflit avec la purge RGPD du journal (appliquerConservation, regrouper, marquerPaie, reprendreJournal font UPDATE / DELETE). Choix proposé : purge par un rôle dédié, le rôle de l’application n’ayant plus que l’ajout."
+        "state": "fait",
+        "delivery": "PR Cursus#46",
+        "note": "Journal des actions en ajout seul (déclencheurs refusant UPDATE, DELETE et TRUNCATE à cursus_app) ; conservation RGPD par le rôle dédié cursus_purge et cursus.purger_journal(), registre des purges (Cursus#46) ; rôle et droits au socle de Matrix (décision M-24, Matrix#101). Purge active sur le serveur commun, premier passage enregistré le 25 nov. 2026 à 13:08."
       }
     },
     {

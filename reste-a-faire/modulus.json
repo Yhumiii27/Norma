@@ -1,7 +1,7 @@
 {
   "outil": "modulus",
   "generated": "2026-11-24",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Modulus",
@@ -26,6 +26,10 @@
     {
       "date": "2026-11-24",
       "text": "Livraison 0 (cadrage) faite, réponses appliquées (Modulus#4) ; M-23 dans les scripts de Matrix (#99)."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Livraison 1 (bêta) fusionnée (Modulus#6) : MO-L1 et MO-N01 faits, MO-L2 à MO-L6 en cours (écrans sur données fictives, intégrations à venir) ; en ligne sur Coolify (conteneur unique, authentification HTTP) ; logo de Norma 2.3.0 dans la coque et en favicon (Modulus#7, fusionnée)."
     }
   ],
   "items": [
@@ -57,16 +61,16 @@
       "kind": "livraison",
       "priority": "prochaine_etape",
       "status": "bloque_attente_proprietaire",
-      "waiting_on": "Livraison précédente ; Norma 1.0, demande Clavis C-1",
+      "waiting_on": "Demande Clavis C-1, liens et publications de Matrix (M-1, M-2)",
       "effort": null,
       "sources": [
         "docs/PLAN.md, livraison 1"
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Modulus#6",
+        "note": "Livraison 1 (bêta) fusionnée le 25 nov. 2026 (docs/DELIVERY-1.md) : socle de Vector (lui-même de Clavis), PostgreSQL seul, schéma modulus (38 tables, 134 contraintes), connexion par Clavis et droits lus dans clavis.pub_acces, journal en ajout seul, jeu de démonstration fictif, CI ; conteneur unique Coolify (deploy/start.sh, MODULUS_SINGLE_CONTAINER) en ligne derrière l’authentification HTTP de Coolify. Rôles dans Clavis (C-1) et liens de Matrix (M-1, M-2) attendus."
       }
     },
     {
@@ -84,9 +88,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Modulus#6",
+        "note": "Machines, versions, options, règles, BOM et deltas, budgets, grilles datées et validation construits sur le jeu de démonstration (Modulus#6) ; reste la reprise journalisée du catalogue de Keystone et les prix d’achat (K-1)."
       }
     },
     {
@@ -104,9 +108,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Modulus#6",
+        "note": "Affaires, configurateur à règles, offres figées par déclencheur, revue d’offre, pipeline et impression construits (Modulus#6) ; dépôt dans Codex simulé (file outbox) jusqu’au connecteur."
       }
     },
     {
@@ -124,9 +128,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Modulus#6",
+        "note": "Questionnaires types, demandes, qualification, chiffrage, réponse et cas proches construits (Modulus#6) ; reste l’API /api/v1/quote-requests pour Arche et la vue pub_cotations appliquée par Matrix."
       }
     },
     {
@@ -144,9 +148,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Modulus#6",
+        "note": "Commande, configuration vendue immuable, avenants et retour du projet (saisi) construits (Modulus#6) ; reste la vue pour Keystone appliquée par Matrix et le coût réel lu dans Keystone (K-2)."
       }
     },
     {
@@ -164,9 +168,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "PR Modulus#6",
+        "note": "Niveaux de savoir-faire calculés, carte, preuves, propositions d’entrée au catalogue construits (Modulus#6) ; caractéristiques pas encore colonnes de la carte."
       }
     },
     {
@@ -205,9 +209,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "PR Modulus#6",
+        "note": "Livraison 1 construite sur la coque commune de Norma 2.1 (AppShell, PageHeader, PrefsStack), fusionnée le 25 nov. 2026."
       }
     }
   ]

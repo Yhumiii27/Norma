@@ -1,7 +1,7 @@
 {
   "outil": "codex",
   "generated": "2026-10-09",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Codex",
@@ -54,6 +54,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Codex#35) : CX-N07 fait ; CX-N08 ajouté (CLAUDE.md cite encore ThemeToggle.tsx)."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée)."
     }
   ],
   "items": [
@@ -3481,6 +3485,27 @@
         "state": "a_faire",
         "delivery": null,
         "note": ""
+      }
+    },
+    {
+      "id": "CX-R07",
+      "title": "Demande de Cursus (lot 16) : tous les documents de Cursus stockés dans Codex",
+      "description": "Catégories du dossier du personnel (types ou sous-types de RHF publiés dans codex.pub_types_document), dépôt sans circuit par l’application, lecture et destruction par l’application. Entrée du 2026-11-10 ajoutée au REQUESTS.md de Codex (Codex#29), statut OUVERTE. Côté Matrix : liens de lecture de cursus_app (MX-R11).",
+      "category": "integrations",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "Accord du propriétaire de Codex",
+      "effort": null,
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-10 (Cursus → Codex)",
+        "PR Codex#29"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Demande inscrite le 25 nov. 2026 (Codex#29), à traiter avec l’accord du propriétaire."
       }
     },
     {
