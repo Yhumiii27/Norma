@@ -149,3 +149,13 @@ test('≤ 1024 px : une seule cloche visible quand la barre supérieure la porte
   assert.match(doc, /Une seule cloche visible/);
   assert.match(doc, /justify-content: flex-end/);
 });
+
+test('chaque outil du registre a son logo, et ToolLogo les connaît tous', async () => {
+  const { readFileSync, existsSync } = await import('node:fs');
+  const { outils } = JSON.parse(readFileSync(new URL('../registre/outils.json', import.meta.url), 'utf8'));
+  const tsx = readFileSync(new URL('../charte/ds/ToolLogo.tsx', import.meta.url), 'utf8');
+  for (const { code } of outils) {
+    assert.ok(existsSync(new URL(`../charte/logos/${code}.svg`, import.meta.url)), `charte/logos/${code}.svg absent`);
+    assert.match(tsx, new RegExp(`\\n  ${code}: \\(id\\) =>`), `ToolLogo sans ${code}`);
+  }
+});

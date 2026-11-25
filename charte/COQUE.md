@@ -53,8 +53,9 @@ import '@norma/charte/touch.css'; import '@norma/charte/coque.css';` dans la mis
 
 De haut en bas, padding 18 / 14 px, gap 14 px, bordure droite `--color-neutral-900` :
 
-1. **Marque** (`.coque-brand`) : carré de 26 px à bord d'accent avec halo et glyphe Phosphor de 15 px, puis le nom de
-   l'outil, 16 px (`--text-brand`), poids 500. ≤ 1024 px : bouton × « Fermer le menu » à droite.
+1. **Marque** (`.coque-brand`) : le **logo de l'outil** en 26 px (`<Sidebar logo={<ToolLogo code="…" />}>`, tuile
+   `.coque-logo-mark`, Norma 2.3), puis le nom de l'outil, 16 px (`--text-brand`), poids 500. ≤ 1024 px : bouton × « Fermer
+   le menu » à droite. (Sans `logo`, l'ancien carré de 26 px à bord d'accent et glyphe Phosphor de 15 px reste possible.)
 2. **Recherche de pages ⌘K** (`PageSearch`, `.coque-pagesearch`) : champ 32 px, 12,5 px, loupe à gauche, `⌘K` à droite
    (`--color-neutral-400`, contraste AA dans les deux affichages, Norma 2.2) ;
    ⌘K / Ctrl+K y met le focus, Entrée ouvre la première page trouvée, Échap vide ; pendant la saisie les résultats
@@ -198,6 +199,17 @@ Sous l'en-tête, une seule ligne `.coque-toolbar` (gap 12 px, passe à la ligne)
   celle de l'en-tête reste.
 - Le bouton ouvre la barre latérale en tiroir (300 px, ombre `lg`, voile) ; la page derrière est inerte ; Échap, le voile, ×
   et tout lien suivi le ferment ; le focus revient au bouton. Élargir la fenêtre le ferme.
+
+## 8 bis. Logos des outils (Norma 2.3)
+
+- Un logo par outil du registre, validé par le propriétaire le 25 novembre 2026 : `charte/logos/<code>.svg` (tuile de 64 × 64,
+  coins de 14, dégradé propre à l'outil, glyphe blanc). Seule exception à « jamais de couleur en dur » : les couleurs d'un
+  logo sont celles de la marque, identiques dans les deux affichages.
+- Dans la coque : `ToolLogo` (`charte/ds/ToolLogo.tsx`, généré depuis les SVG) — 26 px dans la marque de la barre
+  latérale, 20 px dans la barre supérieure (`<MobileTopBar logo={<ToolLogo code="…" size={20} />}>`, `.coque-topbar-mark`).
+- **Favicon** : le SVG de l'outil, recopié de `norma/charte/logos/<code>.svg` (Next.js : `src/app/icon.svg`, ou
+  `app/icon.svg` ; une page HTML : `<link rel="icon" type="image/svg+xml" href="…">`). Un ancien `favicon.ico` est retiré.
+- Un logo se change ici, jamais dans un outil.
 
 ## 9. Ce qui reste propre à chaque outil
 
