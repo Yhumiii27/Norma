@@ -1,7 +1,7 @@
 {
   "outil": "keystone",
   "generated": "2026-10-10",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main-2a2fep",
   "origine": {
     "depot": "Yhumiii27/Keystone",
@@ -358,6 +358,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Keystone#84) : R-N03 fait ; contraintes de format en base et renvoi à la liste globale fusionnés (Keystone#83) : R-N02 fait ; R-N04 ajouté (écran Plan à 390 px)."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Logo de Norma 2.3.0 dans la coque et en favicon (Keystone#85, ouverte)."
     }
   ],
   "items": [

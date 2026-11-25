@@ -1,7 +1,7 @@
 {
   "outil": "vigie",
   "generated": "2026-10-10",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Vigie",
@@ -61,6 +61,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Logo de Norma 2.3.0 dans la coque et en favicon (Vigie#45, fusionnée)."
     }
   ],
   "items": [

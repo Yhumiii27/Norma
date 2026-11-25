@@ -1,7 +1,7 @@
 {
   "outil": "vector",
   "generated": "2026-11-24",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/vector",
@@ -30,6 +30,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Vector#1) : VE-N01 fait."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "VE-L1 fait : livraison 1 (Vector#1) déployée le 25 nov. 2026 en conteneur unique (Vector#2) ; schéma et rôle vector_app au socle (M-25, Matrix#102) ; logo de Norma 2.3.0 dans la coque et en favicon (Vector#3, fusionnée)."
     }
   ],
   "items": [
@@ -68,9 +72,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "L1",
-        "note": "Socle, schéma, règles, tous les écrans et connecteurs simulés construits sur la branche claude/quirky-brown-c7af5m ; PR à fusionner une fois la CI verte (DN-1 attendue pour le contrôle Norma)."
+        "state": "fait",
+        "delivery": "PR Vector#1",
+        "note": "Livraison 1 fusionnée le 24 nov. 2026 (Vector#1) ; image Coolify en conteneur unique (Vector#2, VECTOR_SINGLE_CONTAINER) déployée le 25 nov. 2026 derrière l’authentification HTTP de Coolify ; schéma vector et rôle vector_app dans le socle de Matrix (décision M-25, Matrix#102)."
       }
     },
     {

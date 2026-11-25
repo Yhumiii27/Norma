@@ -1,7 +1,7 @@
 {
   "outil": "norma",
   "generated": "2026-11-24",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Norma",
@@ -35,6 +35,10 @@
     {
       "date": "2026-11-24",
       "text": "Norma 2.2.0 : retours des outils sur la coque (en-tête passé à la ligne aligné à droite, ⌘K lisible en affichage clair, une seule cloche ≤ 1024 px) ; NO-006 fait ; NO-007 en cours (restent Vigie et Modulus)."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Norma 2.3.0 : logos des outils dans la charte (ToolLogo, favicon), NO-008 ajouté (en cours : Keystone#85, Cursus#47 ouvertes) ; NO-007 fait (coque reprise par les dix outils, Modulus#6 le dernier)."
     }
   ],
   "items": [
@@ -183,9 +187,32 @@
         "test/coque.test.mjs"
       ],
       "progress": {
+        "state": "fait",
+        "delivery": "Norma 2.0.0 – 2.2.0",
+        "note": "Contrat et composants livrés (2.0.0) ; retours des outils appliqués en 2.2.0 (en-tête passé à la ligne aligné à droite, ⌘K lisible en affichage clair, une seule cloche ≤ 1024 px). Coque reprise par les dix outils : Vigie#44 le 24 nov. 2026, Modulus dans sa livraison 1 (Modulus#6, 25 nov. 2026)."
+      }
+    },
+    {
+      "id": "NO-008",
+      "title": "Logos des outils dans la charte",
+      "description": "Un logo par outil dans charte/logos, composant ToolLogo de charte/ds pour la marque de la coque, et favicon de chaque outil.",
+      "category": "socle",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "Norma 2.3.0 (PR Norma#12)",
+        "CHANGELOG.md"
+      ],
+      "evidence": [
+        "charte/logos"
+      ],
+      "progress": {
         "state": "en_cours",
-        "delivery": "Norma 2.0.0",
-        "note": "Contrat et composants livrés ; corrections 2.2.0 (passage à la ligne de l’en-tête, contraste de ⌘K, une seule cloche). Coque reprise par les neuf outils dotés d’une interface (Vigie#44 fusionnée le 24 nov. 2026) ; reste Modulus (MO-N01, pas encore d’interface)."
+        "delivery": "Norma 2.3.0",
+        "note": "Logos livrés en 2.3.0 (charte/logos, composant ToolLogo, favicon). Fusionnés le 25 nov. 2026 : Arche#65, Clavis#18, Codex#36, Crucible#51, Matrix#103, Modulus#7, Vector#3, Vigie#45. Restent ouvertes : Keystone#85, Cursus#47."
       }
     }
   ]

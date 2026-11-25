@@ -1,7 +1,7 @@
 {
   "outil": "clavis",
   "generated": "2026-11-24",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Clavis",
@@ -40,6 +40,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Clavis#15) : CL-N07 fait."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "CL-S07 ajouté et fait : conteneur unique (Clavis#17), Clavis activé sur le serveur commun et en ligne le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Clavis#18, fusionnée)."
     }
   ],
   "items": [
@@ -414,6 +418,27 @@
         "state": "a_faire",
         "delivery": null,
         "note": ""
+      }
+    },
+    {
+      "id": "CL-S07",
+      "title": "Mise en service sur le serveur commun et en ligne",
+      "description": "Conteneur unique pour Coolify, connexion du rôle clavis_app et schéma clavis sur le serveur commun, déploiement derrière l’authentification HTTP de Coolify.",
+      "category": "suite",
+      "kind": "exploitation",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "",
+      "effort": null,
+      "sources": [
+        "PR Clavis#17",
+        "deploy/start.sh, deploy/README.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "fait",
+        "delivery": "PR Clavis#17",
+        "note": "Conteneur unique (deploy/start.sh, CLAVIS_SINGLE_CONTAINER, Clavis#17) ; activé sur le serveur commun le 25 nov. 2026 (connexion du rôle clavis_app, schéma, déploiement) ; en ligne sur https://clavis.projectdirection.fr derrière l’authentification HTTP de Coolify. Reste le transport des e-mails (CL-S04) et la connexion centrale des autres outils (CL-S01, CL-S05)."
       }
     },
     {

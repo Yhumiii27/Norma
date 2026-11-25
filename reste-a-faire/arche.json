@@ -1,7 +1,7 @@
 {
   "outil": "arche",
   "generated": "2026-10-22",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "branch": "claude/brave-curie-chxbck",
   "origine": {
     "depot": "Yhumiii27/Arche",
@@ -240,6 +240,10 @@
     {
       "date": "2026-11-24",
       "text": "Coque commune Norma 2.x fusionnée (Arche#63) : AR-N04 fait."
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Conteneur unique pour Coolify, derrière son authentification HTTP (Arche#64 ; AR-009, AR-015) ; logo de Norma 2.3.0 dans la coque et en favicon (Arche#65, fusionnée)."
     }
   ],
   "items": [
@@ -423,7 +427,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 1",
-        "note": "Kit Coolify testé de bout en bout en CI depuis la livraison 4 (docs/EXPLOITATION.md §4)."
+        "note": "Kit Coolify testé de bout en bout en CI depuis la livraison 4 (docs/EXPLOITATION.md §4). 25 nov. 2026 : conteneur unique derrière l’authentification HTTP de Coolify (deploy/start.sh, ARCHE_SINGLE_CONTAINER, Arche#64)."
       }
     },
     {
@@ -543,7 +547,7 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "note": "24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, epc2i-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1).",
+        "note": "24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, epc2i-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1). 25 nov. 2026 : image en conteneur unique prête pour Coolify (Arche#64) ; reste la mise en ligne.",
         "delivery": null
       }
     },
