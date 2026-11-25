@@ -51,6 +51,9 @@
   display: grid; place-items: center; color: var(--color-accent);
   box-shadow: 0 0 14px color-mix(in srgb, var(--color-accent) 40%, transparent);
 }
+/* Logo de l'outil (Norma 2.3.0, charte/logos) : la tuile remplace le carré à bord d'accent. */
+.coque-logo-mark { border: 0; box-shadow: none; overflow: hidden; }
+.coque-logo-mark svg { width: 26px; height: 26px; display: block; }
 .coque-wordmark { font-size: var(--text-brand); font-weight: var(--weight-strong); letter-spacing: -0.01em; }
 .coque-side-close { display: none; }
 
@@ -285,6 +288,8 @@
 .coque-menu-btn.btn { gap: 8px; min-height: var(--touch-target); font-size: var(--text-ui); }
 .coque-topbar-brand { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: var(--weight-strong); }
 .coque-topbar-logo { color: var(--color-accent); }
+.coque-topbar-mark { display: inline-flex; flex: none; border-radius: 5px; overflow: hidden; }
+.coque-topbar-mark svg { width: 20px; height: 20px; display: block; }
 .coque-topbar-tools { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .coque-backdrop { display: none; }
 

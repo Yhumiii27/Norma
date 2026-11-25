@@ -1,5 +1,16 @@
 # Norma — journal des versions
 
+## 2.3.0 — 25 novembre 2026
+
+Logos des outils, validés par le propriétaire (page de proposition du 25 novembre 2026).
+
+- **`charte/logos/<code>.svg`** : un logo par outil du registre (Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis,
+  Matrix, Modulus, Vector) — tuile de 64 × 64, dégradé propre à l'outil, glyphe blanc.
+- **`charte/ds/ToolLogo.tsx`** : le logo en composant (`<ToolLogo code="arche" />`, identifiants de dégradé uniques).
+- **Marque** : `Sidebar` et `MobileTopBar` prennent `logo` (prioritaire) ; `icon` devient facultatif (compatibilité).
+  `coque.css` : `.coque-logo-mark` (26 px) et `.coque-topbar-mark` (20 px).
+- **Favicon** : le SVG de l'outil (`COQUE.md` § 8 bis).
+
 ## 2.2.0 — 24 novembre 2026
 
 Retours des outils pendant leur alignement sur la coque commune (Crucible, Keystone, Vigie, Codex).
