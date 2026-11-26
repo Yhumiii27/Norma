@@ -61,6 +61,10 @@
     {
       "date": "2026-11-26",
       "text": "CU-051 fait (lot 17, Cursus#49) ; CU-142 fait (lot 18, Cursus#50) ; icônes de l’application installée au logo de Norma 2.3.0 (Cursus#48) ; CU-N01 : quatre écrans traduits (Cursus#51) ; CU-037 commencé (côté Codex fait)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "CU-037 avancé (Cursus#52) ; CU-N01 : Habilitations, Confidentialité, Expositions (Cursus#53)."
     }
   ],
   "items": [
@@ -908,8 +912,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Côté Codex fait (Codex#38, 26 nov. 2026) : dépôt, relecture et destruction par l’API. Côté Cursus : adaptation du connecteur en cours."
+        "delivery": "Cursus#52",
+        "note": "Connecteur aligné sur le contrat de Codex#38 (Cursus#52, 26 nov. 2026), Codex simulé pour la démonstration. Reste : identifiants posés des deux côtés, lien Matrix sur codex.pub_types_document, reprise des pièces locales ; CU-037-Q1 (dossiers OPCO sans matricule) appliquée par défaut."
       },
       "details": {
         "preuves": "server/src/integrations/ged.ts:17-22 (DepotGed : chaque appel lève GED_NON_RACCORDEE) · server/src/pieces.ts:126, :130 · shared/reglages.ts (réglage « GED » refusé)"
@@ -4471,8 +4475,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": "Cursus#51",
-        "note": "26 nov. 2026 (Cursus#51) : Hors ligne, mot de passe, Avis demandés et Pointages en chaînes sources (`tn()`, contexte `#…`). Restent les autres écrans, les libellés de `shared/` et le format des dates."
+        "delivery": "Cursus#51, #53",
+        "note": "Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (Cursus#51), Habilitations, Confidentialité (cadre), Expositions et composants communs (Cursus#53). Restent une trentaine d’écrans, les libellés de `shared/`, les dates et les exports."
       }
     },
     {

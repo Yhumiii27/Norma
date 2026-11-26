@@ -2,14 +2,14 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 26 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 817 faits, 91 en cours, 202 à faire, sur 1110 points.
+**Avancement** : 818 faits, 90 en cours, 202 à faire, sur 1110 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
 | [Keystone](#keystone) | 140 | 28 | 51 | 219 | 14 | 20 | 2026-11-25 |
-| [Codex](#codex) | 63 | 15 | 65 | 143 | 0 | 54 | 2026-11-26 |
+| [Codex](#codex) | 64 | 14 | 65 | 143 | 0 | 54 | 2026-11-26 |
 | [Vigie](#vigie) | 299 | 13 | 54 | 366 | 6 | 29 | 2026-11-26 |
 | [Cursus](#cursus) | 179 | 3 | 15 | 197 | 1 | 0 | 2026-11-26 |
 | [Arche](#arche) | 46 | 10 | 1 | 57 | 3 | 3 | 2026-11-25 |
@@ -19,7 +19,7 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 | [Modulus](#modulus) | 3 | 5 | 1 | 9 | 0 | 0 | 2026-11-25 |
 | [Vector](#vector) | 3 | 0 | 5 | 8 | 0 | 0 | 2026-11-25 |
 | [Norma (socle)](#norma) | 7 | 1 | 1 | 9 | 0 | 1 | 2026-11-26 |
-| **Total** | **817** | **91** | **202** | **1110** | | | |
+| **Total** | **818** | **90** | **202** | **1110** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -360,7 +360,7 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
 
 ## Codex
 
-63 faits, 15 en cours, 65 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+64 faits, 14 en cours, 65 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -635,16 +635,13 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
   Option 1 : signer avec une identité stable, choisie par une variable (`CODEX_SIGN_IDENTITY`). Ce peut être un certificat de signature de code auto-signé, créé une fois dans le Trousseau (Assistant de certification), ou un Developer ID si l'utilisateur en a un. Si l'identité est absente, le script revient à la signature ad hoc. Aucun certificat ni aucune clé ne doit entrer dans le dépôt : `.gitignore` exclut déjà `*.p12` et `*.cer`. Option 2, à envisager en complément : demander l'emplacement de téléchargement par `NSSavePanel`, dont le choix par l'utilisateur vaut autorisation, au lieu d'écrire en silence dans `~/Downloads`. Le certificat doit être créé par l'utilisateur sur son Mac.
   *Attend : Une session sur macOS (app Mac, T-02) · Sources : docs/reste-a-faire.md, point 129 (Demande une session sur macOS › App Mac)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 6 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
 
-- **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · partiel* · **en cours (Codex#39)**  
-  Interface par clés (src/lib/i18n.ts) et non par chaînes sources en anglais traduites (REGLES § 2).
-  *Avancement : 26 nov. 2026 (Codex#39) : accueil, départements, validations, pages introuvables et erreur en chaînes sources, contexte `#…`. Restent : explorateur, recherche, fiche document, archivage, administration, aide, et les vocabulaires partagés (`FACET_LABEL`, `failureText`, `Pager`). · Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CX-N08 · CLAUDE.md cite encore ThemeToggle.tsx supprimé (#35)** — *Prochaine étape · non commencé · effort S*  
   Depuis l'alignement sur la coque commune (Codex#35), src/components/shell/ThemeToggle.tsx n'existe plus (paire langue / affichage de la coque, PrefsStack) ; la section « Conventions » du CLAUDE.md de Codex le cite encore comme bouton d'affichage. Corriger le texte pour renvoyer à la coque (norma/charte/COQUE.md § 4).
   *Sources : Codex#35 (coque commune, 24 nov. 2026), CLAUDE.md de Codex, « Conventions », affichage sombre / clair*
 
-Faits : CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formulaires en panneau latéral ; CX-N05 Un dossier par connecteur ; CX-N06 Retirer le correctif local des textes atténués ; CX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
+Faits : CX-N01 Interface par chaînes sources en anglais ; CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formulaires en panneau latéral ; CX-N05 Un dossier par connecteur ; CX-N06 Retirer le correctif local des textes atténués ; CX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="vigie"></a>
 
@@ -957,9 +954,9 @@ Faits : CU-013 Expurger le journal et lui fixer une durée de conservation ; CU-
 - **CU-019 · Coder l'envoi réel à Sage Paie et ne marquer « transmis » qu'après accusé** — *Bloquant production · non commencé · effort M*  
   Dès que SAGE_URL est défini, l'écran annonce l'envoi, mais rien ne part et les feuilles sont marquées transmises à la paie. En attendant, lever une erreur en mode API ; ensuite faire l'appel HTTP hors transaction, contrôler et conserver l'accusé. *Analyse comparative du 25/10/2026 : prérequis bloquant pour la mise en service. Les SIRH du marché (Lucca, Kelio, Silae, Nibelis) livrent un export de variables de paie dont chaque rubrique est confirmée avec le service paie avant la première période. Dans Cursus, les codes JREN (jours de repos rachetés), HNUIT et MAJ_NUIT (heures de nuit), CET et AST_* (astreintes) restent à confirmer : les éléments concernés partent aujourd'hui sans code, sur la liste « à saisir dans Sage » du résumé du lot (server/src/actions/paie.ts:100, server/src/regularisation-paie.ts:50, server/src/astreintes-paie.ts:2-5, server/src/actions/forfait-jours.ts:5). Obtenir la confirmation des codes avec le service paie et les activer dans la correspondance des rubriques avant le premier lot réel.*
   *Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
-- **CU-037 · Déposer les pièces justificatives et les titres dans la GED Codex** — *Prochaine étape · partiel · effort M* · **en cours**  
+- **CU-037 · Déposer les pièces justificatives et les titres dans la GED Codex** — *Prochaine étape · partiel · effort M* · **en cours (Cursus#52)**  
   Les pièces (attestations, cartes CACES, titres signés, passeports) ne sont conservées que dans le dossier local de Cursus ; le réglage « GED » est refusé et l'adaptateur DepotGed lève une erreur à chaque appel. Dès que l'interface de la GED développée avec Codex est connue : coder l'adaptateur (compte de service, classement par salarié et par objet, durée de conservation transmise), reprendre les pièces du dossier local et déposer aussi les titres d'habilitation et comptes rendus d'entretien signés. Attente du marché : standard (Lucca, Factorial, Eurécia archivent les documents du salarié dans un coffre ou une GED). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : dépend de l'interface et de la date de mise en service de la GED.* *10/11/2026 (lot 16) : décision du propriétaire, tous les documents de la suite dans Codex. Côté Cursus, fait : client de Codex (dépôt signé, relecture, destruction avec motif codé), versement des pièces jointes et reprise du dossier local, contrôle des catégories dans `codex.pub_types_document`, stockage « Codex » dans Paramètres, refusé tant que Codex n'est pas raccordé. Reste, hors de Cursus : catégories, dépôt sans circuit, lecture et destruction par l'application (Codex#29) ; liens de lecture de `cursus_app` (Matrix#87) ; puis variables `CODEX_*` posées et stockage choisi. Comptes rendus d'entretien signés : à verser quand ils seront joints au dossier.*
-  *Avancement : Côté Codex fait (Codex#38, 26 nov. 2026) : dépôt, relecture et destruction par l’API. Côté Cursus : adaptation du connecteur en cours. · Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
+  *Avancement : Connecteur aligné sur le contrat de Codex#38 (Cursus#52, 26 nov. 2026), Codex simulé pour la démonstration. Reste : identifiants posés des deux côtés, lien Matrix sur codex.pub_types_document, reprise des pièces locales ; CU-037-Q1 (dossiers OPCO sans matricule) appliquée par défaut. · Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
 
 Faits : CU-020 Coder l'envoi HTTP sortant vers Keystone ; CU-021 Stocker le vrai matricule de paie ; CU-022 Rendre paramétrable la correspondance des rubriques de paie Sage ; CU-023 Alimenter depuis Keystone les chantiers, projets, missions et tâches ; CU-024 Créer une file d'envoi persistante avec reprise sur échec et écran de suivi ; CU-025 Calculer la période de paie Sage à partir de la semaine ; CU-026 Pousser à Keystone les changements de verdict Go / No Go ; CU-027 Contrôler et tracer les demandes Keystone entrantes ; CU-028 Transmettre à la paie les absences validées et proposer un export CSV ; CU-029 Tracer chaque transmission Sage en lot identifié et rejouable ; CU-030 Produire et envoyer le relevé d'heures des intérimaires ; CU-031 Transmettre à la paie les jours de déplacement et le temps de trajet ; CU-032 Créer le module d'envoi d'e-mails et stocker les adresses ; CU-033 Notifier par e-mail les étapes de validation ; CU-034 Planifier des relances automatiques des échéances ; CU-035 Publier un contrat OpenAPI versionné des routes Keystone ; CU-036 Proposer un export calendrier (.ics) ; CU-038 Tenir les intérimaires et les extérieurs et recevoir les pré-déclarations de présence (demande de Vigie).
 
@@ -1046,9 +1043,9 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 
 ### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 2 faits)
 
-- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51)**  
+- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51, #53)**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
-  *Avancement : 26 nov. 2026 (Cursus#51) : Hors ligne, mot de passe, Avis demandés et Pointages en chaînes sources (`tn()`, contexte `#…`). Restent les autres écrans, les libellés de `shared/` et le format des dates. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (Cursus#51), Habilitations, Confidentialité (cadre), Expositions et composants communs (Cursus#53). Restent une trentaine d’écrans, les libellés de `shared/`, les dates et les exports. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CU-N02 · PostgreSQL seul** — *Prochaine étape · partiel*  
   SQLite (node:sqlite) reste le moteur par défaut, PostgreSQL en option ; les tests tournent sur SQLite, PostgreSQL seulement dans le job postgres (REGLES § 4).
   *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
@@ -1416,9 +1413,12 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 ## Mises à jour
 
 - 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
+- 2026-11-26 — **Codex** : CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun.
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
 - 2026-11-26 — **Cursus** : CU-051 fait (lot 17, Cursus#49) ; CU-142 fait (lot 18, Cursus#50) ; icônes de l’application installée au logo de Norma 2.3.0 (Cursus#48) ; CU-N01 : quatre écrans traduits (Cursus#51) ; CU-037 commencé (côté Codex fait).
+- 2026-11-26 — **Cursus** : CU-037 avancé (Cursus#52) ; CU-N01 : Habilitations, Confidentialité, Expositions (Cursus#53).
 - 2026-11-26 — **Matrix** : MX-N01 fait (Matrix#104) ; demande de Codex inscrite (lot 16 : enregistrements du dossier du personnel hors des vues pub_ de Codex, Matrix#105, OUVERTE).
+- 2026-11-26 — **Matrix** : Demande lot 16 de Codex traitée côté dépôt (Matrix#106) ; appliquées sur le serveur : codex.pub_documents, pub_revisions_document, pub_validations ; pub_journal après la migration 0006 de Codex.
 - 2026-11-26 — **Norma (socle)** : Proposition « menus de base communs, tâches et approbations dans toute la suite » (NO-009) : relevé des dix outils, cible, phases, questionnaire TA-1 à TA-16 ; rien n'est construit.
 - 2026-11-25 — **Keystone** : Logo de Norma 2.3.0 dans la coque et en favicon (Keystone#85, ouverte).
 - 2026-11-25 — **Codex** : CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée).
@@ -1472,6 +1472,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Matrix** : Coque commune Norma 2.x fusionnée (Matrix#100) : MX-N07 fait.
 - 2026-11-24 — **Modulus** : Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa).
 - 2026-11-24 — **Modulus** : Audit du design de Norma 2.0 : point MO-N01 (coque commune).
-- 2026-11-24 — **Modulus** : Livraison 0 (cadrage) faite, réponses appliquées (Modulus#4) ; M-23 dans les scripts de Matrix (#99).
-- 2026-11-24 — **Vector** : Cadrage (L0) et socle + interface (L1) dans un dépôt local, en attente de création du dépôt GitHub.
-- 2026-11-24 — **Vector** : Livraison 1 construite : socle, schéma contraint, règles pures, 28 Server Functions, tous les écrans, connecteurs simulés.

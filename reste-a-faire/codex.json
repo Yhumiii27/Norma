@@ -62,6 +62,10 @@
     {
       "date": "2026-11-26",
       "text": "CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun."
     }
   ],
   "items": [
@@ -3528,9 +3532,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Codex#39",
-        "note": "26 nov. 2026 (Codex#39) : accueil, départements, validations, pages introuvables et erreur en chaînes sources, contexte `#…`. Restent : explorateur, recherche, fiche document, archivage, administration, aide, et les vocabulaires partagés (`FACET_LABEL`, `failureText`, `Pager`)."
+        "state": "fait",
+        "delivery": "Codex#39, #41",
+        "note": "Tous les écrans en chaînes sources anglaises, dictionnaire à clés retiré (Codex#39, #41, 26 nov. 2026). Contrôles du navigateur (`npm run a11y`, `npm run e2e`) à relancer sur un serveur construit."
       }
     },
     {
