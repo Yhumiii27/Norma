@@ -1,7 +1,7 @@
 {
   "outil": "matrix",
   "generated": "2026-10-26",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Matrix",
@@ -45,6 +45,10 @@
     {
       "date": "2026-11-25",
       "text": "M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’epc2i-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "MX-N01 fait (Matrix#104) ; demande de Codex inscrite (lot 16 : enregistrements du dossier du personnel hors des vues pub_ de Codex, Matrix#105, OUVERTE)."
     }
   ],
   "items": [
@@ -810,9 +814,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": null,
-        "note": "Coque traduite ; environ 650 chaînes restent à passer par l’i18n."
+        "state": "fait",
+        "delivery": "Matrix#104",
+        "note": "Interface en chaînes sources anglaises traduites en français par `outils/i18n.mjs`, contrôle `test/i18n.test.mjs` (Matrix#104, 25 nov. 2026)."
       }
     },
     {

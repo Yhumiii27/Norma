@@ -1,7 +1,7 @@
 {
   "outil": "cursus",
   "generated": "2026-10-10",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Cursus",
@@ -57,6 +57,10 @@
     {
       "date": "2026-11-25",
       "text": "CU-N03 fait : journal en ajout seul et purge par le rôle cursus_purge (Cursus#46, Matrix#101, décision M-24), active sur le serveur commun depuis le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Cursus#47, ouverte)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "CU-051 fait (lot 17, Cursus#49) ; CU-142 fait (lot 18, Cursus#50) ; icônes de l’application installée au logo de Norma 2.3.0 (Cursus#48) ; CU-N01 : quatre écrans traduits (Cursus#51) ; CU-037 commencé (côté Codex fait)."
     }
   ],
   "items": [
@@ -895,7 +899,7 @@
       "category": "integrations_keystone_sage_e_mails",
       "kind": "tache",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "M",
       "sources": [
@@ -903,9 +907,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
         "delivery": null,
-        "note": ""
+        "note": "Côté Codex fait (Codex#38, 26 nov. 2026) : dépôt, relecture et destruction par l’API. Côté Cursus : adaptation du connecteur en cours."
       },
       "details": {
         "preuves": "server/src/integrations/ged.ts:17-22 (DepotGed : chaque appel lève GED_NON_RACCORDEE) · server/src/pieces.ts:126, :130 · shared/reglages.ts (réglage « GED » refusé)"
@@ -1222,9 +1226,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Cursus#49",
+        "note": "Compensation des astreintes chiffrée et transmise (lot 17, Cursus#49, 25 nov. 2026). Question CU-051-Q1 (taux, majoration week-end et fériés, codes Sage) en attente du propriétaire : valeurs par défaut appliquées."
       },
       "details": {
         "preuves": "grep astreinte → aucun résultat · shared/types.ts:100-105"
@@ -3315,9 +3319,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Cursus#50",
+        "note": "Cycles, affectations, échanges de poste et contrôles à la publication déjà construits (lot 12, chantier C5) ; ajout du lot 18 (Cursus#50, 26 nov. 2026) : alerte sur les postes déjà planifiés quand une habilitation ne sera plus valable. Questions CU-142-Q1 à Q3 appliquées par défaut."
       },
       "details": {
         "preuves": "client/src/pages/ReferentielsHoraires.tsx (horaires par salarié) · shared/rules/repos-nuit.ts · grep -i 3x8\\|rotation\\|echange.*poste → aucun résultat"
@@ -4457,7 +4461,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -4467,8 +4471,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Chaînes sources et sélecteur FR / EN : reprise commencée."
+        "delivery": "Cursus#51",
+        "note": "26 nov. 2026 (Cursus#51) : Hors ligne, mot de passe, Avis demandés et Pointages en chaînes sources (`tn()`, contexte `#…`). Restent les autres écrans, les libellés de `shared/` et le format des dates."
       }
     },
     {
