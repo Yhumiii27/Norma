@@ -1,25 +1,25 @@
 # Reste à faire de la solution EPC2I
 
-Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 25 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
+Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 26 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 813 faits, 91 en cours, 205 à faire, sur 1109 points.
+**Avancement** : 817 faits, 91 en cours, 201 à faire, sur 1109 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
 | [Keystone](#keystone) | 140 | 28 | 51 | 219 | 14 | 20 | 2026-11-25 |
-| [Codex](#codex) | 63 | 14 | 66 | 143 | 0 | 54 | 2026-11-25 |
-| [Vigie](#vigie) | 298 | 14 | 54 | 366 | 6 | 29 | 2026-11-25 |
-| [Cursus](#cursus) | 177 | 2 | 18 | 197 | 1 | 0 | 2026-11-25 |
+| [Codex](#codex) | 63 | 15 | 65 | 143 | 0 | 54 | 2026-11-26 |
+| [Vigie](#vigie) | 299 | 13 | 54 | 366 | 6 | 29 | 2026-11-26 |
+| [Cursus](#cursus) | 179 | 3 | 15 | 197 | 1 | 0 | 2026-11-26 |
 | [Arche](#arche) | 46 | 10 | 1 | 57 | 3 | 3 | 2026-11-25 |
 | [Crucible](#crucible) | 32 | 4 | 2 | 38 | 1 | 1 | 2026-11-25 |
 | [Clavis](#clavis) | 20 | 1 | 4 | 25 | 0 | 0 | 2026-11-25 |
-| [Matrix](#matrix) | 24 | 12 | 3 | 39 | 1 | 2 | 2026-11-25 |
+| [Matrix](#matrix) | 25 | 11 | 3 | 39 | 1 | 2 | 2026-11-26 |
 | [Modulus](#modulus) | 3 | 5 | 1 | 9 | 0 | 0 | 2026-11-25 |
 | [Vector](#vector) | 3 | 0 | 5 | 8 | 0 | 0 | 2026-11-25 |
 | [Norma (socle)](#norma) | 7 | 1 | 0 | 8 | 0 | 0 | 2026-11-25 |
-| **Total** | **813** | **91** | **205** | **1109** | | | |
+| **Total** | **817** | **91** | **201** | **1109** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -360,7 +360,7 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
 
 ## Codex
 
-63 faits, 14 en cours, 66 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+63 faits, 15 en cours, 65 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -461,9 +461,9 @@ Faits : CX-022 Historique des métadonnées (valeurs avant et après) ; CX-023 A
 
 ### Intégrations (17 restants, 2 faits)
 
-- **CX-R07 · Demande de Cursus (lot 16) : tous les documents de Cursus stockés dans Codex** — *Prochaine étape · non commencé*  
+- **CX-R07 · Demande de Cursus (lot 16) : tous les documents de Cursus stockés dans Codex** — *Prochaine étape · partiel* · **en cours (Codex#38)**  
   Catégories du dossier du personnel (types ou sous-types de RHF publiés dans codex.pub_types_document), dépôt sans circuit par l’application, lecture et destruction par l’application. Entrée du 2026-11-10 ajoutée au REQUESTS.md de Codex (Codex#29), statut OUVERTE. Côté Matrix : liens de lecture de cursus_app (MX-R11).
-  *Avancement : Demande inscrite le 25 nov. 2026 (Codex#29), à traiter avec l’accord du propriétaire. · Attend : Accord du propriétaire de Codex · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Codex), PR Codex#29*
+  *Avancement : Traitée le 26 nov. 2026 (Codex#38, décision D-32 à confirmer) : type `DPE`, 11 catégories, dépôt sans circuit par le jeton de Cursus, relecture avec empreinte, destruction avec trace (`destroyed_documents`), Très confidentiel réservé aux lecteurs RH. Reste : durées à confirmer par le DPO, chiffrement au repos (disque du serveur), côté Cursus CU-037, filtre des vues `pub_` demandé à Matrix (MX, demande du 26 nov. 2026, Matrix#105). · Attend : Accord du propriétaire de Codex · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Codex), PR Codex#29*
 - **CX-097 · Dépôt depuis Keystone : lien profond vers le dialogue de création prérempli** — *À décider · attend le responsable produit · effort S*  
   Le manque est confirmé, et il est un peu plus large que décrit. Aucune URL n'ouvre « Nouveau document » prérempli. Surtout, la liste des pièces attendues et le bouton « Déposer » n'existent que dans l'onglet Projet de la fiche d'un document déjà rattaché au projet (page.tsx:249-289). Pour un projet qui n'a encore aucun document dans Codex, il n'y a donc aucun point d'entrée. À écrire : - des paramètres d'URL (ex. `/documents/nouveau?project=…&expected=…`, ou `?new=1&project=…&expected=…` lus par l'AppProvider) qui ouvrent le dialogue prérempli, avec le type verrouillé comme le fait `lockType` (Dialogs.tsx:335) ; - la revalidation côté serveur, déjà en place dans `createDocument` (actions.ts:177-180, 199-203) ; - éventuellement une vue projet (`/projets/{code}`) qui liste les pièces attendues ; - ou, à la place, une API de création réservée à Keystone. Le choix entre les deux relève de O-03.
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 97 (Attend une décision de l'utilisateur › Intégrations)*
@@ -526,15 +526,15 @@ Faits : CX-034 Modificateur désigné par Vigie : son droit de rédiger n'est pa
 - **CX-046 · Servir les fichiers en flux, avec les requêtes partielles (Range)** — *Prochaine étape · partiel · effort M* · **en cours**  
   Le constat est juste, mais la cause du rechargement à chaque page est surtout l'iframe recréée (`key={page}`, DocClient.tsx:30), combinée au `no-store` (route.ts:81). Range seul ne la corrige pas. À faire : 1. Servir le fichier en `ReadableStream` : `createReadStream` en local ; pour SharePoint, relayer le corps de `/content` et transmettre l'en-tête Range à Graph. 2. Gérer Range, avec 206, Content-Range et Accept-Ranges. 3. Rendre le fichier d'une version cacheable en privé (ETag sur l'id de version : une version de travail ne change jamais), ou changer de page sans recréer l'iframe. 4. Côté dépôt, le flux est plus délicat : `countPdfPages` (storage.ts:171-190) a besoin du fichier entier. Il faut écrire sur disque en flux, puis compter les pages à partir du fichier.
   *Avancement : Fait en partie le 15 octobre 2026 : la route fichier sert le stockage en flux (`openStored`, src/lib/storage.ts ; pour SharePoint, corps de `/content` relayé avec l'en-tête Range, non essayé sur un vrai tenant) avec `Accept-Ranges`, 206 et `Content-Range`, 416, le fichier entier pour plusieurs plages, `If-Range`, ETag, Last-Modified, 304 et un HEAD cohérent (`src/lib/ranges.ts`), après les mêmes contrôles d'accès, D-14, suffixes et limite de débit qu'avant, un téléchargement étant journalisé quand sa réponse part du premier octet, et le navigateur garde, revalidé à chaque usage (`private, … · Sources : docs/reste-a-faire.md, point 46 (Développable maintenant › Exploitation et déploiement)*
-- **CX-047 · Chaque navigation recharge toutes les tables** — *Prochaine étape · partiel · effort M* · **en cours**  
+- **CX-047 · Chaque navigation recharge toutes les tables** — *Prochaine étape · partiel · effort M* · **en cours (Codex#37)**  
   Le titre exagère : ce n'est pas « chaque navigation », mais chaque chargement complet et chaque mutation, plus `listDocs` dans chaque page. À faire : - envelopper `listDocs` et `listWorkflows` dans `cache()` (avec des arguments stables, car `opts` est un nouvel objet à chaque appel) ; - dans le layout, ne charger que ce qu'il affiche : validations qui m'attendent, cinq dernières activités visibles, modèles utilisables, avec des requêtes ciblées ; - calculer le compteur hebdomadaire par un agrégat SQL sur `audit_log` (action `in_force`, date de moins de 7 jours) et non sur les 500 dernières lignes.
-  *Avancement : Fait le 17 octobre 2026 : constat revérifié au commit `c80d6ae`. `listDocs` et `listWorkflows` étaient déjà en cache par requête, mais le layout lisait encore tous les documents (`listDocs`, `listTemplates`), « À traiter » tous les documents et tous les circuits avec leurs étapes et commentaires, et l'accueil, Archivage, les pages département et la fiche relisaient tous les documents. Chaque écran lit maintenant ce qu'il montre (`src/lib/queries.ts`), en SQL, avec les règles de visibilité de `readableSql` : le layout lit « À traiter » (seuls les circuits en cours où l'utilisateur a une … · Attend : Reste bloqué par une décision (docs/reste-a-faire.md, état au 18 octobre) · Sources : docs/reste-a-faire.md, point 47 (Développable maintenant › Exploitation et déploiement)*
+  *Avancement : 25 nov. 2026 (Codex#37) : les documents proposés dans les dialogues sont cherchés à la saisie au lieu d’être tous chargés ; constats antérieurs (17 oct. 2026) : chaque écran lit ce qu’il montre, en SQL, avec `readableSql`. · Attend : Reste bloqué par une décision (docs/reste-a-faire.md, état au 18 octobre) · Sources : docs/reste-a-faire.md, point 47 (Développable maintenant › Exploitation et déploiement)*
 - **CX-048 · Sauvegarde et restauration de la base et des fichiers** — *Prochaine étape · partiel · effort M* · **en cours**  
   À faire : 1. Un script de sauvegarde cohérent : dump de la base (`dumpDataDir` de PGlite, serveur arrêté ou mis en pause ; `pg_dump` une fois sur Postgres), plus copie de `files/` au même instant (ou versionnage du stockage objet). 2. Rotation et chiffrement de la sauvegarde. 3. Une procédure de restauration testée. Le script peut s'écrire dès maintenant. La perte de données tolérée, le délai de reprise et le lieu d'hébergement sont à fixer par l'utilisateur (M22, hors liste O-01..O-11).
   *Avancement : Avancé le 2 novembre 2026 (D-28, bibliothèque sur notre serveur) : avec la base sur un serveur PostgreSQL, la base est sauvegardée par le `pg_dump` du serveur commun (dépôt Matrix) et Codex sauvegarde les fichiers (`src/lib/files-backup-core.mjs`, appelé par `backUpNow`, `src/lib/backup.ts`) : chaque fichier référencé copié une fois dans `CODEX_BACKUP_DIR/fichiers/objets/`, vérifié par l'empreinte enregistrée (un fichier altéré n'est pas copié et est signalé), un état JSON par sauvegarde, rotation des états comme les archives puis suppression des copies qu'aucun état ne cite ; « Remettre les … · Sources : docs/reste-a-faire.md, point 48 (Développable maintenant › Exploitation et déploiement)*
-- **CX-049 · Journalisation technique et supervision** — *Prochaine étape · partiel · effort M* · **en cours**  
+- **CX-049 · Journalisation technique et supervision** — *Prochaine étape · partiel · effort M* · **en cours (Codex#37)**  
   Ce qui peut se faire maintenant : (1) Écrire un petit module de journal (src/lib/log.ts) qui écrit en JSON sur stdout avec un niveau, un horodatage, un identifiant de requête (x-request-id ou crypto.randomUUID) et, s'il y en a un, le digest. Remplacer les cinq console.error par ce module. (2) Journaliser en warn les refus 401 et 503 de checkBearer, avec la route et l'IP, sans le jeton. (3) Ajouter src/instrumentation.ts avec onRequestError, pour enregistrer toutes les erreurs serveur : rendu, Server Actions et routes. (4) Ajouter GET /api/health, qui exécute un select 1 via getDb() et vérifie l'accès en écriture à FILES_DIR, ou à SharePoint quand ce stockage est actif. Elle répond 200 ou 503 et ne divulgue aucune donnée. Les métriques et les alertes dépendent de la plateforme d'hébergement. Qui héberge et exploite Codex n'a pas été tranché (question 3 de l'audit, docs/audit-deck-epc2i.md:1217-1218). Ce n'est pas une des questions O-01 à O-11, donc ce point n'est pas classé comme bloqué par une décision.
-  *Avancement : Fait en partie le 15 octobre 2026 (procédure : `docs/exploitation.md`) : (1) `src/lib/log.ts` écrit le journal technique, distinct du journal d'audit, une entrée par ligne : JSON en production, lisible en développement (`CODEX_LOG_FORMAT`), niveau `CODEX_LOG_LEVEL` (`info`), avec l'identifiant de la requête (`X-Request-Id` d'un reverse proxy s'il est un simple jeton, sinon un UUID, renvoyé sur les réponses d'API) ; jamais de jeton, cookie, corps de requête, contenu de document ni chaîne de requête ; d'une erreur, nom, message, code, `digest` et lignes « at » de la pile, jamais les valeurs … · Sources : docs/reste-a-faire.md, point 49 (Développable maintenant › Exploitation et déploiement)*
+  *Avancement : 25 nov. 2026 (Codex#37) : les erreurs du navigateur sont envoyées au journal technique ; journal technique `src/lib/log.ts` depuis le 15 oct. 2026 (procédure `docs/exploitation.md`). Reste la supervision. · Sources : docs/reste-a-faire.md, point 49 (Développable maintenant › Exploitation et déploiement)*
 - **CX-050 · Recherche, facettes et listes : filtrer et paginer en SQL plutôt qu'en mémoire** — *Prochaine étape · partiel · effort L* · **en cours**  
   Point confirmé. Correction : le journal est tronqué à 500 lignes à l'écran, mais son export CSV complet existe déjà, en flux avec un curseur (src/app/api/export/audit/route.ts:14-41). Il manque seulement un filtre et une pagination à l'écran. À faire : - traduire les règles de `canRead` (src/lib/access.ts) en conditions SQL, avec jointures sur `document_readers`, les révisions ouvertes, les étapes de circuit et les titulaires de fonction ; - compter les facettes par `GROUP BY` ; - créer un index plein texte (tsvector ou pg_trgm, avec unaccent) sur le titre, l'ID, les alias et les mots-clés ; - paginer par curseur la recherche, l'explorateur, les validations et le journal. Le contenu des fichiers n'est toujours pas indexé (G15). Le volume réel reste inconnu (M18, O-11), mais rien n'empêche de commencer. Ce chantier va de pair avec le passage à Postgres serveur.
   *Avancement : Fait en partie le 12 octobre 2026 : visibilité traduite en conditions SQL (`readableSql`, `draftingCircleSql`, src/lib/access.ts), `canRead` gardé comme référence et comparé pour chaque personne sous chaque rôle sur des documents variés et sur la base de démo (`tests/integration/access-sql.test.ts`, `seed-sql.test.ts`). Recherche (`searchDocs`, src/lib/queries.ts) : une requête calcule visibilité, texte sans accents ni casse (table `document_terms` tenue par un déclencheur, index trigrammes `pg_trgm`, repli `codex_fold` de la base appliqué aux valeurs comme à la requête), période, comptes … · Sources : docs/reste-a-faire.md, point 50 (Développable maintenant › Exploitation et déploiement)*
@@ -637,9 +637,9 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
 
 ### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 6 faits)
 
-- **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · non commencé* · **en cours**  
+- **CX-N01 · Interface par chaînes sources en anglais** — *Prochaine étape · partiel* · **en cours (Codex#39)**  
   Interface par clés (src/lib/i18n.ts) et non par chaînes sources en anglais traduites (REGLES § 2).
-  *Avancement : Coque passée aux chaînes sources ; environ 1850 appels t.key restent à reprendre. · Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : 26 nov. 2026 (Codex#39) : accueil, départements, validations, pages introuvables et erreur en chaînes sources, contexte `#…`. Restent : explorateur, recherche, fiche document, archivage, administration, aide, et les vocabulaires partagés (`FACET_LABEL`, `failureText`, `Pager`). · Sources : PR Codex#32 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CX-N08 · CLAUDE.md cite encore ThemeToggle.tsx supprimé (#35)** — *Prochaine étape · non commencé · effort S*  
   Depuis l'alignement sur la coque commune (Codex#35), src/components/shell/ThemeToggle.tsx n'existe plus (paire langue / affichage de la coque, PrefsStack) ; la section « Conventions » du CLAUDE.md de Codex le cite encore comme bouton d'affichage. Corriger le texte pour renvoyer à la coque (norma/charte/COQUE.md § 4).
   *Sources : Codex#35 (coque commune, 24 nov. 2026), CLAUDE.md de Codex, « Conventions », affichage sombre / clair*
@@ -650,7 +650,7 @@ Faits : CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formul
 
 ## Vigie
 
-298 faits, 14 en cours, 54 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+299 faits, 13 en cours, 54 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
 ### Tableau de bord, échéances et navigation (1 restants, 18 faits)
 
@@ -930,22 +930,19 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
 
 Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-09 Communication et sensibilisation ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 6 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
 
-- **VG-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours (Vigie#43)**  
-  Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
-  *Avancement : Coque traduite (chaînes sources et sélecteur FR / EN) ; les écrans restent à traduire. · Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **VG-N04 · Tables déclarées dans le schéma vigie** — *Prochaine étape · non commencé*  
   Tables en pgTable réécrites vers « vigie » par le migrateur au lieu de pgSchema(...).table(...) (REGLES § 4).
   *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 
-Faits : VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place).
+Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="cursus"></a>
 
 ## Cursus
 
-177 faits, 2 en cours, 18 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+179 faits, 3 en cours, 15 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -960,22 +957,19 @@ Faits : CU-013 Expurger le journal et lui fixer une durée de conservation ; CU-
 - **CU-019 · Coder l'envoi réel à Sage Paie et ne marquer « transmis » qu'après accusé** — *Bloquant production · non commencé · effort M*  
   Dès que SAGE_URL est défini, l'écran annonce l'envoi, mais rien ne part et les feuilles sont marquées transmises à la paie. En attendant, lever une erreur en mode API ; ensuite faire l'appel HTTP hors transaction, contrôler et conserver l'accusé. *Analyse comparative du 25/10/2026 : prérequis bloquant pour la mise en service. Les SIRH du marché (Lucca, Kelio, Silae, Nibelis) livrent un export de variables de paie dont chaque rubrique est confirmée avec le service paie avant la première période. Dans Cursus, les codes JREN (jours de repos rachetés), HNUIT et MAJ_NUIT (heures de nuit), CET et AST_* (astreintes) restent à confirmer : les éléments concernés partent aujourd'hui sans code, sur la liste « à saisir dans Sage » du résumé du lot (server/src/actions/paie.ts:100, server/src/regularisation-paie.ts:50, server/src/astreintes-paie.ts:2-5, server/src/actions/forfait-jours.ts:5). Obtenir la confirmation des codes avec le service paie et les activer dans la correspondance des rubriques avant le premier lot réel.*
   *Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
-- **CU-037 · Déposer les pièces justificatives et les titres dans la GED Codex** — *Prochaine étape · non commencé · effort M*  
+- **CU-037 · Déposer les pièces justificatives et les titres dans la GED Codex** — *Prochaine étape · partiel · effort M* · **en cours**  
   Les pièces (attestations, cartes CACES, titres signés, passeports) ne sont conservées que dans le dossier local de Cursus ; le réglage « GED » est refusé et l'adaptateur DepotGed lève une erreur à chaque appel. Dès que l'interface de la GED développée avec Codex est connue : coder l'adaptateur (compte de service, classement par salarié et par objet, durée de conservation transmise), reprendre les pièces du dossier local et déposer aussi les titres d'habilitation et comptes rendus d'entretien signés. Attente du marché : standard (Lucca, Factorial, Eurécia archivent les documents du salarié dans un coffre ou une GED). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : dépend de l'interface et de la date de mise en service de la GED.* *10/11/2026 (lot 16) : décision du propriétaire, tous les documents de la suite dans Codex. Côté Cursus, fait : client de Codex (dépôt signé, relecture, destruction avec motif codé), versement des pièces jointes et reprise du dossier local, contrôle des catégories dans `codex.pub_types_document`, stockage « Codex » dans Paramètres, refusé tant que Codex n'est pas raccordé. Reste, hors de Cursus : catégories, dépôt sans circuit, lecture et destruction par l'application (Codex#29) ; liens de lecture de `cursus_app` (Matrix#87) ; puis variables `CODEX_*` posées et stockage choisi. Comptes rendus d'entretien signés : à verser quand ils seront joints au dossier.*
-  *Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
+  *Avancement : Côté Codex fait (Codex#38, 26 nov. 2026) : dépôt, relecture et destruction par l’API. Côté Cursus : adaptation du connecteur en cours. · Sources : docs/RESTE_A_FAIRE.md, « Intégrations (Keystone, Sage, e-mails) »*
 
 Faits : CU-020 Coder l'envoi HTTP sortant vers Keystone ; CU-021 Stocker le vrai matricule de paie ; CU-022 Rendre paramétrable la correspondance des rubriques de paie Sage ; CU-023 Alimenter depuis Keystone les chantiers, projets, missions et tâches ; CU-024 Créer une file d'envoi persistante avec reprise sur échec et écran de suivi ; CU-025 Calculer la période de paie Sage à partir de la semaine ; CU-026 Pousser à Keystone les changements de verdict Go / No Go ; CU-027 Contrôler et tracer les demandes Keystone entrantes ; CU-028 Transmettre à la paie les absences validées et proposer un export CSV ; CU-029 Tracer chaque transmission Sage en lot identifié et rejouable ; CU-030 Produire et envoyer le relevé d'heures des intérimaires ; CU-031 Transmettre à la paie les jours de déplacement et le temps de trajet ; CU-032 Créer le module d'envoi d'e-mails et stocker les adresses ; CU-033 Notifier par e-mail les étapes de validation ; CU-034 Planifier des relances automatiques des échéances ; CU-035 Publier un contrat OpenAPI versionné des routes Keystone ; CU-036 Proposer un export calendrier (.ics) ; CU-038 Tenir les intérimaires et les extérieurs et recevoir les pré-déclarations de présence (demande de Vigie).
 
-### Conformité droit du travail : temps et congés (2 restants, 15 faits)
+### Conformité droit du travail : temps et congés (1 restants, 16 faits)
 
 - **CU-046 · Forfait annuel en heures : calculer la régularisation de fin d'année** — *Prochaine étape · non commencé · effort M*  
   L'écran signale des « heures à régulariser » mais rien ne les calcule ni ne les transmet. Ajouter une clôture annuelle produisant les rubriques Sage (heures au-delà du forfait, heures complémentaires). *Analyse comparative du 25/10/2026 : standard GTA (Kelio, Horoquartz) : la clôture annuelle compare les heures validées au forfait et produit automatiquement les heures excédentaires majorées pour la paie de décembre ou de janvier. Priorité suggérée : 🟠 Important (P2), à livrer avant la première clôture annuelle d'un salarié au forfait heures (décembre 2026).*
   *Sources : docs/RESTE_A_FAIRE.md, « Conformité droit du travail : temps et congés »*
-- **CU-051 · Gérer les astreintes** — *Prochaine étape · non commencé · effort L*  
-  Aucune notion d'astreinte n'existe alors qu'elle est courante en maintenance. Ajouter le planning communiqué 15 jours avant, la saisie des interventions comme travail effectif, la compensation transmise à Sage et le récapitulatif mensuel. *Lot 7 (23 octobre 2026) : planning, interventions, récapitulatif mensuel et famille de paie livrés ; reste le montant ou la durée de la compensation et les codes Sage, qui attendent l'accord sur les astreintes et la paie (rubriques AST_* inactives).* *Analyse comparative du 25/10/2026 : prérequis bloquant pour la mise en service d'un service de maintenance. Le marché (Kelio, Horoquartz) calcule la compensation d'astreinte (prime par période ou repos) et l'envoie à la paie sous rubrique dédiée ; dans Cursus, AST_H et AST_PER partent sans code et la compensation n'est ni calculée ni transmise (server/src/astreintes-paie.ts:2-5). Fixer la compensation (accord d'entreprise) et activer les codes AST_* avant le premier lot de paie réel.*
-  *Sources : docs/RESTE_A_FAIRE.md, « Conformité droit du travail : temps et congés »*
 
-Faits : CU-039 Choisir entre paiement et repos des heures supplémentaires ; CU-040 Ajouter les absences hors congés (maladie, AT/MP, maternité, événements familiaux…) ; CU-041 Repérer et majorer les heures travaillées un jour férié ; CU-042 Contrôler les moyennes sur 12 semaines (44 h, requalification temps partiel) ; CU-043 Calculer l'acquisition des CP pendant les arrêts (loi 2024-364) ; CU-044 Suivre le contingent annuel d'heures supplémentaires ; CU-045 Forfait jours : cumul annuel et renonciation à des jours de repos ; CU-047 Stocker la date de naissance complète et appliquer les règles d'âge ; CU-048 Contrôler le congé principal et créditer les jours de fractionnement ; CU-049 Ajouter samedi et dimanche à la feuille de temps et contrôler le repos hebdomadaire ; CU-050 Saisir horaires ou postes pour contrôler repos, pause et travail de nuit ; CU-052 Temps partiel : plafond d'heures complémentaires paramétrable et avenants ; CU-053 Paramétrer la journée de solidarité et les jours fériés chômés ; CU-054 Suivre les expositions du compte professionnel de prévention (C2P) ; CU-055 CDD : enregistrer motif et renouvellements, alerter sur la durée maximale.
+Faits : CU-039 Choisir entre paiement et repos des heures supplémentaires ; CU-040 Ajouter les absences hors congés (maladie, AT/MP, maternité, événements familiaux…) ; CU-041 Repérer et majorer les heures travaillées un jour férié ; CU-042 Contrôler les moyennes sur 12 semaines (44 h, requalification temps partiel) ; CU-043 Calculer l'acquisition des CP pendant les arrêts (loi 2024-364) ; CU-044 Suivre le contingent annuel d'heures supplémentaires ; CU-045 Forfait jours : cumul annuel et renonciation à des jours de repos ; CU-047 Stocker la date de naissance complète et appliquer les règles d'âge ; CU-048 Contrôler le congé principal et créditer les jours de fractionnement ; CU-049 Ajouter samedi et dimanche à la feuille de temps et contrôler le repos hebdomadaire ; CU-050 Saisir horaires ou postes pour contrôler repos, pause et travail de nuit ; CU-051 Gérer les astreintes ; CU-052 Temps partiel : plafond d'heures complémentaires paramétrable et avenants ; CU-053 Paramétrer la journée de solidarité et les jours fériés chômés ; CU-054 Suivre les expositions du compte professionnel de prévention (C2P) ; CU-055 CDD : enregistrer motif et renouvellements, alerter sur la durée maximale.
 
 ### Conformité : santé, sécurité et obligations employeur (0 restants, 16 faits)
 
@@ -1000,13 +994,10 @@ Faits : CU-097 Bloquer clôture et signature d'un entretien si une section n'est
 
 Faits : CU-111 Clôturer les sessions passées : présence, résultats et recyclages ; CU-112 Permettre au RH d'administrer formations, habilitations et destinations ; CU-113 Saisir le coût réel à la clôture d'une action du plan ; CU-114 Gérer le cycle de vie des sessions : confirmer, modifier, annuler, voir les inscrits ; CU-115 Ajouter « Envoyer la convocation » et « Désinscrire » ; CU-116 Suivre les demandes de visite médicale ; CU-117 Imprimer le titre d'habilitation et le passeport formation du collaborateur ; CU-118 Historiser les formations suivies, y compris hors catalogue ; CU-119 Clôturer l'exercice du plan de formation et consulter les années passées ; CU-120 Gérer des sessions sur plusieurs jours avec horaires ; CU-121 Corriger ou supprimer une saisie erronée (certification, action du plan, demande) ; CU-122 Gérer une liste d'attente pour les sessions complètes ; CU-123 Enregistrer l'évaluation des formations ; CU-124 Exporter le plan de formation et les indicateurs du bilan social.
 
-### Fonctions métier : collaborateurs, temps, absences, déplacements (5 restants, 14 faits)
+### Fonctions métier : collaborateurs, temps, absences, déplacements (4 restants, 15 faits)
 
 - **CU-141 · Badgeage : badgeuse physique ou virtuelle, pointage géolocalisé et compteurs débit-crédit en temps réel** — *Prochaine étape · non commencé · effort L*  
   Le temps n'est connu que par les feuilles déclaratives hebdomadaires (et la saisie par jour) : aucun pointage à l'entrée et à la sortie, donc pas de compteur débit-crédit au fil de la journée ni de contrôle du temps de présence réel. Ajouter un pointage (badgeuse physique via import ou API, badgeuse virtuelle sur navigateur ou mobile avec géolocalisation facultative), le rapprochement pointages ↔ feuille avec anomalies à justifier, et des compteurs débit-crédit mis à jour en temps réel. Attente du marché : avancé (Kelio, Horoquartz), standard dans l'industrie. *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : le choix badgeage ou déclaratif relève de l'accord d'entreprise et du CSE.*
-  *Sources : docs/RESTE_A_FAIRE.md, « Fonctions métier : collaborateurs, temps, absences, déplacements »*
-- **CU-142 · Planning d'équipe : cycles 2x8/3x8, échanges de poste et alerte si habilitation manquante sur un créneau** — *Prochaine étape · non commencé · effort L*  
-  Les horaires de poste sont rattachés au salarié (référentiel des horaires) ; il n'existe pas de planning de postes par équipe et par semaine : pas de cycles 2x8/3x8 avec rotation, pas d'échange de poste entre salariés, et une personne peut être prévue sur un créneau exigeant une habilitation qu'elle n'a pas ou plus. Ajouter un planning d'équipe (cycles, affectation par créneau, demandes d'échange validées par le manager) qui alimente les horaires de la feuille et vérifie les exigences du poste et les absences validées. Attente du marché : avancé (Horoquartz, Kelio). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : à distinguer du planning des missions (client/src/pages/PlanningMissions.tsx), qui place les ressources sur les chantiers.*
   *Sources : docs/RESTE_A_FAIRE.md, « Fonctions métier : collaborateurs, temps, absences, déplacements »*
 - **CU-143 · Notes de frais : saisie mobile avec OCR, barèmes kilométriques et archivage à valeur probante** — *Prochaine étape · non commencé · effort L*  
   Cursus calcule les jours de déplacement, nuits et trajets pour la paie des grands déplacements, mais aucune note de frais n'est saisie : pas de justificatif photographié, pas de barème kilométrique, pas de circuit de validation ni d'export comptable. Ajouter la note de frais (saisie depuis le téléphone avec lecture du reçu, barème kilométrique de l'année, plafonds, validation manager puis RH, export vers la comptabilité ou la paie) et l'archivage des justificatifs à valeur probante. Attente du marché : standard (Lucca, Factorial). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : vérifier que les notes de frais ne sont pas déjà traitées par l'outil comptable du groupe.*
@@ -1018,7 +1009,7 @@ Faits : CU-111 Clôturer les sessions passées : présence, résultats et recycl
   Équipes et hiérarchie ne se consultent qu'en tableau ; il n'existe ni vue graphique ni notion d'entité (société, site, filiale pays) au-dessus des équipes. Ajouter un organigramme navigable (entité → équipe → salarié, manager et suppléant, effectif, sortis exclus) imprimable et exportable. Attente du marché : standard (Lucca). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer.*
   *Sources : docs/RESTE_A_FAIRE.md, « Fonctions métier : collaborateurs, temps, absences, déplacements »*
 
-Faits : CU-127 Outiller la mise en service : import des salariés, soldes d'ouverture et titres ; CU-128 Gérer la sortie d'un collaborateur ; CU-129 Permettre d'annuler une absence demandée ou validée ; CU-130 Modifier ou annuler un déplacement et reprogrammer un entretien ; CU-131 Utiliser et liquider les jours épargnés sur le CET ; CU-132 Calculer l'état des compteurs à la date de sortie ; CU-133 Permettre les demi-journées de congé, RTT ou récupération ; CU-134 Suivre les feuilles de temps par semaine et valider en groupe ; CU-135 Rouvrir une feuille validée et transmettre une régularisation ; CU-136 Administrer les codes d'imputation internes et suivre les heures de délégation ; CU-137 Stocker les pièces justificatives ; CU-138 Paramétrer la campagne d'entretiens annuels ; CU-139 Déléguer la validation d'un manager absent ; CU-140 Gérer une hiérarchie à plusieurs niveaux.
+Faits : CU-127 Outiller la mise en service : import des salariés, soldes d'ouverture et titres ; CU-128 Gérer la sortie d'un collaborateur ; CU-129 Permettre d'annuler une absence demandée ou validée ; CU-130 Modifier ou annuler un déplacement et reprogrammer un entretien ; CU-131 Utiliser et liquider les jours épargnés sur le CET ; CU-132 Calculer l'état des compteurs à la date de sortie ; CU-133 Permettre les demi-journées de congé, RTT ou récupération ; CU-134 Suivre les feuilles de temps par semaine et valider en groupe ; CU-135 Rouvrir une feuille validée et transmettre une régularisation ; CU-136 Administrer les codes d'imputation internes et suivre les heures de délégation ; CU-137 Stocker les pièces justificatives ; CU-138 Paramétrer la campagne d'entretiens annuels ; CU-139 Déléguer la validation d'un manager absent ; CU-140 Gérer une hiérarchie à plusieurs niveaux ; CU-142 Planning d'équipe : cycles 2x8/3x8, échanges de poste et alerte si habilitation manquante sur un créneau.
 
 ### Ergonomie & accessibilité (4 restants, 19 faits)
 
@@ -1055,9 +1046,9 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 
 ### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 2 faits)
 
-- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours**  
+- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51)**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
-  *Avancement : Chaînes sources et sélecteur FR / EN : reprise commencée. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : 26 nov. 2026 (Cursus#51) : Hors ligne, mot de passe, Avis demandés et Pointages en chaînes sources (`tn()`, contexte `#…`). Restent les autres écrans, les libellés de `shared/` et le format des dates. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CU-N02 · PostgreSQL seul** — *Prochaine étape · partiel*  
   SQLite (node:sqlite) reste le moteur par défaut, PostgreSQL en option ; les tests tournent sur SQLite, PostgreSQL seulement dans le job postgres (REGLES § 4).
   *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
@@ -1269,7 +1260,7 @@ Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de p
 
 ## Matrix
 
-24 faits, 12 en cours, 3 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+25 faits, 11 en cours, 3 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1330,13 +1321,9 @@ Faits : MX-S02 Redéploiement d’epc2i-postgres limité au socle, et rejeu du s
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 6 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 7 faits)
 
-- **MX-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · non commencé* · **en cours**  
-  Pas d’i18n ni de sélecteur FR / EN : interface en français seul (REGLES § 2 et § 7).
-  *Avancement : Coque traduite ; environ 650 chaînes restent à passer par l’i18n. · Sources : PR Matrix#95 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
-
-Faits : MX-N02 Icônes Phosphor ; MX-N03 Formulaires en panneau latéral ; MX-N04 Variables d’environnement toutes validées au démarrage ; MX-N05 Modulus, Clavis et Matrix dans les listes d’outils ; MX-N06 Délégation de Claude conforme à REGLES § 10 ; MX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
+Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Icônes Phosphor ; MX-N03 Formulaires en panneau latéral ; MX-N04 Variables d’environnement toutes validées au démarrage ; MX-N05 Modulus, Clavis et Matrix dans les listes d’outils ; MX-N06 Délégation de Claude conforme à REGLES § 10 ; MX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 <a id="modulus"></a>
 
@@ -1425,6 +1412,10 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 
 ## Mises à jour
 
+- 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
+- 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
+- 2026-11-26 — **Cursus** : CU-051 fait (lot 17, Cursus#49) ; CU-142 fait (lot 18, Cursus#50) ; icônes de l’application installée au logo de Norma 2.3.0 (Cursus#48) ; CU-N01 : quatre écrans traduits (Cursus#51) ; CU-037 commencé (côté Codex fait).
+- 2026-11-26 — **Matrix** : MX-N01 fait (Matrix#104) ; demande de Codex inscrite (lot 16 : enregistrements du dossier du personnel hors des vues pub_ de Codex, Matrix#105, OUVERTE).
 - 2026-11-25 — **Keystone** : Logo de Norma 2.3.0 dans la coque et en favicon (Keystone#85, ouverte).
 - 2026-11-25 — **Codex** : CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée).
 - 2026-11-25 — **Vigie** : Logo de Norma 2.3.0 dans la coque et en favicon (Vigie#45, fusionnée).
@@ -1481,7 +1472,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Vector** : Cadrage (L0) et socle + interface (L1) dans un dépôt local, en attente de création du dépôt GitHub.
 - 2026-11-24 — **Vector** : Livraison 1 construite : socle, schéma contraint, règles pures, 28 Server Functions, tous les écrans, connecteurs simulés.
 - 2026-11-24 — **Vector** : Inscrit au registre de Norma 2.1.0 (DN-1) ; repris dans le reste à faire global ; point VE-N01 (coque commune Norma 2.0).
-- 2026-11-24 — **Vector** : Coque commune Norma 2.x fusionnée (Vector#1) : VE-N01 fait.
-- 2026-11-24 — **Norma (socle)** : Norma 1.0.0 à 1.1.0 : règles communes, charte Nocturne (sombre et clair), registre, dépendances, copie et contrôle.
-- 2026-11-24 — **Norma (socle)** : Norma 1.2.0 : questionnaire du responsable produit et reste à faire global de la solution dans le socle ; reprise des listes des neuf outils.
-- 2026-11-24 — **Norma (socle)** : Norma 2.0.0 : audit du design et coque commune (NO-007).

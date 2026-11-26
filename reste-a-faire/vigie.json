@@ -1,7 +1,7 @@
 {
   "outil": "vigie",
   "generated": "2026-10-10",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Vigie",
@@ -65,6 +65,10 @@
     {
       "date": "2026-11-25",
       "text": "Logo de Norma 2.3.0 dans la coque et en favicon (Vigie#45, fusionnée)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46)."
     }
   ],
   "items": [
@@ -9788,9 +9792,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Vigie#43",
-        "note": "Coque traduite (chaînes sources et sélecteur FR / EN) ; les écrans restent à traduire."
+        "state": "fait",
+        "delivery": "Vigie#47, #48, #49",
+        "note": "Tous les écrans traduits (25–26 nov. 2026 : Vigie#47, #48, #49). Restent en français fixe, notés dans `CLAUDE.md` : fiches imprimables des événements et des actions, titres `metadata` des sous-pages, export CSV des déchets, rapport d’audit PDF et libellés construits par `src/lib`."
       }
     },
     {

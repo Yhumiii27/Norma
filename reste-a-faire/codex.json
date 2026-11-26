@@ -1,7 +1,7 @@
 {
   "outil": "codex",
   "generated": "2026-10-09",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Codex",
@@ -58,6 +58,10 @@
     {
       "date": "2026-11-25",
       "text": "CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39)."
     }
   ],
   "items": [
@@ -1243,8 +1247,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Fait le 17 octobre 2026 : constat revérifié au commit `c80d6ae`. `listDocs` et `listWorkflows` étaient déjà en cache par requête, mais le layout lisait encore tous les documents (`listDocs`, `listTemplates`), « À traiter » tous les documents et tous les circuits avec leurs étapes et commentaires, et l'accueil, Archivage, les pages département et la fiche relisaient tous les documents. Chaque écran lit maintenant ce qu'il montre (`src/lib/queries.ts`), en SQL, avec les règles de visibilité de `readableSql` : le layout lit « À traiter » (seuls les circuits en cours où l'utilisateur a une …"
+        "delivery": "Codex#37",
+        "note": "25 nov. 2026 (Codex#37) : les documents proposés dans les dialogues sont cherchés à la saisie au lieu d’être tous chargés ; constats antérieurs (17 oct. 2026) : chaque écran lit ce qu’il montre, en SQL, avec `readableSql`."
       },
       "aliases": [
         "point 47"
@@ -1292,8 +1296,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Fait en partie le 15 octobre 2026 (procédure : `docs/exploitation.md`) : (1) `src/lib/log.ts` écrit le journal technique, distinct du journal d'audit, une entrée par ligne : JSON en production, lisible en développement (`CODEX_LOG_FORMAT`), niveau `CODEX_LOG_LEVEL` (`info`), avec l'identifiant de la requête (`X-Request-Id` d'un reverse proxy s'il est un simple jeton, sinon un UUID, renvoyé sur les réponses d'API) ; jamais de jeton, cookie, corps de requête, contenu de document ni chaîne de requête ; d'une erreur, nom, message, code, `digest` et lignes « at » de la pile, jamais les valeurs …"
+        "delivery": "Codex#37",
+        "note": "25 nov. 2026 (Codex#37) : les erreurs du navigateur sont envoyées au journal technique ; journal technique `src/lib/log.ts` depuis le 15 oct. 2026 (procédure `docs/exploitation.md`). Reste la supervision."
       },
       "aliases": [
         "point 49"
@@ -3494,7 +3498,7 @@
       "category": "integrations",
       "kind": "demande_outil",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "Accord du propriétaire de Codex",
       "effort": null,
       "sources": [
@@ -3503,9 +3507,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Demande inscrite le 25 nov. 2026 (Codex#29), à traiter avec l’accord du propriétaire."
+        "state": "en_cours",
+        "delivery": "Codex#38",
+        "note": "Traitée le 26 nov. 2026 (Codex#38, décision D-32 à confirmer) : type `DPE`, 11 catégories, dépôt sans circuit par le jeton de Cursus, relecture avec empreinte, destruction avec trace (`destroyed_documents`), Très confidentiel réservé aux lecteurs RH. Reste : durées à confirmer par le DPO, chiffrement au repos (disque du serveur), côté Cursus CU-037, filtre des vues `pub_` demandé à Matrix (MX, demande du 26 nov. 2026, Matrix#105)."
       }
     },
     {
@@ -3515,7 +3519,7 @@
       "category": "alignement_norma",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": null,
       "sources": [
@@ -3525,8 +3529,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Coque passée aux chaînes sources ; environ 1850 appels t.key restent à reprendre."
+        "delivery": "Codex#39",
+        "note": "26 nov. 2026 (Codex#39) : accueil, départements, validations, pages introuvables et erreur en chaînes sources, contexte `#…`. Restent : explorateur, recherche, fiche document, archivage, administration, aide, et les vocabulaires partagés (`FACET_LABEL`, `failureText`, `Pager`)."
       }
     },
     {
