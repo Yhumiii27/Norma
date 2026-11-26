@@ -2,7 +2,7 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 26 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 817 faits, 91 en cours, 201 à faire, sur 1109 points.
+**Avancement** : 817 faits, 91 en cours, 202 à faire, sur 1110 points.
 
 ## Sommaire
 
@@ -18,8 +18,8 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 | [Matrix](#matrix) | 25 | 11 | 3 | 39 | 1 | 2 | 2026-11-26 |
 | [Modulus](#modulus) | 3 | 5 | 1 | 9 | 0 | 0 | 2026-11-25 |
 | [Vector](#vector) | 3 | 0 | 5 | 8 | 0 | 0 | 2026-11-25 |
-| [Norma (socle)](#norma) | 7 | 1 | 0 | 8 | 0 | 0 | 2026-11-25 |
-| **Total** | **817** | **91** | **201** | **1109** | | | |
+| [Norma (socle)](#norma) | 7 | 1 | 1 | 9 | 0 | 1 | 2026-11-26 |
+| **Total** | **817** | **91** | **202** | **1110** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -1392,13 +1392,16 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Norma (socle)
 
-7 faits, 1 en cours, 0 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+7 faits, 1 en cours, 1 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
-### Socle commun (règles, charte, registre, dépendances) (1 restants, 3 faits)
+### Socle commun (règles, charte, registre, dépendances) (2 restants, 3 faits)
 
 - **NO-008 · Logos des outils dans la charte** — *Prochaine étape · partiel* · **en cours (Norma 2.3.0)**  
   Un logo par outil dans charte/logos, composant ToolLogo de charte/ds pour la marque de la coque, et favicon de chaque outil.
   *Avancement : Logos livrés en 2.3.0 (charte/logos, composant ToolLogo, favicon). Fusionnés le 25 nov. 2026 : Arche#65, Clavis#18, Codex#36, Crucible#51, Matrix#103, Modulus#7, Vector#3, Vigie#45. Restent ouvertes : Keystone#85, Cursus#47. · Sources : Norma 2.3.0 (PR Norma#12), CHANGELOG.md*
+- **NO-009 · Menus de base communs, tâches et approbations dans toute la suite** — *À décider · attend le responsable produit · effort XL*  
+  Même bloc d'entrées de base que Keystone dans tous les outils ; « Mes tâches », « Mes approbations » et cloche de toute la suite (pub_taches réunies par Matrix) ; fiche et décision depuis chaque outil par l'API de l'outil propriétaire avec un jeton de la personne émis par Clavis ; documents par l'aperçu de Codex ; un seul résumé e-mail.
+  *Avancement : Proposition et questionnaire du 26 nov. 2026 ; phases 0 à 5, pilote proposé Keystone + Codex + Arche. · Attend : Réponses du propriétaire au questionnaire TA-1 à TA-16 · Sources : propositions/TACHES-ET-APPROBATIONS.md, propositions/questionnaire-taches/questions.json*
 
 Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus ; NO-007 Coque commune des outils (Norma 2.0).
 
@@ -1416,6 +1419,7 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
 - 2026-11-26 — **Cursus** : CU-051 fait (lot 17, Cursus#49) ; CU-142 fait (lot 18, Cursus#50) ; icônes de l’application installée au logo de Norma 2.3.0 (Cursus#48) ; CU-N01 : quatre écrans traduits (Cursus#51) ; CU-037 commencé (côté Codex fait).
 - 2026-11-26 — **Matrix** : MX-N01 fait (Matrix#104) ; demande de Codex inscrite (lot 16 : enregistrements du dossier du personnel hors des vues pub_ de Codex, Matrix#105, OUVERTE).
+- 2026-11-26 — **Norma (socle)** : Proposition « menus de base communs, tâches et approbations dans toute la suite » (NO-009) : relevé des dix outils, cible, phases, questionnaire TA-1 à TA-16 ; rien n'est construit.
 - 2026-11-25 — **Keystone** : Logo de Norma 2.3.0 dans la coque et en favicon (Keystone#85, ouverte).
 - 2026-11-25 — **Codex** : CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée).
 - 2026-11-25 — **Vigie** : Logo de Norma 2.3.0 dans la coque et en favicon (Vigie#45, fusionnée).
@@ -1471,4 +1475,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Modulus** : Livraison 0 (cadrage) faite, réponses appliquées (Modulus#4) ; M-23 dans les scripts de Matrix (#99).
 - 2026-11-24 — **Vector** : Cadrage (L0) et socle + interface (L1) dans un dépôt local, en attente de création du dépôt GitHub.
 - 2026-11-24 — **Vector** : Livraison 1 construite : socle, schéma contraint, règles pures, 28 Server Functions, tous les écrans, connecteurs simulés.
-- 2026-11-24 — **Vector** : Inscrit au registre de Norma 2.1.0 (DN-1) ; repris dans le reste à faire global ; point VE-N01 (coque commune Norma 2.0).

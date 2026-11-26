@@ -1,0 +1,199 @@
+[
+  {
+    "id": "TA-11",
+    "group": "menus",
+    "title": "Liste des entrées de base de la barre latérale",
+    "context": "Keystone a Accueil, Mes projets, Mes tâches, Mes approbations, Mes tableaux de bord, Documents · Codex. Aucun autre outil n'a le même bloc (proposition § 1.2). Norma fixerait la liste, l'ordre, les libellés et les icônes (charte/COQUE.md § 2.3, modèle charte/ds/base-nav.ts).",
+    "proposal": "Accueil · Mes tâches · Mes approbations (obligatoires), puis, facultatives : Mes <objets> (propre au métier), Mes tableaux de bord, Documents · Codex ; dans le menu du compte : Notifications, Préférences de notification, Absence et délégation, Aide, Déconnexion ; cloche obligatoire dans l'en-tête.",
+    "alts": [
+      "Copier exactement les six entrées fixes de Keystone dans chaque outil (Mes projets compris, renommé selon l'outil).",
+      "Seulement Accueil et Mes tâches (une seule entrée « Mon travail ») ; le reste reste libre à chaque outil.",
+      "La même liste, mais Aide et Notifications comme entrées fixes de la barre latérale plutôt que dans le menu du compte."
+    ],
+    "blocks": "phase 1"
+  },
+  {
+    "id": "TA-15",
+    "group": "menus",
+    "title": "« Mes tâches » et « Mes approbations » : deux entrées ou une ?",
+    "context": "Keystone sépare les tâches à faire (Mes tâches) et les décisions attendues (Mes approbations) ; Vigie réunit tout dans « À faire », Crucible a « À décider ».",
+    "proposal": "Deux entrées, comme Keystone : « Mes tâches » (à faire, échéances) et « Mes approbations » (décisions), chacune avec ses onglets « Toute la suite » et « Cet outil ».",
+    "alts": [
+      "Une seule entrée « Mon travail » avec deux onglets (Tâches, Approbations).",
+      "Une seule entrée « À faire » pour tout, sans distinguer les décisions."
+    ],
+    "blocks": "phase 1"
+  },
+  {
+    "id": "TA-1",
+    "group": "archi",
+    "title": "Où se réunissent les tâches de tous les outils ?",
+    "context": "Chaque outil publie ses tâches ouvertes dans pub_taches. Il faut un endroit où les lire toutes. Matrix réunit déjà les pub_journal de tous les outils (matrix.journal_unifie).",
+    "proposal": "Matrix publie matrix.pub_taches, réunion des pub_taches lisibles (une vue absente est laissée de côté) ; chaque outil reçoit un seul lien de lecture.",
+    "alts": [
+      "Chaque outil lit les neuf pub_taches des autres (neuf liens par outil, quatre-vingt-dix en tout).",
+      "Pas de vue : chaque outil appelle l'API GET /api/v1/taches?personne= de chacun des autres à l'affichage (droits exacts, mais neuf appels et neuf pannes possibles par page).",
+      "Un nouveau service commun « boîte de réception » (onzième application) qui tient la liste et l'envoi des e-mails."
+    ],
+    "blocks": "phase 2"
+  },
+  {
+    "id": "TA-2",
+    "group": "archi",
+    "title": "Contrat commun pub_taches, version 1",
+    "context": "Colonnes proposées (§ 4.2) : outil, tache_id, nature, type, type_libelle, objet_ref, titre, personne_id, pour_le_compte_de, etat, echeance, priorite, actions, decision_a_distance, sensible, projet, site, filiale, lien, version, cree_le, maj_le. Une colonne publiée ne se retire ni ne se renomme.",
+    "proposal": "Le contrat du § 4.2, tenu dans Norma (propositions/, puis charte ou registre une fois validé), vérifié par Matrix comme celui de pub_journal.",
+    "alts": [
+      "Un contrat plus court pour commencer (outil, tache_id, titre, personne_id, echeance, lien) : lecture et liens profonds seulement, sans décision à distance.",
+      "Le contrat du § 4.2 plus le contenu de la fiche (circuit, données à vérifier, documents) en JSON dans la vue, sans API de fiche."
+    ],
+    "blocks": "phase 2"
+  },
+  {
+    "id": "TA-3",
+    "group": "archi",
+    "title": "Comment chaque outil tient-il la liste qu'il publie ?",
+    "context": "Les règles qui disent qui doit décider sont écrites en TypeScript dans chaque outil (fournisseurs de Keystone, approvalsOf d'Arche, decisionQueue de Crucible, À faire de Vigie). Les réécrire en SQL ferait un double.",
+    "proposal": "Une table de projection taches_publiees par outil, réécrite par ses propres fournisseurs dans la transaction de chaque écriture qui ouvre ou ferme une tâche, et toutes les 15 minutes pour les échéances ; pub_taches la lit. C'est une publication recalculée, jamais la source de vérité.",
+    "alts": [
+      "Une vue SQL directe sur les tables métier (règles de routage réécrites en SQL, toujours à jour, double à tenir).",
+      "Pas de projection : API seulement (voir TA-1, troisième choix)."
+    ],
+    "blocks": "phase 2"
+  },
+  {
+    "id": "TA-4",
+    "group": "archi",
+    "title": "Comment un outil agit-il au nom de la personne chez un autre outil ?",
+    "context": "Clavis n'émet aujourd'hui qu'un jeton d'identité d'une heure pour l'outil où la personne s'est connectée (authorization_code seulement, jeton d'accès opaque). Pour consulter ou décider chez l'outil B depuis l'outil A, B doit savoir que c'est bien la personne.",
+    "proposal": "Échange de jeton (RFC 8693) chez Clavis : jeton de rafraîchissement à la connexion (durée de la session, révoqué au départ ou au retrait de l'accès), échangé par l'outil A contre un jeton JWT pour l'outil B (aud = B, act = A, portée taches:lire ou taches:decider, 5 minutes), journalisé ; B le vérifie par les clés publiques de Clavis.",
+    "alts": [
+      "Confiance entre outils : A signe « la personne X décide » avec sa clé d'application, B le croit et relit pub_acces (comme les fonctions pub_ actuelles ; plus simple, mais un outil compromis décide pour tout le monde).",
+      "Pas de délégation : consulter ou décider ouvre toujours l'outil propriétaire (connexion unique par Clavis, un clic de plus)."
+    ],
+    "blocks": "phase 3"
+  },
+  {
+    "id": "TA-12",
+    "group": "archi",
+    "title": "Décision reçue par Vigie (qui n'a pas d'API HTTP)",
+    "context": "Vigie reçoit aujourd'hui les écritures des autres outils par des fonctions pub_ (vigie.pub_signaler_avancement_nc…) qui déposent une demande traitée ensuite. Une décision à distance demande une réponse immédiate et le jeton de la personne.",
+    "proposal": "Vigie ajoute /api/v1/taches/{id} et /api/v1/taches/{id}/decision, comme les autres outils.",
+    "alts": [
+      "Une fonction vigie.pub_decider_tache (M-19) : la personne est déclarée par l'outil appelant, sans jeton, réponse différée.",
+      "Vigie reste en consultation seule : ses tâches s'ouvrent dans Vigie."
+    ],
+    "blocks": "phase 4"
+  },
+  {
+    "id": "TA-13",
+    "group": "archi",
+    "title": "Décision quand l'outil propriétaire ne répond pas",
+    "context": "Keystone garde aujourd'hui une file d'envoi vers Codex (« en attente de synchronisation »). Une décision envoyée plus tard peut tomber sur un objet qui a changé.",
+    "proposal": "Refusée : « source indisponible, réessayez ou ouvrez l'outil » ; aucune décision mise en attente (la file de Keystone vers Codex passerait à l'appel direct).",
+    "alts": [
+      "File d'attente comme Keystone, rejouée avec la version vue : refusée à l'arrivée si l'objet a changé.",
+      "File d'attente sans contrôle de version."
+    ],
+    "blocks": "phase 4"
+  },
+  {
+    "id": "TA-8",
+    "group": "archi",
+    "title": "Consultation des documents depuis un autre outil",
+    "context": "Codex sert ses fichiers à ses utilisateurs et, par jeton d'application, à Cursus. Pour qu'un approbateur lise le dossier depuis son outil, Codex doit appliquer la confidentialité pour cette personne.",
+    "proposal": "API d'aperçu de Codex (GET /api/v1/documents/{id}/apercu?rev=) avec le jeton de la personne pour Codex : PDF et images dans le panneau, autres formats « Télécharger » ou « Ouvrir dans Codex » ; rien n'est gardé par l'outil appelant.",
+    "alts": [
+      "Lien « Ouvrir dans Codex » seulement (pas d'aperçu dans l'outil).",
+      "Aperçu par le jeton d'application de l'outil appelant (Codex lui fait confiance pour la confidentialité)."
+    ],
+    "blocks": "phase 3"
+  },
+  {
+    "id": "TA-5",
+    "group": "notif",
+    "title": "Résumé e-mail et e-mails immédiats",
+    "context": "Keystone, Vigie, Crucible, Cursus et Arche envoient (ou prépareront) chacun leurs e-mails et leurs résumés : une personne qui travaille dans quatre outils recevrait quatre résumés.",
+    "proposal": "Un seul résumé quotidien pour toute la suite ; l'e-mail immédiat reste à l'outil propriétaire, selon la préférence de la personne ; les résumés propres s'arrêtent quand le résumé commun démarre.",
+    "alts": [
+      "Chaque outil garde ses e-mails et son résumé (rien de commun, seulement la cloche).",
+      "Plus aucun e-mail immédiat : seulement le résumé commun (et la cloche).",
+      "Un résumé commun et aussi un e-mail immédiat commun, envoyés par le même expéditeur."
+    ],
+    "blocks": "phase 5"
+  },
+  {
+    "id": "TA-6",
+    "group": "notif",
+    "title": "Qui envoie le résumé commun ?",
+    "context": "Il faut lire les tâches de tous les outils et l'adresse de chaque personne (clavis.pub_personnes porte l'e-mail professionnel). Cursus a déjà Microsoft Graph Mail.Send, Crucible Graph et SMTP. Le choix Graph ou SMTP attend la DSI.",
+    "proposal": "Matrix : il réunit déjà les publications et sert la DSI ; une boîte d'envoi commune, transport choisi avec la DSI (Graph depuis une boîte partagée ou relais SMTP), code repris de Cursus ou Crucible.",
+    "alts": [
+      "Clavis (annuaire et adresses, déjà un module d'e-mail et des webhooks vers les outils).",
+      "Cursus (Graph déjà construit et testé).",
+      "Keystone (résumé par famille déjà construit)."
+    ],
+    "blocks": "phase 5"
+  },
+  {
+    "id": "TA-7",
+    "group": "notif",
+    "title": "Où se règlent les préférences de notification ?",
+    "context": "Seul Keystone a des préférences (familles × immédiat, résumé, rien). Avec un résumé commun, une préférence par outil ne suffit plus.",
+    "proposal": "Clavis : une page « Mes notifications » (par famille et par outil), publiée en fin de clavis.pub_personnes (ou une vue de plus), lue par l'expéditeur commun et par les outils pour l'immédiat.",
+    "alts": [
+      "Chaque outil garde ses préférences ; le résumé commun a sa propre page.",
+      "Matrix tient les préférences (avec l'expéditeur)."
+    ],
+    "blocks": "phase 5"
+  },
+  {
+    "id": "TA-9",
+    "group": "regles",
+    "title": "Types exclus de la décision à distance",
+    "context": "Certaines décisions engagent une signature ou demandent l'écran de l'outil. Exclues, elles restent consultables partout, avec « Ouvrir dans l'outil ».",
+    "proposal": "Exclus : signature avancée (G2 / AFE d'Arche par Yousign) ; signatures sur le terrain (émargement, permis, consignation, plan de prévention, registre DGI de Vigie) ; tout ce qui porte une donnée de santé ; arbitrages à options et scénarios de Crucible ; compte rendu d'entretien de Cursus.",
+    "alts": [
+      "Exclure seulement la signature avancée ; tout le reste se décide à distance.",
+      "Commencer par une liste fermée de types autorisés (approuver / refuser simples : commandes, étapes de circuit, budgets, absences, notes de frais, demandes d'accès) et l'étendre ensuite."
+    ],
+    "blocks": "phase 4"
+  },
+  {
+    "id": "TA-10",
+    "group": "regles",
+    "title": "Titres publiés et données personnelles",
+    "context": "Tous les rôles d'outil lisent toutes les lignes de la vue réunie (une vue ne sait pas qui regarde). Un titre peut révéler une donnée sensible (nature d'une absence, AT, document confidentiel).",
+    "proposal": "Titres neutres écrits par l'outil propriétaire, colonne sensible (titre générique ailleurs), aucune tâche de santé publiée ; noms de l'annuaire interne admis ; avis du RGPD de Cursus avant d'y publier ses tâches ; lignes fermées gardées 30 jours.",
+    "alts": [
+      "Aucun nom de personne dans les titres (« Demande d'absence n° 1234 »).",
+      "Cursus ne publie pas ses tâches (consultation dans Cursus seulement)."
+    ],
+    "blocks": "phase 2"
+  },
+  {
+    "id": "TA-16",
+    "group": "regles",
+    "title": "Tâches de toute la suite dans tous les outils, ou dans un portail ?",
+    "context": "La demande : approuver depuis son application métier sans ouvrir celle d'un autre métier.",
+    "proposal": "Dans tous les outils : « Mes tâches », « Mes approbations » et la cloche de chaque outil montrent toute la suite.",
+    "alts": [
+      "Dans un seul portail commun (par exemple l'accueil de Clavis ou de Matrix), les outils gardant leurs seules tâches.",
+      "Dans tous les outils, mais les décisions seulement dans l'outil propriétaire ou le portail."
+    ],
+    "blocks": "phase 2"
+  },
+  {
+    "id": "TA-14",
+    "group": "phases",
+    "title": "Phases et pilote",
+    "context": "Phases : 0 décisions, 1 menus de base, 2 « Mes tâches » de la suite en lecture, 3 fiche et documents, 4 décision à distance, 5 résumé commun (§ 6).",
+    "proposal": "Dans cet ordre, avec Keystone + Codex + Arche en pilote (boîte la plus complète, documents et circuits, circuit le plus formel ; Keystone décide déjà des étapes de Codex), puis Vigie et Crucible, puis Cursus, puis Modulus, Vector, Clavis, Matrix.",
+    "alts": [
+      "Pilote Keystone + Vigie (ECO et NC déjà échangés).",
+      "Pilote Cursus + Keystone (absences et frais : le plus de personnes concernées).",
+      "Phase 1 (menus) dans tous les outils d'abord, puis tout le reste d'un coup."
+    ],
+    "blocks": "—"
+  }
+]
