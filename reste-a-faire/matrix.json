@@ -49,6 +49,10 @@
     {
       "date": "2026-11-26",
       "text": "MX-N01 fait (Matrix#104) ; demande de Codex inscrite (lot 16 : enregistrements du dossier du personnel hors des vues pub_ de Codex, Matrix#105, OUVERTE)."
+    },
+    {
+      "date": "2026-11-26",
+      "text": "Demande lot 16 de Codex traitée côté dépôt (Matrix#106) ; appliquées sur le serveur : codex.pub_documents, pub_revisions_document, pub_validations ; pub_journal après la migration 0006 de Codex."
     }
   ],
   "items": [
