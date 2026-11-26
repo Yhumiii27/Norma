@@ -1,0 +1,20 @@
+{
+  "titre": "Tâches et approbations dans toute la suite",
+  "sousTitre": "Norma · questionnaire du responsable produit",
+  "introduction": "Décisions ouvertes de la proposition propositions/TACHES-ET-APPROBATIONS.md (menus de base communs, « Mes tâches » et approbations de toute la suite, consultation et décision depuis chaque outil, notifications). Chaque question porte la proposition par défaut (★), appliquée tant qu’il n’y a pas d’autre réponse. Choisissez une réponse, ajoutez une note si besoin : tout est enregistré à mesure et relu par Claude avant de lancer la phase suivante.",
+  "decideTitre": "Déjà décidé",
+  "decide": [
+    "Rien n’est construit avant les réponses : la proposition et ce questionnaire seulement (26 novembre 2026).",
+    "M-17, M-18, M-19 de Matrix : lecture par les vues pub_ (définies par Matrix), écriture par l’API ou une fonction pub_ de l’outil propriétaire.",
+    "Connexion et droits par Clavis : personne_id de Clavis = clé commune d’une personne ; droits lus dans clavis.pub_acces.",
+    "Codex héberge les documents ; les autres outils n’en gardent que les références."
+  ],
+  "groupes": [
+    ["menus", "Menus de base communs"],
+    ["archi", "Architecture des tâches et des décisions"],
+    ["notif", "Notifications"],
+    ["regles", "Règles et périmètre"],
+    ["phases", "Phases et pilote"]
+  ],
+  "sortie": ".artifacts/questionnaire-taches.html"
+}

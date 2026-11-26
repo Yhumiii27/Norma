@@ -14,6 +14,7 @@ Modulus, Vector) vit ici, une seule fois :
 | `outils/pages/nocturne-page.css` | palette Nocturne des pages autonomes (questionnaire, reste à faire), sombre et clair |
 | `reste-a-faire/` | reste à faire de la solution : un fichier par outil, schéma `reste-a-faire/SCHEMA.md` |
 | `outils/reste-a-faire/` | contrôle et génération de `RESTE-A-FAIRE.md` et de la page `.artifacts/reste-a-faire.html` |
+| `propositions/` | propositions au propriétaire, non distribuées aux outils (`TACHES-ET-APPROBATIONS.md` : menus de base, tâches et approbations dans toute la suite ; questionnaire `questionnaire-taches/`, page `node propositions/questionnaire-taches/build.mjs`) |
 
 ## Dans un outil
 
