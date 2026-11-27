@@ -26,6 +26,7 @@ export const TACHES_FR: Readonly<Record<string, string>> = {
   Catalogue: 'Catalogue',
   'My shipments': 'Mes expéditions',
   'Shipment requests': 'Demandes d’expédition',
+  'Technical reference': 'Référentiel technique',
   'Common menu': 'Menu commun',
   // États et groupes
   'To do': 'À faire',

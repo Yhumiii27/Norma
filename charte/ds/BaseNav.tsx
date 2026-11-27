@@ -4,7 +4,7 @@
 // avant les sections par thème. Même place, même ordre, mêmes icônes, mêmes libellés partout ; les pastilles comptent les
 // tâches et approbations ouvertes de la personne dans toute la suite. Le modèle est ./base-nav.ts.
 import {
-  Books, CalendarDots, CalendarX, CheckSquare, Clock, Cube, Database, FileText, Flask, FlowArrow, FolderUser, Gauge, Handshake,
+  Books, CalendarDots, CalendarX, CheckSquare, Clock, Cube, Database, FileText, Flask, FlowArrow, FolderUser, Gauge, Gear, Handshake,
   House, Key, ListChecks, PaperPlaneTilt, Siren, SquaresFour, Stamp, TreeStructure, Truck,
 } from '@phosphor-icons/react/dist/ssr';
 import type { Icon } from '@phosphor-icons/react';
@@ -16,7 +16,7 @@ import type { ToolCode } from './ToolLogo';
 
 export const BASE_ICONS: Record<BaseIcon, Icon> = {
   House, CheckSquare, Stamp, FolderUser, Gauge, Books, FileText, Siren, ListChecks, Clock, CalendarX, SquaresFour, CalendarDots,
-  Flask, TreeStructure, Key, Database, FlowArrow, Handshake, Cube, Truck, PaperPlaneTilt,
+  Flask, TreeStructure, Key, Database, FlowArrow, Handshake, Cube, Truck, PaperPlaneTilt, Gear,
 };
 
 export interface BaseNavProps extends BaseNavOptions {

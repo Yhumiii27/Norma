@@ -1,12 +1,11 @@
 {
   "outil": "ingenium",
   "updated": "2026-11-27",
-  "nom": "Outil d'ingénierie (à créer)",
   "origine": {
-    "depot": "— (dépôt à créer)",
+    "depot": "Yhumiii27/ingenium",
     "fichier": "cadrage ingenierie/QUESTIONS.json",
     "commit": null,
-    "reprise": "Questionnaire de cadrage du 27 nov. 2026, jamais publié seul."
+    "reprise": "Questionnaire de cadrage du 27 nov. 2026, jamais publié seul ; cadrage repris dans docs/ du dépôt (livraison 0)."
   },
   "groupes": {
     "prio": "À décider en premier",
@@ -17,6 +16,7 @@
     "data": "Données à fournir"
   },
   "decide": [
+    "27 novembre 2026 — l'outil s'appelle Ingenium (ING-01) ; dépôt Yhumiii27/ingenium créé par le propriétaire (ING-02) ; inscrit au registre de Norma 3.1.0.",
     "27 novembre 2026 — certains éléments d'ingénierie sortent de Keystone pour un outil dédié aux équipes d'ingénierie ; rien n'est construit avant les réponses.",
     "27 novembre 2026 — menus de base de chaque outil : Accueil propre à l'outil, Mes tâches (liste, kanban, calendrier), Mes approbations, puis un ou deux menus propres à l'outil.",
     "CV-06 de Vigie (5 novembre 2026) — les demandes et ordres de modification (ECR / ECO) sont tenus dans Vigie.",
@@ -40,8 +40,13 @@
         "Forma (« forme, plan, modèle »)."
       ],
       "bloque": "phase 0",
-      "statut": "ouverte",
-      "reponse": null
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Ingenium : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/ingenium.",
+        "date": "2026-11-27",
+        "source": "réponse en séance"
+      }
     },
     {
       "id": "ingenium:ING-02",
@@ -57,8 +62,13 @@
         "Nom de dépôt avec majuscule (Yhumiii27/Ingenium), comme Keystone et Arche."
       ],
       "bloque": "phase 0",
-      "statut": "ouverte",
-      "reponse": null
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Dépôt privé Yhumiii27/ingenium créé par le propriétaire le 27 nov. 2026 (branche main vide) et ajouté à la session.",
+        "date": "2026-11-27",
+        "source": "réponse en séance"
+      }
     },
     {
       "id": "ingenium:ING-03",

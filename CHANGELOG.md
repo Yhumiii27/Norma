@@ -1,5 +1,24 @@
 # Norma — journal des versions
 
+## 3.1.0 — 27 novembre 2026
+
+Décisions du propriétaire du même jour : l'outil des équipes d'ingénierie, construit en sortant des éléments d'ingénierie de
+Keystone, s'appelle **Ingenium** (ING-01, réponse en séance) ; le dépôt `Yhumiii27/ingenium` est créé (ING-02).
+
+- **Registre** (`registre/outils.json`) : ligne `ingenium` — schéma `ingenium`, rôle `ingenium_app`, ports 4000 / 4010,
+  dépôt `Yhumiii27/ingenium`, connexion par Clavis (`ENTRA_ISSUER`, `INGENIUM_ACCESS_FROM_CLAVIS=on`), commits en anglais ;
+  champ facultatif `domaine` (adresse publique dans Coolify), posé pour Ingenium : `ingenium.projectdirection.fr`.
+- `REGLES.md` § 1 (tableau de la suite) et § 2 (langue des commits) ; `README.md`.
+- **Logo** `charte/logos/ingenium.svg` (tuile carmin, compas de dessin traçant un arc) et entrée `ingenium` de `ToolLogo`
+  (`ToolCode`, `TOOL_CODES`).
+- **Tronc commun des menus** (`charte/COQUE.md` § 2 bis, `ds/base-nav.ts`, `ds/BaseNav.tsx`, `ds/taches-fr.ts`) : accueil
+  « Ma discipline », entrées Mes projets (`FolderUser`, `/my/projects`) et Référentiel technique (`Gear`, `/reference`,
+  source « Technical reference ») ; icône `Gear` ajoutée.
+- **Suivi** : `reste-a-faire/ingenium.json` (livraisons 0 à 5, mise en service, points de Keystone qui suivraient
+  l'ingénierie selon ING-03) ; `decisions/ingenium.json` : ING-01 et ING-02 décidées, nom pris au registre ;
+  `OUTILS_A_VENIR` vide (`outils/suivi/build.mjs`, `decisions/SCHEMA.md`, `test/suivi.test.mjs`).
+- **Version mineure** : aucun outil ne change son code ; chacun reprend la copie à sa prochaine mise à jour de Norma.
+
 ## 3.0.0 — 27 novembre 2026
 
 Décisions du propriétaire : « Supprime les appellations […] de tous nos fichiers : pour le moment l'outil n'est pas approuvé

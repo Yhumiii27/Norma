@@ -21,6 +21,7 @@ ancienne appellation de la suite : l'outil n'est pas approuvé au niveau du grou
 | Matrix | serveur PostgreSQL commun, publications, liens entre outils | `matrix` |
 | Modulus | commercial et chiffrage : catalogue machines, BOM standard, prix, affaires, savoir-faire | `modulus` |
 | Vector | expéditions nationales et internationales : demandes, colisage, transport, douane, documents, suivi, coûts | `vector` |
+| Ingenium | ingénierie : registre des disciplines, P&ID, référentiel technique, nomenclatures d'ingénierie, plans, pack et dossier technique | `ingenium` |
 
 Dépôts, rôles PostgreSQL, ports et variables de connexion : `norma/registre/outils.json`.
 
@@ -28,7 +29,7 @@ Dépôts, rôles PostgreSQL, ports et variables de connexion : `norma/registre/o
 
 - Répondre au propriétaire **en français**.
 - Code et identifiants en anglais. Messages de commit : la langue de l'outil (`langue_commits` du registre : anglais
-  pour Keystone, Arche, Crucible, Clavis, Modulus, Vector ; français pour Codex, Vigie, Cursus, Matrix).
+  pour Keystone, Arche, Crucible, Clavis, Modulus, Vector, Ingenium ; français pour Codex, Vigie, Cursus, Matrix).
 - Interface : chaînes sources en anglais traduites par l'i18n de l'outil ; **le français est la langue par défaut**.
   Le texte saisi par les personnes s'affiche tel quel, jamais passé par `t()`.
 
