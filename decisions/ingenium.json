@@ -2,7 +2,7 @@
   "outil": "ingenium",
   "updated": "2026-11-27",
   "origine": {
-    "depot": "Yhumiii27/ingenium",
+    "depot": "Yhumiii27/Ingenium",
     "fichier": "cadrage ingenierie/QUESTIONS.json",
     "commit": null,
     "reprise": "Questionnaire de cadrage du 27 nov. 2026, jamais publié seul ; cadrage repris dans docs/ du dépôt (livraison 0)."
@@ -16,7 +16,7 @@
     "data": "Données à fournir"
   },
   "decide": [
-    "27 novembre 2026 — l'outil s'appelle Ingenium (ING-01) ; dépôt Yhumiii27/ingenium créé par le propriétaire (ING-02) ; inscrit au registre de Norma 3.1.0.",
+    "27 novembre 2026 — l'outil s'appelle Ingenium (ING-01) ; dépôt Yhumiii27/Ingenium créé par le propriétaire (ING-02) ; inscrit au registre de Norma 3.1.0.",
     "27 novembre 2026 — certains éléments d'ingénierie sortent de Keystone pour un outil dédié aux équipes d'ingénierie ; rien n'est construit avant les réponses.",
     "27 novembre 2026 — menus de base de chaque outil : Accueil propre à l'outil, Mes tâches (liste, kanban, calendrier), Mes approbations, puis un ou deux menus propres à l'outil.",
     "CV-06 de Vigie (5 novembre 2026) — les demandes et ordres de modification (ECR / ECO) sont tenus dans Vigie.",
@@ -34,7 +34,7 @@
       "nature": "question",
       "titre": "Nom de l'outil",
       "contexte": "Les outils de la suite portent un mot latin court : Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis, Matrix, Modulus, Vector. Le nom donne aussi le code du registre de Norma, le schéma PostgreSQL, le rôle <code>_app, les clés de rôles dans Clavis et le dépôt (PERIMETRE.md § 1).",
-      "proposition": "Ingenium (« talent, invention », racine d'« ingénieur ») : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/ingenium.",
+      "proposition": "Ingenium (« talent, invention », racine d'« ingénieur ») : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/Ingenium.",
       "alternatives": [
         "Fabrica (« atelier, art de bâtir »).",
         "Forma (« forme, plan, modèle »)."
@@ -43,7 +43,7 @@
       "statut": "decidee",
       "reponse": {
         "choix": "default",
-        "note": "Ingenium : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/ingenium.",
+        "note": "Ingenium : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/Ingenium.",
         "date": "2026-11-27",
         "source": "réponse en séance"
       }
@@ -64,8 +64,8 @@
       "bloque": "phase 0",
       "statut": "decidee",
       "reponse": {
-        "choix": "default",
-        "note": "Dépôt privé Yhumiii27/ingenium créé par le propriétaire le 27 nov. 2026 (branche main vide) et ajouté à la session.",
+        "choix": "alt2",
+        "note": "Dépôt privé Yhumiii27/Ingenium (avec majuscule, comme Keystone et Arche) créé par le propriétaire le 27 nov. 2026, branche main vide, ajouté à la session.",
         "date": "2026-11-27",
         "source": "réponse en séance"
       }

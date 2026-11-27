@@ -1465,7 +1465,7 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Ingenium
 
-0 faits, 1 en cours, 12 à faire. Source : Yhumiii27/ingenium, `docs/PLAN.md` ; reprise : une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée. Effort : S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10.
+0 faits, 1 en cours, 12 à faire. Source : Yhumiii27/Ingenium, `docs/PLAN.md` ; reprise : une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée. Effort : S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10.
 
 ### Livraisons du plan (6 restants)
 
@@ -1566,7 +1566,7 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-27 — **Modulus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MO-N03.
 - 2026-11-27 — **Vector** : Norma 2.4.0 : VE-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Vector** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VE-N03.
-- 2026-11-27 — **Ingenium** : Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR.
+- 2026-11-27 — **Ingenium** : Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/Ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR.
 - 2026-11-27 — **Norma (socle)** : Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil.
 - 2026-11-27 — **Norma (socle)** : Norma 3.0.0 : suite renommée Atrium (NO-010) ; page unique « Suivi Atrium » avec les décisions de toute la suite (NO-011) ; un point d'adoption par outil, MX-N11 pour le serveur commun.
 - 2026-11-27 — **Norma (socle)** : Norma 3.1.0 : Ingenium (ingénierie) inscrit au registre, à REGLES § 1, aux logos et au tronc commun des menus ; reste à faire reste-a-faire/ingenium.json ; ING-01 et ING-02 décidées.

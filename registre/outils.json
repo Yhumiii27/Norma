@@ -168,7 +168,7 @@
       "code": "ingenium",
       "nom": "Ingenium",
       "role_metier": "Ingénierie : registre des disciplines, P&ID, référentiel technique des articles, nomenclatures d'ingénierie, plans, pack et dossier technique",
-      "depot": "Yhumiii27/ingenium",
+      "depot": "Yhumiii27/Ingenium",
       "schema": "ingenium",
       "role_pg": "ingenium_app",
       "ports": {

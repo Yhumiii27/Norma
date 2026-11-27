@@ -4,7 +4,7 @@
   "updated": "2026-11-27",
   "branch": "main",
   "origine": {
-    "depot": "Yhumiii27/ingenium",
+    "depot": "Yhumiii27/Ingenium",
     "fichier": "docs/PLAN.md",
     "commit": null,
     "reprise": "une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée"
@@ -18,7 +18,7 @@
   "history": [
     {
       "date": "2026-11-27",
-      "text": "Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR."
+      "text": "Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/Ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR."
     }
   ],
   "items": [

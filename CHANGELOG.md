@@ -3,10 +3,10 @@
 ## 3.1.0 — 27 novembre 2026
 
 Décisions du propriétaire du même jour : l'outil des équipes d'ingénierie, construit en sortant des éléments d'ingénierie de
-Keystone, s'appelle **Ingenium** (ING-01, réponse en séance) ; le dépôt `Yhumiii27/ingenium` est créé (ING-02).
+Keystone, s'appelle **Ingenium** (ING-01, réponse en séance) ; le dépôt `Yhumiii27/Ingenium` est créé (ING-02).
 
 - **Registre** (`registre/outils.json`) : ligne `ingenium` — schéma `ingenium`, rôle `ingenium_app`, ports 4000 / 4010,
-  dépôt `Yhumiii27/ingenium`, connexion par Clavis (`ENTRA_ISSUER`, `INGENIUM_ACCESS_FROM_CLAVIS=on`), commits en anglais ;
+  dépôt `Yhumiii27/Ingenium`, connexion par Clavis (`ENTRA_ISSUER`, `INGENIUM_ACCESS_FROM_CLAVIS=on`), commits en anglais ;
   champ facultatif `domaine` (adresse publique dans Coolify), posé pour Ingenium : `ingenium.projectdirection.fr`.
 - `REGLES.md` § 1 (tableau de la suite) et § 2 (langue des commits) ; `README.md`.
 - **Logo** `charte/logos/ingenium.svg` (tuile carmin, compas de dessin traçant un arc) et entrée `ingenium` de `ToolLogo`
