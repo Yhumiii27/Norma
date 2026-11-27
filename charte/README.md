@@ -10,6 +10,7 @@ Inter reprise de Codex (`69e7aec`), servie depuis le dépôt.
 | `nocturne-readme.md` | principes de la charte (couleur, typographie, états, composants) |
 | `COQUE.md`, `coque.css` | **coque commune** (Norma 2.0) : places et mesures communes à tous les outils, classes `.coque-…` ; audit d'origine `AUDIT-2026-11-24.md` |
 | `ds/` | composants React de base : `Button`, `Tag`, `Card`, `Field` / `Input` / `Select`, `Segmented`, `Table`, `Dialog`, `Drawer`, `CenteredModal`, `Popover`, `Menu`, `Toast`, `cx`, `overlay` |
+| `ds/BaseNav.tsx`, `ds/MyTasks.tsx`, `ds/MyApprovals.tsx` | tronc commun des menus, « Mes tâches » (liste, kanban, calendrier), « Mes approbations » (Norma 2.4, `COQUE.md` § 2 bis, contrat `../contrats/taches-v1.md`) |
 | `fonts/inter.ts`, `fonts/inter/` | Inter 4.001 en `next/font/local` (licence OFL) |
 
 ## Brancher la charte dans un outil

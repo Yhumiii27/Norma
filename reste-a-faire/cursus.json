@@ -1,7 +1,7 @@
 {
   "outil": "cursus",
   "generated": "2026-10-10",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Cursus",
@@ -65,6 +65,10 @@
     {
       "date": "2026-11-26",
       "text": "CU-037 avancé (Cursus#52) ; CU-N01 : Habilitations, Confidentialité, Expositions (Cursus#53)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : CU-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
     }
   ],
   "items": [
@@ -4583,6 +4587,28 @@
         "Cursus#45 (coque commune, 24 nov. 2026)",
         "norma/charte/COQUE.md § 1 et § 6 (tableaux dans TableScroll)"
       ]
+    },
+    {
+      "id": "CU-N07",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes temps » et « Mes absences ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mon espace RH : soldes de congés, feuille de temps de la semaine, formations et habilitations à échéance, demandes en cours ; pour un manager, son équipe. Client Vite : modèles purs base-nav.ts / task-rules.ts et HTML de la coque ; titres neutres, absences et santé « sensible » (avis RGPD, TA-10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "L",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
     }
   ]
 }

@@ -7,6 +7,7 @@ Modulus, Vector) vit ici, une seule fois :
 | --- | --- |
 | `REGLES.md` | règles communes (langues, dépôts, PostgreSQL commun, échanges entre outils, Clavis, charte, dépendances, exploitation, ce que Claude fait seul) |
 | `charte/` | charte graphique Nocturne : CSS, composants React de base, police Inter, **coque commune** (`COQUE.md`, `coque.css`), conventions d'écran |
+| `contrats/` | contrats communs entre outils (`taches-v1.md` : tâches et approbations de toute la suite, Norma 2.4) |
 | `registre/outils.json` | outils, schémas, rôles PostgreSQL, ports, connexion par Clavis |
 | `dependances.json` | versions minimales, bibliothèques autorisées, interdites, dérogations |
 | `outils/norma.mjs` | copie du socle dans un outil et contrôle de cette copie |
@@ -14,7 +15,7 @@ Modulus, Vector) vit ici, une seule fois :
 | `outils/pages/nocturne-page.css` | palette Nocturne des pages autonomes (questionnaire, reste à faire), sombre et clair |
 | `reste-a-faire/` | reste à faire de la solution : un fichier par outil, schéma `reste-a-faire/SCHEMA.md` |
 | `outils/reste-a-faire/` | contrôle et génération de `RESTE-A-FAIRE.md` et de la page `.artifacts/reste-a-faire.html` |
-| `propositions/` | propositions au propriétaire, non distribuées aux outils (`TACHES-ET-APPROBATIONS.md` : menus de base, tâches et approbations dans toute la suite ; questionnaire `questionnaire-taches/`, page `node propositions/questionnaire-taches/build.mjs`) |
+| `propositions/` | propositions au propriétaire, non distribuées aux outils (`TACHES-ET-APPROBATIONS.md` : menus de base, tâches et approbations dans toute la suite, décidée le 27 novembre 2026 ; `DEPLOIEMENT-TRONC-COMMUN.md` : déploiement par outil ; questionnaire `questionnaire-taches/`, page `node propositions/questionnaire-taches/build.mjs`) |
 
 ## Dans un outil
 

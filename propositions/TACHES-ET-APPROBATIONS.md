@@ -1,6 +1,11 @@
 # Menus de base communs, tâches et approbations dans toute la suite — proposition
 
-> Proposition du 26 novembre 2026, **rien n'est construit**. Elle répond à la demande du propriétaire :
+> **Décidée le 27 novembre 2026** (§ 7 bis) : le propriétaire a tranché TA-11, TA-15 et TA-16 et confirmé la réponse
+> proposée pour TA-1 à TA-10, TA-12, TA-13 et TA-14. Norma 2.4.0 construit la phase 1 (`charte/COQUE.md` § 2 bis,
+> `contrats/taches-v1.md`, composants `charte/ds/BaseNav.tsx`, `MyTasks.tsx`, `MyApprovals.tsx`) ; déploiement par outil :
+> `propositions/DEPLOIEMENT-TRONC-COMMUN.md`.
+>
+> Proposition du 26 novembre 2026. Elle répond à la demande du propriétaire :
 > « Mon idée est que tous les outils devraient avoir les mêmes menus que Keystone (pour les menus de base qui sont hors des
 > menus métiers). Et que chaque personne devrait pouvoir donner son approbation à une tâche, un workflow ou autre depuis son
 > application métier sans avoir à ouvrir obligatoirement l'application d'un autre métier. La consultation du workflow, des
@@ -477,7 +482,7 @@ Ce que chaque outil demandera, une fois les réponses connues (jamais sans « va
 publication `<outil>.pub_taches` et le lien `lecture matrix.pub_taches` ; à Clavis, l'inscription « peut demander un jeton
 pour » ; à Codex, l'aperçu par jeton de personne.
 
-## 7. Décisions à prendre (questionnaire)
+## 7. Décisions à prendre (questionnaire) — réponses au § 7 bis
 
 | Id | Question | Réponse par défaut |
 | --- | --- | --- |
@@ -497,3 +502,36 @@ pour » ; à Codex, l'aperçu par jeton de personne.
 | TA-14 | Pilote | Keystone + Codex + Arche |
 | TA-15 | « Mes tâches » et « Mes approbations » : deux entrées ou une ? | deux entrées (comme Keystone) |
 | TA-16 | Tâches de toute la suite dans tous les outils, ou seulement dans un « portail » ? | dans tous les outils |
+
+## 7 bis. Décisions du propriétaire (27 novembre 2026)
+
+Décision du propriétaire, citée : « le tronc commun des menus n'est pas disponible sur tous les sites. Je veux dans ce tronc
+commun les menus suivants : 1- Accueil ; 2- Mes tâches (sous le même format que Teams, un affichage en liste, un en kanban
+et un en calendrier) ; 3- Mes approbations. Le minimum est ces trois menus, chaque accueil doit être typé en fonction de
+l'outil, et les tâches et approbations doivent montrer toutes les tâches et toutes les approbations qu'un utilisateur a même
+si la provenance est d'un autre outil. En fonction de l'outil métier tu peux ajouter un ou deux menus dans la liste pour ceux
+qui te semblent les plus importants. » Les autres réponses du questionnaire ont été données le même jour, en séance, et
+enregistrées dans la base du questionnaire : la réponse proposée, confirmée.
+
+| Id | Décision (27 nov. 2026) | Où elle s'applique |
+| --- | --- | --- |
+| TA-1 | **Confirmée** : Matrix publie `matrix.pub_taches` (réunion des `pub_taches`), plus `matrix.pub_taches_sources` | `contrats/taches-v1.md` § 4 ; Matrix MX-N08 |
+| TA-2 | **Confirmée**, ajustée par TA-11 / TA-15 : colonnes du § 4.2 ; `nature` = `tache` · `approbation` (une échéance est une tâche, une information va à la cloche) ; `etat` = `a_faire` · `en_cours` · `en_attente` · `faite` · `annulee` (colonnes du kanban demandé « comme Teams ») ; `resultat`, `type_libelle_en` ajoutés | `contrats/taches-v1.md` § 2 |
+| TA-3 | **Confirmée** : table de projection réécrite par les fournisseurs de l'outil + toutes les 15 min | contrat § 1 |
+| TA-4 | **Confirmée** : échange de jeton RFC 8693 chez Clavis, 5 min, portée `taches:*` — prérequis de la phase 2 | contrat § 5 ; Clavis CL-N09 |
+| TA-5 | **Confirmée** : un seul résumé quotidien pour la suite ; immédiat par l'outil propriétaire | contrat § 7 (phase 3) |
+| TA-6 | **Confirmée** : Matrix envoie le résumé | phase 3 |
+| TA-7 | **Confirmée** : préférences dans Clavis (page « Mes notifications ») | phase 3 |
+| TA-8 | **Confirmée** : aperçu des documents par l'API de Codex avec le jeton de la personne | phase 2 |
+| TA-9 | **Confirmée** : la liste du § 4.6 n'est jamais décidée à distance | contrat § 3 |
+| TA-10 | **Confirmée** : titres neutres, `sensible`, aucune donnée de santé ; avis RGPD de Cursus | contrat § 3 |
+| TA-11 | **Décidée par le propriétaire** : Accueil (typé selon l'outil) · Mes tâches · Mes approbations, puis une ou deux entrées métier par outil ; Mes tableaux de bord et Documents · Codex ne sont plus communs (entrées métier de Keystone ou sections) | `charte/COQUE.md` § 2 bis |
+| TA-12 | **Confirmée** : Vigie ajoute une API `/api/v1/taches/` | contrat § 6 ; Vigie VG-N09 |
+| TA-13 | **Confirmée** : décision refusée si l'outil propriétaire ne répond pas, pas de file d'attente | contrat § 6 |
+| TA-14 | **Confirmée** : pilote Keystone + Codex + Arche | `DEPLOIEMENT-TRONC-COMMUN.md` |
+| TA-15 | **Décidée par le propriétaire** : deux entrées, « Mes tâches » en liste, kanban et calendrier (comme Teams) et « Mes approbations » | `COQUE.md` § 2 bis.4 et 2 bis.5 |
+| TA-16 | **Décidée par le propriétaire** : toutes les tâches et approbations de la personne, quelle que soit leur provenance, dans chaque outil | contrat § 4 ; `COQUE.md` § 2 bis |
+
+**Phases, après décision.** Phase 1 (Norma 2.4) = phases 1 et 2 du § 6 : tronc commun, projection et `pub_taches`,
+`matrix.pub_taches`, « Mes tâches » et « Mes approbations » de toute la suite en lecture, lien profond. Phase 2 = phases 3
+et 4 : échange de jeton de Clavis, fiche et décision à distance, aperçu de Codex. Phase 3 = phase 5 : résumé e-mail commun.

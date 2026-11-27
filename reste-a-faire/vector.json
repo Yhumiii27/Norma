@@ -1,7 +1,7 @@
 {
   "outil": "vector",
   "generated": "2026-11-24",
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/vector",
@@ -34,6 +34,10 @@
     {
       "date": "2026-11-25",
       "text": "VE-L1 fait : livraison 1 (Vector#1) déployée le 25 nov. 2026 en conteneur unique (Vector#2) ; schéma et rôle vector_app au socle (M-25, Matrix#102) ; logo de Norma 2.3.0 dans la coque et en favicon (Vector#3, fusionnée)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : VE-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
     }
   ],
   "items": [
@@ -196,6 +200,28 @@
         "state": "fait",
         "delivery": "Vector#1",
         "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "id": "VE-N02",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes expéditions » et « Demandes d’expédition ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Expéditions en cours (prochaine étape, ETA, retard), demandes à trier, documents manquants, incidents ouverts.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]

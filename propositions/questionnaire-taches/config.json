@@ -1,10 +1,11 @@
 {
   "titre": "Tâches et approbations dans toute la suite",
   "sousTitre": "Norma · questionnaire du responsable produit",
-  "introduction": "Décisions ouvertes de la proposition propositions/TACHES-ET-APPROBATIONS.md (menus de base communs, « Mes tâches » et approbations de toute la suite, consultation et décision depuis chaque outil, notifications). Chaque question porte la proposition par défaut (★), appliquée tant qu’il n’y a pas d’autre réponse. Choisissez une réponse, ajoutez une note si besoin : tout est enregistré à mesure et relu par Claude avant de lancer la phase suivante.",
+  "introduction": "Questions de la proposition propositions/TACHES-ET-APPROBATIONS.md, toutes décidées le 27 novembre 2026 (§ 7 bis) : TA-11, TA-15 et TA-16 par le propriétaire, les autres par la réponse proposée (★), confirmée. La page reste consultable ; une note ajoutée est relue par Claude avant la phase suivante.",
   "decideTitre": "Déjà décidé",
   "decide": [
-    "Rien n’est construit avant les réponses : la proposition et ce questionnaire seulement (26 novembre 2026).",
+    "27 novembre 2026 : toutes les questions sont décidées — TA-11, TA-15, TA-16 par le propriétaire (tronc commun Accueil · Mes tâches · Mes approbations, tâches de toute la suite partout), TA-1 à TA-10, TA-12 à TA-14 : réponse proposée confirmée. Construit dans Norma 2.4.0.",
+    "26 novembre 2026 : proposition et questionnaire seulement.",
     "M-17, M-18, M-19 de Matrix : lecture par les vues pub_ (définies par Matrix), écriture par l’API ou une fonction pub_ de l’outil propriétaire.",
     "Connexion et droits par Clavis : personne_id de Clavis = clé commune d’une personne ; droits lus dans clavis.pub_acces.",
     "Codex héberge les documents ; les autres outils n’en gardent que les références."

@@ -1,25 +1,25 @@
 # Reste à faire de la solution EPC2I
 
-Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 26 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
+Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 27 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
 
-**Avancement** : 818 faits, 90 en cours, 202 à faire, sur 1110 points.
+**Avancement** : 818 faits, 91 en cours, 213 à faire, sur 1122 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
-| [Keystone](#keystone) | 140 | 28 | 51 | 219 | 14 | 20 | 2026-11-25 |
-| [Codex](#codex) | 64 | 14 | 65 | 143 | 0 | 54 | 2026-11-26 |
-| [Vigie](#vigie) | 299 | 13 | 54 | 366 | 6 | 29 | 2026-11-26 |
-| [Cursus](#cursus) | 179 | 3 | 15 | 197 | 1 | 0 | 2026-11-26 |
-| [Arche](#arche) | 46 | 10 | 1 | 57 | 3 | 3 | 2026-11-25 |
-| [Crucible](#crucible) | 32 | 4 | 2 | 38 | 1 | 1 | 2026-11-25 |
-| [Clavis](#clavis) | 20 | 1 | 4 | 25 | 0 | 0 | 2026-11-25 |
-| [Matrix](#matrix) | 25 | 11 | 3 | 39 | 1 | 2 | 2026-11-26 |
-| [Modulus](#modulus) | 3 | 5 | 1 | 9 | 0 | 0 | 2026-11-25 |
-| [Vector](#vector) | 3 | 0 | 5 | 8 | 0 | 0 | 2026-11-25 |
-| [Norma (socle)](#norma) | 7 | 1 | 1 | 9 | 0 | 1 | 2026-11-26 |
-| **Total** | **818** | **90** | **202** | **1110** | | | |
+| [Keystone](#keystone) | 140 | 28 | 52 | 220 | 14 | 20 | 2026-11-27 |
+| [Codex](#codex) | 64 | 14 | 66 | 144 | 0 | 54 | 2026-11-27 |
+| [Vigie](#vigie) | 299 | 13 | 55 | 367 | 6 | 29 | 2026-11-27 |
+| [Cursus](#cursus) | 179 | 3 | 16 | 198 | 1 | 0 | 2026-11-27 |
+| [Arche](#arche) | 46 | 10 | 2 | 58 | 3 | 3 | 2026-11-27 |
+| [Crucible](#crucible) | 32 | 4 | 3 | 39 | 1 | 1 | 2026-11-27 |
+| [Clavis](#clavis) | 20 | 1 | 6 | 27 | 0 | 0 | 2026-11-27 |
+| [Matrix](#matrix) | 25 | 11 | 5 | 41 | 1 | 2 | 2026-11-27 |
+| [Modulus](#modulus) | 3 | 5 | 2 | 10 | 0 | 0 | 2026-11-27 |
+| [Vector](#vector) | 3 | 0 | 6 | 9 | 0 | 0 | 2026-11-27 |
+| [Norma (socle)](#norma) | 7 | 2 | 0 | 9 | 0 | 0 | 2026-11-27 |
+| **Total** | **818** | **91** | **213** | **1122** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -27,7 +27,7 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 
 ## Keystone
 
-140 faits, 28 en cours, 51 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+140 faits, 28 en cours, 52 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (16 restants, 15 faits)
 
@@ -348,11 +348,14 @@ Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Reti
 
 Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P1 · Relance fournisseurs et inspections usine (à valider) ; R-160 P2 · Conformité CE et dossier technique machine (à valider) ; R-162 P4 · Exposition de change par projet et alertes de couverture (à valider).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 2 faits)
 
 - **R-N01 · Tables déclarées dans le schéma keystone (pgSchema(...).table(...))** — *Prochaine étape · non commencé*  
   Les tables sont déclarées avec pgTable et le migrateur réécrit "public". en "keystone". au lieu de pgSchema(...).table(...) (REGLES § 4).
   *Sources : PR Keystone#81 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **R-N05 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes projets » et « Mes tableaux de bord ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes projets en cours (avancement, alertes, prochain jalon), tâches du jour, approbations en attente, activité récente.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -360,7 +363,7 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
 
 ## Codex
 
-64 faits, 14 en cours, 65 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+64 faits, 14 en cours, 66 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -635,11 +638,14 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
   Option 1 : signer avec une identité stable, choisie par une variable (`CODEX_SIGN_IDENTITY`). Ce peut être un certificat de signature de code auto-signé, créé une fois dans le Trousseau (Assistant de certification), ou un Developer ID si l'utilisateur en a un. Si l'identité est absente, le script revient à la signature ad hoc. Aucun certificat ni aucune clé ne doit entrer dans le dépôt : `.gitignore` exclut déjà `*.p12` et `*.cer`. Option 2, à envisager en complément : demander l'emplacement de téléchargement par `NSSavePanel`, dont le choix par l'utilisateur vaut autorisation, au lieu d'écrire en silence dans `~/Downloads`. Le certificat doit être créé par l'utilisateur sur son Mac.
   *Attend : Une session sur macOS (app Mac, T-02) · Sources : docs/reste-a-faire.md, point 129 (Demande une session sur macOS › App Mac)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
 
 - **CX-N08 · CLAUDE.md cite encore ThemeToggle.tsx supprimé (#35)** — *Prochaine étape · non commencé · effort S*  
   Depuis l'alignement sur la coque commune (Codex#35), src/components/shell/ThemeToggle.tsx n'existe plus (paire langue / affichage de la coque, PrefsStack) ; la section « Conventions » du CLAUDE.md de Codex le cite encore comme bouton d'affichage. Corriger le texte pour renvoyer à la coque (norma/charte/COQUE.md § 4).
   *Sources : Codex#35 (coque commune, 24 nov. 2026), CLAUDE.md de Codex, « Conventions », affichage sombre / clair*
+- **CX-N09 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Documents » et « Mes documents ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Documents récents et à réviser, circuits où je suis valideur, échéances de revue et de conservation, recherche documentaire. Mes approbations = /validations.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : CX-N01 Interface par chaînes sources en anglais ; CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formulaires en panneau latéral ; CX-N05 Un dossier par connecteur ; CX-N06 Retirer le correctif local des textes atténués ; CX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -647,7 +653,7 @@ Faits : CX-N01 Interface par chaînes sources en anglais ; CX-N02 Icônes Phosph
 
 ## Vigie
 
-299 faits, 13 en cours, 54 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+299 faits, 13 en cours, 55 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
 ### Tableau de bord, échéances et navigation (1 restants, 18 faits)
 
@@ -927,11 +933,14 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
 
 Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-09 Communication et sensibilisation ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
 
 - **VG-N04 · Tables déclarées dans le schéma vigie** — *Prochaine étape · non commencé*  
   Tables en pgTable réécrites vers « vigie » par le migrateur au lieu de pgSchema(...).table(...) (REGLES § 4).
   *Sources : PR Vigie#40 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **VG-N09 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Événements » et « Plan d’actions ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Tableau de bord QHSE du site choisi : TF1 / TG, jours sans accident, événements récents, actions en retard, échéances de contrôles et d'habilitations. Mes tâches = « À faire » (/a-faire) ; API /api/v1/taches/ en phase 2 (TA-12) ; signatures de terrain jamais décidées à distance.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -939,7 +948,7 @@ Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Con
 
 ## Cursus
 
-179 faits, 3 en cours, 15 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+179 faits, 3 en cours, 16 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -1041,7 +1050,7 @@ Faits : CU-168 Créer une CI GitHub Actions et figer la version de Node ; CU-169
 
 Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU-179 Protéger npm run reset-demo contre l'effacement d'une base réelle ; CU-180 Résoudre les chemins de l'interface et de la base depuis le code ; CU-181 Fournir un packaging serveur (Docker ou systemd) ; CU-182 Versionner les migrations de schéma ; CU-183 Charger les données par périmètre et ne renvoyer que ce qui change ; CU-184 Structurer les logs et répondre en JSON aux erreurs ; CU-185 Ajouter un point de santé /api/health ; CU-186 Activer la compression et un cache long sur les fichiers statiques ; CU-187 Gérer l'arrêt propre et le délai d'attente SQLite ; CU-188 Découper le bundle client par écran ; CU-189 Retirer du dépôt les deux archives zip de la maquette ; CU-191 Déclarer clés étrangères et contraintes dans le schéma.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (4 restants, 2 faits)
 
 - **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51, #53)**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
@@ -1052,6 +1061,9 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 - **CU-N04 · Formulaires en panneau latéral** — *Prochaine étape · non commencé* · **en cours**  
   Les formulaires s’ouvrent en dialogues centrés, pas en panneau latéral (REGLES § 7).
   *Avancement : Formulaires en panneau latéral : reprise commencée. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+- **CU-N07 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort L*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes temps » et « Mes absences ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mon espace RH : soldes de congés, feuille de temps de la semaine, formations et habilitations à échéance, demandes en cours ; pour un manager, son équipe. Client Vite : modèles purs base-nav.ts / task-rules.ts et HTML de la coque ; titres neutres, absences et santé « sensible » (avis RGPD, TA-10).
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1059,7 +1071,7 @@ Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 
 
 ## Arche
 
-46 faits, 10 en cours, 1 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+46 faits, 10 en cours, 2 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (3 restants, 8 faits)
 
@@ -1141,7 +1153,11 @@ Faits : AR-035 Ramp-up : saisie journalière, TRS, 30 jours continus, 6 mois ; v
 
 Faits : AR-001 Cadrage de la livraison 0.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 4 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 4 faits)
+
+- **AR-N05 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes CAPEX » et « Portefeuille ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes CAPEX (phase DIG-PRODI, prochain jalon, budget et réalisé), jalons G1 / G2 / G3 à venir, alertes du portefeuille.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : AR-N01 Contraintes de format en base pour chaque colonne ; AR-N02 Installation directe sans Docker ; AR-N03 Composants et police pris dans norma/charte ; AR-N04 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1149,7 +1165,7 @@ Faits : AR-N01 Contraintes de format en base pour chaque colonne ; AR-N02 Instal
 
 ## Crucible
 
-32 faits, 4 en cours, 2 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+32 faits, 4 en cours, 3 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (1 restants, 4 faits)
 
@@ -1210,7 +1226,11 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 
 Faits : CR-001 Cadrage (livraison 0).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 6 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 6 faits)
+
+- **CR-N07 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Planning des moyens » et « Mes besoins d’essais ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Occupation des moyens d'essais de la semaine, mes réservations, conflits et incidents ouverts. Mes approbations = « À décider » (/my/decisions) ; arbitrages et scénarios non décidables à distance.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dossier par connecteur ; CR-N03 Rôles jamais pris dans le jeton ; CR-N04 Installation directe sans Docker ; CR-N05 Importer norma/charte/touch.css ; CR-N06 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1218,7 +1238,7 @@ Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dos
 
 ## Clavis
 
-20 faits, 1 en cours, 4 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+20 faits, 1 en cours, 6 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
 ### Gestion des droits (proposition du 24 nov. 2026) (1 restants, 4 faits)
 
@@ -1232,7 +1252,7 @@ Faits : CL-LA Lot A — Mise en service ; CL-LB Lot B — Rôles multiples ; CL-
 
 Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défaut ? ; CL-DR2 Une élévation (administrateur, direction) demande-t-elle une seconde validation ? ; CL-DR3 Revue des accès : fréquence et qui valide ? ; CL-DR4 Comptes dormants : seuil ? ; CL-DR5 Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ? ; CL-DR6 Double authentification : pour qui ?.
 
-### Suite prévue (4 restants, 3 faits)
+### Suite prévue (5 restants, 3 faits)
 
 - **CL-S01 · Connexion de Keystone et de Codex par Clavis** — *Prochaine étape · non commencé*  
   Keystone et Codex se connectent par Clavis (Codex n’a pas encore de vraie connexion).
@@ -1246,10 +1266,17 @@ Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défa
 - **CL-S06 · Registre des applications lu par les autres outils** — *Prochaine étape · non commencé*  
   Registre des applications publié et lu par les autres outils.
   *Sources : CLAUDE.md, « Next »*
+- **CL-N09 · Échange de jeton pour les décisions entre outils (Norma 2.4, phase 2)** — *Plus tard · non commencé · effort L*  
+  Échange de jeton RFC 8693 (contrats/taches-v1.md § 5) : jeton de rafraîchissement à la connexion (12 h, révoqué à la déconnexion, au départ, au retrait de l'accès) ; grant token-exchange par le secret client de l'outil A → JWT pour l'outil B (aud = B, sub = oid = personne_id, act.sub = A, scope taches:lire \| taches:decider, 5 min) ; registre « A peut demander un jeton pour B » ; journal de chaque émission. Prérequis de la décision à distance (TA-4, confirmée le 27 nov. 2026).
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : CL-S02 Écran d’import CSV de l’annuaire ; CL-S04 Envoi des mots de passe provisoires ; CL-S07 Mise en service sur le serveur commun et en ligne.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+
+- **CL-N08 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Annuaire » et « Mes accès ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Pour chacun : mes accès et mes demandes ; pour la DSI : comptes à activer, demandes d'accès, revues et écarts.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page ; CL-N02 Recherche de pages ⌘K ; CL-N03 Boîte aux lettres REQUESTS.md ; CL-N04 Police Inter de la charte ; CL-N05 Composants pris dans @norma/charte/ds ; CL-N06 Installation directe sans Docker ; CL-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1257,7 +1284,7 @@ Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de p
 
 ## Matrix
 
-25 faits, 11 en cours, 3 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+25 faits, 11 en cours, 5 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1282,8 +1309,11 @@ Faits : MX-M24 M-24 · Purge du journal de Cursus par le rôle dédié cursus_pu
 
 Faits : MX-S02 Redéploiement d’epc2i-postgres limité au socle, et rejeu du socle.
 
-### Demandes des autres outils (11 restants)
+### Demandes des autres outils (12 restants)
 
+- **MX-N09 · Réunion matrix.pub_taches et matrix.pub_taches_sources (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Construire matrix.pub_taches, réunion (UNION ALL) des <outil>.pub_taches lisibles et conformes au contrat taches v1, sur le modèle de journal_unifie (vue absente ou hors contrat laissée de côté, réunion reconstruite, rejouable), et matrix.pub_taches_sources (outil, etat ok \| absente \| hors_contrat \| illisible, verifie_le, message) ; un seul lien lecture matrix.pub_taches par outil ; appliquer chaque <outil>.pub_taches demandée. Décision TA-1 (27 nov. 2026).
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 - **MX-R01 · M-14 · Rôle de lecture bi_reader pour Power BI (AR-042)** — *Prochaine étape · partiel* · **en cours**  
   Demande de Arche → Matrix du 2026-10-31, statut ACCEPTÉE (02/11/2026, à la demande du propriétaire dans la session de Matrix. Fait : rôle `bi_reader` dans le socle (`init/01` à `03` : connexion si `BI_READER_PASSWORD` est fourni, transactions en lecture seule, requête bornée à 2 minutes, aucun héritage) ; lecteur admis par le registre des liens, `90-droits.sql` et `droits.verifier()` (rien d'autre que `SELECT` sur les vues `pub_` accordées, `USAGE` seulement là où il lit) ; liens vers `arche.pub_capex`, `pub_besoins_machines`, `pub_rampup`, `pub_rex_v2` et `pub_journal` préparés dans `data/publications-depot.json` et décidés dans l'écran « Publications » (pas `arche.pub_rex`). Reste : exposer le serveur à Power BI en TLS (question P-06, configuration du serveur) et ranger `BI_READER_PASSWORD` dans le coffre de la DSI ; la demande passera à FAITE une fois les liens autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (02/11/2026, à la demande du propriétaire dans la session de Matrix. Fait : rôle `bi_reader` dans le socle (`init/01` à `03` : connexion si `BI_READER_PASSWORD` est fourni, transactions en lecture seule, requête bornée à 2 minutes, aucun héritage) ; lecteur admis par le registre des liens, `90-droits.sql` et `droits.verifier()` (rien d'autre que `SELECT` sur les vues `pub_` accordées, `USAGE` seulement là où il lit) ; liens vers `arche.pub_capex`, `pub_besoins_machines`, `pub_rampup`, `pub_rex_v2` et `pub_journal` préparés dans `data/publications-depot.json` et décidés dans l'écran « … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-10-31 (Arche → Matrix)*
@@ -1318,7 +1348,11 @@ Faits : MX-S02 Redéploiement d’epc2i-postgres limité au socle, et rejeu du s
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (0 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+
+- **MX-N08 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Publications » et « Liens entre outils ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : État du serveur commun : outils et publications, publications à appliquer, liens demandés, journal unifié récent. Bloc en HTML (classes coque-base-nav, coque-task-*).
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Icônes Phosphor ; MX-N03 Formulaires en panneau latéral ; MX-N04 Variables d’environnement toutes validées au démarrage ; MX-N05 Modulus, Clavis et Matrix dans les listes d’outils ; MX-N06 Délégation de Claude conforme à REGLES § 10 ; MX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1326,7 +1360,7 @@ Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Ic�
 
 ## Modulus
 
-3 faits, 5 en cours, 1 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
+3 faits, 5 en cours, 2 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
 
 ### Livraisons du plan (6 restants, 2 faits)
 
@@ -1351,7 +1385,11 @@ Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Ic�
 
 Faits : MO-L0 Livraison 0 — Cadrage ; MO-L1 Livraison 1 — Plateforme.
 
-### Alignement Norma (0 restants, 1 faits)
+### Alignement Norma (1 restants, 1 faits)
+
+- **MO-N02 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes affaires » et « Catalogue ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes affaires (étape, offre en cours, échéance), offres à revoir, dernières publications du catalogue et des prix.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1359,7 +1397,7 @@ Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Vector
 
-3 faits, 0 en cours, 5 à faire. Source : Yhumiii27/vector, `docs/PLAN.md` ; reprise : une livraison du plan = un item. Effort : non estimé.
+3 faits, 0 en cours, 6 à faire. Source : Yhumiii27/vector, `docs/PLAN.md` ; reprise : une livraison du plan = un item. Effort : non estimé.
 
 ### Livraisons du plan (5 restants, 2 faits)
 
@@ -1381,7 +1419,11 @@ Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 Faits : VE-L0 Livraison 0 — Cadrage ; VE-L1 Livraison 1 — Socle et interface.
 
-### Alignement Norma (0 restants, 1 faits)
+### Alignement Norma (1 restants, 1 faits)
+
+- **VE-N02 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
+  Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes expéditions » et « Demandes d’expédition ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Expéditions en cours (prochaine étape, ETA, retard), demandes à trier, documents manquants, incidents ouverts.
+  *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
 
 Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1389,16 +1431,16 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Norma (socle)
 
-7 faits, 1 en cours, 1 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+7 faits, 2 en cours, 0 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Socle commun (règles, charte, registre, dépendances) (2 restants, 3 faits)
 
 - **NO-008 · Logos des outils dans la charte** — *Prochaine étape · partiel* · **en cours (Norma 2.3.0)**  
   Un logo par outil dans charte/logos, composant ToolLogo de charte/ds pour la marque de la coque, et favicon de chaque outil.
   *Avancement : Logos livrés en 2.3.0 (charte/logos, composant ToolLogo, favicon). Fusionnés le 25 nov. 2026 : Arche#65, Clavis#18, Codex#36, Crucible#51, Matrix#103, Modulus#7, Vector#3, Vigie#45. Restent ouvertes : Keystone#85, Cursus#47. · Sources : Norma 2.3.0 (PR Norma#12), CHANGELOG.md*
-- **NO-009 · Menus de base communs, tâches et approbations dans toute la suite** — *À décider · attend le responsable produit · effort XL*  
+- **NO-009 · Tronc commun des menus, tâches et approbations dans toute la suite** — *Prochaine étape · partiel · effort XL* · **en cours (Norma 2.4.0)**  
   Même bloc d'entrées de base que Keystone dans tous les outils ; « Mes tâches », « Mes approbations » et cloche de toute la suite (pub_taches réunies par Matrix) ; fiche et décision depuis chaque outil par l'API de l'outil propriétaire avec un jeton de la personne émis par Clavis ; documents par l'aperçu de Codex ; un seul résumé e-mail.
-  *Avancement : Proposition et questionnaire du 26 nov. 2026 ; phases 0 à 5, pilote proposé Keystone + Codex + Arche. · Attend : Réponses du propriétaire au questionnaire TA-1 à TA-16 · Sources : propositions/TACHES-ET-APPROBATIONS.md, propositions/questionnaire-taches/questions.json*
+  *Avancement : 27 nov. 2026 : TA-11, TA-15, TA-16 décidées par le propriétaire, les autres réponses proposées confirmées. Norma 2.4.0 livre la phase 1 dans le socle (tronc commun, composants, contrat pub_taches v1) ; adoption par outil : R-N05, CX-N09, AR-N05, VG-N09, CR-N07, CU-N07, CL-N08, MX-N08, MO-N02, VE-N02 ; MX-N09 (réunion) et CL-N09 (jeton, phase 2). · Sources : propositions/TACHES-ET-APPROBATIONS.md, propositions/questionnaire-taches/questions.json, propositions/DEPLOIEMENT-TRONC-COMMUN.md, contrats/taches-v1.md, charte/COQUE.md § 2 bis*
 
 Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus ; NO-007 Coque commune des outils (Norma 2.0).
 
@@ -1412,6 +1454,17 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 
 ## Mises à jour
 
+- 2026-11-27 — **Keystone** : Norma 2.4.0 : R-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Codex** : Norma 2.4.0 : CX-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Vigie** : Norma 2.4.0 : VG-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Cursus** : Norma 2.4.0 : CU-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Arche** : Norma 2.4.0 : AR-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Crucible** : Norma 2.4.0 : CR-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Clavis** : Norma 2.4.0 : CL-N08 (tronc commun des menus) et CL-N09 (échange de jeton RFC 8693, prérequis de la phase 2) ajoutés.
+- 2026-11-27 — **Matrix** : Norma 2.4.0 : MX-N08 (tronc commun des menus) et MX-N09 (réunion matrix.pub_taches, pub_taches_sources) ajoutés.
+- 2026-11-27 — **Modulus** : Norma 2.4.0 : MO-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Vector** : Norma 2.4.0 : VE-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Norma (socle)** : Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil.
 - 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
 - 2026-11-26 — **Codex** : CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun.
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
@@ -1461,14 +1514,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Crucible** : Audit du design de Norma 2.0 : point CR-N06 (coque commune).
 - 2026-11-24 — **Crucible** : Audit Norma : CR-N01 à CR-N05 faits (Crucible#47, #48) ; coque Norma 2.0 en cours.
 - 2026-11-24 — **Crucible** : Coque commune Norma 2.x fusionnée (Crucible#49) : CR-N06 fait.
-- 2026-11-24 — **Clavis** : Proposition de gestion des droits ; repris dans le reste à faire global de Norma 1.2.0 (commit 097b49d).
-- 2026-11-24 — **Clavis** : Lot A (mise en service) construit, PR Clavis#13 en brouillon ; lot B fusionné (PR Clavis#12).
-- 2026-11-24 — **Clavis** : Audit du design de Norma 2.0 : point CL-N07 (coque commune).
-- 2026-11-24 — **Clavis** : Lots A, B, C, D fusionnés (Clavis#12, #13, #14 ; DR-1 à DR-6 par défaut, transport des e-mails inactif en attente de la DSI), lot E en partie ; écarts de l’audit Norma corrigés (#14) ; coque Norma 2.0 (#15).
-- 2026-11-24 — **Clavis** : Coque commune Norma 2.x fusionnée (Clavis#15) : CL-N07 fait.
-- 2026-11-24 — **Matrix** : Repris dans le reste à faire global de Norma 1.2.0 (commit 4c6b688) ; écarts de l’audit Norma ajoutés (MX-N…).
-- 2026-11-24 — **Matrix** : Audit du design de Norma 2.0 : point MX-N07 (coque commune).
-- 2026-11-24 — **Matrix** : Écarts de l’audit Norma corrigés (Matrix#96, #98 ; scripts du serveur commun #99) ; coque Norma 2.0 (#100) ; i18n en cours (~650 chaînes).
-- 2026-11-24 — **Matrix** : Coque commune Norma 2.x fusionnée (Matrix#100) : MX-N07 fait.
-- 2026-11-24 — **Modulus** : Cadrage (livraison 0) en cours ; repris dans le reste à faire global de Norma 1.2.0 (commit 44784fa).
-- 2026-11-24 — **Modulus** : Audit du design de Norma 2.0 : point MO-N01 (coque commune).
