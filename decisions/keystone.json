@@ -46,6 +46,54 @@
         "date": "2026-11-27",
         "source": "décision du propriétaire en séance, 27 nov. 2026"
       }
+    },
+    {
+      "outil": "keystone",
+      "id": "keystone:CF-1",
+      "alternatives": [
+        "Oui, le directeur voit tous les projets confidentiels."
+      ],
+      "bloque": "R-216",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "session",
+      "ref": "CF-1",
+      "titre": "Le directeur de portefeuille voit-il les projets confidentiels dont il n’est pas membre ?",
+      "contexte": "Confidentialité des projets (décisions du propriétaire du 27 nov. 2026, Keystone#90) : un projet confidentiel n’est vu que de son équipe.",
+      "proposition": "Non, seulement une fois ajouté à l’équipe (DIRECTOR_SEES_CONFIDENTIAL = false)."
+    },
+    {
+      "outil": "keystone",
+      "id": "keystone:CF-2",
+      "alternatives": [
+        "Totaux calculés sur tous les projets, sans détail des projets confidentiels."
+      ],
+      "bloque": "R-216",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "session",
+      "ref": "CF-2",
+      "titre": "Totaux du portefeuille et projets confidentiels",
+      "contexte": "Confidentialité des projets (décisions du propriétaire du 27 nov. 2026, Keystone#90) : un projet confidentiel n’est vu que de son équipe.",
+      "proposition": "Un projet confidentiel est exclu des totaux pour qui n’est pas de son équipe (les totaux diffèrent donc selon la personne)."
+    },
+    {
+      "outil": "keystone",
+      "id": "keystone:CF-3",
+      "alternatives": [
+        "Les calculer par personne, sans les projets confidentiels dont elle n’est pas membre."
+      ],
+      "bloque": "R-216",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "session",
+      "ref": "CF-3",
+      "titre": "Compteurs globaux partagés (documents à valider, factures bloquées, stock, SAV)",
+      "contexte": "Confidentialité des projets (décisions du propriétaire du 27 nov. 2026, Keystone#90) : un projet confidentiel n’est vu que de son équipe. Ces compteurs sont partagés entre lecteurs.",
+      "proposition": "Ils restent calculés sur toute l’entreprise, sans détail de projet (limite connue, à reprendre si le propriétaire le demande)."
     }
   ]
 }

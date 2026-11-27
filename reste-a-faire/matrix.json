@@ -65,6 +65,10 @@
     {
       "date": "2026-11-27",
       "text": "MX-N10 fait (Matrix#107 : dépôt Atrium, contrats v2 des messages, « Filiale partenaire ») ; MX-N11 en cours (fiche d’opération prête, serveur non renommé) ; noms stockés d’Arche dans la fiche (Matrix#108) ; catalogue sans l’ancien nom (Matrix#109)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "MX-R12 ajouté (Matrix#110 : Ingenium dans le socle ; sur le serveur, rôle ingenium_app, schéma ingenium et mot de passe posés, 03-droits.sql rejoué sans écart, 16 liens restent) ; MX-R13 ajouté (DM-1 à DM-3 de Clavis, à appliquer) ; MX-R14 ajouté (publications de confidentialité et d’équipe de Keystone, Matrix#111, #112, à appliquer après 0086) ; question REN-1 close (doublon de R-1)."
     }
   ],
   "items": [
@@ -1047,6 +1051,72 @@
         "state": "en_cours",
         "delivery": "Matrix#107, #108",
         "note": "Fiche d’opération prête et répétée sur des clusters jetables (docs/renommage-atrium.md : base, hôte, volumes, rôle des sauvegardes, filiale) ; noms stockés d’Arche ajoutés (Matrix#108). Rien n’est joué sur le serveur : attend la date de la fenêtre (R-1), la copie des volumes par l’hôte (R-6) et le « validé »."
+      }
+    },
+    {
+      "id": "MX-R12",
+      "title": "Ingenium dans le socle du serveur commun (DI-M1, M-29)",
+      "description": "Demande d’Ingenium du 27 nov. 2026 (DI-M1), acceptée (M-29) : rôle ingenium_app, schéma ingenium, liens de lecture de base, journal (pub_journal), sauvegardes.",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Liens de lecture d’Ingenium (16) à autoriser sur le serveur en service",
+      "effort": "S",
+      "sources": [
+        "REQUESTS.md, entrée du 2026-11-27 (Ingenium → Matrix, DI-M1)"
+      ],
+      "evidence": [
+        "Matrix#110"
+      ],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "Matrix#110",
+        "note": "Socle du dépôt mis à jour (Matrix#110). Sur le serveur le 27 nov. 2026 : rôle ingenium_app et schéma ingenium créés, mot de passe de ingenium_app posé, 03-droits.sql rejoué (960 relations, 0 écart). Restent les 16 liens de lecture d’Ingenium."
+      }
+    },
+    {
+      "id": "MX-R13",
+      "title": "Demandes DM-1 à DM-3 de Clavis : colonnes de pub_acces et pub_personnes, lien vers cursus.pub_salaries",
+      "description": "DM-1 : roles et perimetre en fin de clavis.pub_acces ; DM-2 : type et proprietaire_id en fin de clavis.pub_personnes ; DM-3 : lien de lecture clavis_app → cursus.pub_salaries. Acceptées le 27 nov. 2026 (M-29).",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Application sur le serveur en service (écran Publications)",
+      "effort": "S",
+      "sources": [
+        "REQUESTS.md, entrées du 2026-11-24 (DM-1) et du 2026-11-27 (DM-2, DM-3)"
+      ],
+      "evidence": [
+        "Matrix#110"
+      ],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "Matrix#110",
+        "note": "Préparées dans le dépôt (Matrix#110). Pas encore appliquées sur le serveur : colonnes DM-2 de clavis.pub_personnes et lien clavis_app → cursus.pub_salaries."
+      }
+    },
+    {
+      "id": "MX-R14",
+      "title": "Publications de Keystone : confidentialité des projets et équipe du projet",
+      "description": "confidentialite en fin de keystone.pub_projets et nouvelle vue keystone.pub_equipes_projets (Keystone#90, décisions du propriétaire du 27 nov. 2026), lues par Ingenium, Codex et les autres outils.",
+      "category": "demandes_outils",
+      "kind": "demande_outil",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Déploiement de la migration 0086 de Keystone, puis « Appliquer » dans l’écran Publications",
+      "effort": "S",
+      "sources": [
+        "Keystone docs/delivery-9/notes-confidentiality.md § 3"
+      ],
+      "evidence": [
+        "Matrix#111, #112"
+      ],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "Matrix#111, #112",
+        "note": "Définitions déposées (Matrix#111) et marquées à appliquer après la migration 0086 de Keystone (Matrix#112). Pas encore appliquées sur le serveur."
       }
     }
   ]

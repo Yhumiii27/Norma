@@ -90,6 +90,38 @@
       "bloque": "CU-037",
       "statut": "ouverte",
       "reponse": null
+    },
+    {
+      "outil": "codex",
+      "id": "codex:D-33-a",
+      "alternatives": [
+        "Les gestionnaires documentaires voient tous les documents, projets confidentiels compris."
+      ],
+      "bloque": "CX-134",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "session",
+      "ref": "D-33-a",
+      "titre": "Gestionnaires documentaires hors de l’équipe d’un projet confidentiel",
+      "contexte": "D-33 (27 nov. 2026, Codex#44) : un document rattaché à un projet confidentiel de Keystone n’existe que pour l’équipe du projet. Choix de l’assistant à confirmer.",
+      "proposition": "Ils ne voient pas les documents du projet (comme les Très confidentiel du dossier du personnel, D-32) ; un gestionnaire ajouté à l’équipe les voit avec ses droits de gestionnaire."
+    },
+    {
+      "outil": "codex",
+      "id": "codex:D-33-b",
+      "alternatives": [
+        "Les exclure de l’export complet et des comptes."
+      ],
+      "bloque": "CX-134",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "session",
+      "ref": "D-33-b",
+      "titre": "Sauvegarde, export complet et reprise d’un ensemble",
+      "contexte": "D-33 (27 nov. 2026, Codex#44) : un document rattaché à un projet confidentiel de Keystone n’existe que pour l’équipe du projet. Choix de l’assistant à confirmer.",
+      "proposition": "Ils incluent les documents des projets confidentiels, comme tout document (administration), ainsi que les comptes de la page Vocabulaires des gestionnaires."
     }
   ]
 }

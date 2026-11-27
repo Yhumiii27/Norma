@@ -82,6 +82,10 @@
     {
       "date": "2026-11-27",
       "text": "CX-N10 fait (Codex#43, suite Atrium) ; Codex#42 : CX-036, CX-038, CX-046 avancés, CX-020 posé en O-12 (répondue par le propriétaire, réponse à compléter)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CX-134 ajouté : D-33, documents des projets confidentiels de Keystone réservés à l’équipe (Codex#44), en attente des publications de Keystone par Matrix ; questions D-33-a et D-33-b ajoutées."
     }
   ],
   "items": [
@@ -3742,6 +3746,28 @@
         "state": "fait",
         "delivery": "Codex#43",
         "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Codex#43, 27 nov. 2026)."
+      }
+    },
+    {
+      "id": "CX-134",
+      "title": "Documents des projets confidentiels de Keystone réservés à l’équipe du projet (D-33)",
+      "description": "Keystone donne la confidentialité de ses projets et leur équipe (pub_projets.confidentialite, pub_equipes_projets) ; un document rattaché à un projet confidentiel n’existe que pour l’équipe du projet (listes, recherche, compteurs, exports, circuits, journal ; fiche en 404).",
+      "category": "securite_et_conformite",
+      "kind": "decision_a_appliquer",
+      "priority": "prochaine_etape",
+      "status": "bloque_systeme_externe",
+      "waiting_on": "Matrix : publier les deux vues de Keystone et en accorder la lecture à codex_app (MX-R14)",
+      "effort": "M",
+      "sources": [
+        "docs/decisions.md, D-33 (27 nov. 2026)"
+      ],
+      "evidence": [
+        "Codex#44 : projectOpenTo / projectGateSql (src/lib/access.ts), src/server/integrations/keystone/confidentiality.ts, tests/integration/confidential-projects.test.ts"
+      ],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "Codex#44",
+        "note": "Construit et fusionné le 27 nov. 2026 (Codex#44) ; sans effet tant que Matrix n’a pas publié les vues de Keystone. Deux choix par défaut à confirmer (D-33-a, D-33-b) ; resserrement des vues pub_ de Codex proposé à Matrix (brouillon)."
       }
     }
   ]

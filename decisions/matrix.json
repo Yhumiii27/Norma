@@ -20,8 +20,13 @@
         "Garder les noms actuels sur le serveur (seule la documentation change)."
       ],
       "bloque": "MX-N11",
-      "statut": "ouverte",
-      "reponse": null
+      "statut": "decidee",
+      "reponse": {
+        "choix": "other",
+        "note": "doublon de R-1 : la date de la fenêtre du renommage se décide par matrix:R-1.",
+        "date": "2026-11-27",
+        "source": "suivi de la suite, 27 nov. 2026"
+      }
     },
     {
       "outil": "matrix",

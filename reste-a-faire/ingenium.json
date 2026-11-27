@@ -23,6 +23,10 @@
     {
       "date": "2026-11-27",
       "text": "IN-L0 fait (Ingenium#1) ; IN-L1 en cours ; IN-S03 fait (client OIDC ingenium dans Clavis) ; IN-S01 en cours ; IN-S02 attend Matrix (DI-M1)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "IN-L1 fait (Ingenium#2, #3, #4) ; IN-L2 en cours : lot 2a fusionné (Ingenium#5 : registre, bascule depuis Keystone, tâches propres), lots 2b et 2c à suivre ; IN-S01 : déployé sur Coolify en démonstration ; IN-S02 : rôle et schéma créés par Matrix, liens à autoriser ; ING-29, ING-30 décidées, ING-31 à ING-35 ajoutées."
     }
   ],
   "items": [
@@ -54,16 +58,16 @@
       "kind": "livraison",
       "priority": "prochaine_etape",
       "status": "non_commence",
-      "waiting_on": "Livraison 0 lue ; ING-19, ING-23 à ING-25, ING-28",
+      "waiting_on": "",
       "effort": "L",
       "sources": [
         "docs/PLAN.md, livraison 1"
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": null,
-        "note": "Plateforme reprise de Modulus en cours (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Ingenium#2, #3, #4",
+        "note": "Plateforme fusionnée le 27 nov. 2026 (Ingenium#2) ; DI-M1 noté envoyé (#3) ; ING-29 / ING-30 appliquées (#4 : « Mes projets » filtré sur l’équipe, projets confidentiels lus dans Keystone)."
       }
     },
     {
@@ -73,17 +77,17 @@
       "category": "livraisons",
       "kind": "livraison",
       "priority": "prochaine_etape",
-      "status": "bloque_attente_proprietaire",
-      "waiting_on": "ING-04, ING-05, ING-09, ING-26 ; vues de reprise (Keystone, Matrix)",
+      "status": "partiel",
+      "waiting_on": "Lots 2b (P&ID, assistant d’import, connecteur Codex) et 2c (miroir des plans, connecteur PDM / 3DX) ; ING-05, ING-09 ; vues de reprise (Keystone, Matrix)",
       "effort": "XL",
       "sources": [
         "docs/PLAN.md, livraison 2"
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "en_cours",
+        "delivery": "Ingenium#5",
+        "note": "Lot 2a fusionné le 27 nov. 2026 (Ingenium#5) : registre d’ingénierie (Synthèse et quatre disciplines), bascule depuis Keystone (à blanc puis appliquée), tâches propres et libres publiées ; ING-31 à ING-35 par défaut. Suite : lots 2b et 2c."
       }
     },
     {
@@ -155,7 +159,7 @@
       "kind": "exploitation",
       "priority": "prochaine_etape",
       "status": "bloque_attente_proprietaire",
-      "waiting_on": "Propriétaire : création de l'application dans Coolify",
+      "waiting_on": "Passage du mode démonstration au serveur commun",
       "effort": "S",
       "sources": [
         "docs/PLAN.md, mise en service"
@@ -164,7 +168,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Application Coolify d’Ingenium créée (secret du client OIDC posé) ; adresse et déploiement à suivre la livraison 1."
+        "note": "Application Coolify déployée en mode démonstration et en bonne santé (27 nov. 2026) ; secret du client OIDC posé."
       }
     },
     {
@@ -174,17 +178,17 @@
       "category": "mise_en_service",
       "kind": "integration",
       "priority": "prochaine_etape",
-      "status": "bloque_attente_proprietaire",
-      "waiting_on": "Brouillon DI-M1 de docs/DEMANDES.md, « validé » du propriétaire",
+      "status": "bloque_systeme_externe",
+      "waiting_on": "Matrix : 16 liens de lecture d’Ingenium à autoriser (MX-R12)",
       "effort": "S",
       "sources": [
         "docs/DEMANDES.md, DI-M1"
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Attend Matrix : rôle ingenium_app et schéma ingenium (brouillon DI-M1 de docs/DEMANDES.md)."
+        "state": "en_cours",
+        "delivery": "Matrix#110",
+        "note": "DI-M1 acceptée (M-29). Sur le serveur le 27 nov. 2026 : rôle ingenium_app et schéma ingenium créés, mot de passe posé, droits rejoués sans écart. Restent les liens de lecture."
       }
     },
     {

@@ -85,6 +85,10 @@
     {
       "date": "2026-11-27",
       "text": "VG-N10 fait (Vigie#51, suite Atrium) ; VG-N04 évalué (Vigie#50) ; VG-N11 ajouté : reste des chaînes sources (fiches imprimables, CSV, PDF, libellés de src/lib), en cours."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "VG-N11 avancé : Vigie#52 (français de Norma pour les composants communs), #53, #54, #55 (traduction de l’interface, parties 1 à 3) ; restent l’aide en ligne, les messages des règles et du serveur, quelques libellés composés et le nom du manifeste."
     }
   ],
   "items": [
@@ -10008,7 +10012,7 @@
       "description": "Ce que VG-N01 laissait en français fixe : fiches imprimables des événements et des actions, titres metadata des sous-pages, export CSV des déchets, rapport d’audit PDF et libellés construits par src/lib.",
       "kind": "alignement_norma",
       "priority": "prochaine_etape",
-      "status": "non_commence",
+      "status": "partiel",
       "waiting_on": "",
       "effort": "S",
       "evidence": [],
@@ -10020,8 +10024,8 @@
       ],
       "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Lot en cours (27 nov. 2026)."
+        "delivery": "Vigie#52, #53, #54, #55",
+        "note": "Fusionnés le 27 nov. 2026 : français de Norma pour les composants communs (#52) ; fiches imprimables, PDF, CSV, titres d’onglet et libellés des tables (#53) ; formulaire terrain, Mon espace, recherche, connexion, impressions des risques, libellés composés (#54) ; composants communs, échéances, tables de src/lib, prévention, coactivité (#55). Restent : contenu de l’aide en ligne (help.ts), messages des règles et du serveur, quelques libellés composés, nom de l’application installée."
       }
     }
   ]

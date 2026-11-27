@@ -2,25 +2,25 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 27 novembre 2026. Produite par `npm run suivi` avec la page `.artifacts/suivi.html` (« Suivi Atrium ») ; ne pas la modifier à la main.
 
-**Avancement** : 833 faits, 98 en cours, 221 à faire, sur 1152 points.
+**Avancement** : 837 faits, 102 en cours, 219 à faire, sur 1158 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
-| [Keystone](#keystone) | 141 | 30 | 51 | 222 | 14 | 20 | 2026-11-27 |
-| [Codex](#codex) | 65 | 14 | 66 | 145 | 0 | 54 | 2026-11-27 |
+| [Keystone](#keystone) | 143 | 29 | 51 | 223 | 14 | 20 | 2026-11-27 |
+| [Codex](#codex) | 65 | 15 | 66 | 146 | 0 | 54 | 2026-11-27 |
 | [Vigie](#vigie) | 300 | 14 | 55 | 369 | 6 | 29 | 2026-11-27 |
-| [Cursus](#cursus) | 179 | 4 | 16 | 199 | 1 | 0 | 2026-11-27 |
+| [Cursus](#cursus) | 180 | 3 | 16 | 199 | 1 | 0 | 2026-11-27 |
 | [Arche](#arche) | 48 | 10 | 2 | 60 | 3 | 3 | 2026-11-27 |
 | [Crucible](#crucible) | 33 | 4 | 3 | 40 | 1 | 1 | 2026-11-27 |
-| [Clavis](#clavis) | 22 | 1 | 6 | 29 | 0 | 0 | 2026-11-27 |
-| [Matrix](#matrix) | 26 | 12 | 5 | 43 | 1 | 3 | 2026-11-27 |
+| [Clavis](#clavis) | 22 | 2 | 6 | 30 | 0 | 0 | 2026-11-27 |
+| [Matrix](#matrix) | 26 | 15 | 5 | 46 | 1 | 3 | 2026-11-27 |
 | [Modulus](#modulus) | 4 | 5 | 2 | 11 | 0 | 0 | 2026-11-27 |
 | [Vector](#vector) | 4 | 0 | 6 | 10 | 0 | 0 | 2026-11-27 |
-| [Ingenium](#ingenium) | 2 | 2 | 9 | 13 | 0 | 4 | 2026-11-27 |
+| [Ingenium](#ingenium) | 3 | 3 | 7 | 13 | 0 | 4 | 2026-11-27 |
 | [Norma (socle)](#norma) | 9 | 2 | 0 | 11 | 0 | 0 | 2026-11-27 |
-| **Total** | **833** | **98** | **221** | **1152** | | | |
+| **Total** | **837** | **102** | **219** | **1158** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -28,7 +28,7 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 
 ## Keystone
 
-141 faits, 30 en cours, 51 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+143 faits, 29 en cours, 51 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (16 restants, 15 faits)
 
@@ -83,11 +83,14 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 
 Faits : R-001 Fusionner la livraison 6 dans main ; R-002 Passer de PGlite à un serveur PostgreSQL ; R-006 Mettre en place des tâches planifiées côté serveur ; R-007 Gérer les secrets et la configuration de production ; R-008 Durcir la sécurité HTTP ; R-009 Ajouter journalisation, supervision et alertes ; R-010 Sécuriser les écritures concurrentes en multi-utilisateur ; R-011 Démarrer la production sans données de démonstration ; R-013 Remplacer l’horloge figée au 25 sept. 2026 par l’horloge réelle ; R-015 Notifier les événements clés aux personnes concernées (X-6a) ; R-016 Mettre en place l’intégration continue et versionner les tests de bout en bout ; R-017 Tenir la charge avec de vrais volumes de données ; R-175 Analyser par antivirus les fichiers déposés dans Keystone ; R-176 Ajouter des pages d'erreur et « page introuvable » traduites ; R-199 Rappels d’échéances et rapports programmés (envoi automatique).
 
-### Authentification, utilisateurs et droits (3 restants, 14 faits)
+### Authentification, utilisateurs et droits (4 restants, 14 faits)
 
 - **R-044 · Créer le rôle Finance (contrat, facturation, grille de taux)** — *Bloquant production · non commencé · effort M* · **en cours (Livraison 8)**  
   Ajouter un rôle Finance (persona, ROLE_SCREENS, contrôles serveur, exports, i18n). Directeur, CP du projet et Finance modifient la page Contrat ; les achats perdent ce droit (P-4). Finance et directeur tiennent la grille des taux et coefficients, les CP la consultent (P-12).
   *Avancement : Livraison 8 : rôle Finance (9e persona Léa Marchand), droits P-4 sur le contrat, lecture seule sur Budget / Heures / Facturation ; questions ouvertes : factures, périmètre des projets. · Attend : Responsable produit : droits de Finance sur l’émission et le « payé » des factures client · Sources : P-4, P-12, A-10, 04 Q7, DELIVERY-2.md §7, DELIVERY-3.md §6, §7, DELIVERY-6.md §5*
+- **R-216 · Confidentialité des projets et équipe du projet, publiées aux autres outils** — *Prochaine étape · attend un système externe · effort M* · **en cours (Keystone#90)**  
+  Décisions du propriétaire du 27 nov. 2026 (ING-29, ING-30, source de la confidentialité) : un projet confidentiel n’est vu que de son équipe (équipe nommée, personnes affectées à une tâche ou à une activité, parties prenantes internes) ; Keystone donne la confidentialité et l’équipe à tous les outils (confidentialite en fin de pub_projets, nouvelle vue pub_equipes_projets, définies par Matrix).
+  *Avancement : Construit et fusionné le 27 nov. 2026 (Keystone#90) : niveau normal \| confidentiel fixé par les responsables du projet, projet confidentiel absent pour les autres de toute liste, recherche, export et total ; choix par défaut CF-1 (un directeur non membre ne le voit pas), CF-2, CF-3 (limite connue : quelques compteurs globaux calculés sur toute l’entreprise). Reste : publications appliquées par Matrix. · Attend : Matrix : appliquer les deux publications après le déploiement de la migration 0086 (Matrix#111, #112) · Sources : docs/DECISIONS.md, « Confidentialité des projets et équipe projet » (27 nov. 2026), docs/delivery-9/notes-confidentiality.md*
 - **R-040 · Décider où s’attribuent les rôles (groupes Entra ou écran Keystone)** — *À décider · attend le responsable produit · effort M*  
   Choisir si les rôles (directeur, CP, chef de service, achats, qualité, futur rôle Finance) viennent des groupes Entra ID ou d’un écran d’administration des utilisateurs. Un tel écran, absent du prototype, demande la validation du responsable produit.
   *Attend : Choix du responsable produit et de l’IT · Sources : I-2a, P-4, P-12, CLAUDE.md « No new tools without approval »*
@@ -346,7 +349,7 @@ Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Reti
 
 Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P1 · Relance fournisseurs et inspections usine (à valider) ; R-160 P2 · Conformité CE et dossier technique machine (à valider) ; R-162 P4 · Exposition de change par projet et alertes de couverture (à valider).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (4 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 4 faits)
 
 - **R-N01 · Tables déclarées dans le schéma keystone (pgSchema(...).table(...))** — *Prochaine étape · non commencé*  
   Les tables sont déclarées avec pgTable et le migrateur réécrit "public". en "keystone". au lieu de pgSchema(...).table(...) (REGLES § 4).
@@ -354,20 +357,14 @@ Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P
 - **R-N05 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes projets » et « Mes tableaux de bord ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes projets en cours (avancement, alertes, prochain jalon), tâches du jour, approbations en attente, activité récente.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
-- **R-N06 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S* · **en cours (Keystone#88 (brouillon))**  
-  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
-  *Avancement : Suite Atrium, formulation neutre de l’entreprise, Norma 3.1.0 : PR ouverte (Keystone#88), pas encore fusionnée. · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
-- **R-N07 · Terme du contrat : « clé en main » à la place du terme générique** — *Prochaine étape · non commencé · effort S* · **en cours**  
-  Décision du propriétaire du 27 nov. 2026 : le terme générique de contrat d’ingénierie, achats et construction est remplacé par « clé en main » dans l’interface et les textes de Keystone.
-  *Avancement : Lot « clé en main » en cours dans Keystone. · Sources : Décision du propriétaire du 27 nov. 2026 (keystone:CLE-1)*
 
-Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque commune Norma 2.0 (langue et affichage à la même place).
+Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque commune Norma 2.0 (langue et affichage à la même place) ; R-N06 Suite Atrium et cookie atrium-theme (Norma 3.0) ; R-N07 Terme du contrat : « clé en main » à la place du terme générique.
 
 <a id="codex"></a>
 
 ## Codex
 
-65 faits, 14 en cours, 66 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+65 faits, 15 en cours, 66 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
@@ -434,8 +431,11 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
 
 Faits : CX-001 Liste « Mes demandes » (modification et retrait envoyées à Vigie) ; CX-002 Recherches enregistrées : permettre d'en créer, d'en supprimer et d'en partager ; CX-003 Dates : contrôle de format côté serveur et cohérence émission ≤ effet ≤ expiration ; CX-004 Auteur : pouvoir désigner une autre personne que le créateur ; CX-005 Le demandeur ne peut pas rappeler sa demande de validation ; CX-007 Conservation « durée de vie de l'actif » et « départ du salarié » : date d'événement à saisir (15 types) ; CX-008 Documents obsolètes ou archivés : aucun avertissement, et le fichier reste servi à tous ; CX-009 Rejet d'une étape de validation sans motif ; CX-010 « À traiter » : révisions confiées par un ECO, rejets, brouillons et échéances du propriétaire ; CX-011 Pages dédiées par département ou par métier ; CX-012 Recherche : facettes manquantes et tri ; CX-013 Dates d'expiration et de revue sans effet sur le cycle de vie ; CX-014 « Comparer » : comparer le contenu, pas seulement les attributs ; CX-015 Aperçu des fichiers Office : service de conversion en PDF ; CX-016 Lien « remplacé par » entre documents ; CX-017 Export complet pour la réversibilité ; CX-018 Conservation : classe modifiable document par document et répercussion des règles du type ; CX-019 Reprise des documents d'une personne qui part ; CX-021 Preuve d'approbation d'une révision (fiche de visa).
 
-### Sécurité et conformité (9 restants, 12 faits)
+### Sécurité et conformité (10 restants, 12 faits)
 
+- **CX-134 · Documents des projets confidentiels de Keystone réservés à l’équipe du projet (D-33)** — *Prochaine étape · attend un système externe · effort M* · **en cours (Codex#44)**  
+  Keystone donne la confidentialité de ses projets et leur équipe (pub_projets.confidentialite, pub_equipes_projets) ; un document rattaché à un projet confidentiel n’existe que pour l’équipe du projet (listes, recherche, compteurs, exports, circuits, journal ; fiche en 404).
+  *Avancement : Construit et fusionné le 27 nov. 2026 (Codex#44) ; sans effet tant que Matrix n’a pas publié les vues de Keystone. Deux choix par défaut à confirmer (D-33-a, D-33-b) ; resserrement des vues pub_ de Codex proposé à Matrix (brouillon). · Attend : Matrix : publier les deux vues de Keystone et en accorder la lecture à codex_app (MX-R14) · Sources : docs/decisions.md, D-33 (27 nov. 2026)*
 - **CX-088 · Chiffrement au repos des fichiers stockés** — *À décider · attend le responsable produit · effort M*  
   Si SharePoint est activé (O-01), Microsoft 365 chiffre les fichiers au repos ; il restera la base PGlite, à placer sur un volume chiffré. Sinon, deux options : - un stockage objet chiffré (Azure Blob par exemple) derrière l'interface `FileStore` (storage.ts:24-35) ; - un chiffrement AES-256-GCM dans `put` et `get` du store local, avec une clé hors du dépôt (variable d'environnement ou coffre de clés) et une procédure de rotation. Dans tous les cas, documenter le chiffrement du volume `.data` (base et fichiers) pour l'exploitation.
   *Avancement : Avancé le 18 octobre 2026 (lot 10, étape 4, sans décision ; le point reste bloqué) : le chiffrement du volume est documenté (docs/exploitation.md §9, docs/sauvegarde.md « Chiffrement ») : volumes de `.data` (base et fichiers), des sauvegardes et des exports chiffrés, clés hors du serveur, sauvegarde des clés et restauration d'essai avec la clé de secours. Rien n'est codé ; le choix entre stockage chiffré, chiffrement applicatif et SharePoint attend O-01 et l'hébergement (M22). · Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 88 (Attend une décision de l'utilisateur › Sécurité et conformité)*
@@ -945,9 +945,9 @@ Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances
 - **VG-N09 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Événements » et « Plan d’actions ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Tableau de bord QHSE du site choisi : TF1 / TG, jours sans accident, événements récents, actions en retard, échéances de contrôles et d'habilitations. Mes tâches = « À faire » (/a-faire) ; API /api/v1/taches/ en phase 2 (TA-12) ; signatures de terrain jamais décidées à distance.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
-- **VG-N11 · Chaînes sources : fiches imprimables, export CSV, rapport PDF et libellés de src/lib** — *Prochaine étape · non commencé · effort S* · **en cours**  
+- **VG-N11 · Chaînes sources : fiches imprimables, export CSV, rapport PDF et libellés de src/lib** — *Prochaine étape · partiel · effort S* · **en cours (Vigie#52, #53, #54, #55)**  
   Ce que VG-N01 laissait en français fixe : fiches imprimables des événements et des actions, titres metadata des sous-pages, export CSV des déchets, rapport d’audit PDF et libellés construits par src/lib.
-  *Avancement : Lot en cours (27 nov. 2026). · Sources : Vigie CLAUDE.md, « Langue de l’interface »*
+  *Avancement : Fusionnés le 27 nov. 2026 : français de Norma pour les composants communs (#52) ; fiches imprimables, PDF, CSV, titres d’onglet et libellés des tables (#53) ; formulaire terrain, Mon espace, recherche, connexion, impressions des risques, libellés composés (#54) ; composants communs, échéances, tables de src/lib, prévention, coactivité (#55). Restent : contenu de l’aide en ligne (help.ts), messages des règles et du serveur, quelques libellés composés, nom de l’application installée. · Sources : Vigie CLAUDE.md, « Langue de l’interface »*
 
 Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place) ; VG-N10 Suite Atrium et cookie atrium-theme (Norma 3.0).
 
@@ -955,7 +955,7 @@ Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Con
 
 ## Cursus
 
-179 faits, 4 en cours, 16 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+180 faits, 3 en cours, 16 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -1057,11 +1057,11 @@ Faits : CU-168 Créer une CI GitHub Actions et figer la version de Node ; CU-169
 
 Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU-179 Protéger npm run reset-demo contre l'effacement d'une base réelle ; CU-180 Résoudre les chemins de l'interface et de la base depuis le code ; CU-181 Fournir un packaging serveur (Docker ou systemd) ; CU-182 Versionner les migrations de schéma ; CU-183 Charger les données par périmètre et ne renvoyer que ce qui change ; CU-184 Structurer les logs et répondre en JSON aux erreurs ; CU-185 Ajouter un point de santé /api/health ; CU-186 Activer la compression et un cache long sur les fichiers statiques ; CU-187 Gérer l'arrêt propre et le délai d'attente SQLite ; CU-188 Découper le bundle client par écran ; CU-189 Retirer du dépôt les deux archives zip de la maquette ; CU-191 Déclarer clés étrangères et contraintes dans le schéma.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (5 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (4 restants, 3 faits)
 
-- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51, #53, #54, #55, #56)**  
+- **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51, #53, #54, #55, #56, #58, #59, #60)**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
-  *Avancement : Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (#51), Habilitations, Confidentialité, Expositions (#53), Formations, Congés & absences (#54), Notes de frais, Tableau de bord, Échéances, Missions, Saisie du jour, Voyages (#55), Collaborateurs, grille de Temps, Équipes, e-learning et toutes les confirmations (#56). Partie 6 en cours (Annuaire, Organigramme, Entretiens… et les panneaux de Temps) ; restent aussi les libellés de `shared/`, les dates et les exports. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
+  *Avancement : Parties 1 à 8 fusionnées : en plus des écrans déjà repris, annuaire, Organigramme, Entretiens / 360°, Mes objectifs, Personnes sur site, Relevés, Chantiers (#58), Plan & budget, Indicateurs sociaux, Mon planning, Comptes, Journal, Messagerie, Déclarer, Aide, Mise en service (#59), Référentiels, Paramètres, Mon espace, planning d’équipe, compte rendu et organigramme imprimés (#60). Restent : panneaux de Temps hors de la grille, quelques composants isolés, récapitulatif imprimé des astreintes, libellés de shared/ et noms des mois. · Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
 - **CU-N02 · PostgreSQL seul** — *Prochaine étape · partiel*  
   SQLite (node:sqlite) reste le moteur par défaut, PostgreSQL en option ; les tests tournent sur SQLite, PostgreSQL seulement dans le job postgres (REGLES § 4).
   *Sources : PR Cursus#42 (audit Norma 1.0, 24 nov. 2026), norma/REGLES.md*
@@ -1071,11 +1071,8 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 - **CU-N07 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort L*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes temps » et « Mes absences ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mon espace RH : soldes de congés, feuille de temps de la semaine, formations et habilitations à échéance, demandes en cours ; pour un manager, son équipe. Client Vite : modèles purs base-nav.ts / task-rules.ts et HTML de la coque ; titres neutres, absences et santé « sensible » (avis RGPD, TA-10).
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
-- **CU-N08 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S* · **en cours (Cursus#57 (brouillon))**  
-  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
-  *Avancement : Suite Atrium, Norma 3.1.0, base commune reconnue sous ses deux noms : PR ouverte (Cursus#57), pas encore fusionnée. · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
-Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 (langue et affichage à la même place).
+Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 (langue et affichage à la même place) ; CU-N08 Suite Atrium et cookie atrium-theme (Norma 3.0).
 
 <a id="arche"></a>
 
@@ -1248,7 +1245,7 @@ Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dos
 
 ## Clavis
 
-22 faits, 1 en cours, 6 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+22 faits, 2 en cours, 6 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
 ### Gestion des droits (proposition du 24 nov. 2026) (1 restants, 4 faits)
 
@@ -1262,7 +1259,7 @@ Faits : CL-LA Lot A — Mise en service ; CL-LB Lot B — Rôles multiples ; CL-
 
 Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défaut ? ; CL-DR2 Une élévation (administrateur, direction) demande-t-elle une seconde validation ? ; CL-DR3 Revue des accès : fréquence et qui valide ? ; CL-DR4 Comptes dormants : seuil ? ; CL-DR5 Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ? ; CL-DR6 Double authentification : pour qui ?.
 
-### Suite prévue (5 restants, 4 faits)
+### Suite prévue (6 restants, 4 faits)
 
 - **CL-S01 · Connexion de Keystone et de Codex par Clavis** — *Prochaine étape · non commencé*  
   Keystone et Codex se connectent par Clavis (Codex n’a pas encore de vraie connexion).
@@ -1276,6 +1273,9 @@ Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défa
 - **CL-S06 · Registre des applications lu par les autres outils** — *Prochaine étape · non commencé*  
   Registre des applications publié et lu par les autres outils.
   *Sources : CLAUDE.md, « Next »*
+- **CL-S09 · Demandes DM-1 à DM-3 à Matrix (pub_acces, pub_personnes, lien vers cursus.pub_salaries)** — *Prochaine étape · attend un système externe · effort S* · **en cours (Clavis#22)**  
+  DM-1 : roles et perimetre en fin de clavis.pub_acces ; DM-2 : type et proprietaire_id en fin de clavis.pub_personnes ; DM-3 : lecture de cursus.pub_salaries pour les arrivées et départs.
+  *Avancement : Envoyées à Matrix et acceptées le 27 nov. 2026 (Clavis#22, Matrix#110, M-29) ; en attente de leur application sur le serveur. · Attend : Matrix : application sur le serveur en service (MX-R13) · Sources : docs/DEMANDES-MATRIX.md, DM-1 à DM-3*
 - **CL-N09 · Échange de jeton pour les décisions entre outils (Norma 2.4, phase 2)** — *Plus tard · non commencé · effort L*  
   Échange de jeton RFC 8693 (contrats/taches-v1.md § 5) : jeton de rafraîchissement à la connexion (12 h, révoqué à la déconnexion, au départ, au retrait de l'accès) ; grant token-exchange par le secret client de l'outil A → JWT pour l'outil B (aud = B, sub = oid = personne_id, act.sub = A, scope taches:lire \| taches:decider, 5 min) ; registre « A peut demander un jeton pour B » ; journal de chaque émission. Prérequis de la décision à distance (TA-4, confirmée le 27 nov. 2026).
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
@@ -1294,7 +1294,7 @@ Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de p
 
 ## Matrix
 
-26 faits, 12 en cours, 5 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+26 faits, 15 en cours, 5 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1322,7 +1322,7 @@ Faits : MX-M24 M-24 · Purge du journal de Cursus par le rôle dédié cursus_pu
 
 Faits : MX-S02 Redéploiement d’atrium-postgres limité au socle, et rejeu du socle.
 
-### Demandes des autres outils (12 restants)
+### Demandes des autres outils (15 restants)
 
 - **MX-N09 · Réunion matrix.pub_taches et matrix.pub_taches_sources (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Construire matrix.pub_taches, réunion (UNION ALL) des <outil>.pub_taches lisibles et conformes au contrat taches v1, sur le modèle de journal_unifie (vue absente ou hors contrat laissée de côté, réunion reconstruite, rejouable), et matrix.pub_taches_sources (outil, etat ok \| absente \| hors_contrat \| illisible, verifie_le, message) ; un seul lien lecture matrix.pub_taches par outil ; appliquer chaque <outil>.pub_taches demandée. Décision TA-1 (27 nov. 2026).
@@ -1360,6 +1360,15 @@ Faits : MX-S02 Redéploiement d’atrium-postgres limité au socle, et rejeu du 
 - **MX-R11 · Liens de lecture de cursus_app sur codex.pub_types_document et codex.pub_documents (lot 16 de Cursus : documents stockés dans Codex)** — *Prochaine étape · partiel* · **en cours**  
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
+- **MX-R12 · Ingenium dans le socle du serveur commun (DI-M1, M-29)** — *Prochaine étape · partiel · effort S* · **en cours (Matrix#110)**  
+  Demande d’Ingenium du 27 nov. 2026 (DI-M1), acceptée (M-29) : rôle ingenium_app, schéma ingenium, liens de lecture de base, journal (pub_journal), sauvegardes.
+  *Avancement : Socle du dépôt mis à jour (Matrix#110). Sur le serveur le 27 nov. 2026 : rôle ingenium_app et schéma ingenium créés, mot de passe de ingenium_app posé, 03-droits.sql rejoué (960 relations, 0 écart). Restent les 16 liens de lecture d’Ingenium. · Attend : Liens de lecture d’Ingenium (16) à autoriser sur le serveur en service · Sources : REQUESTS.md, entrée du 2026-11-27 (Ingenium → Matrix, DI-M1)*
+- **MX-R13 · Demandes DM-1 à DM-3 de Clavis : colonnes de pub_acces et pub_personnes, lien vers cursus.pub_salaries** — *Prochaine étape · partiel · effort S* · **en cours (Matrix#110)**  
+  DM-1 : roles et perimetre en fin de clavis.pub_acces ; DM-2 : type et proprietaire_id en fin de clavis.pub_personnes ; DM-3 : lien de lecture clavis_app → cursus.pub_salaries. Acceptées le 27 nov. 2026 (M-29).
+  *Avancement : Préparées dans le dépôt (Matrix#110). Pas encore appliquées sur le serveur : colonnes DM-2 de clavis.pub_personnes et lien clavis_app → cursus.pub_salaries. · Attend : Application sur le serveur en service (écran Publications) · Sources : REQUESTS.md, entrées du 2026-11-24 (DM-1) et du 2026-11-27 (DM-2, DM-3)*
+- **MX-R14 · Publications de Keystone : confidentialité des projets et équipe du projet** — *Prochaine étape · partiel · effort S* · **en cours (Matrix#111, #112)**  
+  confidentialite en fin de keystone.pub_projets et nouvelle vue keystone.pub_equipes_projets (Keystone#90, décisions du propriétaire du 27 nov. 2026), lues par Ingenium, Codex et les autres outils.
+  *Avancement : Définitions déposées (Matrix#111) et marquées à appliquer après la migration 0086 de Keystone (Matrix#112). Pas encore appliquées sur le serveur. · Attend : Déploiement de la migration 0086 de Keystone, puis « Appliquer » dans l’écran Publications · Sources : Keystone docs/delivery-9/notes-confidentiality.md § 3*
 
 ### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 8 faits)
 
@@ -1444,16 +1453,13 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place) ;
 
 ## Ingenium
 
-2 faits, 2 en cours, 9 à faire. Source : Yhumiii27/ingenium, `docs/PLAN.md` ; reprise : une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée. Effort : S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10.
+3 faits, 3 en cours, 7 à faire. Source : Yhumiii27/ingenium, `docs/PLAN.md` ; reprise : une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée. Effort : S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10.
 
-### Livraisons du plan (5 restants, 1 faits)
+### Livraisons du plan (4 restants, 2 faits)
 
-- **IN-L1 · Livraison 1 — Plateforme** — *Prochaine étape · non commencé · effort L* · **en cours**  
-  Socle copié de Modulus main (docs/SOCLE.md) : PostgreSQL seul, schéma ingenium, connexion par Clavis et droits lus dans clavis.pub_acces, coque commune et logo, tronc commun (Accueil « Ma discipline », Mes tâches liste / kanban / calendrier, Mes approbations, Mes projets, Référentiel technique), i18n, journal en ajout seul, tâches planifiées, jeu de démonstration fictif aligné sur celui de Keystone, CI.
-  *Avancement : Plateforme reprise de Modulus en cours (27 nov. 2026). · Attend : Livraison 0 lue ; ING-19, ING-23 à ING-25, ING-28 · Sources : docs/PLAN.md, livraison 1*
-- **IN-L2 · Livraison 2 — Registre d'ingénierie, P&ID et plans** — *Prochaine étape · attend le responsable produit · effort XL*  
+- **IN-L2 · Livraison 2 — Registre d'ingénierie, P&ID et plans** — *Prochaine étape · partiel · effort XL* · **en cours (Ingenium#5)**  
   Disciplines, entrées, livrables jusqu'à la diffusion, listes générées, contrôles de cohérence, changements, assistant d'import ; validation P&ID (feuilles, repères, étapes, import) ; miroir des plans PDM. D'abord en lecture des données de Keystone (vues de reprise), puis écritures objet par objet.
-  *Attend : ING-04, ING-05, ING-09, ING-26 ; vues de reprise (Keystone, Matrix) · Sources : docs/PLAN.md, livraison 2*
+  *Avancement : Lot 2a fusionné le 27 nov. 2026 (Ingenium#5) : registre d’ingénierie (Synthèse et quatre disciplines), bascule depuis Keystone (à blanc puis appliquée), tâches propres et libres publiées ; ING-31 à ING-35 par défaut. Suite : lots 2b et 2c. · Attend : Lots 2b (P&ID, assistant d’import, connecteur Codex) et 2c (miroir des plans, connecteur PDM / 3DX) ; ING-05, ING-09 ; vues de reprise (Keystone, Matrix) · Sources : docs/PLAN.md, livraison 2*
 - **IN-L3 · Livraison 3 — Référentiel technique et nomenclature d'ingénierie** — *Plus tard · attend le responsable produit · effort XL*  
   Articles (données techniques, validation, équivalents, structures, pièces d'usure et de rechange), nomenclature d'ingénierie rattachée aux équipements ; publications ingenium.pub_articles et pub_nomenclatures sous les contrats de Keystone.
   *Attend : ING-06, ING-07, ING-08 ; A-1b, D9-18 et R-185 de Keystone · Sources : docs/PLAN.md, livraison 3*
@@ -1464,16 +1470,16 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place) ;
   Arche, Vigie, Modulus, Vector et Keystone lisent les vues d'Ingenium ; Matrix retire les vues de Keystone ; Keystone retire ses écrans d'ingénierie (nouvelle migration).
   *Attend : Livraisons 2 à 4 ; ING-27 · Sources : docs/PLAN.md, livraison 5, docs/spec/06-transition.md*
 
-Faits : IN-L0 Livraison 0 — Cadrage.
+Faits : IN-L0 Livraison 0 — Cadrage ; IN-L1 Livraison 1 — Plateforme.
 
 ### Mise en service (2 restants, 1 faits)
 
 - **IN-S01 · Mise en service : application Coolify et adresse** — *Prochaine étape · attend le responsable produit · effort S* · **en cours**  
   Application Coolify (Dockerfile, conteneur unique comme Modulus) sur ingenium.projectdirection.fr, derrière l'authentification HTTP de Coolify pendant la bêta.
-  *Avancement : Application Coolify d’Ingenium créée (secret du client OIDC posé) ; adresse et déploiement à suivre la livraison 1. · Attend : Propriétaire : création de l'application dans Coolify · Sources : docs/PLAN.md, mise en service*
-- **IN-S02 · Mise en service : rôle ingenium_app et schéma ingenium** — *Prochaine étape · attend le responsable produit · effort S*  
+  *Avancement : Application Coolify déployée en mode démonstration et en bonne santé (27 nov. 2026) ; secret du client OIDC posé. · Attend : Passage du mode démonstration au serveur commun · Sources : docs/PLAN.md, mise en service*
+- **IN-S02 · Mise en service : rôle ingenium_app et schéma ingenium** — *Prochaine étape · attend un système externe · effort S* · **en cours (Matrix#110)**  
   Créés par Matrix sur le serveur commun (aucune migration ne crée de schéma) ; liens de lecture de la livraison 1.
-  *Avancement : Attend Matrix : rôle ingenium_app et schéma ingenium (brouillon DI-M1 de docs/DEMANDES.md). · Attend : Brouillon DI-M1 de docs/DEMANDES.md, « validé » du propriétaire · Sources : docs/DEMANDES.md, DI-M1*
+  *Avancement : DI-M1 acceptée (M-29). Sur le serveur le 27 nov. 2026 : rôle ingenium_app et schéma ingenium créés, mot de passe posé, droits rejoués sans écart. Restent les liens de lecture. · Attend : Matrix : 16 liens de lecture d’Ingenium à autoriser (MX-R12) · Sources : docs/DEMANDES.md, DI-M1*
 
 Faits : IN-S03 Mise en service : application ingenium dans Clavis.
 
@@ -1523,18 +1529,22 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-27 — **Keystone** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
 - 2026-11-27 — **Keystone** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption R-N06.
 - 2026-11-27 — **Keystone** : R-N04 fait (Keystone#86) ; liens profonds de Codex /documents/{id} (Keystone#86, #87, R-033) ; R-N01 évalué, « à discuter » ; R-N06 en cours (Keystone#88, brouillon) ; R-N07 ajouté (« clé en main », en cours).
+- 2026-11-27 — **Keystone** : R-N06 fait (Keystone#88, suite Atrium) ; R-N07 fait (Keystone#89 « clé en main », #91 code stocké lump_sum_turnkey, migration 0085) ; R-216 ajouté : confidentialité des projets et équipe du projet (Keystone#90, migration 0086), publications à appliquer par Matrix ; questions CF-1 à CF-3 ajoutées.
 - 2026-11-27 — **Codex** : Norma 2.4.0 : CX-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Codex** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
 - 2026-11-27 — **Codex** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CX-N10.
 - 2026-11-27 — **Codex** : CX-N10 fait (Codex#43, suite Atrium) ; Codex#42 : CX-036, CX-038, CX-046 avancés, CX-020 posé en O-12 (répondue par le propriétaire, réponse à compléter).
+- 2026-11-27 — **Codex** : CX-134 ajouté : D-33, documents des projets confidentiels de Keystone réservés à l’équipe (Codex#44), en attente des publications de Keystone par Matrix ; questions D-33-a et D-33-b ajoutées.
 - 2026-11-27 — **Vigie** : Norma 2.4.0 : VG-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Vigie** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
 - 2026-11-27 — **Vigie** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VG-N10.
 - 2026-11-27 — **Vigie** : VG-N10 fait (Vigie#51, suite Atrium) ; VG-N04 évalué (Vigie#50) ; VG-N11 ajouté : reste des chaînes sources (fiches imprimables, CSV, PDF, libellés de src/lib), en cours.
+- 2026-11-27 — **Vigie** : VG-N11 avancé : Vigie#52 (français de Norma pour les composants communs), #53, #54, #55 (traduction de l’interface, parties 1 à 3) ; restent l’aide en ligne, les messages des règles et du serveur, quelques libellés composés et le nom du manifeste.
 - 2026-11-27 — **Cursus** : Norma 2.4.0 : CU-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Cursus** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
 - 2026-11-27 — **Cursus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CU-N08.
 - 2026-11-27 — **Cursus** : CU-N01 : parties 3 à 5 fusionnées (Cursus#54, #55, #56), partie 6 en cours ; CU-N08 en cours (Cursus#57, brouillon).
+- 2026-11-27 — **Cursus** : CU-N08 fait (Cursus#57, suite Atrium) ; CU-N01 : parties 6 à 8 fusionnées (Cursus#58, #59, #60), restent les panneaux de Temps hors de la grille, quelques composants, le récapitulatif des astreintes, les libellés de shared/ et les mois.
 - 2026-11-27 — **Arche** : Norma 2.4.0 : AR-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Arche** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption AR-N06.
 - 2026-11-27 — **Arche** : AR-N06 fait (Arche#67, suite Atrium, Norma 3.1.0) ; AR-N07 ajouté et fait (Arche#68 : identifiants stockés renommés, API v2) ; AR-025 : contrat de dépôt de Codex en service suivi (Arche#66).
@@ -1544,9 +1554,11 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-27 — **Clavis** : Norma 2.4.0 : CL-N08 (tronc commun des menus) et CL-N09 (échange de jeton RFC 8693, prérequis de la phase 2) ajoutés.
 - 2026-11-27 — **Clavis** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CL-N10.
 - 2026-11-27 — **Clavis** : CL-N10 fait (Clavis#20, suite Atrium) ; CL-S08 fait (Clavis#19 : Modulus, Vector, Ingenium, client OIDC ingenium inscrit sur le serveur) ; clé de rôle PMO d’Arche renommée engineering_pmo (Clavis#21).
+- 2026-11-27 — **Clavis** : CL-S09 ajouté : DM-1 à DM-3 envoyées à Matrix et acceptées (Clavis#22, Matrix#110), en attente d’application sur le serveur.
 - 2026-11-27 — **Matrix** : Norma 2.4.0 : MX-N08 (tronc commun des menus) et MX-N09 (réunion matrix.pub_taches, pub_taches_sources) ajoutés.
 - 2026-11-27 — **Matrix** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MX-N10. MX-N11 : renommage du serveur commun, opération séparée.
 - 2026-11-27 — **Matrix** : MX-N10 fait (Matrix#107 : dépôt Atrium, contrats v2 des messages, « Filiale partenaire ») ; MX-N11 en cours (fiche d’opération prête, serveur non renommé) ; noms stockés d’Arche dans la fiche (Matrix#108) ; catalogue sans l’ancien nom (Matrix#109).
+- 2026-11-27 — **Matrix** : MX-R12 ajouté (Matrix#110 : Ingenium dans le socle ; sur le serveur, rôle ingenium_app, schéma ingenium et mot de passe posés, 03-droits.sql rejoué sans écart, 16 liens restent) ; MX-R13 ajouté (DM-1 à DM-3 de Clavis, à appliquer) ; MX-R14 ajouté (publications de confidentialité et d’équipe de Keystone, Matrix#111, #112, à appliquer après 0086) ; question REN-1 close (doublon de R-1).
 - 2026-11-27 — **Modulus** : Norma 2.4.0 : MO-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Modulus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MO-N03.
 - 2026-11-27 — **Modulus** : MO-N03 fait (Modulus#8, suite Atrium).
@@ -1555,10 +1567,12 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-27 — **Vector** : VE-N03 fait (Vector#4, suite Atrium).
 - 2026-11-27 — **Ingenium** : Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR.
 - 2026-11-27 — **Ingenium** : IN-L0 fait (Ingenium#1) ; IN-L1 en cours ; IN-S03 fait (client OIDC ingenium dans Clavis) ; IN-S01 en cours ; IN-S02 attend Matrix (DI-M1).
+- 2026-11-27 — **Ingenium** : IN-L1 fait (Ingenium#2, #3, #4) ; IN-L2 en cours : lot 2a fusionné (Ingenium#5 : registre, bascule depuis Keystone, tâches propres), lots 2b et 2c à suivre ; IN-S01 : déployé sur Coolify en démonstration ; IN-S02 : rôle et schéma créés par Matrix, liens à autoriser ; ING-29, ING-30 décidées, ING-31 à ING-35 ajoutées.
 - 2026-11-27 — **Norma (socle)** : Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil.
 - 2026-11-27 — **Norma (socle)** : Norma 3.0.0 : suite renommée Atrium (NO-010) ; page unique « Suivi Atrium » avec les décisions de toute la suite (NO-011) ; un point d'adoption par outil, MX-N11 pour le serveur commun.
 - 2026-11-27 — **Norma (socle)** : Norma 3.1.0 : Ingenium (ingénierie) inscrit au registre, à REGLES § 1, aux logos et au tronc commun des menus ; reste à faire reste-a-faire/ingenium.json ; ING-01 et ING-02 décidées.
 - 2026-11-27 — **Norma (socle)** : Norma 3.1.1 : « Filiale partenaire » dans les fichiers de Crucible. Suivi mis à jour après les fusions du jour (adoption d’Atrium par les outils, identifiants stockés d’Arche, Ingenium) ; réponses du propriétaire reportées (codex:O-12, keystone:R-N01, matrix:R-2 à R-4) ; questions matrix:R-1, R-2, R-3, R-4, R-6 et keystone:CLE-1 ajoutées.
+- 2026-11-27 — **Norma (socle)** : Suivi mis à jour après les fusions de l’après-midi (Keystone, Matrix, Clavis, Ingenium, Codex, Cursus, Vigie) ; questions ajoutées : ingenium:ING-29 à ING-35 et ING-29-bis, keystone:CF-1 à CF-3, codex:D-33-a et D-33-b ; matrix:REN-1 close (doublon de R-1).
 - 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
 - 2026-11-26 — **Codex** : CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun.
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
@@ -1571,11 +1585,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-25 — **Codex** : CX-R07 ajouté : demande de Cursus (lot 16) inscrite au REQUESTS.md, OUVERTE (Codex#29) ; logo de Norma 2.3.0 dans la coque et en favicon (Codex#36, fusionnée).
 - 2026-11-25 — **Vigie** : Logo de Norma 2.3.0 dans la coque et en favicon (Vigie#45, fusionnée).
 - 2026-11-25 — **Cursus** : CU-N03 fait : journal en ajout seul et purge par le rôle cursus_purge (Cursus#46, Matrix#101, décision M-24), active sur le serveur commun depuis le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Cursus#47, ouverte).
-- 2026-11-25 — **Arche** : Conteneur unique pour Coolify, derrière son authentification HTTP (Arche#64 ; AR-009, AR-015) ; logo de Norma 2.3.0 dans la coque et en favicon (Arche#65, fusionnée).
-- 2026-11-25 — **Crucible** : Conteneur unique pour Coolify, derrière son authentification HTTP (Crucible#50 ; CR-007) ; logo de Norma 2.3.0 dans la coque et en favicon (Crucible#51, fusionnée).
-- 2026-11-25 — **Clavis** : CL-S07 ajouté et fait : conteneur unique (Clavis#17), Clavis activé sur le serveur commun et en ligne le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Clavis#18, fusionnée).
-- 2026-11-25 — **Matrix** : M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’atrium-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée).
-- 2026-11-25 — **Modulus** : Livraison 1 (bêta) fusionnée (Modulus#6) : MO-L1 et MO-N01 faits, MO-L2 à MO-L6 en cours (écrans sur données fictives, intégrations à venir) ; en ligne sur Coolify (conteneur unique, authentification HTTP) ; logo de Norma 2.3.0 dans la coque et en favicon (Modulus#7, fusionnée).
-- 2026-11-25 — **Vector** : VE-L1 fait : livraison 1 (Vector#1) déployée le 25 nov. 2026 en conteneur unique (Vector#2) ; schéma et rôle vector_app au socle (M-25, Matrix#102) ; logo de Norma 2.3.0 dans la coque et en favicon (Vector#3, fusionnée).
-- 2026-11-25 — **Norma (socle)** : Norma 2.3.0 : logos des outils dans la charte (ToolLogo, favicon), NO-008 ajouté (en cours : Keystone#85, Cursus#47 ouvertes) ; NO-007 fait (coque reprise par les dix outils, Modulus#6 le dernier).
-- 2026-11-24 — **Keystone** : Clavis : le titre affiché suit le rôle accordé dans clavis.pub_acces (il gardait celui de la connexion) — trouvé à la répétition de l'installation.
