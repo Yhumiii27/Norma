@@ -81,6 +81,10 @@
     {
       "date": "2026-11-27",
       "text": "CU-N01 : parties 3 à 5 fusionnées (Cursus#54, #55, #56), partie 6 en cours ; CU-N08 en cours (Cursus#57, brouillon)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CU-N08 fait (Cursus#57, suite Atrium) ; CU-N01 : parties 6 à 8 fusionnées (Cursus#58, #59, #60), restent les panneaux de Temps hors de la grille, quelques composants, le récapitulatif des astreintes, les libellés de shared/ et les mois."
     }
   ],
   "items": [
@@ -4491,8 +4495,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": "Cursus#51, #53, #54, #55, #56",
-        "note": "Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (#51), Habilitations, Confidentialité, Expositions (#53), Formations, Congés & absences (#54), Notes de frais, Tableau de bord, Échéances, Missions, Saisie du jour, Voyages (#55), Collaborateurs, grille de Temps, Équipes, e-learning et toutes les confirmations (#56). Partie 6 en cours (Annuaire, Organigramme, Entretiens… et les panneaux de Temps) ; restent aussi les libellés de `shared/`, les dates et les exports."
+        "delivery": "Cursus#51, #53, #54, #55, #56, #58, #59, #60",
+        "note": "Parties 1 à 8 fusionnées : en plus des écrans déjà repris, annuaire, Organigramme, Entretiens / 360°, Mes objectifs, Personnes sur site, Relevés, Chantiers (#58), Plan & budget, Indicateurs sociaux, Mon planning, Comptes, Journal, Messagerie, Déclarer, Aide, Mise en service (#59), Référentiels, Paramètres, Mon espace, planning d’équipe, compte rendu et organigramme imprimés (#60). Restent : panneaux de Temps hors de la grille, quelques composants isolés, récapitulatif imprimé des astreintes, libellés de shared/ et noms des mois."
       }
     },
     {
@@ -4639,9 +4643,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Cursus#57 (brouillon)",
-        "note": "Suite Atrium, Norma 3.1.0, base commune reconnue sous ses deux noms : PR ouverte (Cursus#57), pas encore fusionnée."
+        "state": "fait",
+        "delivery": "Cursus#57",
+        "note": "Suite Atrium, Norma 3.1.0, base commune reconnue sous ses deux noms : fusionné le 27 nov. 2026 (Cursus#57)."
       }
     }
   ]

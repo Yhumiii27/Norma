@@ -56,6 +56,10 @@
     {
       "date": "2026-11-27",
       "text": "CL-N10 fait (Clavis#20, suite Atrium) ; CL-S08 fait (Clavis#19 : Modulus, Vector, Ingenium, client OIDC ingenium inscrit sur le serveur) ; clé de rôle PMO d’Arche renommée engineering_pmo (Clavis#21)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CL-S09 ajouté : DM-1 à DM-3 envoyées à Matrix et acceptées (Clavis#22, Matrix#110), en attente d’application sur le serveur."
     }
   ],
   "items": [
@@ -684,6 +688,28 @@
         "state": "fait",
         "delivery": "Clavis#19",
         "note": "Migration 0009_modulus_vector_ingenium ; client OIDC ingenium inscrit sur le serveur le 27 nov. 2026 (secret posé dans l’application Coolify d’Ingenium)."
+      }
+    },
+    {
+      "id": "CL-S09",
+      "title": "Demandes DM-1 à DM-3 à Matrix (pub_acces, pub_personnes, lien vers cursus.pub_salaries)",
+      "description": "DM-1 : roles et perimetre en fin de clavis.pub_acces ; DM-2 : type et proprietaire_id en fin de clavis.pub_personnes ; DM-3 : lecture de cursus.pub_salaries pour les arrivées et départs.",
+      "category": "suite",
+      "kind": "integration",
+      "priority": "prochaine_etape",
+      "status": "bloque_systeme_externe",
+      "waiting_on": "Matrix : application sur le serveur en service (MX-R13)",
+      "effort": "S",
+      "sources": [
+        "docs/DEMANDES-MATRIX.md, DM-1 à DM-3"
+      ],
+      "evidence": [
+        "Clavis#22"
+      ],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "Clavis#22",
+        "note": "Envoyées à Matrix et acceptées le 27 nov. 2026 (Clavis#22, Matrix#110, M-29) ; en attente de leur application sur le serveur."
       }
     }
   ]

@@ -378,6 +378,10 @@
     {
       "date": "2026-11-27",
       "text": "R-N04 fait (Keystone#86) ; liens profonds de Codex /documents/{id} (Keystone#86, #87, R-033) ; R-N01 évalué, « à discuter » ; R-N06 en cours (Keystone#88, brouillon) ; R-N07 ajouté (« clé en main », en cours)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "R-N06 fait (Keystone#88, suite Atrium) ; R-N07 fait (Keystone#89 « clé en main », #91 code stocké lump_sum_turnkey, migration 0085) ; R-216 ajouté : confidentialité des projets et équipe du projet (Keystone#90, migration 0086), publications à appliquer par Matrix ; questions CF-1 à CF-3 ajoutées."
     }
   ],
   "items": [
@@ -6654,9 +6658,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "en_cours",
-        "delivery": "Keystone#88 (brouillon)",
-        "note": "Suite Atrium, formulation neutre de l’entreprise, Norma 3.1.0 : PR ouverte (Keystone#88), pas encore fusionnée."
+        "state": "fait",
+        "delivery": "Keystone#88",
+        "note": "Suite Atrium, formulation neutre de l’entreprise, Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut) : fusionné le 27 nov. 2026 (Keystone#88)."
       }
     },
     {
@@ -6674,9 +6678,32 @@
         "Décision du propriétaire du 27 nov. 2026 (keystone:CLE-1)"
       ],
       "progress": {
+        "state": "fait",
+        "delivery": "Keystone#89, #91",
+        "note": "« Clé en main » dans l’interface et les textes (Keystone#89) ; code stocké du type de contrat renommé lump_sum_turnkey (migration 0085, Keystone#91). Fusionné le 27 nov. 2026."
+      }
+    },
+    {
+      "id": "R-216",
+      "title": "Confidentialité des projets et équipe du projet, publiées aux autres outils",
+      "description": "Décisions du propriétaire du 27 nov. 2026 (ING-29, ING-30, source de la confidentialité) : un projet confidentiel n’est vu que de son équipe (équipe nommée, personnes affectées à une tâche ou à une activité, parties prenantes internes) ; Keystone donne la confidentialité et l’équipe à tous les outils (confidentialite en fin de pub_projets, nouvelle vue pub_equipes_projets, définies par Matrix).",
+      "category": "droits_acces",
+      "kind": "decision_a_appliquer",
+      "priority": "prochaine_etape",
+      "status": "bloque_systeme_externe",
+      "waiting_on": "Matrix : appliquer les deux publications après le déploiement de la migration 0086 (Matrix#111, #112)",
+      "effort": "M",
+      "sources": [
+        "docs/DECISIONS.md, « Confidentialité des projets et équipe projet » (27 nov. 2026)",
+        "docs/delivery-9/notes-confidentiality.md"
+      ],
+      "evidence": [
+        "Keystone#90 : projects.confidentiality (migration 0086), projectTeam (src/domain/confidentiality.ts), hiddenProjects (src/server/dal/project-visibility.ts), requêtes de référence de pub_projets.confidentialite et pub_equipes_projets"
+      ],
+      "progress": {
         "state": "en_cours",
-        "delivery": null,
-        "note": "Lot « clé en main » en cours dans Keystone."
+        "delivery": "Keystone#90",
+        "note": "Construit et fusionné le 27 nov. 2026 (Keystone#90) : niveau normal | confidentiel fixé par les responsables du projet, projet confidentiel absent pour les autres de toute liste, recherche, export et total ; choix par défaut CF-1 (un directeur non membre ne le voit pas), CF-2, CF-3 (limite connue : quelques compteurs globaux calculés sur toute l’entreprise). Reste : publications appliquées par Matrix."
       }
     }
   ]

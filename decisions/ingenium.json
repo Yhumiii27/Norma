@@ -569,6 +569,148 @@
       "bloque": "phase 2 articles",
       "statut": "ouverte",
       "reponse": null
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-29",
+      "alternatives": [
+        "Seulement les projets dont ils sont l’équipe (Keystone)."
+      ],
+      "bloque": "IN-L1",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "other",
+        "note": "« les utilisateurs peuvent sur la liste des projets voir par défaut les projets dont ils font partie, et s'ils enlèvent le filtre voir la totalité des projets en cours. Attention, il se peut pour des projets R&D qu'un projet soit confidentiel et donc l'accès n'est accordé que si la personne fait partie du projet et est ajoutée par le responsable du projet. Il n'apparaîtra donc jamais dans la liste des projets pour ceux qui n'en font pas partie. » Appliqué (Ingenium#4) : « Mes projets » filtré par défaut sur l’équipe, tous les projets en cours sans le filtre, pour tous les rôles ; un projet confidentiel n’est vu que de son équipe publiée par Keystone.",
+        "date": "2026-11-27",
+        "source": "décision du propriétaire, 27 nov. 2026 (docs/DECISIONS.md d’Ingenium)"
+      },
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-29",
+      "titre": "Portée des lecteurs et projets confidentiels",
+      "contexte": "Livraison 1 : quels projets voient les lecteurs (chefs de projet, qualité, achats, logistique, direction) ?",
+      "proposition": "Tous les projets, en lecture."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-30",
+      "alternatives": [
+        "Keystone publie l’identifiant Clavis (personne_id) dans pub_affectations (demande à Keystone)."
+      ],
+      "bloque": "IN-L1",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "other",
+        "note": "« Quand une personne de l'ingénierie est appelée dans l'équipe projet (que ce soit affectée à une tâche ou ajoutée à la liste des parties prenantes) alors le projet apparaît dans Ingenium. Keystone publie qui fait partie de l'équipe des projets et les autres outils peuvent s'en servir. » Appliqué (Ingenium#4) : équipe lue dans keystone.pub_equipes_projets dès sa publication, d’ici là keystone.pub_affectations ; demande DI-K5.",
+        "date": "2026-11-27",
+        "source": "décision du propriétaire, 27 nov. 2026 (docs/DECISIONS.md d’Ingenium)"
+      },
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-30",
+      "titre": "Équipe d’un projet",
+      "contexte": "Rapprocher un membre d’équipe de Keystone et la personne connectée.",
+      "proposition": "Par le matricule de keystone.pub_affectations et l’adresse de clavis.pub_personnes."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-29-bis",
+      "alternatives": [],
+      "bloque": "IN-L1",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« Tous les projets industriels ou R&D doivent être dans Keystone ; c'est donc Keystone qui donnera le niveau de confidentialité à Ingenium et aux autres softs (valable aussi pour les documents dans Codex par exemple). » Appliqué : Ingenium#4, Keystone#90, Codex#44 (D-33).",
+        "date": "2026-11-27",
+        "source": "décision du propriétaire, 27 nov. 2026"
+      },
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-29-bis",
+      "titre": "Source de la confidentialité des projets",
+      "contexte": "Qui tient le niveau de confidentialité d’un projet et la liste de ses membres, pour Ingenium et les autres outils ?",
+      "proposition": "Keystone, qui la publie à tous les outils (pub_projets.confidentialite, pub_equipes_projets) ; Ingenium ne tient ni indicateur ni liste de membres."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-31",
+      "alternatives": [
+        "Dès une livraison 1 bis."
+      ],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "interface",
+      "ref": "ING-31",
+      "titre": "Tâches libres de « Mes tâches » (ING-25)",
+      "contexte": "Quand les tâches libres arrivent-elles dans Mes tâches ?",
+      "proposition": "Avec les registres : appliquée au lot 2a (créer, déplacer sur le tableau, annuler avec motif)."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-32",
+      "alternatives": [
+        "Non : la démonstration commence tenue dans Keystone, l’administrateur bascule."
+      ],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "transition",
+      "ref": "ING-32",
+      "titre": "Démonstration basculée",
+      "contexte": "Le jeu de démonstration montre-t-il le registre déjà tenu par Ingenium ?",
+      "proposition": "Oui : la reprise du registre simulé de Keystone est appliquée par le jeu de démonstration ; une base de production démarre tenue dans Keystone."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-33",
+      "alternatives": [
+        "Le responsable ingénierie seul.",
+        "Attendre le connecteur Codex."
+      ],
+      "bloque": "lot 2b",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-33",
+      "titre": "Enregistrer la diffusion décidée dans Codex",
+      "contexte": "Tant que le connecteur Codex n’existe pas (lot 2b, DI-X1), qui enregistre dans Ingenium la diffusion décidée dans Codex ?",
+      "proposition": "Le responsable ingénierie ou le gestionnaire documentaire."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-34",
+      "alternatives": [
+        "Toutes les personnes ayant le rôle Ingenium.EngineeringLead dans Clavis."
+      ],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-34",
+      "titre": "Destinataires des propositions de diffusion",
+      "contexte": "À qui une proposition de diffusion d’un livrable est-elle envoyée ?",
+      "proposition": "Les membres de l’équipe publiée par Keystone dont l’activité est « Responsable ingénierie »."
+    },
+    {
+      "outil": "ingenium",
+      "id": "ingenium:ING-35",
+      "alternatives": [
+        "Aussi l’ingénieur de la discipline responsable."
+      ],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null,
+      "nature": "question",
+      "groupe": "personnes",
+      "ref": "ING-35",
+      "titre": "Clôture d’un contrôle de cohérence",
+      "contexte": "Qui clôt un contrôle de cohérence entre disciplines ?",
+      "proposition": "Le responsable ingénierie (ING-19) ; les ingénieurs de la discipline le prennent en charge ou le renvoient à leur outil."
     }
   ]
 }
