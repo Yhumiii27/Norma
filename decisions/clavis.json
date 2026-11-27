@@ -1,0 +1,261 @@
+{
+  "outil": "clavis",
+  "updated": "2026-11-27",
+  "origine": {
+    "depot": "Yhumiii27/Clavis",
+    "fichier": "docs/PROPOSITION-DROITS.md, docs/DEMANDES-MATRIX.md",
+    "commit": "4f12a70",
+    "reprise": "Questions DR-1 à DR-13 et demandes DM-2, DM-3 (DM-1 faite par Matrix le 24 nov. 2026)."
+  },
+  "groupes": {
+    "droits": "Droits et comptes (PROPOSITION-DROITS.md)",
+    "matrix": "Demandes à Matrix"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "clavis:DR-1",
+      "ref": "DR-1",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Copier les droits d'un collègue : ajouter ou remplacer par défaut ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "ajouter (aperçu des deux)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-2",
+      "ref": "DR-2",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Une élévation (administrateur, direction) demande-t-elle une seconde validation ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "non, motif obligatoire et journal",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-3",
+      "ref": "DR-3",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Revue des accès : fréquence et qui valide ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "semestrielle, par le manager direct, IT en relance",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-4",
+      "ref": "DR-4",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Comptes dormants : seuil ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "90 jours sans connexion → alerte, 120 → fermeture proposée",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-5",
+      "ref": "DR-5",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Rôles particuliers (CSE, secouriste, auditeur) : tenus dans Clavis ou lus dans Cursus ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "dans Clavis pour le CSE ; secouriste et auditeur restent des titres de Cursus",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-6",
+      "ref": "DR-6",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Double authentification : pour qui ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "administrateurs de Clavis d'abord, puis tous les comptes à droits élevés",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "« je suis ok lance le tout » : réponse par défaut appliquée.",
+        "date": "2026-11-24",
+        "source": "Clavis, docs/PROPOSITION-DROITS.md"
+      }
+    },
+    {
+      "id": "clavis:DR-7",
+      "ref": "DR-7",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Rôles incompatibles : refuser la paire, ou la permettre avec un motif ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "permise avec un motif, journalisée et listée (écran « Rôles incompatibles », fiche)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-8",
+      "ref": "DR-8",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Gestionnaire d'accès : jusqu'où ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "les droits, le profil, l'activation et le compte des personnes de son périmètre (départements, sites) ; jamais un droit d'administrateur ou de direction, ni les profils, applications, rôles Clavis ; ni le départ",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-9",
+      "ref": "DR-9",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Comptes de service : qui en répond ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "un propriétaire (un salarié), qui revoit leurs droits dans la revue des accès",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-10",
+      "ref": "DR-10",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Demande d'accès faite par le responsable lui-même, ou sans responsable ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "directement à la DSI (pas d'étape responsable)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-11",
+      "ref": "DR-11",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Double authentification à l'installation : active d'office ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "non (CLAVIS_MFA_REQUIRED=none par défaut, la DSI pose admins à la mise en service)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-13",
+      "ref": "DR-13",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Arrivées d'après Cursus : Clavis peut-il lire les dates d'entrée et de sortie de cursus.pub_salaries (la règle « Clavis ne lit jamais le contrat » de CLAUDE.md) ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "seulement à l'affichage, sans rien copier, et désactivé tant que le propriétaire ne l'a pas confirmé (CLAVIS_CURSUS=off)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DR-12",
+      "ref": "DR-12",
+      "outil": "clavis",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Notifications des outils : quel contenu ?",
+      "contexte": "docs/PROPOSITION-DROITS.md de Clavis : réponse par défaut appliquée (lots B à E, 24 nov. 2026).",
+      "proposition": "la personne et l'outil seulement (l'outil relit clavis.pub_acces) ; désactivées par défaut (CLAVIS_WEBHOOKS)",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DM-2",
+      "ref": "DM-2",
+      "outil": "clavis",
+      "groupe": "matrix",
+      "nature": "question",
+      "titre": "Envoyer DM-2 à Matrix : colonnes type et proprietaire_id en fin de clavis.pub_personnes",
+      "contexte": "Les comptes de service ont des droits comme une personne ; un outil doit pouvoir ne pas les compter comme des salariés. Sans elle : un compte de service apparaît dans pub_personnes comme une personne (ses droits restent justes dans pub_acces).",
+      "proposition": "Validé : porter DM-2 dans le REQUESTS.md de Matrix.",
+      "alternatives": [
+        "Attendre."
+      ],
+      "bloque": "CL lot D",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "clavis:DM-3",
+      "ref": "DM-3",
+      "outil": "clavis",
+      "groupe": "matrix",
+      "nature": "question",
+      "titre": "Envoyer DM-3 à Matrix : lien de lecture clavis_app → cursus.pub_salaries",
+      "contexte": "L'écran « Arrivées et départs » lit à l'affichage les arrivées et départs (rien n'est copié) pour préparer l'activation. Sans lui : CLAVIS_CURSUS reste à off, la DSI pose le jour d'activation à la main. Lié à DR-13.",
+      "proposition": "Validé : porter DM-3 dans le REQUESTS.md de Matrix, puis CLAVIS_CURSUS=views.",
+      "alternatives": [
+        "Attendre ; garder CLAVIS_CURSUS=off."
+      ],
+      "bloque": "CL lot E, DR-13",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

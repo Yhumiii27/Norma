@@ -47,6 +47,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium (NO-010) ; page unique « Suivi Atrium » avec les décisions de toute la suite (NO-011) ; un point d'adoption par outil, MX-N11 pour le serveur commun."
     }
   ],
   "items": [
@@ -252,6 +256,57 @@
         "state": "en_cours",
         "delivery": "Norma 2.4.0",
         "note": "27 nov. 2026 : TA-11, TA-15, TA-16 décidées par le propriétaire, les autres réponses proposées confirmées. Norma 2.4.0 livre la phase 1 dans le socle (tronc commun, composants, contrat pub_taches v1) ; adoption par outil : R-N05, CX-N09, AR-N05, VG-N09, CR-N07, CU-N07, CL-N08, MX-N08, MO-N02, VE-N02 ; MX-N09 (réunion) et CL-N09 (jeton, phase 2)."
+      }
+    },
+    {
+      "id": "NO-010",
+      "title": "Suite renommée Atrium, sans appellation de l'entreprise",
+      "description": "Décision du propriétaire du 27 novembre 2026 : supprimer les appellations de l'ancienne suite et de l'entreprise de tous les fichiers (l'outil n'est pas approuvé au niveau du groupe) ; suite renommée Atrium ; cookie d'affichage atrium-theme (ancien nom lu à défaut) ; noms cibles du serveur commun dans le registre, renommage du serveur par Matrix à part.",
+      "category": "socle",
+      "kind": "decision_a_appliquer",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "CHANGELOG.md § 3.0.0",
+        "REGLES.md",
+        "registre/outils.json"
+      ],
+      "evidence": [
+        "charte/ds/theme.ts",
+        "test/theme.test.mjs"
+      ],
+      "progress": {
+        "state": "fait",
+        "delivery": "Norma 3.0.0",
+        "note": "27 nov. 2026 : fait dans Norma ; adoption par outil : R-N06, CX-N10, AR-N06, VG-N10, CR-N08, CU-N08, CL-N10, MX-N10, MO-N03, VE-N03 ; serveur : MX-N11."
+      }
+    },
+    {
+      "id": "NO-011",
+      "title": "Une seule page de suivi : reste à faire et décisions de toute la suite",
+      "description": "Décision du propriétaire du 27 novembre 2026 : un seul artefact pour la liste des décisions et le questionnaire, tenu à jour au fur et à mesure, pour suivre tous les outils au même endroit. decisions/<outil>.json (schéma decisions/SCHEMA.md), page .artifacts/suivi.html (npm run suivi) : « À décider » (réponse enregistrée dans la base de l'artefact), « Décidé », « Reste à faire » ; les pages de questionnaire des outils ne sont plus publiées.",
+      "category": "outils_communs",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "decisions/SCHEMA.md",
+        "outils/suivi/build.mjs",
+        "REGLES.md § 3"
+      ],
+      "evidence": [
+        "outils/suivi/build.mjs",
+        "outils/suivi/page.template.html",
+        "test/suivi.test.mjs"
+      ],
+      "progress": {
+        "state": "fait",
+        "delivery": "Norma 3.0.0",
+        "note": "27 nov. 2026 : questions reprises des questionnaires d'Arche, Crucible, Modulus, Vector, de l'outil d'ingénierie et de Norma, réponses déjà données reprises ; questions ouvertes des sessions ajoutées."
       }
     }
   ]

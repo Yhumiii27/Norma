@@ -1,4 +1,4 @@
-# Norma — socle commun de la suite EPC2I
+# Norma — socle commun de la suite Atrium
 
 Ce qui doit être identique dans tous les outils (Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis, Matrix,
 Modulus, Vector) vit ici, une seule fois :
@@ -12,9 +12,11 @@ Modulus, Vector) vit ici, une seule fois :
 | `dependances.json` | versions minimales, bibliothèques autorisées, interdites, dérogations |
 | `outils/norma.mjs` | copie du socle dans un outil et contrôle de cette copie |
 | `outils/questionnaire/` | modèle commun du questionnaire du responsable produit (distribué aux outils) |
-| `outils/pages/nocturne-page.css` | palette Nocturne des pages autonomes (questionnaire, reste à faire), sombre et clair |
+| `outils/pages/nocturne-page.css` | palette Nocturne des pages autonomes (suivi, questionnaire), sombre et clair |
 | `reste-a-faire/` | reste à faire de la solution : un fichier par outil, schéma `reste-a-faire/SCHEMA.md` |
-| `outils/reste-a-faire/` | contrôle et génération de `RESTE-A-FAIRE.md` et de la page `.artifacts/reste-a-faire.html` |
+| `decisions/` | questions au responsable produit de toute la suite : un fichier par outil, schéma `decisions/SCHEMA.md` |
+| `outils/reste-a-faire/` | contrôle des listes du reste à faire et `RESTE-A-FAIRE.md` |
+| `outils/suivi/` | page unique « Suivi Atrium » (`.artifacts/suivi.html`) : à décider, décidé, reste à faire |
 | `propositions/` | propositions au propriétaire, non distribuées aux outils (`TACHES-ET-APPROBATIONS.md` : menus de base, tâches et approbations dans toute la suite, décidée le 27 novembre 2026 ; `DEPLOIEMENT-TRONC-COMMUN.md` : déploiement par outil ; questionnaire `questionnaire-taches/`, page `node propositions/questionnaire-taches/build.mjs`) |
 
 ## Dans un outil
@@ -34,35 +36,32 @@ node norma/outils/norma.mjs verifier                            # à mettre dans
 - `verifier` refuse une copie modifiée localement et contrôle `package.json` (minimums, interdites, à déclarer).
 - Charte : `charte/README.md`.
 
-## Questionnaire du responsable produit
+## Suivi Atrium : décisions et reste à faire
 
-Un seul modèle pour tous les outils (plus de copie d'un outil à l'autre). Dans l'outil :
+Une seule page pour toute la suite (décision du propriétaire du 27 novembre 2026), publiée à
+https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf avec les capacités `db` et `user`. `npm run suivi` contrôle
+`reste-a-faire/<outil>.json` et `decisions/<outil>.json`, puis écrit `RESTE-A-FAIRE.md` et `.artifacts/suivi.html`
+(`npm run reste-a-faire` en est un alias) :
 
-- `scripts/questionnaire/questions.json` : une entrée par question, `{ id, group, title, context, proposal, alts, blocks }`,
-  ou `{ id, group, title, context, kind: "data", placeholder }` pour une donnée à coller. Ids uniques, groupe connu,
-  champs obligatoires : contrôlés à la génération, avec un message par erreur.
-- `scripts/questionnaire/config.json` :
-  ```json
-  { "titre": "Décisions Arche", "sousTitre": "Arche · questionnaire du responsable produit",
-    "introduction": "Chaque question porte la proposition par défaut (★)…",
-    "decideTitre": "Déjà décidé", "decide": ["AC-1 — le système s’appelle Arche."],
-    "groupes": [["prio", "À traiter en priorité"], ["data", "Données à fournir"]],
-    "sortie": ".artifacts/decisions-arche.html" }
-  ```
-- `node norma/outils/questionnaire/build.mjs [--sortie <page.html>]` (script `questionnaire:page`) écrit la page autonome,
-  publiée comme artefact (charte Nocturne, sombre et clair).
-- Réponses : base de l'artefact, collection `answers`, un document par question
-  `{ choice: default | altN | other | discuss, note, updatedAt }` (mêmes champs qu'avant : les réponses déjà données dans
-  Arche et Crucible restent lues). Relues avec l'outil ArtifactData avant chaque livraison, reportées dans `DECISIONS.md`.
+- **À décider** : les questions ouvertes de tous les outils, groupées par outil, avec la proposition par défaut (★), les
+  autres réponses, « Autre réponse », « À discuter » et une note ; chaque réponse est enregistrée à mesure dans la base de
+  la page (collection `answers`, un document par question `{ choice, note, updatedAt }`) ; sans base, la page est en lecture
+  seule.
+- **Décidé** : les réponses déjà données (anciens questionnaires d'Arche, Crucible, Modulus, décisions datées) et ce qui
+  était décidé avant les questions ; une réponse peut être revue.
+- **Reste à faire** : les points de chaque outil, filtres par état, priorité, recherche.
 
-## Reste à faire de la solution
+Avant chaque livraison, la session relit `answers`, reporte les réponses dans `decisions/<outil>.json` puis dans le
+`DECISIONS.md` de l'outil, ajoute ses nouvelles questions, régénère et republie la page (`decisions/SCHEMA.md`,
+`REGLES.md` § 3). Après chaque développement, la session de l'outil met à jour `reste-a-faire/<outil>.json` ici et ouvre
+la PR de Norma.
 
-Une seule liste pour toute la suite, ici : `reste-a-faire/<outil>.json` (et `norma.json` pour le socle), schéma
-`reste-a-faire/SCHEMA.md`. Page publiée : https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf. `npm run reste-a-faire` contrôle chaque fichier et produit `RESTE-A-FAIRE.md` (sommaire par
-outil, puis les points par outil et catégorie) et `.artifacts/reste-a-faire.html` (page autonome : filtres par outil, état,
-priorité, recherche, compteurs), republiée à la même adresse d'artefact. Après chaque développement, la session de l'outil
-met à jour son fichier ici et ouvre la PR de Norma (REGLES.md § 3). Les listes propres des outils sont remplacées par un
-renvoi à celle-ci.
+## Questionnaire d'un outil (modèle, plus publié)
+
+`outils/questionnaire/` reste distribué aux outils et constructible (`node norma/outils/questionnaire/build.mjs`, réglé par
+`scripts/questionnaire/config.json` et `questions.json`), mais ses pages ne sont plus publiées : les questions vivent dans
+`decisions/<outil>.json` et la page « Suivi Atrium ». Les réponses déjà données dans les pages d'Arche, de Crucible et de
+Modulus y sont reprises.
 
 ## Changer le socle
 

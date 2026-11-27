@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════════════
-   Norma 2.0 — coque commune des outils de la suite EPC2I (charte/COQUE.md).
+   Norma 2.0 — coque commune des outils de la suite Atrium (charte/COQUE.md).
    Reprise de la coque de Keystone (src/components/app/shell/*.module.css, commit f412d0e) ; mêmes mesures, valeurs
    prises dans les variables de nocturne.css (jamais de couleur en dur). Classes globales : les composants React de
    charte/ds (AppShell, Sidebar, PageHeader, HeaderTools…) les posent, et un outil sans React (Matrix, page statique)

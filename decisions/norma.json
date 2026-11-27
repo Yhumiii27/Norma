@@ -1,0 +1,476 @@
+{
+  "outil": "norma",
+  "updated": "2026-11-27",
+  "nom": "Suite et socle (Norma)",
+  "origine": {
+    "depot": "Yhumiii27/Norma",
+    "fichier": "propositions/questionnaire-taches/questions.json",
+    "commit": null,
+    "reprise": "Questions TA-1 à TA-16 (décidées) et questions des sessions."
+  },
+  "groupes": {
+    "menus": "Menus de base communs",
+    "archi": "Architecture des tâches et des décisions",
+    "notif": "Notifications",
+    "regles": "Règles et périmètre",
+    "phases": "Phases et pilote",
+    "suite": "Suite : déploiement et exploitation",
+    "socle": "Socle Norma"
+  },
+  "decide": [
+    "27 novembre 2026 : toutes les questions sont décidées — TA-11, TA-15, TA-16 par le propriétaire (tronc commun Accueil · Mes tâches · Mes approbations, tâches de toute la suite partout), TA-1 à TA-10, TA-12 à TA-14 : réponse proposée confirmée. Construit dans Norma 2.4.0.",
+    "26 novembre 2026 : proposition et questionnaire seulement.",
+    "M-17, M-18, M-19 de Matrix : lecture par les vues pub_ (définies par Matrix), écriture par l’API ou une fonction pub_ de l’outil propriétaire.",
+    "Connexion et droits par Clavis : personne_id de Clavis = clé commune d’une personne ; droits lus dans clavis.pub_acces.",
+    "Codex héberge les documents ; les autres outils n’en gardent que les références."
+  ],
+  "questions": [
+    {
+      "id": "norma:TA-11",
+      "ref": "TA-11",
+      "outil": "norma",
+      "groupe": "menus",
+      "nature": "question",
+      "titre": "Liste des entrées de base de la barre latérale — décidé le 27 nov. 2026",
+      "contexte": "Keystone a Accueil, Mes projets, Mes tâches, Mes approbations, Mes tableaux de bord, Documents · Codex. Aucun autre outil n'a le même bloc (proposition § 1.2). Norma fixerait la liste, l'ordre, les libellés et les icônes (charte/COQUE.md § 2.3, modèle charte/ds/base-nav.ts).",
+      "proposition": "Décision du propriétaire : Accueil (typé selon l'outil) · Mes tâches · Mes approbations, puis une ou deux entrées propres au métier par outil (charte/COQUE.md § 2 bis).",
+      "alternatives": [
+        "Copier exactement les six entrées fixes de Keystone dans chaque outil (Mes projets compris, renommé selon l'outil).",
+        "Seulement Accueil et Mes tâches (une seule entrée « Mon travail ») ; le reste reste libre à chaque outil.",
+        "La même liste, mais Aide et Notifications comme entrées fixes de la barre latérale plutôt que dans le menu du compte."
+      ],
+      "bloque": "phase 1",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Décision du propriétaire (texte de la proposition).",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-15",
+      "ref": "TA-15",
+      "outil": "norma",
+      "groupe": "menus",
+      "nature": "question",
+      "titre": "« Mes tâches » et « Mes approbations » : deux entrées ou une ? — décidé le 27 nov. 2026",
+      "contexte": "Keystone sépare les tâches à faire (Mes tâches) et les décisions attendues (Mes approbations) ; Vigie réunit tout dans « À faire », Crucible a « À décider ».",
+      "proposition": "Décision du propriétaire : deux entrées — « Mes tâches » sous le format de Teams (liste, kanban, calendrier) et « Mes approbations ».",
+      "alternatives": [
+        "Une seule entrée « Mon travail » avec deux onglets (Tâches, Approbations).",
+        "Une seule entrée « À faire » pour tout, sans distinguer les décisions."
+      ],
+      "bloque": "phase 1",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Décision du propriétaire (texte de la proposition).",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-1",
+      "ref": "TA-1",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Où se réunissent les tâches de tous les outils ? — décidé le 27 nov. 2026",
+      "contexte": "Chaque outil publie ses tâches ouvertes dans pub_taches. Il faut un endroit où les lire toutes. Matrix réunit déjà les pub_journal de tous les outils (matrix.journal_unifie).",
+      "proposition": "Matrix publie matrix.pub_taches, réunion des pub_taches lisibles (une vue absente est laissée de côté) ; chaque outil reçoit un seul lien de lecture.",
+      "alternatives": [
+        "Chaque outil lit les neuf pub_taches des autres (neuf liens par outil, quatre-vingt-dix en tout).",
+        "Pas de vue : chaque outil appelle l'API GET /api/v1/taches?personne= de chacun des autres à l'affichage (droits exacts, mais neuf appels et neuf pannes possibles par page).",
+        "Un nouveau service commun « boîte de réception » (onzième application) qui tient la liste et l'envoi des e-mails."
+      ],
+      "bloque": "phase 2",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-2",
+      "ref": "TA-2",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Contrat commun pub_taches, version 1 — décidé le 27 nov. 2026",
+      "contexte": "Colonnes proposées (§ 4.2) : outil, tache_id, nature, type, type_libelle, objet_ref, titre, personne_id, pour_le_compte_de, etat, echeance, priorite, actions, decision_a_distance, sensible, projet, site, filiale, lien, version, cree_le, maj_le. Une colonne publiée ne se retire ni ne se renomme.",
+      "proposition": "Le contrat du § 4.2, tenu dans Norma (propositions/, puis charte ou registre une fois validé), vérifié par Matrix comme celui de pub_journal.",
+      "alternatives": [
+        "Un contrat plus court pour commencer (outil, tache_id, titre, personne_id, echeance, lien) : lecture et liens profonds seulement, sans décision à distance.",
+        "Le contrat du § 4.2 plus le contenu de la fiche (circuit, données à vérifier, documents) en JSON dans la vue, sans API de fiche."
+      ],
+      "bloque": "phase 2",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-3",
+      "ref": "TA-3",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Comment chaque outil tient-il la liste qu'il publie ? — décidé le 27 nov. 2026",
+      "contexte": "Les règles qui disent qui doit décider sont écrites en TypeScript dans chaque outil (fournisseurs de Keystone, approvalsOf d'Arche, decisionQueue de Crucible, À faire de Vigie). Les réécrire en SQL ferait un double.",
+      "proposition": "Une table de projection taches_publiees par outil, réécrite par ses propres fournisseurs dans la transaction de chaque écriture qui ouvre ou ferme une tâche, et toutes les 15 minutes pour les échéances ; pub_taches la lit. C'est une publication recalculée, jamais la source de vérité.",
+      "alternatives": [
+        "Une vue SQL directe sur les tables métier (règles de routage réécrites en SQL, toujours à jour, double à tenir).",
+        "Pas de projection : API seulement (voir TA-1, troisième choix)."
+      ],
+      "bloque": "phase 2",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-4",
+      "ref": "TA-4",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Comment un outil agit-il au nom de la personne chez un autre outil ? — décidé le 27 nov. 2026",
+      "contexte": "Clavis n'émet aujourd'hui qu'un jeton d'identité d'une heure pour l'outil où la personne s'est connectée (authorization_code seulement, jeton d'accès opaque). Pour consulter ou décider chez l'outil B depuis l'outil A, B doit savoir que c'est bien la personne.",
+      "proposition": "Échange de jeton (RFC 8693) chez Clavis : jeton de rafraîchissement à la connexion (durée de la session, révoqué au départ ou au retrait de l'accès), échangé par l'outil A contre un jeton JWT pour l'outil B (aud = B, act = A, portée taches:lire ou taches:decider, 5 minutes), journalisé ; B le vérifie par les clés publiques de Clavis.",
+      "alternatives": [
+        "Confiance entre outils : A signe « la personne X décide » avec sa clé d'application, B le croit et relit pub_acces (comme les fonctions pub_ actuelles ; plus simple, mais un outil compromis décide pour tout le monde).",
+        "Pas de délégation : consulter ou décider ouvre toujours l'outil propriétaire (connexion unique par Clavis, un clic de plus)."
+      ],
+      "bloque": "phase 3",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-12",
+      "ref": "TA-12",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Décision reçue par Vigie (qui n'a pas d'API HTTP) — décidé le 27 nov. 2026",
+      "contexte": "Vigie reçoit aujourd'hui les écritures des autres outils par des fonctions pub_ (vigie.pub_signaler_avancement_nc…) qui déposent une demande traitée ensuite. Une décision à distance demande une réponse immédiate et le jeton de la personne.",
+      "proposition": "Vigie ajoute /api/v1/taches/{id} et /api/v1/taches/{id}/decision, comme les autres outils.",
+      "alternatives": [
+        "Une fonction vigie.pub_decider_tache (M-19) : la personne est déclarée par l'outil appelant, sans jeton, réponse différée.",
+        "Vigie reste en consultation seule : ses tâches s'ouvrent dans Vigie."
+      ],
+      "bloque": "phase 4",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-13",
+      "ref": "TA-13",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Décision quand l'outil propriétaire ne répond pas — décidé le 27 nov. 2026",
+      "contexte": "Keystone garde aujourd'hui une file d'envoi vers Codex (« en attente de synchronisation »). Une décision envoyée plus tard peut tomber sur un objet qui a changé.",
+      "proposition": "Refusée : « source indisponible, réessayez ou ouvrez l'outil » ; aucune décision mise en attente (la file de Keystone vers Codex passerait à l'appel direct).",
+      "alternatives": [
+        "File d'attente comme Keystone, rejouée avec la version vue : refusée à l'arrivée si l'objet a changé.",
+        "File d'attente sans contrôle de version."
+      ],
+      "bloque": "phase 4",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-8",
+      "ref": "TA-8",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Consultation des documents depuis un autre outil — décidé le 27 nov. 2026",
+      "contexte": "Codex sert ses fichiers à ses utilisateurs et, par jeton d'application, à Cursus. Pour qu'un approbateur lise le dossier depuis son outil, Codex doit appliquer la confidentialité pour cette personne.",
+      "proposition": "API d'aperçu de Codex (GET /api/v1/documents/{id}/apercu?rev=) avec le jeton de la personne pour Codex : PDF et images dans le panneau, autres formats « Télécharger » ou « Ouvrir dans Codex » ; rien n'est gardé par l'outil appelant.",
+      "alternatives": [
+        "Lien « Ouvrir dans Codex » seulement (pas d'aperçu dans l'outil).",
+        "Aperçu par le jeton d'application de l'outil appelant (Codex lui fait confiance pour la confidentialité)."
+      ],
+      "bloque": "phase 3",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-5",
+      "ref": "TA-5",
+      "outil": "norma",
+      "groupe": "notif",
+      "nature": "question",
+      "titre": "Résumé e-mail et e-mails immédiats — décidé le 27 nov. 2026",
+      "contexte": "Keystone, Vigie, Crucible, Cursus et Arche envoient (ou prépareront) chacun leurs e-mails et leurs résumés : une personne qui travaille dans quatre outils recevrait quatre résumés.",
+      "proposition": "Un seul résumé quotidien pour toute la suite ; l'e-mail immédiat reste à l'outil propriétaire, selon la préférence de la personne ; les résumés propres s'arrêtent quand le résumé commun démarre.",
+      "alternatives": [
+        "Chaque outil garde ses e-mails et son résumé (rien de commun, seulement la cloche).",
+        "Plus aucun e-mail immédiat : seulement le résumé commun (et la cloche).",
+        "Un résumé commun et aussi un e-mail immédiat commun, envoyés par le même expéditeur."
+      ],
+      "bloque": "phase 5",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-6",
+      "ref": "TA-6",
+      "outil": "norma",
+      "groupe": "notif",
+      "nature": "question",
+      "titre": "Qui envoie le résumé commun ? — décidé le 27 nov. 2026",
+      "contexte": "Il faut lire les tâches de tous les outils et l'adresse de chaque personne (clavis.pub_personnes porte l'e-mail professionnel). Cursus a déjà Microsoft Graph Mail.Send, Crucible Graph et SMTP. Le choix Graph ou SMTP attend la DSI.",
+      "proposition": "Matrix : il réunit déjà les publications et sert la DSI ; une boîte d'envoi commune, transport choisi avec la DSI (Graph depuis une boîte partagée ou relais SMTP), code repris de Cursus ou Crucible.",
+      "alternatives": [
+        "Clavis (annuaire et adresses, déjà un module d'e-mail et des webhooks vers les outils).",
+        "Cursus (Graph déjà construit et testé).",
+        "Keystone (résumé par famille déjà construit)."
+      ],
+      "bloque": "phase 5",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-7",
+      "ref": "TA-7",
+      "outil": "norma",
+      "groupe": "notif",
+      "nature": "question",
+      "titre": "Où se règlent les préférences de notification ? — décidé le 27 nov. 2026",
+      "contexte": "Seul Keystone a des préférences (familles × immédiat, résumé, rien). Avec un résumé commun, une préférence par outil ne suffit plus.",
+      "proposition": "Clavis : une page « Mes notifications » (par famille et par outil), publiée en fin de clavis.pub_personnes (ou une vue de plus), lue par l'expéditeur commun et par les outils pour l'immédiat.",
+      "alternatives": [
+        "Chaque outil garde ses préférences ; le résumé commun a sa propre page.",
+        "Matrix tient les préférences (avec l'expéditeur)."
+      ],
+      "bloque": "phase 5",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-9",
+      "ref": "TA-9",
+      "outil": "norma",
+      "groupe": "regles",
+      "nature": "question",
+      "titre": "Types exclus de la décision à distance — décidé le 27 nov. 2026",
+      "contexte": "Certaines décisions engagent une signature ou demandent l'écran de l'outil. Exclues, elles restent consultables partout, avec « Ouvrir dans l'outil ».",
+      "proposition": "Exclus : signature avancée (G2 / AFE d'Arche par Yousign) ; signatures sur le terrain (émargement, permis, consignation, plan de prévention, registre DGI de Vigie) ; tout ce qui porte une donnée de santé ; arbitrages à options et scénarios de Crucible ; compte rendu d'entretien de Cursus.",
+      "alternatives": [
+        "Exclure seulement la signature avancée ; tout le reste se décide à distance.",
+        "Commencer par une liste fermée de types autorisés (approuver / refuser simples : commandes, étapes de circuit, budgets, absences, notes de frais, demandes d'accès) et l'étendre ensuite."
+      ],
+      "bloque": "phase 4",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-10",
+      "ref": "TA-10",
+      "outil": "norma",
+      "groupe": "regles",
+      "nature": "question",
+      "titre": "Titres publiés et données personnelles — décidé le 27 nov. 2026",
+      "contexte": "Tous les rôles d'outil lisent toutes les lignes de la vue réunie (une vue ne sait pas qui regarde). Un titre peut révéler une donnée sensible (nature d'une absence, AT, document confidentiel).",
+      "proposition": "Titres neutres écrits par l'outil propriétaire, colonne sensible (titre générique ailleurs), aucune tâche de santé publiée ; noms de l'annuaire interne admis ; avis du RGPD de Cursus avant d'y publier ses tâches ; lignes fermées gardées 30 jours.",
+      "alternatives": [
+        "Aucun nom de personne dans les titres (« Demande d'absence n° 1234 »).",
+        "Cursus ne publie pas ses tâches (consultation dans Cursus seulement)."
+      ],
+      "bloque": "phase 2",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-16",
+      "ref": "TA-16",
+      "outil": "norma",
+      "groupe": "regles",
+      "nature": "question",
+      "titre": "Tâches de toute la suite dans tous les outils, ou dans un portail ? — décidé le 27 nov. 2026",
+      "contexte": "La demande : approuver depuis son application métier sans ouvrir celle d'un autre métier.",
+      "proposition": "Décision du propriétaire : dans tous les outils, toutes les tâches et toutes les approbations de la personne, même venues d'un autre outil.",
+      "alternatives": [
+        "Dans un seul portail commun (par exemple l'accueil de Clavis ou de Matrix), les outils gardant leurs seules tâches.",
+        "Dans tous les outils, mais les décisions seulement dans l'outil propriétaire ou le portail."
+      ],
+      "bloque": "phase 2",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Décision du propriétaire (texte de la proposition).",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-14",
+      "ref": "TA-14",
+      "outil": "norma",
+      "groupe": "phases",
+      "nature": "question",
+      "titre": "Phases et pilote — décidé le 27 nov. 2026",
+      "contexte": "Phases : 0 décisions, 1 menus de base, 2 « Mes tâches » de la suite en lecture, 3 fiche et documents, 4 décision à distance, 5 résumé commun (§ 6).",
+      "proposition": "Dans cet ordre, avec Keystone + Codex + Arche en pilote (boîte la plus complète, documents et circuits, circuit le plus formel ; Keystone décide déjà des étapes de Codex), puis Vigie et Crucible, puis Cursus, puis Modulus, Vector, Clavis, Matrix.",
+      "alternatives": [
+        "Pilote Keystone + Vigie (ECO et NC déjà échangés).",
+        "Pilote Cursus + Keystone (absences et frais : le plus de personnes concernées).",
+        "Phase 1 (menus) dans tous les outils d'abord, puis tout le reste d'un coup."
+      ],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Réponse proposée confirmée par le propriétaire.",
+        "date": "2026-11-27",
+        "source": "propositions/TACHES-ET-APPROBATIONS.md § 7 bis"
+      }
+    },
+    {
+      "id": "norma:TA-2-ajust",
+      "ref": "TA-2-ajust",
+      "outil": "norma",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Ajustement du contrat pub_taches v1 (après TA-11 et TA-15)",
+      "contexte": "Pour le kanban « comme Teams » et les approbations, le contrat de TA-2 a été ajusté dans contrats/taches-v1.md : nature = tache · approbation (une échéance est une tâche, une information va à la cloche) ; états a_faire · en_cours · en_attente · faite · annulee ; colonnes resultat et type_libelle_en ajoutées.",
+      "proposition": "Accepter l'ajustement tel qu'écrit dans contrats/taches-v1.md (Norma 2.4.0).",
+      "alternatives": [
+        "Revenir au contrat de la proposition (§ 4.2), sans en_attente ni resultat."
+      ],
+      "bloque": "phase 1 du tronc commun",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "norma:NV-1",
+      "ref": "NV-1",
+      "outil": "norma",
+      "groupe": "socle",
+      "nature": "question",
+      "titre": "Numérotation de Norma 2.4 (version mineure)",
+      "contexte": "Norma 2.4.0 a été numérotée mineure : rien n'est retiré, l'adoption du tronc commun est suivie par outil.",
+      "proposition": "Garder 2.4.0 en version mineure.",
+      "alternatives": [
+        "La renuméroter 3.0.0."
+      ],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Sans objet : Norma 3.0.0 (renommage de la suite en Atrium, cookie atrium-theme) suit 2.4.0 le même jour.",
+        "date": "2026-11-27",
+        "source": "Norma 3.0.0"
+      }
+    },
+    {
+      "id": "norma:DEP-1",
+      "ref": "DEP-1",
+      "outil": "norma",
+      "groupe": "suite",
+      "nature": "question",
+      "titre": "Déployer le tronc commun sur le serveur",
+      "contexte": "Le tronc commun (menus de base, Mes tâches, Mes approbations, pub_taches réunies par Matrix) est prêt dans Norma 2.4.0 ; propositions/DEPLOIEMENT-TRONC-COMMUN.md prévoit Matrix d'abord, puis un pilote Keystone + Codex + Arche, puis les autres outils.",
+      "proposition": "Oui : Matrix d'abord (matrix.pub_taches et pub_taches_sources), puis le pilote Keystone + Codex + Arche, puis les autres outils.",
+      "alternatives": [
+        "Attendre la fin des alignements en cours dans chaque outil.",
+        "Tous les outils en même temps."
+      ],
+      "bloque": "NO-009, MX-N09",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "norma:MAIL-1",
+      "ref": "MAIL-1",
+      "outil": "norma",
+      "groupe": "suite",
+      "nature": "question",
+      "titre": "Transport des e-mails de la suite",
+      "contexte": "Clavis (mot de passe provisoire), Arche, Crucible, Vigie, Cursus et le résumé quotidien commun (TA-5, TA-6) envoient des e-mails ; aujourd'hui seuls les transports « aucun » et « fichier » sont en place. Le choix se fait avec la DSI.",
+      "proposition": "À décider avec la DSI : Microsoft Graph (Mail.Send, compte d’application) ou SMTP du serveur de messagerie interne.",
+      "alternatives": [
+        "Microsoft Graph (Mail.Send).",
+        "SMTP interne."
+      ],
+      "bloque": "résumé quotidien, mots de passe provisoires",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "norma:REN-2",
+      "ref": "REN-2",
+      "outil": "norma",
+      "groupe": "socle",
+      "nature": "question",
+      "titre": "Nom de la suite : Atrium",
+      "contexte": "27 nov. 2026 : le propriétaire a demandé de retirer l'ancienne appellation de tous les fichiers (l'outil n'est pas approuvé au niveau du groupe) et a choisi Atrium.",
+      "proposition": "Atrium.",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Choix du propriétaire, appliqué dans Norma 3.0.0.",
+        "date": "2026-11-27",
+        "source": "décision du 27 nov. 2026"
+      }
+    }
+  ]
+}

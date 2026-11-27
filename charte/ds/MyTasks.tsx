@@ -129,7 +129,7 @@ function TaskList({ items, today, ctx }: { items: readonly TaskRow[]; today: str
 }
 
 // ── Tableau kanban ───────────────────────────────────────────────────────────────────────────────────────────────
-const DRAG_TYPE = 'application/x-epc2i-task';
+const DRAG_TYPE = 'application/x-atrium-task';
 
 function TaskBoard({ items, today, ctx, onMove }: { items: readonly TaskRow[]; today: string; ctx: DecideContext; onMove?: MyTasksProps['onMove'] }) {
   const { t } = useI18n();

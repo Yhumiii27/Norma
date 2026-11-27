@@ -1,0 +1,1496 @@
+{
+  "outil": "arche",
+  "updated": "2026-11-27",
+  "origine": {
+    "depot": "Yhumiii27/Arche",
+    "fichier": "scripts/questionnaire/questions.json",
+    "commit": "a06bb99",
+    "reprise": "Questionnaire « Décisions Arche » repris le 27 nov. 2026 ; réponses de sa base (collection answers) reprises."
+  },
+  "groupes": {
+    "prio": "À traiter en priorité",
+    "archi": "Décisions d’architecture à confirmer",
+    "cdc": "Compléments au cahier des charges",
+    "keystone": "Liens avec Keystone",
+    "arche": "Questions propres à Arche",
+    "extra": "Ajouts au-delà du cahier des charges",
+    "data": "Données à fournir",
+    "session": "Questions des sessions"
+  },
+  "decide": [
+    "AC-1 — le système s’appelle Arche (dépôt Yhumiii27/Arche).",
+    "N-23 — PostgreSQL uniquement, pas de PGlite.",
+    "N-17 — Codex héberge tous les documents d’Arche ; Arche n’en garde que les références.",
+    "Tenir compte des environnements de Codex, Vigie, Cursus et Matrix (demandes envoyées à chacun)."
+  ],
+  "questions": [
+    {
+      "id": "arche:N-3",
+      "ref": "N-3",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Comptes des utilisateurs des filiales",
+      "contexte": "Les filiales doivent se connecter à Arche. Sont-elles dans le même annuaire Microsoft (Entra ID) que le groupe ?",
+      "proposition": "Même locataire Entra si les filiales y sont, sinon invités B2B ; rôles et périmètres attribués dans Arche par l’administrateur.",
+      "alternatives": [
+        "Toutes les filiales sont dans l’annuaire du groupe",
+        "Les filiales ont leurs propres annuaires (invités B2B)",
+        "Comptes locaux Arche (sans Microsoft) pour les filiales"
+      ],
+      "bloque": "L1b",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-4",
+      "ref": "N-4",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Profil Administrateur d’Arche (hors CDC)",
+      "contexte": "Quelqu’un doit tenir les filiales, les sites, les comptes, les rôles et les paramètres. Ce profil ne voit aucune donnée métier.",
+      "proposition": "Créer le profil « Administrateur », tenu par le PMO groupe ou la DSI.",
+      "alternatives": [
+        "Oui, tenu par la DSI",
+        "Oui, tenu par le PMO groupe",
+        "Non : le Dir.IG administre Arche"
+      ],
+      "bloque": "L1b",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-6",
+      "ref": "C-6",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Définition des rôles (Co-DIG, Client Interne, COPIL GPI, Dir.IG, Directeur de Zone)",
+      "contexte": "Le CDC cite ces rôles sans les définir. Arche a proposé un glossaire (spec 00 §3) et une matrice de droits (spec 01 §3) en attendant la grille RACI du groupe.",
+      "proposition": "Retenir le glossaire et la matrice de droits d’Arche en attendant la grille RACI du groupe.",
+      "alternatives": [
+        "Glossaire retenu, je fournirai la grille RACI",
+        "Glossaire à corriger (préciser en note)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-22",
+      "ref": "N-22",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Qui tient la liste des filiales, de leurs zones et de leurs sites ?",
+      "contexte": "Matrix possède les sites (D14) et l’organigramme (D15), mais n’a pas de niveau « société / filiale ».",
+      "proposition": "Matrix (nouveau niveau « société ») ; Arche garde ses propres tables en attendant, tenues par son administrateur.",
+      "alternatives": [
+        "Arche tient définitivement la liste des filiales",
+        "Un autre outil (préciser)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-24",
+      "ref": "N-24",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Rattachement d’un document de CAPEX dans Codex",
+      "contexte": "Codex ne connaît que trois rattachements : aucun, projet (Keystone), recherche. Les documents d’un CAPEX (plan de masse, permis, AFE, PV de transfert…) n’appartiennent à aucun projet Keystone.",
+      "proposition": "Demander à Codex un nouveau rattachement « capex » (contexte = code CAPEX, ex. PID-CPX-APM-2026-01-001).",
+      "alternatives": [
+        "Traiter un CAPEX comme un « projet » dans Codex",
+        "Rattacher les documents au département de la filiale"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-13",
+      "ref": "C-13",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Hébergement en France, IA et annuaire",
+      "contexte": "Le CDC exige un hébergement des données en France. Même question que I-1a pour Keystone.",
+      "proposition": "Données et sauvegardes en France ; IA désactivée tant qu’aucun fournisseur conforme (UE/France) n’est validé ; Entra ID accepté ; même hébergeur que Keystone.",
+      "alternatives": [
+        "Serveur cloud en France (OVHcloud, Scaleway…)",
+        "Azure France Central",
+        "Serveur interne du groupe"
+      ],
+      "bloque": "production",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:AC-3",
+      "ref": "AC-3",
+      "outil": "arche",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Études de sécurité des procédés (HazID, HazOp, AMDEC, PSSR, ASPD)",
+      "contexte": "Constat du 22 oct. : Vigie ne modélise aucune de ces études (seulement « HAZOP » comme source libre d’action QSE).",
+      "proposition": "Les demander à Vigie ; en attendant, jalons HS déclaratifs dans Arche, saisis par le SSE groupe avec une preuve Codex.",
+      "alternatives": [
+        "Arche porte lui-même ces études et leurs actions",
+        "Rester déclaratif dans Arche, sans évolution de Vigie"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:A-1",
+      "ref": "A-1",
+      "outil": "arche",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Application CAPEX séparée de Keystone",
+      "contexte": "Les filiales et le groupe ont un compte Arche, pas Keystone.",
+      "proposition": "Confirmer.",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:A-2",
+      "ref": "A-2",
+      "outil": "arche",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Données communes sur le serveur PostgreSQL Atrium",
+      "contexte": "Un schéma par outil (arche), partage en lecture par les vues pub_ uniquement.",
+      "proposition": "Confirmer.",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:A-3",
+      "ref": "A-3",
+      "outil": "arche",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Socle repris de Keystone une fois, puis paquet partagé",
+      "contexte": "Copie du socle au commit 63f43ad (docs/SOCLE.md) ; extraction en @atrium/socle plus tard (R-194).",
+      "proposition": "Confirmer.",
+      "alternatives": [],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:A-4",
+      "ref": "A-4",
+      "outil": "arche",
+      "groupe": "archi",
+      "nature": "question",
+      "titre": "Répartition des responsabilités entre outils",
+      "contexte": "Arche : CAPEX, phases, jalons, dossiers, lots hors ingénierie interne, BP, typologie, ramp-up, besoins (demande). Keystone : catalogue, réponses, projets Keystone. Vigie : études et actions de sécurité. Codex : documents. Ajout proposé : le registre des autorisations (ICPE, PC, PLU, ATEX) appartient à Arche.",
+      "proposition": "Confirmer, avec le registre des autorisations dans Arche.",
+      "alternatives": [
+        "Confirmer, mais le registre des autorisations va dans Vigie"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-1",
+      "ref": "C-1",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Jalons de fin de phase 3 et 4",
+      "contexte": "Le CDC titre la phase 4 « (G4) » alors que son jalon est G3 ; la phase 3 n’a pas de jalon de fin.",
+      "proposition": "Phase 4 → G3 ; passage Exécution → Démarrage = point de contrôle K3 « Prêt à démarrer », visa du Dir.IG, sans arbitrage.",
+      "alternatives": [
+        "Pas de point de contrôle entre phase 3 et 4",
+        "Un vrai jalon G (arbitrage) entre phase 3 et 4"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-2",
+      "ref": "C-2",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Le « livrable 3.1 » (tableau de bord d’exécution)",
+      "contexte": "Le CDC numérote 1, 2, 3.1, 3.",
+      "proposition": "C’est un tableau de bord, pas un dossier vivant ; 3 dossiers vivants.",
+      "alternatives": [],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-3",
+      "ref": "C-3",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Table des jalons de sécurité HS",
+      "contexte": "HS 1 n’existe pas ; RSPDI et ASPD ne sont pas définis.",
+      "proposition": "HS 2 HazID → G1 ; HS 3 HazOp/AMDEC → G2 ; HS 4 contrôle chantier → K3 ; PSSR (HS 4+5, RSPDI) → début de MES ; HS 6 ASPD → G3. Définitions de RSPDI / ASPD et preuves à fournir par le SSE groupe.",
+      "alternatives": [
+        "La table est à corriger (préciser en note)"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-4",
+      "ref": "C-4",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Matrice de délégation (seuils du Copil projet, du Dir.IG, du PDG)",
+      "contexte": "Le CDC parle de « seuils délégués » sans les chiffrer. Arche a proposé des valeurs d’amorce (spec 05 §5) : Light, Copil ≤ 3 % du budget G2 et ≤ 250 k€, Dir.IG ≤ 7 % et ≤ 1 000 k€ ; Stratégique, Copil ≤ 1 % et ≤ 500 k€, Dir.IG ≤ 5 % et ≤ 2 500 k€ ; cumul > 10 % → PDG.",
+      "proposition": "Utiliser ces valeurs d’amorce, modifiables par l’administrateur, jusqu’à la matrice du groupe.",
+      "alternatives": [
+        "Je fournis la matrice du groupe (bloc Données)"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-5",
+      "ref": "C-5",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Typologie Light / Stratégique (20 % du CA de la filiale)",
+      "contexte": "Le CA de référence n’est dans aucun outil.",
+      "proposition": "CA saisi par la DAF groupe (dernier exercice clos) ; seuil ≥ 20 % = Stratégique ; nouvelle usine = Stratégique d’office ; forçage par le Dir.IG avec motif ; un recalcul qui change la typologie est confirmé par le Dir.IG.",
+      "alternatives": [
+        "Le seuil s’applique au budget G2 seulement (pas avant)",
+        "La typologie est choisie à la main, sans calcul"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-7",
+      "ref": "C-7",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Niveau de signature électronique",
+      "contexte": "Le CDC demande des signatures électroniques sans préciser le niveau.",
+      "proposition": "Signature simple pour tout en v1 (connexion Microsoft récente + horodatage + empreinte du dossier) ; signature avancée pour G2 / AFE plus tard, prestataire français (Yousign par défaut).",
+      "alternatives": [
+        "Signature avancée dès le départ pour G2",
+        "Signature simple partout, pas de signature avancée"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-8",
+      "ref": "C-8",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Classes d’estimation du budget",
+      "contexte": "Le CDC donne ±50 %, ±30 %, +10/−5 % sans règle de passage.",
+      "proposition": "E50 exigé au G1, E30 à mi-Avant-Projet (non bloquant), E10 exigé au G2 et validé par la DAF groupe.",
+      "alternatives": [],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-9",
+      "ref": "C-9",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Calcul du % de complétude du pack ingénierie (> 80 % au G2)",
+      "contexte": "La base du pourcentage n’est pas définie.",
+      "proposition": "Liste type par type d’investissement, pondérée par famille (P&ID, BOM, layout, électrique, analyses fonctionnelles) ; % = poids des pièces validées / poids des pièces attendues ; amorce : 5 familles à poids égal.",
+      "alternatives": [
+        "Je fournis la liste type (bloc Données)"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-10",
+      "ref": "C-10",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Mesure des objectifs (−40 % de délais, −50 % de documents, 100 % de traçabilité)",
+      "contexte": "Aucune référence chiffrée de l’existant.",
+      "proposition": "Arche mesure le délai soumission → décision par jalon, les documents hors dossier, la part des décisions tracées ; la référence est relevée pendant le pilote.",
+      "alternatives": [],
+      "bloque": "pilote",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-11",
+      "ref": "C-11",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Lien CAPEX ↔ Keystone et catalogue machines",
+      "contexte": "Besoins machines depuis le catalogue de Keystone, réponse dans Keystone, passage à « commandé » au G2.",
+      "proposition": "Comme la spec 07 ; catalogue = module de Keystone.",
+      "alternatives": [],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:C-12",
+      "ref": "C-12",
+      "outil": "arche",
+      "groupe": "cdc",
+      "nature": "question",
+      "titre": "Interfaces avec les autres outils",
+      "contexte": "Codex (documents), Vigie (sécurité), Keystone (machines), Cursus (RH), Sage (comptabilité).",
+      "proposition": "Codex, Vigie, Keystone dès que possible ; Sage hors v1 ; Cursus inutile en v1.",
+      "alternatives": [
+        "Il faut aussi Sage dès la v1"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:AC-2",
+      "ref": "AC-2",
+      "outil": "arche",
+      "groupe": "keystone",
+      "nature": "question",
+      "titre": "Données financières d’un projet Keystone visibles par la filiale",
+      "contexte": "Question P-05 de Keystone.",
+      "proposition": "Prix de vente, avenants, facturé, % physique, SPI : oui. Coûts internes, taux, marge : non.",
+      "alternatives": [
+        "La filiale voit aussi les coûts de l’ingénierie",
+        "La filiale ne voit que le prix et les dates"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:AC-4",
+      "ref": "AC-4",
+      "outil": "arche",
+      "groupe": "keystone",
+      "nature": "question",
+      "titre": "Catalogue machines",
+      "contexte": "Module de Keystone (R-186), configurateur à part plus tard si besoin.",
+      "proposition": "Module Keystone ; Arche lit la vue pub_catalogue_machines.",
+      "alternatives": [
+        "Nouvelle application dédiée au catalogue"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:AC-5",
+      "ref": "AC-5",
+      "outil": "arche",
+      "groupe": "keystone",
+      "nature": "question",
+      "titre": "Un besoin de plusieurs machines",
+      "contexte": "Exemple : une EMP et plusieurs MEMU dans un même CAPEX (R-185).",
+      "proposition": "Un projet Keystone à plusieurs équipements.",
+      "alternatives": [
+        "Un projet Keystone par machine"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-1",
+      "ref": "N-1",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Nom du schéma et du rôle PostgreSQL",
+      "contexte": "Le prompt proposait « capex ». Appliqué en livraison 1.",
+      "proposition": "Schéma arche, rôle arche_app.",
+      "alternatives": [
+        "capex / capex_app"
+      ],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-2",
+      "ref": "N-2",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Devise des filiales hors zone euro",
+      "contexte": "Une filiale au Maroc ou au Sénégal tient ses comptes en devise locale.",
+      "proposition": "v1 en k€ seulement ; devise locale et taux de référence groupe plus tard.",
+      "alternatives": [
+        "Saisie en devise locale + conversion au taux groupe dès la v1"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-5",
+      "ref": "N-5",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Les fonctions centrales voient-elles les brouillons de CAPEX ?",
+      "contexte": "Un brouillon est un CAPEX pas encore ouvert par le Sponsor.",
+      "proposition": "Non : un brouillon reste dans la filiale jusqu’à son ouverture.",
+      "alternatives": [
+        "Oui, le groupe voit tout dès le brouillon"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-6",
+      "ref": "N-6",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "COPIL GPI : composition et qui enregistre la décision",
+      "contexte": "Le G1 est décidé par le COPIL GPI.",
+      "proposition": "Membres nommés par l’administrateur ; le président (Dir.IG) enregistre la décision au nom du comité.",
+      "alternatives": [
+        "Chaque membre vote dans Arche, décision à la majorité",
+        "Le PDG préside le COPIL GPI"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-7",
+      "ref": "N-7",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Délai « 2 jours maximum » du G1",
+      "contexte": "Le COPIL GPI est mensuel, mais le CDC limite le G1 à 2 jours.",
+      "proposition": "2 jours ouvrés entre la mise à la décision (visa Sponsor) et la décision, par examen en ligne ; la séance mensuelle suivante en prend acte.",
+      "alternatives": [
+        "2 jours après la séance mensuelle du COPIL"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-8",
+      "ref": "N-8",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Connexion récente exigée pour signer",
+      "contexte": "Garantit que la personne qui signe est bien devant l’écran.",
+      "proposition": "Connexion Microsoft de moins de 10 minutes, sinon nouvelle connexion.",
+      "alternatives": [
+        "Pas d’exigence particulière",
+        "Moins de 30 minutes"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-9",
+      "ref": "N-9",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Format des codes",
+      "contexte": "Codes affichés partout et publiés aux autres outils.",
+      "proposition": "CAPEX CPX-<FIL>-<AAAA>-<NN> (ex. CPX-APM-2026-01) ; besoin <CAPEX>/B01 ; modification MOC-01 dans le CAPEX.",
+      "alternatives": [
+        "Autre format (préciser en note)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-10",
+      "ref": "N-10",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Avis d’experts : délai et absence de réponse",
+      "contexte": "Experts Qualité, HSE, DAF, Exploitation consultés en ligne.",
+      "proposition": "Délai de 5 jours ouvrés ; pas d’avis tacite ; le décideur peut passer outre avec un motif.",
+      "alternatives": [
+        "Sans réponse au délai, l’avis est réputé favorable",
+        "Délai de 10 jours ouvrés"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-11",
+      "ref": "N-11",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Modèle financier (BP) de la DAF",
+      "contexte": "VAN, TRI, délai de retour au niveau du CAPEX.",
+      "proposition": "Saisie structurée et import d’un gabarit Excel Arche ; horizon 10 ans ; taux d’actualisation fixé par la DAF ; le modèle existant de la DAF le remplacera s’il existe.",
+      "alternatives": [
+        "La DAF a déjà un modèle Excel (je le fournis)"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-12",
+      "ref": "N-12",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Liste des lots d’un CAPEX",
+      "contexte": "Postes de budget suivis dans un CAPEX.",
+      "proposition": "Génie civil, bâtiments, utilités, VRD, terrain, machines, recrutement, autres ; liste modifiable.",
+      "alternatives": [
+        "Liste à compléter (préciser en note)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-13",
+      "ref": "N-13",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Jalons HS avant un lien avec Vigie",
+      "contexte": "Voir AC-3.",
+      "proposition": "Statut déclaratif saisi par le SSE groupe, avec une preuve (document Codex).",
+      "alternatives": [],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-14",
+      "ref": "N-14",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Engagé et réalisé des lots hors ingénierie interne",
+      "contexte": "Suivi des coûts du génie civil, des bâtiments…",
+      "proposition": "Saisie mensuelle ou import CSV par le CDG ; import Sage plus tard.",
+      "alternatives": [
+        "Import Sage dès le départ"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-15",
+      "ref": "N-15",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Clôture comptable du G3",
+      "contexte": "Condition du G3.",
+      "proposition": "Attestation du CDG (coût final par lot, solde de l’AFE), sans lien Sage en v1.",
+      "alternatives": [],
+      "bloque": "L6",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-16",
+      "ref": "N-16",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Montée en puissance : saisie et seuils",
+      "contexte": "Critère G3 : 30 jours continus à capacité nominale.",
+      "proposition": "Saisie journalière par le chef de projet ou l’expert Exploitation (ou import CSV) ; jour conforme = production ≥ 100 % du nominal et rebuts ≤ objectif ; arrêts planifiés neutres.",
+      "alternatives": [
+        "Import automatique depuis la supervision de l’usine",
+        "Seuil de 95 % du nominal"
+      ],
+      "bloque": "L6",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-18",
+      "ref": "N-18",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Langues",
+      "contexte": "Interface d’Arche.",
+      "proposition": "Français (par défaut) et anglais.",
+      "alternatives": [
+        "Ajouter d’autres langues (préciser)"
+      ],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-19",
+      "ref": "N-19",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "« Audits transversaux » des projets Stratégiques",
+      "contexte": "Le CDC les cite sans les décrire.",
+      "proposition": "Un audit par phase, tenu par le Dir.IG ou le PMO de l’ingénierie, enregistré comme une revue de type « audit ».",
+      "alternatives": [],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-20",
+      "ref": "N-20",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Reprise des CAPEX en cours",
+      "contexte": "CAPEX déjà lancés avant Arche.",
+      "proposition": "Saisie manuelle des CAPEX pilotes (phase, jalons passés datés, budget validé) ; pas d’import en masse en v1.",
+      "alternatives": [
+        "Import depuis un fichier Excel existant"
+      ],
+      "bloque": "pilote",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-21",
+      "ref": "N-21",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Jeu de démonstration",
+      "contexte": "Données fictives pour les démonstrations et les tests.",
+      "proposition": "Deux filiales fictives (Maroc, Sénégal), trois CAPEX ; aucune donnée réelle.",
+      "alternatives": [
+        "Utiliser des filiales réelles anonymisées"
+      ],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-25",
+      "ref": "N-25",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Identité des personnes entre outils",
+      "contexte": "Cursus identifie par matricule ; Arche par le compte Microsoft.",
+      "proposition": "Arche identifie par le compte Microsoft ; matricule ajouté pour les salariés du groupe quand Cursus l’expose.",
+      "alternatives": [
+        "Les salariés des filiales seront aussi dans Cursus"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-26",
+      "ref": "N-26",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Validation des versions de budget E50 et E30",
+      "contexte": "Le CDC dit seulement que la DAF groupe valide l’estimation E10 du G2. Qui valide les versions E50 (G1) et E30 (mi-avant-projet) ?",
+      "proposition": "Le contrôleur de gestion (CDG) de la filiale ou la DAF groupe ; l’E10 reste réservé à la DAF groupe.",
+      "alternatives": [
+        "La DAF groupe seule, pour toutes les classes",
+        "Le Sponsor de la filiale pour E50 et E30"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-27",
+      "ref": "N-27",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Décision des jalons avant les circuits",
+      "contexte": "Les circuits de jalon (visas, avis d’experts, signature) arrivent en livraison 3. En attendant, qui enregistre la décision d’un jalon dans Arche ?",
+      "proposition": "Le décideur l’enregistre lui-même : Dir.IG pour G1 (au nom du COPIL GPI), K3 et G3 ; PDG pour G2. Les critères sont évalués et gardés avec la décision ; un critère forcé l’est avec un motif tracé.",
+      "alternatives": [
+        "Personne : aucune décision de jalon avant la livraison 3",
+        "Le PMO groupe enregistre toutes les décisions sur instruction"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-28",
+      "ref": "N-28",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Échelle du registre des risques",
+      "contexte": "Le CDC cite les risques sans en décrire la cotation.",
+      "proposition": "Probabilité et impact de 1 à 4 ; criticité = P × I ; risque majeur à partir de 9.",
+      "alternatives": [
+        "Échelle de 1 à 5, majeur à partir de 15",
+        "Cotation qualitative (faible, moyen, fort)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-29",
+      "ref": "N-29",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Création du brouillon de CAPEX",
+      "contexte": "Qui peut créer un CAPEX en brouillon, et qui fait partie de son équipe ?",
+      "proposition": "Le Sponsor (dans sa filiale) ou le chef de projet (dans la filiale de son compte) ; le chef de projet qui crée est nommé d’office ; le Sponsor ouvre le CAPEX ; un membre d’équipe est toujours de la filiale ou du groupe.",
+      "alternatives": [
+        "Le Sponsor seul crée les CAPEX",
+        "Le PMO groupe crée les CAPEX à la demande des filiales"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-30",
+      "ref": "N-30",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Décision du Copil projet sur une modification",
+      "contexte": "Après G2, une petite modification (MoC) est décidée par le Copil projet selon la matrice de délégation. Qui l’enregistre dans Arche ?",
+      "proposition": "Le Sponsor de la filiale, au nom du Copil projet ; le Dir.IG et le PDG enregistrent la leur.",
+      "alternatives": [
+        "Le chef de projet, secrétaire du Copil projet",
+        "Le Co-DIG"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-31",
+      "ref": "N-31",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Qui rend les avis HSE et DAF",
+      "contexte": "Les consultations d’experts demandent des avis HSE, DAF, Qualité et Exploitation.",
+      "proposition": "L’expert de la spécialité nommé sur le CAPEX, ou le SSE groupe (HSE) et la DAF groupe (DAF) ; Qualité et Exploitation : un expert nommé sur le CAPEX ; le chef de projet peut nommer l’expert à la soumission.",
+      "alternatives": [
+        "Toujours un expert nommé sur le CAPEX",
+        "Toujours les fonctions centrales (SSE groupe, DAF groupe…)"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-32",
+      "ref": "N-32",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Client Interne du G3",
+      "contexte": "Le PV de transfert du G3 est contresigné par le Client Interne et le Dir.IG.",
+      "proposition": "La personne nommée « Client interne » dans l’équipe du CAPEX contresigne.",
+      "alternatives": [
+        "Le directeur d’usine de la filiale (profil à créer)",
+        "Le Sponsor"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-33",
+      "ref": "N-33",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Provision pour aléas",
+      "contexte": "La matrice de délégation route les tirages de provision selon la part de la provision tirée ; Arche ne connaît pas encore la provision d’un CAPEX.",
+      "proposition": "Un tirage de provision va au Dir.IG tant que la provision n’est pas saisie (elle le sera avec le suivi d’exécution, L5).",
+      "alternatives": [
+        "Saisir la provision dans la version E10 du budget dès maintenant"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-34",
+      "ref": "N-34",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Jours ouvrés",
+      "contexte": "Les échéances des étapes (2 jours ouvrés au G1, 5 jours pour un avis) se comptent en jours ouvrés.",
+      "proposition": "Du lundi au vendredi, sans jours fériés en v1 ; le calendrier des jours fériés des filiales sera fourni plus tard.",
+      "alternatives": [
+        "Jours fériés français dès maintenant",
+        "Calendrier par filiale dès maintenant"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-35",
+      "ref": "N-35",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Relances par e-mail",
+      "contexte": "La spec prévoit une relance le matin des étapes dues et une alerte au chef de projet à échéance dépassée.",
+      "proposition": "Pas d’e-mail en v1 : « Mes validations » et la page du jalon montrent ce qui est dû et en retard ; l’envoi attend le choix du transport.",
+      "alternatives": [
+        "E-mail par SMTP du groupe",
+        "E-mail par Microsoft Graph (compte de service)"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-36",
+      "ref": "N-36",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Qui saisit et soumet les besoins machines",
+      "contexte": "Spec 07 §1 : les besoins machines d’un CAPEX sont soumis à l’entreprise en phases 1 et 2, puis commandés au Go du G2.",
+      "proposition": "Le chef de projet du CAPEX seul ; un besoin soumis ne se modifie plus (il se retire avec un motif et se ressaisit) ; un besoin commandé ne se retire pas (une modification après G2 passe par une MoC).",
+      "alternatives": [
+        "Le chef de projet et le Sponsor",
+        "Le chef de projet, et le PMO de l’ingénierie en lecture et commentaire"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-37",
+      "ref": "N-37",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Simulation de Keystone tant que ses vues manquent",
+      "contexte": "Keystone ne publie pas encore le catalogue, les réponses ni le suivi des projets (R-186 à R-191). Arche les simule (spec 07 §2).",
+      "proposition": "Simulation sur le jeu de démonstration seulement : qualification 10 min après la soumission, réponse indicative E50 le lendemain, devis E30 à 30 jours, offre ferme E10 à 60 jours ; projet Keystone ouvert à la commande. En production, une vue non partagée reste vide et la page Connecteurs le signale.",
+      "alternatives": [
+        "Pas de simulation du tout : attendre les vues de Keystone",
+        "Saisie manuelle des réponses de l’entreprise par le PMO de l’ingénierie en attendant"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:N-38",
+      "ref": "N-38",
+      "outil": "arche",
+      "groupe": "arche",
+      "nature": "question",
+      "titre": "Fréquence de lecture de Keystone",
+      "contexte": "Arche copie les vues partagées de Keystone dans un miroir en lecture seule.",
+      "proposition": "Toutes les 15 minutes par le worker (ARCHE_KEYSTONE_SYNC_MIN), copie complète de chaque vue ; bouton « Synchroniser maintenant » pour l’administrateur.",
+      "alternatives": [
+        "Toutes les heures",
+        "À chaque ouverture de page (lecture directe des vues, sans miroir)"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "Confirmé dans la conversation le 2 nov. 2026",
+        "date": "2026-11-02",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-1",
+      "ref": "X-1",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Profil Administrateur et écrans d’administration",
+      "contexte": "Ajout hors CDC.",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L1b",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-2",
+      "ref": "X-2",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Point de contrôle K3 « Prêt à démarrer »",
+      "contexte": "Ajout hors CDC (correction C-1).",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-3",
+      "ref": "X-3",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Registres des risques et des décisions",
+      "contexte": "Le CDC cite « risques » et « décisions » sans les décrire.",
+      "proposition": "Retenir, en version simple.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-4",
+      "ref": "X-4",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Bibliothèque REX",
+      "contexte": "Pour la « capitalisation automatique du REX ».",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L6",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-5",
+      "ref": "X-5",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Vue pub_journal pour Matrix",
+      "contexte": "Journal unifié des outils (convention des autres outils).",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L1b",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-6",
+      "ref": "X-6",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Alertes à règles sans IA",
+      "contexte": "Le CDC demande des alertes ; elles fonctionnent sans fournisseur d’IA.",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:X-7",
+      "ref": "X-7",
+      "outil": "arche",
+      "groupe": "extra",
+      "nature": "question",
+      "titre": "Mode démonstration « Voir en tant que »",
+      "contexte": "Pour les démonstrations et les tests, derrière une authentification HTTP.",
+      "proposition": "Retenir.",
+      "alternatives": [
+        "Ne pas retenir"
+      ],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-10-22",
+        "source": "questionnaire arche"
+      }
+    },
+    {
+      "id": "arche:D-1",
+      "ref": "D-1",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Liste des filiales",
+      "contexte": "Une ligne par filiale : code à 3 lettres, nom, pays, zone, devise, CA du dernier exercice clos (k€).",
+      "aide": "APM ; Atlas Process Maroc ; MA ; Afrique du Nord ; MAD ; 45 000\n…",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-2",
+      "ref": "D-2",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Sites (usines) des filiales",
+      "contexte": "Une ligne par site : filiale, nom, ville, pays.",
+      "aide": "APM ; Usine de Kénitra ; Kénitra ; MA",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-3",
+      "ref": "D-3",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Membres du COPIL GPI",
+      "contexte": "Noms et adresses e-mail ; qui préside.",
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-4",
+      "ref": "D-4",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Premiers comptes et rôles",
+      "contexte": "Administrateur(s), Dir.IG, DAF groupe, SSE groupe, PDG… : nom, e-mail, rôle, filiale ou zone.",
+      "bloque": "L1b",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-5",
+      "ref": "D-5",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Matrice de délégation du groupe",
+      "contexte": "Si elle existe : seuils par typologie et par objet (coût, délai, provision, périmètre). Sinon les valeurs d’amorce s’appliquent (C-4).",
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-6",
+      "ref": "D-6",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Liste type du pack ingénierie",
+      "contexte": "Pièces attendues par type d’investissement et leur poids (C-9).",
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-7",
+      "ref": "D-7",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Définitions RSPDI et ASPD, preuves attendues des jalons HS",
+      "contexte": "À fournir par le SSE groupe (C-3).",
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:D-8",
+      "ref": "D-8",
+      "outil": "arche",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Relevé de l’existant pour les objectifs",
+      "contexte": "Délai moyen actuel d’un jalon, nombre de documents par projet (C-10).",
+      "bloque": "pilote",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "arche:CX-CAPEX",
+      "ref": "CX-CAPEX",
+      "outil": "arche",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Mise en service du dépôt des documents d’Arche dans Codex",
+      "contexte": "Le dépôt des pièces des CAPEX dans Codex (AR-026, CX-03) est prêt mais coupé (CODEX_CAPEX=off). Pour l'ouvrir : un secret commun Arche ↔ Codex, le lien Matrix codex_app → arche.pub_capex (lecture), puis CODEX_CAPEX=on.",
+      "proposition": "Oui, préparer : secret commun, demande du lien à Matrix, puis CODEX_CAPEX=on au déploiement.",
+      "alternatives": [
+        "Attendre la fin du pilote."
+      ],
+      "bloque": "AR-026",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

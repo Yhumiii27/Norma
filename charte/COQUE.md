@@ -241,7 +241,7 @@ Demande du propriétaire (24 novembre 2026). `PrefsStack` = `LangSwitch` au-dess
 - **Langue** : `LangSwitch onSelect` (Server Action qui pose le cookie de langue de l'outil) puis rafraîchissement. Un outil
   dont l'interface n'existe qu'en français (Vigie, Cursus aujourd'hui) garde **le même bloc**, EN désactivé
   (`available={['fr']}`), jusqu'à ce que son i18n soit en place (Norma § 2).
-- **Affichage** : cookie `epc2i-theme`, `data-theme` sur `<html>` posé par le serveur (inchangé, voir `README.md`) ; le
+- **Affichage** : cookie `atrium-theme` (Norma 3.0 ; l'ancien nom reste lu à défaut, `themeFromCookies`), `data-theme` sur `<html>` posé par le serveur (voir `README.md`) ; le
   changement est diffusé (`THEME_EVENT`) pour que les deux copies (en-tête, barre supérieure) restent d'accord.
 - HTML simple : `<div class="coque-prefs"><div class="coque-pref" role="group" aria-label="Langue"><button class="coque-pref-opt" aria-pressed="true" lang="fr" title="Français">FR</button>…</div><div class="coque-pref" role="group" aria-label="Affichage">…</div></div>`.
 

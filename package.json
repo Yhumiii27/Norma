@@ -1,14 +1,15 @@
 {
   "name": "norma",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "Socle commun de la suite EPC2I : règles, charte, registre, dépendances",
+  "description": "Socle commun de la suite Atrium : règles, charte, registre, dépendances",
   "type": "module",
   "engines": {
     "node": ">=22.18"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "reste-a-faire": "node outils/reste-a-faire/build.mjs"
+    "suivi": "node outils/suivi/build.mjs",
+    "reste-a-faire": "node outils/suivi/build.mjs"
   }
 }

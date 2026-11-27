@@ -44,7 +44,7 @@
     },
     {
       "date": "2026-11-25",
-      "text": "M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’epc2i-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée)."
+      "text": "M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’atrium-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée)."
     },
     {
       "date": "2026-11-26",
@@ -57,6 +57,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : MX-N08 (tronc commun des menus) et MX-N09 (réunion matrix.pub_taches, pub_taches_sources) ajoutés."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MX-N10. MX-N11 : renommage du serveur commun, opération séparée."
     }
   ],
   "items": [
@@ -567,8 +571,8 @@
     },
     {
       "id": "MX-S02",
-      "title": "Redéploiement d’epc2i-postgres limité au socle, et rejeu du socle",
-      "description": "Ne redéployer la ressource epc2i-postgres de Coolify que lorsque infra/postgres/** change ; rejouer le socle sur le serveur en service pour y porter M-24 et M-25.",
+      "title": "Redéploiement d’atrium-postgres limité au socle, et rejeu du socle",
+      "description": "Ne redéployer la ressource atrium-postgres de Coolify que lorsque infra/postgres/** change ; rejouer le socle sur le serveur en service pour y porter M-24 et M-25.",
       "category": "mise_en_service",
       "kind": "mise_en_production",
       "priority": "prochaine_etape",
@@ -583,7 +587,7 @@
       "progress": {
         "state": "fait",
         "delivery": null,
-        "note": "25 nov. 2026 : watch_paths de Coolify posé sur epc2i-postgres (infra/postgres/**) ; socle rejoué sur le serveur commun sans aucun écart (droits.verifier())."
+        "note": "25 nov. 2026 : watch_paths de Coolify posé sur atrium-postgres (infra/postgres/**) ; socle rejoué sur le serveur commun sans aucun écart (droits.verifier())."
       }
     },
     {
@@ -995,6 +999,50 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "MX-N10",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "MX-N11",
+      "title": "Renommer le serveur commun pour la suite Atrium",
+      "description": "Opération séparée, annoncée aux outils : base → atrium, hôte → atrium-postgres, dossier de configuration → /etc/atrium/, rôle de sauvegarde → atrium_sauvegarde (noms cibles de registre/outils.json, serveur_commun) ; fichiers .env des outils, sauvegardes et documentation d'installation mis à jour dans la même fenêtre ; schémas et rôles <outil>_app inchangés. Rien n'est supposé fait avant l'annonce de Matrix.",
+      "category": "mise_en_service",
+      "kind": "exploitation",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Fenêtre de l'opération (question matrix:REN-1 du suivi)",
+      "effort": "M",
+      "sources": [
+        "norma/registre/outils.json (serveur_commun)",
+        "norma/REGLES.md § 9",
+        "norma/decisions/matrix.json (REN-1)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026) : noms cibles posés, serveur en service inchangé."
       }
     }
   ]

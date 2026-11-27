@@ -2,8 +2,8 @@
 
 Un fichier par outil, `reste-a-faire/<code>.json` (codes du registre `registre/outils.json`), plus `norma.json` pour le
 socle. Schéma repris de celui de Keystone (`docs/reste-a-developper.json`, le plus complet), contrôlé par
-`outils/reste-a-faire/build.mjs` (`valider`, rejoué par `npm test` et par `npm run reste-a-faire`, qui refuse de produire
-la page au moindre écart).
+`outils/reste-a-faire/build.mjs` (`valider`, rejoué par `npm test` et par `npm run suivi`, qui refuse de produire la
+page au moindre écart).
 
 ## Fichier
 
@@ -44,5 +44,8 @@ la raison dans `progress.note`.
 
 1. Dans `reste-a-faire/<outil>.json` de Norma : `progress` des points touchés (`en_cours` quand une livraison le prend,
    `fait` une fois intégré et vérifié sur `main`), une ligne dans `history`, `updated`.
-2. `npm run reste-a-faire` (régénère `RESTE-A-FAIRE.md` et `.artifacts/reste-a-faire.html`), `npm test`.
-3. Branche et PR dans Norma ; la page `.artifacts/reste-a-faire.html` est republiée à la même adresse d'artefact.
+2. Toute question pour le propriétaire : `decisions/<outil>.json` (schéma `decisions/SCHEMA.md`).
+3. `npm run suivi` (régénère `RESTE-A-FAIRE.md` et la page `.artifacts/suivi.html` ; `npm run reste-a-faire` en est un
+   alias), `npm test`.
+4. Branche et PR dans Norma ; la page `.artifacts/suivi.html` (« Suivi Atrium ») est republiée à l'adresse d'artefact de
+   la suite.

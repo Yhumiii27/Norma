@@ -97,7 +97,7 @@
     },
     {
       "date": "2026-10-17",
-      "text": "PR #12 fusionnée : Keystone déclare le schéma de sa base à Matrix (catalogue des bases EPC2i) au démarrage, en arrière-plan ; variables MATRIX_URL et MATRIX_TOKEN."
+      "text": "PR #12 fusionnée : Keystone déclare le schéma de sa base à Matrix (catalogue des bases de la suite) au démarrage, en arrière-plan ; variables MATRIX_URL et MATRIX_TOKEN."
     },
     {
       "date": "2026-10-18",
@@ -109,7 +109,7 @@
     },
     {
       "date": "2026-10-18",
-      "text": "Serveur PostgreSQL commun EPC2I (étape 3, décision M-01) : sur PostgreSQL, tables, vues pub_ et journal des migrations dans le schéma keystone (rôle keystone_app), migrations publiées inchangées (« \"public\". » remplacé par « \"keystone\". » à l’application, verrou hashtext('keystone.migrations')), verrou d’écriture des transactions, numéro et code analytique d’un nouveau projet calculés dans la transaction, sauvegarde limitée au schéma keystone ; migrations 0034_share_prerequisites et 0035_share (12 vues pub_ du partage). PGlite inchangé."
+      "text": "Serveur PostgreSQL commun Atrium (étape 3, décision M-01) : sur PostgreSQL, tables, vues pub_ et journal des migrations dans le schéma keystone (rôle keystone_app), migrations publiées inchangées (« \"public\". » remplacé par « \"keystone\". » à l’application, verrou hashtext('keystone.migrations')), verrou d’écriture des transactions, numéro et code analytique d’un nouveau projet calculés dans la transaction, sauvegarde limitée au schéma keystone ; migrations 0034_share_prerequisites et 0035_share (12 vues pub_ du partage). PGlite inchangé."
     },
     {
       "date": "2026-10-19",
@@ -117,7 +117,7 @@
     },
     {
       "date": "2026-10-22",
-      "text": "DIG-PRODI : le niveau CAPEX devient une application dédiée (données communes sur le serveur PostgreSQL EPC2I, échanges par vues pub_) ; changements de Keystone consignés (R-186 à R-194, R-185 prérequis) ; prompt de démarrage de l’application CAPEX dans docs/dig-prodi/."
+      "text": "DIG-PRODI : le niveau CAPEX devient une application dédiée (données communes sur le serveur PostgreSQL Atrium, échanges par vues pub_) ; changements de Keystone consignés (R-186 à R-194, R-185 prérequis) ; prompt de démarrage de l’application CAPEX dans docs/dig-prodi/."
     },
     {
       "date": "2026-10-22",
@@ -345,7 +345,7 @@
     },
     {
       "date": "2026-11-24",
-      "text": "Norma 1.0.0 adopté (copie norma/, contrôle npm run norma:check en CI, CLAUDE.md importe norma/REGLES.md) ; charte et police Inter lues dans norma/charte (build sans réseau) ; bouton d'affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, data-theme posé au rendu)."
+      "text": "Norma 1.0.0 adopté (copie norma/, contrôle npm run norma:check en CI, CLAUDE.md importe norma/REGLES.md) ; charte et police Inter lues dans norma/charte (build sans réseau) ; bouton d'affichage sombre / clair à droite du sélecteur FR / EN (cookie atrium-theme, data-theme posé au rendu)."
     },
     {
       "date": "2026-11-24",
@@ -370,6 +370,10 @@
     {
       "date": "2026-11-27",
       "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption R-N06."
     }
   ],
   "items": [
@@ -427,7 +431,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 7",
-        "note": "Livraison 7 : pilote node-postgres, db:migrate au déploiement. 18 oct. 2026 : serveur commun EPC2I (schéma keystone, rôle keystone_app, docs/EXPLOITATION.md § 4.1)."
+        "note": "Livraison 7 : pilote node-postgres, db:migrate au déploiement. 18 oct. 2026 : serveur commun Atrium (schéma keystone, rôle keystone_app, docs/EXPLOITATION.md § 4.1)."
       }
     },
     {
@@ -1493,7 +1497,7 @@
       "kind": "mise_en_production",
       "priority": "bloquant_production",
       "status": "non_commence",
-      "waiting_on": "Inscription de l’application dans le tenant Entra ID par l’administrateur Microsoft d’EPC2i",
+      "waiting_on": "Inscription de l’application dans le tenant Entra ID par l’administrateur Microsoft de l’entreprise",
       "effort": "L",
       "sources": [
         "I-2a",
@@ -5031,7 +5035,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 9",
-        "note": "25 oct. 2026 : le responsable produit redemande le module (« il manque un module de gestion des expéditions du matériel vers la filiale ») ; cadrage rédigé (docs/delivery-9/cadrage-r158-expeditions.md) : écran projet Expéditions, chargements et colis, contrôle colisage ↔ nomenclature, douane (codes HS), documents (packing list, proforma) versés dans Codex, réception sur site et réserves, jalons expedition / arrivee_site, vue pub_expeditions pour la filiale ; 8 points à valider. Même jour : choix tranchés (cadrage § 5) — vue projet seulement, transport d’après l’Incoterm du contrat, Keystone génère tous les documents sauf les factures, contrôle colisage bloquant, écart à la réception = réserve, suivi filiale dans Arche, nouveau profil Logistique, transitaires externes sans accès, Incoterms 2020 paramétrables, conteneurs et contenus déclarés par EPC2i ; construction lancée. Lot A fait (docs/delivery-9/notes-r158-shipments.md) : profil Logistique (10ᵉ), 11 Incoterms 2020 paramétrables (Paramètres) avec répartition vendeur / acheteur, Incoterm et lieu sur le contrat, écran projet Expéditions (EXP-nn, étapes d’après l’Incoterm, chargements et contenu déclarés, contrôle colisage ↔ nomenclature, synthèse par code SH), case « Colisage & documents douaniers » bloquée tant que le contrôle n’est pas soldé (migration 0061). Lot B : documents, réception sur site et réserves, jalons, pub_expeditions. 26 oct. 2026 : lot B fait — 8 documents générés sans facture (packing list, par conteneur, bon de livraison, marquage, CMR, instructions d’expédition, demande d’origine / EUR.1, déclaration d’export ; gabarits génériques remplaçables), versés dans Codex (type SHP, outbox de dépôt), réception sur site chargement par chargement (écart → réserve : endommagé A, manquant B), jalons expedition / arrivee_site de pub_jalons_projets nourris par les expéditions, vue pub_expeditions sans valeurs pour Arche, alerte retard de fret avec « Ouvrir un risque » (migrations 0063-0064). Reste : formats standard EPC2i, API de dépôt Codex. Vues pub_expeditions et pub_jalons_projets recopiées et accordées par Matrix (29 oct. 2026). 31 oct. 2026 (L9-X3) : la démonstration contient trois documents d’EXP-01 versés dans Codex (packing list, CMR, bon de livraison : SHP-HLT-040 à 042, dépôts en attente de synchro)."
+        "note": "25 oct. 2026 : le responsable produit redemande le module (« il manque un module de gestion des expéditions du matériel vers la filiale ») ; cadrage rédigé (docs/delivery-9/cadrage-r158-expeditions.md) : écran projet Expéditions, chargements et colis, contrôle colisage ↔ nomenclature, douane (codes HS), documents (packing list, proforma) versés dans Codex, réception sur site et réserves, jalons expedition / arrivee_site, vue pub_expeditions pour la filiale ; 8 points à valider. Même jour : choix tranchés (cadrage § 5) — vue projet seulement, transport d’après l’Incoterm du contrat, Keystone génère tous les documents sauf les factures, contrôle colisage bloquant, écart à la réception = réserve, suivi filiale dans Arche, nouveau profil Logistique, transitaires externes sans accès, Incoterms 2020 paramétrables, conteneurs et contenus déclarés par l’entreprise ; construction lancée. Lot A fait (docs/delivery-9/notes-r158-shipments.md) : profil Logistique (10ᵉ), 11 Incoterms 2020 paramétrables (Paramètres) avec répartition vendeur / acheteur, Incoterm et lieu sur le contrat, écran projet Expéditions (EXP-nn, étapes d’après l’Incoterm, chargements et contenu déclarés, contrôle colisage ↔ nomenclature, synthèse par code SH), case « Colisage & documents douaniers » bloquée tant que le contrôle n’est pas soldé (migration 0061). Lot B : documents, réception sur site et réserves, jalons, pub_expeditions. 26 oct. 2026 : lot B fait — 8 documents générés sans facture (packing list, par conteneur, bon de livraison, marquage, CMR, instructions d’expédition, demande d’origine / EUR.1, déclaration d’export ; gabarits génériques remplaçables), versés dans Codex (type SHP, outbox de dépôt), réception sur site chargement par chargement (écart → réserve : endommagé A, manquant B), jalons expedition / arrivee_site de pub_jalons_projets nourris par les expéditions, vue pub_expeditions sans valeurs pour Arche, alerte retard de fret avec « Ouvrir un risque » (migrations 0063-0064). Reste : formats standard de l’entreprise, API de dépôt Codex. Vues pub_expeditions et pub_jalons_projets recopiées et accordées par Matrix (29 oct. 2026). 31 oct. 2026 (L9-X3) : la démonstration contient trois documents d’EXP-01 versés dans Codex (packing list, CMR, bon de livraison : SHP-HLT-040 à 042, dépôts en attente de synchro)."
       }
     },
     {
@@ -5195,7 +5199,7 @@
       ],
       "progress": {
         "state": "a_faire",
-        "note": " 10 nov. 2026 (D9-36) : remplacée par un logiciel catalogue / module commercial dédié, géré par EPC2i, qui publiera le catalogue dans Arche et Keystone (hors Keystone).",
+        "note": " 10 nov. 2026 (D9-36) : remplacée par un logiciel catalogue / module commercial dédié, géré par l’entreprise, qui publiera le catalogue dans Arche et Keystone (hors Keystone).",
         "delivery": null
       }
     },
@@ -5579,7 +5583,7 @@
       }
     },
     {
-      "title": "Fournir et charger les listes de référence réelles d'EPC2i",
+      "title": "Fournir et charger les listes de référence réelles de l’entreprise",
       "description": "Les Paramètres (catégories de risques et de coûts, compétences, types de livrables, statuts, lieux de stockage), la grille de taux, les services et les clients viennent des constantes du prototype, et « Rétablir les valeurs par défaut » recharge SETTINGS0. Il faut que la direction fournisse les vraies listes et qu'une reprise les charge, en complément du démarrage sans données de démonstration.",
       "category": "plateforme_production",
       "kind": "donnees_a_fournir",
@@ -5780,7 +5784,7 @@
       "id": "R-185",
       "verdict": "ajout_critique",
       "title": "Projets multi-équipements (ex. une EMP et plusieurs MEMU) : adapter l’approche projet",
-      "description": "Un projet peut fournir plusieurs équipements, de types différents et en plusieurs exemplaires (par exemple une EMP et plusieurs MEMU). Aujourd’hui un projet porte un seul type de machine : le modèle de création (phases, catégories de coûts, systèmes ITP), le plan ITP unique du projet, le budget de référence (références REX) et l’affichage du projet en dépendent ; la mise en service et la nomenclature ne savent pas à quel équipement se rattache un système ou une ligne. Le parc installé, lui, enregistre déjà une machine par équipement livré, avec son propre type. L’approche projet doit pouvoir s’adapter : équipements du projet (type, quantité), lots / systèmes, ITP, mise en service, nomenclature et coûts par équipement, livraison et parc installé par exemplaire. À cadrer avec le responsable produit avant de construire ; toute nouvelle fonction ne doit plus supposer « un seul type de machine par projet ». Analyse comparative du 25 oct. 2026 : le multi-équipements par projet est un besoin spécifique au métier d’EPC2i (sans équivalent direct dans les outils du commerce) ; parties 1 et 2 faites, reste la ventilation complète et la généralisation aux nouvelles fonctions. Priorité suggérée P2 pour ce qui reste.",
+      "description": "Un projet peut fournir plusieurs équipements, de types différents et en plusieurs exemplaires (par exemple une EMP et plusieurs MEMU). Aujourd’hui un projet porte un seul type de machine : le modèle de création (phases, catégories de coûts, systèmes ITP), le plan ITP unique du projet, le budget de référence (références REX) et l’affichage du projet en dépendent ; la mise en service et la nomenclature ne savent pas à quel équipement se rattache un système ou une ligne. Le parc installé, lui, enregistre déjà une machine par équipement livré, avec son propre type. L’approche projet doit pouvoir s’adapter : équipements du projet (type, quantité), lots / systèmes, ITP, mise en service, nomenclature et coûts par équipement, livraison et parc installé par exemplaire. À cadrer avec le responsable produit avant de construire ; toute nouvelle fonction ne doit plus supposer « un seul type de machine par projet ». Analyse comparative du 25 oct. 2026 : le multi-équipements par projet est un besoin spécifique au métier de l’entreprise (sans équivalent direct dans les outils du commerce) ; parties 1 et 2 faites, reste la ventilation complète et la généralisation aux nouvelles fonctions. Priorité suggérée P2 pour ce qui reste.",
       "category": "projets_cycle_de_vie_modeles",
       "kind": "fonction_manquante",
       "priority": "a_decider",
@@ -5802,7 +5806,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 9",
-        "note": "Consigné le 15 oct. 2026 à la demande du responsable produit ; à cadrer avant la livraison 9. 22 oct. 2026 : prérequis du lien avec l’application CAPEX (un besoin de plusieurs machines = un projet EPC2i à plusieurs équipements, recommandé). Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-10 — un besoin de plusieurs machines doit pouvoir créer un projet EPC2i à plusieurs équipements ou en ajouter à un projet existant. 23 oct. 2026 : AC-5 tranché (oui) — un besoin de plusieurs machines = un projet EPC2i à plusieurs équipements ; cadrage proposé dans docs/delivery-9/cadrage-r185-r186.md, 5 choix à valider avant de construire. 23 oct. 2026 : les 5 choix du cadrage validés par le responsable produit. Partie 1 faite (docs/delivery-9/notes-r185-equipments.md) : lignes d’équipement project_equipments (type × quantité, EQ-01…), reprise des projets existants (migrations 0041-0042), carte « Équipement » sur l’écran Contrat, résumé « 1 × EMP · 3 × MEMU » au registre, assistant à plusieurs lignes avec lots propres à chaque équipement (phases per_equipment), budget de référence = somme des types × quantité. Reste (partie 2) : un plan ITP par ligne, réserves, mise en service, nomenclature et parc installé rattachés à l’équipement. Partie 2 faite (même notes, section « Partie 2 ») : un plan ITP par ligne d’équipement (migrations 0043-0044, plans existants rattachés à la ligne principale, numéros d’inspection uniques sur le projet), réserves, systèmes de mise en service, nomenclature et machines du parc installé rattachés à une ligne (ou communs), écrans ITP, réserves, mise en service, nomenclature et parc installé filtrés par équipement quand le projet a plusieurs lignes ; démonstration : HLT-026 EQ-02 (3 × MEMU) a son plan, deux inspections, une réserve C et un système. Reste : ventilation des coûts par équipement au Budget (à décider). 23 oct. 2026 : parties 1 et 2 fusionnées dans main (PR #29, #30), CI verte. 24 oct. 2026 : ventilation des coûts par équipement faite à la demande du responsable produit (carte « Budget par équipement », Budget › Structure : budget actuel, réel, EAC, valeur acquise et commandes ouvertes par ligne ; catégories de coûts et engagé hors commandes restent au niveau du projet)."
+        "note": "Consigné le 15 oct. 2026 à la demande du responsable produit ; à cadrer avant la livraison 9. 22 oct. 2026 : prérequis du lien avec l’application CAPEX (un besoin de plusieurs machines = un projet Keystone à plusieurs équipements, recommandé). Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-10 — un besoin de plusieurs machines doit pouvoir créer un projet Keystone à plusieurs équipements ou en ajouter à un projet existant. 23 oct. 2026 : AC-5 tranché (oui) — un besoin de plusieurs machines = un projet Keystone à plusieurs équipements ; cadrage proposé dans docs/delivery-9/cadrage-r185-r186.md, 5 choix à valider avant de construire. 23 oct. 2026 : les 5 choix du cadrage validés par le responsable produit. Partie 1 faite (docs/delivery-9/notes-r185-equipments.md) : lignes d’équipement project_equipments (type × quantité, EQ-01…), reprise des projets existants (migrations 0041-0042), carte « Équipement » sur l’écran Contrat, résumé « 1 × EMP · 3 × MEMU » au registre, assistant à plusieurs lignes avec lots propres à chaque équipement (phases per_equipment), budget de référence = somme des types × quantité. Reste (partie 2) : un plan ITP par ligne, réserves, mise en service, nomenclature et parc installé rattachés à l’équipement. Partie 2 faite (même notes, section « Partie 2 ») : un plan ITP par ligne d’équipement (migrations 0043-0044, plans existants rattachés à la ligne principale, numéros d’inspection uniques sur le projet), réserves, systèmes de mise en service, nomenclature et machines du parc installé rattachés à une ligne (ou communs), écrans ITP, réserves, mise en service, nomenclature et parc installé filtrés par équipement quand le projet a plusieurs lignes ; démonstration : HLT-026 EQ-02 (3 × MEMU) a son plan, deux inspections, une réserve C et un système. Reste : ventilation des coûts par équipement au Budget (à décider). 23 oct. 2026 : parties 1 et 2 fusionnées dans main (PR #29, #30), CI verte. 24 oct. 2026 : ventilation des coûts par équipement faite à la demande du responsable produit (carte « Budget par équipement », Budget › Structure : budget actuel, réel, EAC, valeur acquise et commandes ouvertes par ligne ; catégories de coûts et engagé hors commandes restent au niveau du projet)."
       }
     },
     {
@@ -5834,7 +5838,7 @@
       "id": "R-187",
       "verdict": "ajout_critique",
       "title": "Besoins machines des filiales : connecteur capex, réponse chiffrée, création du projet à la commande",
-      "description": "Connecteur capex (miroir de pub_capex et pub_besoins_machines, liens profonds, simulation) ; corbeille « Besoins des filiales » ; qualification, réponse chiffrée avec classe d’estimation, devis puis offre (Codex) ; création du projet EPC2i au G2 du CAPEX avec la référence du CAPEX et du besoin ; vue pub_reponses_besoins. Rejoint la proposition P6 (offres et chiffrage).",
+      "description": "Connecteur capex (miroir de pub_capex et pub_besoins_machines, liens profonds, simulation) ; corbeille « Besoins des filiales » ; qualification, réponse chiffrée avec classe d’estimation, devis puis offre (Codex) ; création du projet Keystone au G2 du CAPEX avec la référence du CAPEX et du besoin ; vue pub_reponses_besoins. Rejoint la proposition P6 (offres et chiffrage).",
       "category": "integrations",
       "kind": "integration",
       "priority": "a_decider",
@@ -5852,7 +5856,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 9",
-        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-02 — connecteur capex (lire arche.pub_capex et arche.pub_besoins_machines, liens profonds <ARCHE_URL>/capex/<code>), corbeille « Besoins des filiales », pub_reponses_besoins ; K-10 — à la commande, créer le projet EPC2i ou ajouter des équipements à un projet existant, code publié dans pub_reponses_besoins.projet_code. 24 oct. 2026 : fait côté Keystone (docs/delivery-9/notes-r187-capex-needs.md) — connecteur capex (miroir de arche.pub_capex et arche.pub_besoins_machines : lecture directe sur le serveur commun, simulation en démonstration, tâche toutes les 15 min, liens profonds ARCHE_URL), carte « Besoins machines des filiales » sous le registre de Portefeuille › Projets (directeur ; chefs de projet en lecture), réponses chiffrées RB-nnn (qualification, indicatif, devis, offre ferme E10 ; fourchette par la classe), création du projet ou ajout d’une ligne d’équipement à la commande (action du directeur), vue pub_reponses_besoins (migrations 0049-0050). Reste : Arche publie ses deux vues (son lot L4) ; Matrix recopie la vue et vérifie les droits. 2 nov. 2026 (K-14) : démonstration alignée sur Arche — cinq CAPEX et six besoins simulés, projet APM-008 livré pour CPX-APM-2025-01/B01 (docs/delivery-9/notes-k14-demo.md)."
+        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-02 — connecteur capex (lire arche.pub_capex et arche.pub_besoins_machines, liens profonds <ARCHE_URL>/capex/<code>), corbeille « Besoins des filiales », pub_reponses_besoins ; K-10 — à la commande, créer le projet Keystone ou ajouter des équipements à un projet existant, code publié dans pub_reponses_besoins.projet_code. 24 oct. 2026 : fait côté Keystone (docs/delivery-9/notes-r187-capex-needs.md) — connecteur capex (miroir de arche.pub_capex et arche.pub_besoins_machines : lecture directe sur le serveur commun, simulation en démonstration, tâche toutes les 15 min, liens profonds ARCHE_URL), carte « Besoins machines des filiales » sous le registre de Portefeuille › Projets (directeur ; chefs de projet en lecture), réponses chiffrées RB-nnn (qualification, indicatif, devis, offre ferme E10 ; fourchette par la classe), création du projet ou ajout d’une ligne d’équipement à la commande (action du directeur), vue pub_reponses_besoins (migrations 0049-0050). Reste : Arche publie ses deux vues (son lot L4) ; Matrix recopie la vue et vérifie les droits. 2 nov. 2026 (K-14) : démonstration alignée sur Arche — cinq CAPEX et six besoins simulés, projet APM-008 livré pour CPX-APM-2025-01/B01 (docs/delivery-9/notes-k14-demo.md)."
       }
     },
     {
@@ -5931,7 +5935,7 @@
     {
       "id": "R-191",
       "verdict": "ajout_critique",
-      "title": "Part EPC2i du pack ingénierie et son % de complétude (vue pub_pack_ingenierie)",
+      "title": "Part ingénierie du pack ingénierie et son % de complétude (vue pub_pack_ingenierie)",
       "description": "Types de livrable layout / plan de masse machine, schéma électrique et bilan de puissance, analyse fonctionnelle ; liste type pondérée par type de machine ; % de complétude au tableau de bord ingénierie ; vue pub_pack_ingenierie pour le Dossier Investissement du CAPEX (cible > 80 %).",
       "category": "ingenierie_plm",
       "kind": "fonction_manquante",
@@ -5950,7 +5954,7 @@
       "progress": {
         "state": "fait",
         "delivery": "Livraison 9",
-        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. 25 oct. 2026 : fait avec la liste provisoire validée par le responsable produit (docs/delivery-9/notes-r191-engineering-pack.md) — 5 familles × 20 % par type de machine (P&ID, nomenclature, implantation, électrique, analyse fonctionnelle), modifiables sur l’écran Types de machine ; pièces = documents de l’index Codex par type de document, validées = diffusées ; carte « Pack ingénierie · part EPC2i » sur la Synthèse ingénierie (cible > 80 %) ; vue pub_pack_ingenierie (migrations 0058-0060). Reste : la vraie liste type (C-9)."
+        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. 25 oct. 2026 : fait avec la liste provisoire validée par le responsable produit (docs/delivery-9/notes-r191-engineering-pack.md) — 5 familles × 20 % par type de machine (P&ID, nomenclature, implantation, électrique, analyse fonctionnelle), modifiables sur l’écran Types de machine ; pièces = documents de l’index Codex par type de document, validées = diffusées ; carte « Pack ingénierie · part ingénierie » sur la Synthèse ingénierie (cible > 80 %) ; vue pub_pack_ingenierie (migrations 0058-0060). Reste : la vraie liste type (C-9)."
       }
     },
     {
@@ -6005,7 +6009,7 @@
     {
       "id": "R-194",
       "verdict": "ajout_critique",
-      "title": "Socle partagé @epc2i/socle (Keystone et application CAPEX)",
+      "title": "Socle partagé @atrium/socle (Keystone et application CAPEX)",
       "description": "Extraire de Keystone la coquille, le design Nocturne, l’infrastructure i18n, l’authentification Entra, la piste d’audit, le moteur de validations, les tâches planifiées, la configuration, les journaux et la santé, l’exploitation, en un paquet versionné consommé par Keystone et par l’application CAPEX ; aucun changement de comportement dans Keystone. L’application CAPEX démarre avec une copie du socle, remplacée par le paquet.",
       "category": "dette_technique",
       "kind": "dette_technique",
@@ -6025,7 +6029,7 @@
       ],
       "progress": {
         "state": "a_faire",
-        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-12 — Arche consommera @epc2i/socle à la place de ses copies.",
+        "note": "Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-12 — Arche consommera @atrium/socle à la place de ses copies.",
         "delivery": null
       }
     },
@@ -6397,7 +6401,7 @@
       "id": "R-210",
       "verdict": "ajout_critique",
       "title": "Application Windows (.exe) à côté de l’accès web",
-      "description": "Le responsable produit (31 oct. 2026, questionnaire L9-X2) : l’accès web reste la solution pour accéder à Keystone de n’importe où ; une application Windows (.exe), installable par ceux qui le souhaitent, coexiste avec lui pour laisser le choix à l’utilisateur. Fenêtre native (WebView2) sur le serveur Keystone d’EPC2i, connexion Microsoft habituelle, sans serveur local.",
+      "description": "Le responsable produit (31 oct. 2026, questionnaire L9-X2) : l’accès web reste la solution pour accéder à Keystone de n’importe où ; une application Windows (.exe), installable par ceux qui le souhaitent, coexiste avec lui pour laisser le choix à l’utilisateur. Fenêtre native (WebView2) sur le serveur Keystone de l’entreprise, connexion Microsoft habituelle, sans serveur local.",
       "category": "plateforme_production",
       "kind": "fonction_manquante",
       "priority": "plus_tard",
@@ -6443,7 +6447,7 @@
       "id": "R-212",
       "verdict": "ajout_critique",
       "title": "Envoyer en signature électronique (DocuSign) les documents à officialiser avec un client",
-      "description": "Le responsable produit (10 nov. 2026, D9-06) : les clients ne voient pas Keystone ; un point à officialiser avec un client (PV, décision) part en signature par DocuSign. Nouvel outil : compte DocuSign d’EPC2i et accord de la DSI ; document signé rangé dans Codex.",
+      "description": "Le responsable produit (10 nov. 2026, D9-06) : les clients ne voient pas Keystone ; un point à officialiser avec un client (PV, décision) part en signature par DocuSign. Nouvel outil : compte DocuSign de l’entreprise et accord de la DSI ; document signé rangé dans Codex.",
       "category": "plateforme_production",
       "kind": "decision_a_appliquer",
       "priority": "prochaine_etape",
@@ -6627,6 +6631,28 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "R-N06",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
       }
     }
   ]

@@ -1,0 +1,27 @@
+{
+  "outil": "keystone",
+  "updated": "2026-11-27",
+  "groupes": {
+    "session": "Questions des sessions",
+    "data": "Données à fournir"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "keystone:R-N01",
+      "ref": "R-N01",
+      "outil": "keystone",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Tables hors pgSchema (pgTable réécrit par le migrateur)",
+      "contexte": "REGLES § 4 demande des tables déclarées par pgSchema('keystone').table(…). Keystone garde pgTable : le migrateur du serveur réécrit \"public\". en \"keystone\"., PGlite reste dans public. Le résultat sur le serveur est le même ; l'écart est dans la forme du code.",
+      "proposition": "A — Dérogation inscrite dans Norma : la réécriture au migrateur est admise pour Keystone (recommandée).",
+      "alternatives": [
+        "B — Lot dédié : tables déclarées par pgSchema, PGlite repris dans le schéma ; les applications locales étant reportées (27 nov. 2026), la reprise se limite aux bases de démonstration et de développement."
+      ],
+      "bloque": "R-N01",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

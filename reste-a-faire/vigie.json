@@ -77,6 +77,10 @@
     {
       "date": "2026-11-27",
       "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VG-N10."
     }
   ],
   "items": [
@@ -3084,7 +3088,7 @@
     {
       "id": "VG-PRV-20",
       "title": "Plans de prévention reçus des clients",
-      "description": "Les interventions EPC2i chez les clients ne sont pas suivies.",
+      "description": "Les interventions de l’entreprise chez les clients ne sont pas suivies.",
       "category": "prevention_et_carte_du_site",
       "kind": "element",
       "priority": "a_decider",
@@ -7087,7 +7091,7 @@
     {
       "id": "VG-INT-18",
       "title": "Vue `pub_` des jalons de sécurité des procédés pour Keystone et l'application CAPEX",
-      "description": "Publier, par une vue `pub_` du schéma `vigie` (serveur PostgreSQL commun, décision M-01), l'état des études et jalons de sécurité des procédés d'un projet : HazID (HS 2), HazOp / AMDEC (HS 3), PSSR et RSPDI (HS 4+5), ASPD (HS 6) — projet ou CAPEX concerné, statut, date, recommandations ouvertes / levées / en retard, quitus. Lecteurs : Keystone (projet EPC2i : HazOp / AMDEC machine, condition « PSSR obtenu » avant la mise en service avec produit, R-192 de Keystone) et l'application CAPEX de la méthodologie DIG-PRODI (jalons G1, G2, G3 bloqués par les jalons HS). Contrat de vue : colonnes jamais supprimées ni renommées, aucune donnée de santé. Liens profonds vers les fiches Vigie. (source : dépôt Keystone, `docs/dig-prodi/ARCHITECTURE-CAPEX-KEYSTONE.md` § 2 ; aucune donnée de ce type dans `src/db/schema.ts`)",
+      "description": "Publier, par une vue `pub_` du schéma `vigie` (serveur PostgreSQL commun, décision M-01), l'état des études et jalons de sécurité des procédés d'un projet : HazID (HS 2), HazOp / AMDEC (HS 3), PSSR et RSPDI (HS 4+5), ASPD (HS 6) — projet ou CAPEX concerné, statut, date, recommandations ouvertes / levées / en retard, quitus. Lecteurs : Keystone (projet Keystone : HazOp / AMDEC machine, condition « PSSR obtenu » avant la mise en service avec produit, R-192 de Keystone) et l'application CAPEX de la méthodologie DIG-PRODI (jalons G1, G2, G3 bloqués par les jalons HS). Contrat de vue : colonnes jamais supprimées ni renommées, aucune donnée de santé. Liens profonds vers les fiches Vigie. (source : dépôt Keystone, `docs/dig-prodi/ARCHITECTURE-CAPEX-KEYSTONE.md` § 2 ; aucune donnée de ce type dans `src/db/schema.ts`)",
       "category": "integrations",
       "kind": "element",
       "priority": "prochaine_etape",
@@ -7776,7 +7780,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — ◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write com.epc2i.vigie VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le …"
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — ◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write <identifiant de l’application Vigie> VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le …"
       },
       "aliases": [
         "PRD-14"
@@ -9720,7 +9724,7 @@
       "progress": {
         "state": "fait",
         "delivery": null,
-        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet EPC2i, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
+        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet Keystone, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
       },
       "aliases": [
         "CNF-12"
@@ -9733,7 +9737,7 @@
     {
       "id": "VG-CNF-13",
       "title": "Études HazOp / AMDEC (jalon HS 3) et registre des recommandations",
-      "description": "DIG-PRODI, phase 2 « Avant-Projet » : études de sécurité HazOp / AMDEC (HS 3) avant le jalon G2 « Single Gate PDG », avec le dossier réglementaire (ICPE, zonage ATEX). Étude par nœud (P&ID, révision), déviations (mot-guide × paramètre), causes, conséquences, sauvegardes, cotation (gravité × probabilité), recommandations ; registre des recommandations avec responsable, échéance et preuve de levée (lien vers l'action QSE) ; taux de levée et recommandations en retard (alerte demandée par le CDC : « suivi de la levée des actions HazID / HazOp ») ; AMDEC : modes de défaillance, effets, criticité. Le P&ID et sa révision viennent de Keystone (part EPC2i du pack ingénierie) ou de Codex.",
+      "description": "DIG-PRODI, phase 2 « Avant-Projet » : études de sécurité HazOp / AMDEC (HS 3) avant le jalon G2 « Single Gate PDG », avec le dossier réglementaire (ICPE, zonage ATEX). Étude par nœud (P&ID, révision), déviations (mot-guide × paramètre), causes, conséquences, sauvegardes, cotation (gravité × probabilité), recommandations ; registre des recommandations avec responsable, échéance et preuve de levée (lien vers l'action QSE) ; taux de levée et recommandations en retard (alerte demandée par le CDC : « suivi de la levée des actions HazID / HazOp ») ; AMDEC : modes de défaillance, effets, criticité. Le P&ID et sa révision viennent de Keystone (part ingénierie du pack ingénierie) ou de Codex.",
       "category": "conformite_reglementaire_transverse",
       "kind": "element",
       "priority": "prochaine_etape",
@@ -9747,7 +9751,7 @@
       "progress": {
         "state": "fait",
         "delivery": null,
-        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet EPC2i, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
+        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet Keystone, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
       },
       "aliases": [
         "CNF-13"
@@ -9774,7 +9778,7 @@
       "progress": {
         "state": "fait",
         "delivery": null,
-        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet EPC2i, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
+        "note": "✅ Livré (01/11/2026, migration 0023, demande d'Arche VG-01 à VG-05, spec `docs/specs/etudes-securite.md`) — vue « Études de sécurité des procédés » de l'écran Évaluation des risques (`?vue=etudes&etude=ES-n`) : étude par site (usine) et CAPEX (`CPX-…`) et / ou projet Keystone, jalon et type (HazID HS 2, HazOp / AMDEC HS 3, contrôle chantier HS 4, PSSR / RSPDI, audit ASPD HS 6), statut planifiée / réalisée / validée (annulée : motif), séance, validation datée et conclusion (favorable, avec réserves, défavorable), animateur, rapport (référence Codex), recommandations = actions QSE rattachées …"
       },
       "aliases": [
         "CNF-14"
@@ -9972,6 +9976,28 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "VG-N10",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
       }
     }
   ]

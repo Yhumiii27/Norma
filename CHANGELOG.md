@@ -1,5 +1,44 @@
 # Norma — journal des versions
 
+## 3.0.0 — 27 novembre 2026
+
+Décisions du propriétaire : « Supprime les appellations […] de tous nos fichiers : pour le moment l'outil n'est pas approuvé
+au niveau groupe » — la suite s'appelle **Atrium** ; « Fais un seul artifact pour la liste des décisions et le
+questionnaire où tu attends des réponses de ma part ; tiens-le à jour au fur et à mesure. C'est cet artifact qui nous fera
+suivre tous les softs au même endroit. »
+
+- **Suite Atrium** : plus aucune appellation de l'ancienne suite ni de l'entreprise dans Norma (règles, charte, registre,
+  outils, propositions, reste à faire, journal — anciennes entrées comprises, sens gardé). Là où un texte nommait
+  l'entreprise, il dit « l'entreprise », « le groupe », « l'ingénierie », « Keystone » pour ses projets, ou rien ; l'entité
+  partenaire de Crucible est « l'entité partenaire ». `REGLES.md` § 1 donne le nom de la suite.
+- **Cookie d'affichage** `atrium-theme` (`charte/ds/theme.ts`) : seul nom **écrit** (`themeCookie`) ; l'ancien nom reste
+  **lu** à défaut du nouveau pendant la transition (`LEGACY_THEME_COOKIE`, `THEME_COOKIES_READ`, `themeFromCookies`,
+  `themeFromCookieHeader`), à retirer en 4.0 ; événement `THEME_EVENT` = `atrium-theme` ; glisser-déposer de « Mes tâches »
+  `application/x-atrium-task`. `charte/README.md` : le serveur lit le thème par `themeFromCookies`.
+- **Serveur commun** : noms cibles au registre (`registre/outils.json`, `serveur_commun` : base `atrium`, hôte
+  `atrium-postgres`, `/etc/atrium/`, rôle `atrium_sauvegarde`) et `REGLES.md` § 9. **Le serveur en service n'est pas
+  renommé par cette version** : Matrix le fait dans une opération séparée (MX-N11, question `matrix:REN-1`).
+- **Page unique « Suivi Atrium »** (`outils/suivi/`, `npm run suivi` → `.artifacts/suivi.html`, `RESTE-A-FAIRE.md` ;
+  `npm run reste-a-faire` en est un alias) : onglets « À décider » (réponse enregistrée dans la base de l'artefact,
+  collection `answers`, un document par question, même forme que les anciens questionnaires ; lecture seule sans base),
+  « Décidé » et « Reste à faire », une carte par outil (questions à décider, points restants). Publiée à l'adresse
+  d'artefact de la suite avec les capacités `db` et `user`.
+- **Décisions** `decisions/<outil>.json` (schéma `decisions/SCHEMA.md`, contrôle `validerDecisions`) : un fichier par outil
+  du registre, `norma.json` et `ingenium.json` (outil d'ingénierie en cadrage). Repris : questionnaires d'Arche, Crucible,
+  Modulus, Vector (dépôts sur `main`), de l'outil d'ingénierie et `propositions/questionnaire-taches` (décidé) ; réponses
+  déjà données dans les pages d'Arche, Crucible et Modulus (source « questionnaire <outil> ») ; questions ouvertes des
+  sessions (Keystone R-N01, Vigie VG-N04, Codex O-12 et dossier du personnel, Cursus CU-037, CU-142, CU-051, Arche dépôt
+  dans Codex, Clavis DR-7 à DR-13, DM-2, DM-3, Matrix REN-1, suite : déploiement du tronc commun, transport des e-mails,
+  ajustement de TA-2).
+- `REGLES.md` § 3 : une seule page de suivi ; toute question pour le propriétaire va dans `decisions/<outil>.json` ; les
+  pages de questionnaire des outils ne sont plus publiées (le modèle `outils/questionnaire/` reste distribué).
+- Tests : `test/theme.test.mjs` (nom écrit, ancien nom lu, priorité du nouveau), `test/suivi.test.mjs` (schéma, un fichier
+  par outil, ids uniques, réponses reprises, page, aucune ancienne appellation).
+- **Reste à faire** : NO-010 et NO-011 faits ; un point d'adoption par outil (R-N06, CX-N10, AR-N06, VG-N10, CR-N08,
+  CU-N08, CL-N10, MX-N10, MO-N03, VE-N03) ; MX-N11 (renommage du serveur commun).
+- **Version majeure** : chaque outil change son code — lecture du thème par `themeFromCookies` (sinon l'ancien réglage est
+  ignoré), tests qui citent l'ancien nom du cookie, textes de l'outil.
+
 ## 2.4.0 — 27 novembre 2026
 
 Décision du propriétaire : « le tronc commun des menus n'est pas disponible sur tous les sites. Je veux dans ce tronc commun
@@ -162,5 +201,5 @@ Première version, à la demande du propriétaire (un dépôt pour le socle comm
 - `dependances.json` : minimums (Next.js 16.4.6), autorisées, interdites et dérogations (PGlite : Keystone, Codex, Vigie).
 - `outils/norma.mjs` : `copier` et `verifier`.
 - Thème clair (propriétaire, 24 novembre 2026) : variables `[data-theme="light"]` dans `nocturne.css`, cookie
-  `epc2i-theme`, `ds/theme.ts`, bouton `ds/ThemeToggle.tsx` à côté du sélecteur de langue.
+  `atrium-theme`, `ds/theme.ts`, bouton `ds/ThemeToggle.tsx` à côté du sélecteur de langue.
 - Dépendances de Cursus déclarées (Express, Vite, tests d'interface).

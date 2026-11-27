@@ -1,0 +1,579 @@
+{
+  "outil": "vector",
+  "updated": "2026-11-27",
+  "origine": {
+    "depot": "Yhumiii27/vector",
+    "fichier": "scripts/questionnaire/questions.json",
+    "commit": "afb2a04",
+    "reprise": "Questionnaire « Décisions Vector » repris le 27 nov. 2026 ; réponses de sa base (collection answers) reprises."
+  },
+  "groupes": {
+    "prio": "À traiter en priorité",
+    "transition": "Transition depuis Keystone",
+    "operations": "Demandes, transport et suivi",
+    "douane": "Douane, conformité et documents",
+    "couts": "Coûts et performance",
+    "integrations": "Connecteurs et services extérieurs",
+    "droits": "Utilisateurs et droits",
+    "data": "Données à fournir"
+  },
+  "decide": [
+    "P-1 · Un nouvel outil de la suite pour le responsable des expéditions (nationales et internationales) du groupe.",
+    "P-2 · Règles communes de la suite (Norma) : PostgreSQL commun, schéma propre, vues pub_ définies par Matrix, droits lus dans Clavis, documents dans Codex.",
+    "P-3 · Charte Nocturne (Norma), thèmes sombre et clair, français par défaut.",
+    "P-4 · L’interface complète et le suivi des expéditions sont construits dès la première version, sur des données de démonstration fictives."
+  ],
+  "questions": [
+    {
+      "id": "vector:N-1",
+      "ref": "N-1",
+      "outil": "vector",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Le nom de l’outil : « Vector » ?",
+      "contexte": "Nom de travail : Vector (latin « celui qui transporte »), dans la lignée de Keystone, Arche, Crucible, Clavis, Matrix, Modulus. Le nom figure dans le schéma (vector), le rôle PostgreSQL (vector_app), les variables (VECTOR_*), les rôles Clavis (Vector.*) et les libellés ; un renommage reste mécanique tant que rien n’est en service.",
+      "proposition": "Vector",
+      "alternatives": [
+        "Portus (« le port »)",
+        "Navis (« le navire »)",
+        "Un autre nom (le donner en note)"
+      ],
+      "bloque": "L1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:T-1",
+      "ref": "T-1",
+      "outil": "vector",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Les expéditions passent-elles de Keystone (écran projet R-158) à Vector ?",
+      "contexte": "Keystone tient depuis le 25 octobre 2026 un écran projet « Expéditions » (chargements, contenu, étapes d’après l’Incoterm, documents versés dans Codex, réception sur site, vue pub_expeditions lue par Arche). Vector couvre aussi les pièces de rechange, les retours, les achats, les appels d’offres, la douane, les coûts et la performance. Deux sources pour un même envoi seraient une erreur.",
+      "proposition": "Oui, par étapes (docs/spec/05-echanges.md § 4) : Vector devient la source des expéditions ; Keystone garde l’Incoterm du contrat, la nomenclature, le contrôle colisage ↔ nomenclature, la réception sur site et les réserves, et affiche les expéditions du projet en lecture avec un lien vers Vector ; Arche lit vector.pub_expeditions (mêmes colonnes).",
+      "alternatives": [
+        "Non : Keystone garde les expéditions de projet, Vector ne traite que le hors projet (pièces de rechange, retours, achats)",
+        "Vector reprend tout, y compris la réception sur site et les réserves"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-1",
+      "ref": "D-1",
+      "outil": "vector",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Pour quelles sociétés et quels sites Vector travaille-t-il ?",
+      "contexte": "Le responsable des expéditions est celui du groupe. Les filiales expédient aussi (consommables, pièces) ; Matrix publie sites et filiales.",
+      "proposition": "Au départ, tout ce qui part des sites de l’entreprise (ateliers, magasins) ou d’un fournisseur pour son compte ; une filiale s’ajoute ensuite site par site (le site devient un départ possible, ses utilisateurs reçoivent un rôle Vector dans Clavis).",
+      "alternatives": [
+        "Tout le groupe dès le départ",
+        "L’entreprise seulement, sans extension prévue"
+      ],
+      "bloque": "L1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-2",
+      "ref": "D-2",
+      "outil": "vector",
+      "groupe": "operations",
+      "nature": "question",
+      "titre": "Les enlèvements chez les fournisseurs (achats) passent-ils par Vector ?",
+      "contexte": "Quand l’entreprise achète EXW / FCA, le transport depuis le fournisseur est à sa charge ; il est aujourd’hui organisé par l’acheteur ou le responsable des expéditions.",
+      "proposition": "Oui quand le transport est à la charge du groupe (Incoterm d’achat E ou F) : l’acheteur crée une demande d’origine « commande d’achat » ; sinon rien dans Vector (le fournisseur livre).",
+      "alternatives": [
+        "Non, seulement les envois sortants",
+        "Tous les achats, même livrés par le fournisseur (suivi seulement)"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-3",
+      "ref": "D-3",
+      "outil": "vector",
+      "groupe": "operations",
+      "nature": "question",
+      "titre": "D’où viennent les demandes de pièces de rechange ?",
+      "contexte": "Les commandes de pièces des sites miniers et des filiales arrivent par e-mail au service pièces ; aucun outil de la suite ne tient les commandes de pièces aujourd’hui.",
+      "proposition": "Le magasin ou le service pièces saisit la demande dans Vector (origine « pièce de rechange », n° de commande du client en texte, urgence) ; un outil de commandes de pièces, s’il vient, créera les demandes par l’API de Vector.",
+      "alternatives": [
+        "Les commandes de pièces se tiennent dans Keystone (projet « SAV »)",
+        "Les filiales saisissent elles-mêmes leurs demandes dans Vector"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-4",
+      "ref": "D-4",
+      "outil": "vector",
+      "groupe": "operations",
+      "nature": "question",
+      "titre": "Groupage : plusieurs demandes dans une expédition ?",
+      "contexte": "Groupage d’envois du même départ vers la même destination (ex. pièces de deux projets vers le même site minier), éclatement d’une demande (urgent par avion, le reste par mer).",
+      "proposition": "Oui, dans les deux sens ; les coûts d’une expédition groupée se répartissent au prorata du poids taxable de chaque demande (D-7).",
+      "alternatives": [
+        "Une demande = une expédition"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-5",
+      "ref": "D-5",
+      "outil": "vector",
+      "groupe": "operations",
+      "nature": "question",
+      "titre": "Au-delà de quel montant une attribution est-elle validée par le responsable des expéditions ?",
+      "contexte": "Un coordinateur peut attribuer une cotation ; une attribution importante mérite un second regard.",
+      "proposition": "10 000 € (réglable dans l’administration) ; une urgence « critique » peut être attribuée sans appel d’offres, avec motif journalisé.",
+      "alternatives": [
+        "5 000 €",
+        "Toute attribution validée par le responsable",
+        "Pas de validation"
+      ],
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-6",
+      "ref": "D-6",
+      "outil": "vector",
+      "groupe": "operations",
+      "nature": "question",
+      "titre": "Combien de cotations faut-il avant d’attribuer ?",
+      "contexte": "La mise en concurrence fait baisser les prix mais prend du temps ; la politique achats du groupe peut l’imposer.",
+      "proposition": "3 cotations au-delà de 5 000 € estimés, 1 en dessous ; une exception se motive (seuils réglables).",
+      "alternatives": [
+        "Toujours 3",
+        "Selon la politique achats (à fournir)"
+      ],
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-7",
+      "ref": "D-7",
+      "outil": "vector",
+      "groupe": "couts",
+      "nature": "question",
+      "titre": "Comment imputer le coût d’une expédition groupée ?",
+      "contexte": "Une expédition peut porter les demandes de plusieurs projets ou codes de coût.",
+      "proposition": "Au prorata du poids taxable de chaque demande ; le responsable peut corriger la répartition à la main, avec motif.",
+      "alternatives": [
+        "Au prorata de la valeur",
+        "Au prorata du volume",
+        "Saisie à la main seulement"
+      ],
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-8",
+      "ref": "D-8",
+      "outil": "vector",
+      "groupe": "couts",
+      "nature": "question",
+      "titre": "Devises et cours de change",
+      "contexte": "Les cotations arrivent en EUR, USD, ZAR, AUD, CLP… Arche tient déjà ses cours (exchange_rates) ; Sage aussi.",
+      "proposition": "Tout est comparé et cumulé en euros ; les cours se saisissent chaque semaine par la finance dans Vector (table des cours) ; ils seront lus dans Sage ou dans une publication commune quand elle existera.",
+      "alternatives": [
+        "Lire les cours d’Arche (vue à demander)",
+        "Cours de la BCE importés (demande DSI : appel extérieur)"
+      ],
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-9",
+      "ref": "D-9",
+      "outil": "vector",
+      "groupe": "douane",
+      "nature": "question",
+      "titre": "Comment se fait le criblage sanctions des destinataires ?",
+      "contexte": "Les listes de sanctions (UE, ONU, OFAC) évoluent sans cesse ; un outil de criblage est un service extérieur (validation DSI) ou une vérification manuelle sur les sites officiels.",
+      "proposition": "Vérification manuelle tracée dans Vector (qui, quand, quelle liste, résultat, preuve dans Codex), refaite pour chaque nouvel destinataire et au plus tard tous les 6 mois ; la table des pays (embargo, restreint, surveillé) est tenue par le rôle Conformité.",
+      "alternatives": [
+        "Outil de criblage du groupe (à indiquer), Vector garde le résultat",
+        "Pas de criblage (déconseillé)"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-10",
+      "ref": "D-10",
+      "outil": "vector",
+      "groupe": "douane",
+      "nature": "question",
+      "titre": "Marchandises dangereuses : qui signe, et que voit Vigie ?",
+      "contexte": "ADR, IMDG, IATA exigent une déclaration signée par une personne formée ; le conseiller sécurité transport (CSTMD) est souvent rattaché au QHSE (Vigie).",
+      "proposition": "La déclaration est faite par une personne habilitée (titre lu plus tard dans Cursus) et référencée dans Vector ; toute expédition avec un n° ONU est signalée à Vigie (file d’envoi) ; un incident de transport de marchandises dangereuses ouvre un événement dans Vigie.",
+      "alternatives": [
+        "Rien vers Vigie, Vector seul",
+        "Validation préalable obligatoire par le QHSE dans Vigie"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-12",
+      "ref": "D-12",
+      "outil": "vector",
+      "groupe": "douane",
+      "nature": "question",
+      "titre": "Quels documents Vector génère-t-il ?",
+      "contexte": "Keystone génère déjà (gabarits génériques) packing list, liste par conteneur, bon de livraison, marques, CMR, instructions d’expédition, demande d’origine, données d’export, sans les factures (décision R-158 n° 3).",
+      "proposition": "Liste de colisage, liste par conteneur, marques de colis, instructions d’expédition, CMR, VGM et facture proforma (valeur douane, jamais la facture comptable) ; gabarits génériques jusqu’aux modèles de l’entreprise ; tout est déposé dans Codex.",
+      "alternatives": [
+        "Les mêmes sans la facture proforma",
+        "Aucun : seulement des références aux documents faits ailleurs"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-18",
+      "ref": "D-18",
+      "outil": "vector",
+      "groupe": "douane",
+      "nature": "question",
+      "titre": "Lettres de crédit : jusqu’où Vector les suit-il ?",
+      "contexte": "Une erreur dans les documents d’une LC bloque le paiement ; la LC est tenue par la trésorerie avec la banque.",
+      "proposition": "Vector porte la LC de l’expédition (n°, banque, date limite d’expédition, validité, documents exigés et leurs mentions) et contrôle les dates et la liste ; la présentation à la banque reste à la trésorerie.",
+      "alternatives": [
+        "Rien dans Vector",
+        "Vector prépare aussi le dossier de présentation à la banque"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-11",
+      "ref": "D-11",
+      "outil": "vector",
+      "groupe": "couts",
+      "nature": "question",
+      "titre": "Comment noter les transporteurs ?",
+      "contexte": "La note sert à choisir et à revoir les transporteurs ; elle est calculée, jamais saisie.",
+      "proposition": "Ponctualité 40 %, incidents 25 %, écart facture / cotation 20 %, réactivité aux appels d’offres 15 % (pondérations réglables) sur 12 mois glissants, affichée à partir de 5 expéditions.",
+      "alternatives": [
+        "Ponctualité seule",
+        "Pondérations à donner"
+      ],
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-13",
+      "ref": "D-13",
+      "outil": "vector",
+      "groupe": "couts",
+      "nature": "question",
+      "titre": "Faut-il estimer les émissions de CO₂ des expéditions ?",
+      "contexte": "Le reporting extra-financier (CSRD) peut demander les émissions du transport amont et aval ; une estimation t·km × facteur par mode suffit souvent (méthode GLEC / ISO 14083).",
+      "proposition": "Plus tard : la colonne et le calcul sont prévus ; activés quand la direction fournit les facteurs et la méthode.",
+      "alternatives": [
+        "Oui dès la livraison 5",
+        "Non"
+      ],
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-17",
+      "ref": "D-17",
+      "outil": "vector",
+      "groupe": "couts",
+      "nature": "question",
+      "titre": "Assurance transport",
+      "contexte": "Le groupe a peut-être une police annuelle (« police flottante ») ; sinon chaque envoi s’assure à part, ou l’acheteur s’assure selon l’Incoterm.",
+      "proposition": "Police annuelle du groupe par défaut (n° et assureur dans l’administration), valeur assurée = valeur CIF × 110 % ; police spécifique pour un envoi hors conditions (valeur, pays).",
+      "alternatives": [
+        "Une assurance par envoi",
+        "Pas d’assurance du groupe (acheteur)"
+      ],
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:T-2",
+      "ref": "T-2",
+      "outil": "vector",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Que deviennent les documents d’expédition déjà générés par Keystone ?",
+      "contexte": "Keystone a déjà versé des documents d’expédition dans Codex (type SHP).",
+      "proposition": "Ils restent dans Codex tels quels ; Vector reprend le type SHP pour ses dépôts ; une expédition importée de Keystone garde ses références Codex.",
+      "alternatives": [
+        "Type documentaire distinct pour Vector"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:T-3",
+      "ref": "T-3",
+      "outil": "vector",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Où vit le contrôle colisage ↔ nomenclature d’une expédition de projet ?",
+      "contexte": "Le contrôle compare les quantités expédiées à la nomenclature du projet ; la nomenclature est dans Keystone, le colisage passera dans Vector.",
+      "proposition": "Dans Keystone, qui lit vector.pub_colis et garde le livrable « Colisage & documents douaniers » ; Vector affiche le résultat lu dans une vue de Keystone.",
+      "alternatives": [
+        "Dans Vector, qui lit keystone.pub_nomenclatures"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:T-4",
+      "ref": "T-4",
+      "outil": "vector",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Où se pointe la réception sur site ?",
+      "contexte": "La réception d’un matériel de projet crée des réserves dans la punch list du projet (Keystone).",
+      "proposition": "Dans Keystone pour les expéditions de projet (réserves comprises) ; Vector lit l’état de réception. Dans Vector pour les autres expéditions (le demandeur confirme la réception).",
+      "alternatives": [
+        "Toujours dans Vector, les réserves envoyées à Keystone par son API"
+      ],
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-14",
+      "ref": "D-14",
+      "outil": "vector",
+      "groupe": "integrations",
+      "nature": "question",
+      "titre": "Suivi automatique des transports (API) ?",
+      "contexte": "project44, Shippeo, FourKites ou les API des compagnies maritimes (DCSA) et des intégrateurs donnent des jalons et ETA automatiques ; c’est un service extérieur (données envoyées hors du serveur : accord de la DSI).",
+      "proposition": "Saisie à la main au départ ; connecteur simulé prêt ; branchement réel d’un fournisseur après accord de la DSI et si le volume le justifie.",
+      "alternatives": [
+        "Branchement dès la livraison 3 (fournisseur à choisir)",
+        "Jamais"
+      ],
+      "bloque": "L6",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-15",
+      "ref": "D-15",
+      "outil": "vector",
+      "groupe": "integrations",
+      "nature": "question",
+      "titre": "Les transporteurs saisissent-ils eux-mêmes (portail) ?",
+      "contexte": "Un portail permet au transitaire de répondre aux appels d’offres et de saisir les jalons ; il ouvre l’outil à l’extérieur (comptes externes, sécurité, DSI).",
+      "proposition": "Non au départ : les appels d’offres partent par e-mail (texte préparé) et les réponses sont saisies par l’équipe ; un lien de réponse à usage unique pourra être étudié avec la DSI.",
+      "alternatives": [
+        "Portail dès la livraison 3"
+      ],
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-16",
+      "ref": "D-16",
+      "outil": "vector",
+      "groupe": "integrations",
+      "nature": "question",
+      "titre": "Colis express : un agrégateur (Sendcloud, Boxtal…) ?",
+      "contexte": "Les pièces urgentes de petit poids partent chez un intégrateur (DHL, UPS, FedEx) ; un agrégateur imprime les étiquettes et compare les tarifs.",
+      "proposition": "Non au départ : l’étiquette se fait sur le site de l’intégrateur, Vector garde l’expédition, le n° de suivi et le coût.",
+      "alternatives": [
+        "Agrégateur à choisir avec la DSI"
+      ],
+      "bloque": "L6",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:D-19",
+      "ref": "D-19",
+      "outil": "vector",
+      "groupe": "integrations",
+      "nature": "question",
+      "titre": "Les factures de fret viennent-elles de Sage ?",
+      "contexte": "Arche lit déjà des extractions de Sage déposées dans un dossier (AR-047).",
+      "proposition": "Oui, par la même méthode : extraction Sage des factures fournisseurs des comptes de transport déposée dans un dossier (VECTOR_SAGE_DIR), rapprochée par n° de réservation ou d’expédition ; saisie à la main en attendant.",
+      "alternatives": [
+        "Saisie à la main seulement",
+        "Lecture d’une vue Sage sur le serveur"
+      ],
+      "bloque": "L6",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:U-1",
+      "ref": "U-1",
+      "outil": "vector",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Rôles de Vector (lus dans Clavis, cumulables)",
+      "contexte": "Les rôles déterminent ce que chacun fait (docs/spec/06-droits-interface.md).",
+      "proposition": "Manager (responsable des expéditions), Coordinator, Requester (demandeur), Packing (magasin / emballage), Finance, Compliance (douane et conformité), Reader, Admin.",
+      "alternatives": [
+        "Sans le rôle Compliance (le responsable des expéditions s’en charge)",
+        "Ajouter un rôle « assistant(e) expéditions »"
+      ],
+      "bloque": "L1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:U-2",
+      "ref": "U-2",
+      "outil": "vector",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Qui voit les valeurs marchandes et les coûts ?",
+      "contexte": "La valeur des marchandises et le coût du fret sont sensibles (marges, prix).",
+      "proposition": "Manager, Coordinator, Finance, Compliance, Admin ; pas les demandeurs, le magasin ni la lecture.",
+      "alternatives": [
+        "Aussi les demandeurs pour leurs propres expéditions",
+        "Seulement Manager et Finance"
+      ],
+      "bloque": "L1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:U-3",
+      "ref": "U-3",
+      "outil": "vector",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Un demandeur voit-il toutes les expéditions ?",
+      "contexte": "Un chef de projet veut suivre ses envois, un acheteur les siens.",
+      "proposition": "Ses demandes et les expéditions qui les portent, plus celles des projets dont il fait partie (lu dans Keystone plus tard) ; le reste en liste sans détail.",
+      "alternatives": [
+        "Toutes, sans valeurs ni coûts"
+      ],
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-1",
+      "ref": "DA-1",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Transporteurs, transitaires, emballeurs, assureurs habituels",
+      "contexte": "Modèle docs/donnees/01-partenaires.csv : raison sociale, pays, type, modes, zones, contacts professionnels.",
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-2",
+      "ref": "DA-2",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Sites de départ, magasins et adresses d’enlèvement",
+      "contexte": "Modèle docs/donnees/02-sites-et-adresses.csv (complète matrix.pub_sites : heures d’ouverture, quai, capacité de levage).",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-3",
+      "ref": "DA-3",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Codes SH utilisés et désignations douanières validées",
+      "contexte": "Modèle docs/donnees/03-codes-sh.csv ; reprendre ceux des articles de Keystone, à valider par le transitaire ou la douane.",
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-4",
+      "ref": "DA-4",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Politique Incoterms du groupe",
+      "contexte": "Modèle docs/donnees/04-politique-incoterms.csv : Incoterm par type de vente, de client, de destination.",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-5",
+      "ref": "DA-5",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Standards d’emballage",
+      "contexte": "Modèle docs/donnees/05-emballages.csv : caisses types, palettes, conteneurs, normes (HPE, NIMP 15).",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-6",
+      "ref": "DA-6",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Pays : risques, embargos, accords d’origine",
+      "contexte": "Modèle docs/donnees/06-pays.csv ; à valider par la conformité.",
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-7",
+      "ref": "DA-7",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Standards de coût et historique de 12 mois d’expéditions",
+      "contexte": "Modèle docs/donnees/07-standards-couts.csv et 08-historique-expeditions.csv (tableur actuel) : estimation et indicateurs de départ.",
+      "bloque": "L5",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "vector:DA-8",
+      "ref": "DA-8",
+      "outil": "vector",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Modèles de documents de l’entreprise",
+      "contexte": "Packing list, facture proforma, marques, instructions d’expédition actuels (fichiers à déposer dans Codex).",
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}
