@@ -78,6 +78,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CX-N10."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CX-N10 fait (Codex#43, suite Atrium) ; Codex#42 : CX-036, CX-038, CX-046 avancés, CX-020 posé en O-12 (répondue par le propriétaire, réponse à compléter)."
     }
   ],
   "items": [
@@ -589,7 +593,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Fait en partie le 12 octobre 2026 : détection optimiste, sans réservation : `documents.version`, relevée par la base à chaque modification réelle de la fiche (déclencheur `documents_version`, `src/db/index.ts`) et réservée au cercle de rédaction (D-14), est renvoyée par les dialogues de métadonnées et de lecteurs désignés, et la dernière version de travail montrée par ceux de dépôt et de demande de validation ; `updateMeta`, `setReaders`, `addWorkingVersion` et `requestValidation` refusent sans rien écrire une action partie d'une vue périmée (« Ce document a été modifié entre-temps par … ; …"
+        "note": "Fait en partie le 12 octobre 2026 : détection optimiste, sans réservation : `documents.version`, relevée par la base à chaque modification réelle de la fiche (déclencheur `documents_version`, `src/db/index.ts`) et réservée au cercle de rédaction (D-14), est renvoyée par les dialogues de métadonnées et de lecteurs désignés, et la dernière version de travail montrée par ceux de dépôt et de demande de validation ; `updateMeta`, `setReaders`, `addWorkingVersion` et `requestValidation` refusent sans rien écrire une action partie d'une vue périmée (« Ce document a été modifié entre-temps par … ; … Codex#42 (27 nov. 2026) : réservation posée en question O-12 ; réponse du propriétaire du 27 nov. 2026 (autre réponse, en cours de saisie) : la personne qui modifie bloque la modification par d’autres, et une seule demande de modification à la fois par document. À appliquer une fois la réponse complète."
       },
       "aliases": [
         "point 20"
@@ -999,7 +1003,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Préparé le 18 octobre 2026 (lot 10, étape 3) : la partie SharePoint est essayée contre un faux Microsoft Graph (`tests/support/fake-graph.ts`, `tests/integration/sharepoint-store.test.ts`). La liste paginée de `_staging`, la reprise des noms provisoires (`renameProvisional`, journalisée) et le nettoyage des orphelins, qui les liste sans jamais envoyer de suppression à Graph, sont couverts. Reste : la suppression des orphelins sur SharePoint et l'essai sur un vrai tenant (O-01, `npm run storage:check`)."
+        "note": "Préparé le 18 octobre 2026 (lot 10, étape 3) : la partie SharePoint est essayée contre un faux Microsoft Graph (`tests/support/fake-graph.ts`, `tests/integration/sharepoint-store.test.ts`). La liste paginée de `_staging`, la reprise des noms provisoires (`renameProvisional`, journalisée) et le nettoyage des orphelins, qui les liste sans jamais envoyer de suppression à Graph, sont couverts. Reste : la suppression des orphelins sur SharePoint et l'essai sur un vrai tenant (O-01, `npm run storage:check`). Codex#42 (27 nov. 2026) : nettoyage des orphelins de SharePoint (_staging) construit, essayé contre le faux Graph ; reste l’essai sur un vrai tenant (O-01, D-28)."
       },
       "aliases": [
         "point 36"
@@ -1048,7 +1052,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Fait en partie le 18 octobre 2026 (constat vérifié au commit `ccf5940`, sauf que `src/instrumentation.ts` existe depuis le point 37) : `src/lib/scheduler.ts`, démarré par `register` après le contrôle de configuration (jamais pendant `next build` ni dans les tests), lance dans le processus du serveur la mise en vigueur différée toutes les 5 minutes (`CODEX_SCHEDULE_PROMOTE`) : `promoteDue`, plus l'application d'une acceptation de Vigie restée en attente alors que plus rien ne la retient (`applyDuePendingDecisions`) ; tant qu'il le fait, `getCtx` ne l'appelle plus à chaque requête …"
+        "note": "Fait en partie le 18 octobre 2026 (constat vérifié au commit `ccf5940`, sauf que `src/instrumentation.ts` existe depuis le point 37) : `src/lib/scheduler.ts`, démarré par `register` après le contrôle de configuration (jamais pendant `next build` ni dans les tests), lance dans le processus du serveur la mise en vigueur différée toutes les 5 minutes (`CODEX_SCHEDULE_PROMOTE`) : `promoteDue`, plus l'application d'une acceptation de Vigie restée en attente alors que plus rien ne la retient (`applyDuePendingDecisions`) ; tant qu'il le fait, `getCtx` ne l'appelle plus à chaque requête … Codex#42 (27 nov. 2026) : envois aux autres outils sans file (D-31, M-18), documentation à jour ; restent les relances (M19, canal) et les fréquences (M22)."
       },
       "aliases": [
         "point 38"
@@ -1241,7 +1245,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "Fait en partie le 15 octobre 2026 : la route fichier sert le stockage en flux (`openStored`, src/lib/storage.ts ; pour SharePoint, corps de `/content` relayé avec l'en-tête Range, non essayé sur un vrai tenant) avec `Accept-Ranges`, 206 et `Content-Range`, 416, le fichier entier pour plusieurs plages, `If-Range`, ETag, Last-Modified, 304 et un HEAD cohérent (`src/lib/ranges.ts`), après les mêmes contrôles d'accès, D-14, suffixes et limite de débit qu'avant, un téléchargement étant journalisé quand sa réponse part du premier octet, et le navigateur garde, revalidé à chaque usage (`private, …"
+        "note": "Fait en partie le 15 octobre 2026 : la route fichier sert le stockage en flux (`openStored`, src/lib/storage.ts ; pour SharePoint, corps de `/content` relayé avec l'en-tête Range, non essayé sur un vrai tenant) avec `Accept-Ranges`, 206 et `Content-Range`, 416, le fichier entier pour plusieurs plages, `If-Range`, ETag, Last-Modified, 304 et un HEAD cohérent (`src/lib/ranges.ts`), après les mêmes contrôles d'accès, D-14, suffixes et limite de débit qu'avant, un téléchargement étant journalisé quand sa réponse part du premier octet, et le navigateur garde, revalidé à chaque usage (`private, … Codex#42 (27 nov. 2026) : aperçu paginé revérifié ; restent l’essai dans WebKit et le dépôt en flux (points 98 et 106)."
       },
       "aliases": [
         "point 46"
@@ -3735,9 +3739,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Codex#43",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Codex#43, 27 nov. 2026)."
       }
     }
   ]

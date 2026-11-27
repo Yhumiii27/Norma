@@ -61,6 +61,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MX-N10. MX-N11 : renommage du serveur commun, opération séparée."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "MX-N10 fait (Matrix#107 : dépôt Atrium, contrats v2 des messages, « Filiale partenaire ») ; MX-N11 en cours (fiche d’opération prête, serveur non renommé) ; noms stockés d’Arche dans la fiche (Matrix#108) ; catalogue sans l’ancien nom (Matrix#109)."
     }
   ],
   "items": [
@@ -1018,9 +1022,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Matrix#107",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Matrix#107, 27 nov. 2026). Filiale partenaire renommée « Filiale partenaire » (M-27, Matrix#107, #109) ; contrats des messages v2 atrium.…/2 ajoutés (M-28)."
       }
     },
     {
@@ -1040,9 +1044,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026) : noms cibles posés, serveur en service inchangé."
+        "state": "en_cours",
+        "delivery": "Matrix#107, #108",
+        "note": "Fiche d’opération prête et répétée sur des clusters jetables (docs/renommage-atrium.md : base, hôte, volumes, rôle des sauvegardes, filiale) ; noms stockés d’Arche ajoutés (Matrix#108). Rien n’est joué sur le serveur : attend la date de la fenêtre (R-1), la copie des volumes par l’hôte (R-6) et le « validé »."
       }
     }
   ]

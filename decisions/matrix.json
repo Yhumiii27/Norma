@@ -22,6 +22,91 @@
       "bloque": "MX-N11",
       "statut": "ouverte",
       "reponse": null
+    },
+    {
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "alternatives": [],
+      "id": "matrix:R-1",
+      "ref": "R-1",
+      "titre": "Renommage en Atrium : date de la fenêtre et annonce aux utilisateurs",
+      "contexte": "Fiche d’opération du renommage du serveur commun en Atrium (Matrix docs/renommage-atrium.md § 14).",
+      "proposition": "À fixer hors des heures d’usage et hors de la sauvegarde de 2 h 15.",
+      "bloque": "MX-N11",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "alternatives": [],
+      "id": "matrix:R-2",
+      "ref": "R-2",
+      "titre": "Renommage en Atrium : nom de la filiale SMC",
+      "contexte": "Fiche d’opération du renommage du serveur commun en Atrium (Matrix docs/renommage-atrium.md § 14).",
+      "proposition": "La filiale garde son nom d’origine.",
+      "bloque": "MX-N10",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "other",
+        "date": "2026-11-27",
+        "source": "page Suivi Atrium",
+        "note": "Réponse en séance le 27/11/2026 : le nom de l’ancienne société doit disparaître, comme toute allusion à l’ancien nom de la suite (référentiels, données de démonstration, tests, documents). Appliqué : « Filiale partenaire », codes SMC et smc inchangés (M-27, Matrix#107, #109) ; sur le serveur, pendant le renommage."
+      }
+    },
+    {
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "alternatives": [],
+      "id": "matrix:R-3",
+      "ref": "R-3",
+      "titre": "Renommage en Atrium : identifiants des messages d’échange",
+      "contexte": "Fiche d’opération du renommage du serveur commun en Atrium (Matrix docs/renommage-atrium.md § 14).",
+      "proposition": "Garder les identifiants de version 1.",
+      "bloque": "MX-N10",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "other",
+        "date": "2026-11-27",
+        "source": "page Suivi Atrium",
+        "note": "Réponse en séance le 27/11/2026 : « On fait la V2 maintenant » — messages en version 2 sous le nom atrium (atrium.heures.*/2, atrium.absence.*/2, mêmes champs). Appliqué pour les contrats (schémas v2 de Matrix#107, M-28) ; aucun outil n’émet encore ces messages."
+      }
+    },
+    {
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "alternatives": [],
+      "id": "matrix:R-4",
+      "ref": "R-4",
+      "titre": "Renommage en Atrium : bases, serveur, volumes et prérequis des outils",
+      "contexte": "Fiche d’opération du renommage du serveur commun en Atrium (Matrix docs/renommage-atrium.md § 14). Les prérequis des outils (§ 13) se portent dans leurs REQUESTS.md ou sont faits par leurs sessions.",
+      "proposition": "Tout renommer (bases, serveur PostgreSQL, volumes) ; demandes aux outils après « validé ».",
+      "bloque": "MX-N11",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "date": "2026-11-27",
+        "source": "page Suivi Atrium",
+        "note": "Réponse en séance le 27/11/2026 : renommer aussi toutes les bases, le serveur PostgreSQL et tout ce qui fait allusion à l’ancien nom (volumes compris) ; les prérequis des outils sont faits dans chaque dépôt. Fiche prête (Matrix#107), opération sur le serveur pas encore jouée."
+      }
+    },
+    {
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "alternatives": [],
+      "id": "matrix:R-6",
+      "ref": "R-6",
+      "titre": "Renommage en Atrium : qui copie les volumes sur l’hôte ?",
+      "contexte": "Fiche d’opération du renommage du serveur commun en Atrium (Matrix docs/renommage-atrium.md § 14). La copie demande un accès SSH à l’hôte (P8).",
+      "proposition": "Le propriétaire, si la session de Claude n’a pas d’accès à l’hôte.",
+      "bloque": "MX-N11",
+      "statut": "ouverte",
+      "reponse": null
     }
   ]
 }

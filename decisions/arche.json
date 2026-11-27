@@ -21,7 +21,8 @@
     "AC-1 — le système s’appelle Arche (dépôt Yhumiii27/Arche).",
     "N-23 — PostgreSQL uniquement, pas de PGlite.",
     "N-17 — Codex héberge tous les documents d’Arche ; Arche n’en garde que les références.",
-    "Tenir compte des environnements de Codex, Vigie, Cursus et Matrix (demandes envoyées à chacun)."
+    "Tenir compte des environnements de Codex, Vigie, Cursus et Matrix (demandes envoyées à chacun).",
+    "Identifiants stockés qui gardaient l’ancien nom de la suite renommés (colonnes, clé de rôle engineering_pmo, critère g2_keystone_offers, API v2) : « oui lance le lot Arche » (propriétaire, 27 nov. 2026) ; appliqué (Arche#68, Clavis#21, Matrix#108), brouillon M-16 sans objet."
   ],
   "questions": [
     {

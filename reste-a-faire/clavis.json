@@ -52,6 +52,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CL-N10."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CL-N10 fait (Clavis#20, suite Atrium) ; CL-S08 fait (Clavis#19 : Modulus, Vector, Ingenium, client OIDC ingenium inscrit sur le serveur) ; clé de rôle PMO d’Arche renommée engineering_pmo (Clavis#21)."
     }
   ],
   "items": [
@@ -657,9 +661,29 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Clavis#20",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Clavis#20, 27 nov. 2026). Base et hôte du serveur commun en variables."
+      }
+    },
+    {
+      "description": "Applications, clés de rôles Modulus.*, Vector.*, Ingenium.* et profils d’ingénierie ; oidc:client --secret-env.",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "id": "CL-S08",
+      "title": "Modulus, Vector et Ingenium inscrits dans Clavis",
+      "category": "suite",
+      "sources": [
+        "Décision du propriétaire du 27 nov. 2026 (Modulus, Vector, Ingenium)"
+      ],
+      "progress": {
+        "state": "fait",
+        "delivery": "Clavis#19",
+        "note": "Migration 0009_modulus_vector_ingenium ; client OIDC ingenium inscrit sur le serveur le 27 nov. 2026 (secret posé dans l’application Coolify d’Ingenium)."
       }
     }
   ]

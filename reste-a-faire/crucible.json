@@ -210,6 +210,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CR-N08."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CR-N08 fait (Crucible#52, suite Atrium, « Filiale partenaire »)."
     }
   ],
   "items": [
@@ -1080,9 +1084,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Crucible#52",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Crucible#52, 27 nov. 2026). Entité partenaire « Filiale partenaire » (PARTENAIRE), base et hôte du serveur commun en variables."
       }
     }
   ]
