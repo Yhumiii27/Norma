@@ -77,6 +77,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CU-N08."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "CU-N01 : parties 3 à 5 fusionnées (Cursus#54, #55, #56), partie 6 en cours ; CU-N08 en cours (Cursus#57, brouillon)."
     }
   ],
   "items": [
@@ -4487,8 +4491,8 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "delivery": "Cursus#51, #53",
-        "note": "Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (Cursus#51), Habilitations, Confidentialité (cadre), Expositions et composants communs (Cursus#53). Restent une trentaine d’écrans, les libellés de `shared/`, les dates et les exports."
+        "delivery": "Cursus#51, #53, #54, #55, #56",
+        "note": "Écrans repris : Hors ligne, mot de passe, Avis demandés, Pointages (#51), Habilitations, Confidentialité, Expositions (#53), Formations, Congés & absences (#54), Notes de frais, Tableau de bord, Échéances, Missions, Saisie du jour, Voyages (#55), Collaborateurs, grille de Temps, Équipes, e-learning et toutes les confirmations (#56). Partie 6 en cours (Annuaire, Organigramme, Entretiens… et les panneaux de Temps) ; restent aussi les libellés de `shared/`, les dates et les exports."
       }
     },
     {
@@ -4635,9 +4639,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "en_cours",
+        "delivery": "Cursus#57 (brouillon)",
+        "note": "Suite Atrium, Norma 3.1.0, base commune reconnue sous ses deux noms : PR ouverte (Cursus#57), pas encore fusionnée."
       }
     }
   ]

@@ -20,8 +20,32 @@
         "B — Lot dédié : tables déclarées par pgSchema, PGlite repris dans le schéma ; les applications locales étant reportées (27 nov. 2026), la reprise se limite aux bases de démonstration et de développement."
       ],
       "bloque": "R-N01",
-      "statut": "ouverte",
-      "reponse": null
+      "statut": "repondue",
+      "reponse": {
+        "choix": "discuss",
+        "date": "2026-11-27",
+        "source": "page Suivi Atrium",
+        "note": "À discuter avec le propriétaire (évaluation : Keystone docs/delivery-9/notes-r-n01.md, Keystone#86)."
+      }
+    },
+    {
+      "id": "keystone:CLE-1",
+      "ref": "CLE-1",
+      "outil": "keystone",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Terme du contrat des projets",
+      "contexte": "Keystone désignait le contrat de ses projets par un sigle générique d’ingénierie, achats et construction, proche de l’ancienne appellation de la suite.",
+      "proposition": "« Clé en main » partout dans Keystone (interface, textes, aide).",
+      "alternatives": [],
+      "bloque": "R-N07",
+      "statut": "decidee",
+      "reponse": {
+        "choix": "default",
+        "note": "Décision du propriétaire en séance : le terme générique du contrat est remplacé par « clé en main » ; lot en cours dans Keystone (R-N07).",
+        "date": "2026-11-27",
+        "source": "décision du propriétaire en séance, 27 nov. 2026"
+      }
     }
   ]
 }

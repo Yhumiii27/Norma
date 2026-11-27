@@ -42,6 +42,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VE-N03."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "VE-N03 fait (Vector#4, suite Atrium)."
     }
   ],
   "items": [
@@ -245,9 +249,9 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Vector#4",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Vector#4, 27 nov. 2026)."
       }
     }
   ]

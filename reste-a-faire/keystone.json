@@ -374,6 +374,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption R-N06."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "R-N04 fait (Keystone#86) ; liens profonds de Codex /documents/{id} (Keystone#86, #87, R-033) ; R-N01 évalué, « à discuter » ; R-N06 en cours (Keystone#88, brouillon) ; R-N07 ajouté (« clé en main », en cours)."
     }
   ],
   "items": [
@@ -1352,7 +1356,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Livraison 8",
-        "note": "Livraison 8 : côté Keystone du connecteur Codex (liens, état réel, lecture horaire de l’index ; les fiches en attente d’un projet ou d’un type sont relues seules) ; l’API Codex (D-1), le formulaire de dépôt (R-125) et les téléchargements restent à faire."
+        "note": "Livraison 8 : côté Keystone du connecteur Codex (liens, état réel, lecture horaire de l’index ; les fiches en attente d’un projet ou d’un type sont relues seules) ; l’API Codex (D-1), le formulaire de dépôt (R-125) et les téléchargements restent à faire. Keystone#86, #87 (27 nov. 2026) : liens « Ouvrir dans Codex » sur le lien profond /documents/{id} du contrat de Codex (CX-08)."
       }
     },
     {
@@ -6544,8 +6548,8 @@
       "evidence": [],
       "progress": {
         "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "delivery": "Keystone#86 (évaluation)",
+        "note": "Évalué sans changement de code (docs/delivery-9/notes-r-n01.md) : options A (dérogation) et B (lot dédié). Question keystone:R-N01 « à discuter » avec le propriétaire (27 nov. 2026)."
       }
     },
     {
@@ -6599,9 +6603,9 @@
       "effort": "S",
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "state": "fait",
+        "delivery": "Keystone#86",
+        "note": "Filtres et puces de l’écran Plan dans la barre d’outils de l’en-tête (FilterBar), sélecteurs compacts ; plus de défilement horizontal à 390 px (vérifié avec Playwright)."
       },
       "id": "R-N04",
       "title": "Écran Plan : filtres par code d'activité en pleine largeur et défilement horizontal à 390 px (ligne Date de référence)",
@@ -6650,9 +6654,29 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "en_cours",
+        "delivery": "Keystone#88 (brouillon)",
+        "note": "Suite Atrium, formulation neutre de l’entreprise, Norma 3.1.0 : PR ouverte (Keystone#88), pas encore fusionnée."
+      }
+    },
+    {
+      "description": "Décision du propriétaire du 27 nov. 2026 : le terme générique de contrat d’ingénierie, achats et construction est remplacé par « clé en main » dans l’interface et les textes de Keystone.",
+      "kind": "decision_a_appliquer",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "id": "R-N07",
+      "title": "Terme du contrat : « clé en main » à la place du terme générique",
+      "category": "alignement_norma",
+      "sources": [
+        "Décision du propriétaire du 27 nov. 2026 (keystone:CLE-1)"
+      ],
+      "progress": {
+        "state": "en_cours",
         "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "note": "Lot « clé en main » en cours dans Keystone."
       }
     }
   ]

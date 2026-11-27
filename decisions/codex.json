@@ -21,8 +21,13 @@
         "(c) Oui, réservation indicative : la mention prévient sans refuser le dépôt."
       ],
       "bloque": "CX-020",
-      "statut": "ouverte",
-      "reponse": null
+      "statut": "repondue",
+      "reponse": {
+        "choix": "other",
+        "date": "2026-11-27",
+        "source": "page Suivi Atrium",
+        "note": "Réponse en cours de saisie, apparemment inachevée (dernière lecture le 27 nov. 2026, 11 h 12) : « La personne qui modifie un document doit bloquer la modification par d'autres personnes et une autre demande d modification ne peut être ouverte sur un même document si une modification est déjà en cours.\nSi plusieurs personnes doivent travailler sur le document a modifier alors ils se partageront le document dans un onedrive que l'on ne gère pas pour travailler a plusieurs sur le document. Seule la personne qui »"
+      }
     },
     {
       "id": "codex:O-12-delai",

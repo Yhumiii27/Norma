@@ -252,6 +252,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption AR-N06."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "AR-N06 fait (Arche#67, suite Atrium, Norma 3.1.0) ; AR-N07 ajouté et fait (Arche#68 : identifiants stockés renommés, API v2) ; AR-025 : contrat de dépôt de Codex en service suivi (Arche#66)."
     }
   ],
   "items": [
@@ -778,7 +782,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Livraison 3",
-        "note": "Références Codex vérifiées (pub_documents ou simulation), liens profonds ; dépôt dans Codex depuis une section et dépôt du PDF de la version figée (CX-03, POST /api/documents). Rattachement CAPEX (CX-01) et gel juridique de la version figée (CX-07) faits par Codex le 5 nov. 2026, actifs avec CODEX_CAPEX=on."
+        "note": "Références Codex vérifiées (pub_documents ou simulation), liens profonds ; dépôt dans Codex depuis une section et dépôt du PDF de la version figée (CX-03, POST /api/documents). Rattachement CAPEX (CX-01) et gel juridique de la version figée (CX-07) faits par Codex le 5 nov. 2026, actifs avec CODEX_CAPEX=on. Arche#66 (27 nov. 2026) : contrat de dépôt de Codex en service suivi — lien profond /documents/{id} (CX-08), reprises signées à nouveau, identifiant de requête, refus lisibles, 409 d’une version figée déjà déposée."
       }
     },
     {
@@ -1557,9 +1561,30 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "state": "fait",
+        "delivery": "Arche#67",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Arche#67, 27 nov. 2026). Base et hôte du serveur commun lus dans des variables (ATRIUM_PG_DATABASE, ATRIUM_PG_HOST)."
+      }
+    },
+    {
+      "description": "Colonnes, clé de rôle, code de critère et champs d’API qui gardaient l’ancien nom de la suite : capex_lots.from_keystone, capex_snapshots.keystone_pack_pct, rôle engineering_pmo (avec Clavis), critère g2_keystone_offers, API /api/v2/ (la v1 garde ses noms publiés, dépréciée).",
+      "kind": "decision_a_appliquer",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "id": "AR-N07",
+      "title": "Identifiants stockés renommés pour la suite Atrium",
+      "category": "alignement_norma",
+      "sources": [
+        "Décision du propriétaire du 27 nov. 2026 (« oui lance le lot Arche »)",
+        "Arche docs/DEMANDES-MATRIX.md M-16"
+      ],
+      "progress": {
+        "state": "fait",
+        "delivery": "Arche#68",
+        "note": "Migration 0037_atrium_stored_names ; clé de rôle renommée côté Clavis (Clavis#21) et dans la fiche d’opération de Matrix (Matrix#108) ; M-16 sans objet (aucune vue pub_ ne lit ces colonnes). Déployer Arche avant Clavis."
       }
     }
   ]

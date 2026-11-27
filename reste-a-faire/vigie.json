@@ -81,6 +81,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VG-N10."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "VG-N10 fait (Vigie#51, suite Atrium) ; VG-N04 évalué (Vigie#50) ; VG-N11 ajouté : reste des chaînes sources (fiches imprimables, CSV, PDF, libellés de src/lib), en cours."
     }
   ],
   "items": [
@@ -9868,8 +9872,8 @@
       "evidence": [],
       "progress": {
         "state": "a_faire",
-        "delivery": null,
-        "note": ""
+        "delivery": "Vigie#50 (évaluation)",
+        "note": "Évalué sans changement de code (docs/specs/schema-vigie-vg-n04.md) : option A (dérogation inscrite dans Norma) recommandée à court terme, B (lot dédié) ; décision du propriétaire attendue."
       }
     },
     {
@@ -9995,9 +9999,29 @@
       ],
       "evidence": [],
       "progress": {
-        "state": "a_faire",
+        "state": "fait",
+        "delivery": "Vigie#51",
+        "note": "Suite Atrium adoptée : copie de Norma 3.1.0, cookie atrium-theme (ancien nom lu à défaut), plus aucune appellation de l'ancienne suite ni de l'entreprise (Vigie#51, 27 nov. 2026)."
+      }
+    },
+    {
+      "description": "Ce que VG-N01 laissait en français fixe : fiches imprimables des événements et des actions, titres metadata des sous-pages, export CSV des déchets, rapport d’audit PDF et libellés construits par src/lib.",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "evidence": [],
+      "id": "VG-N11",
+      "title": "Chaînes sources : fiches imprimables, export CSV, rapport PDF et libellés de src/lib",
+      "category": "alignement_norma",
+      "sources": [
+        "Vigie CLAUDE.md, « Langue de l’interface »"
+      ],
+      "progress": {
+        "state": "en_cours",
         "delivery": null,
-        "note": "Norma 3.0.0 (27 nov. 2026)."
+        "note": "Lot en cours (27 nov. 2026)."
       }
     }
   ]
