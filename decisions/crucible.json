@@ -78,12 +78,12 @@
       "outil": "crucible",
       "groupe": "prio",
       "nature": "question",
-      "titre": "Règle de partage avec l’entité partenaire sur le laboratoire 67",
-      "contexte": "Une priorité de fait semble donnée à l’entité partenaire. Crucible ne peut appliquer qu’une règle écrite. Existe-t-il un accord (contrat, convention, refacturation) ?",
-      "proposition": "Écrire un accord de partage : quota ou créneaux réservés à l’entité partenaire (par exemple X jours par mois), délai de prévenance identique pour tous ; au-delà du quota, mêmes règles de priorité que les projets Keystone (classe, échéance, marge). Désaccord : comité mensuel commun.",
+      "titre": "Règle de partage avec la Filiale partenaire sur le laboratoire 67",
+      "contexte": "Une priorité de fait semble donnée à la Filiale partenaire. Crucible ne peut appliquer qu’une règle écrite. Existe-t-il un accord (contrat, convention, refacturation) ?",
+      "proposition": "Écrire un accord de partage : quota ou créneaux réservés à la Filiale partenaire (par exemple X jours par mois), délai de prévenance identique pour tous ; au-delà du quota, mêmes règles de priorité que les projets Keystone (classe, échéance, marge). Désaccord : comité mensuel commun.",
       "alternatives": [
         "Priorité égale sans quota : seules les règles de priorité comptent",
-        "l’entité partenaire reste prioritaire sur le laboratoire 67 (formaliser l’existant)",
+        "La Filiale partenaire reste prioritaire sur le laboratoire 67 (formaliser l’existant)",
         "Les projets Keystone sont prioritaires sur le laboratoire 67"
       ],
       "bloque": "L2",
@@ -151,7 +151,7 @@
       "contexte": "Le moteur classe les options selon un ordre de critères (sécurité, échéances critiques, retard pondéré, stabilité, utilisation, équité) et des règles de priorité. Ces règles doivent avoir un propriétaire légitime aux yeux des deux entités.",
       "proposition": "La direction R&D fixe et publie les règles et l’ordre des critères ; elles sont versionnées dans Crucible et chaque proposition cite la version qui l’a produite. Les classes de priorité des projets sont fixées par la direction R&D, jamais par l’entité demandeuse.",
       "alternatives": [
-        "Un comité commun entreprise / entité partenaire",
+        "Un comité commun entreprise / Filiale partenaire",
         "La direction générale",
         "Le coordinateur des moyens d’essais"
       ],
@@ -172,9 +172,9 @@
       "nature": "question",
       "titre": "Le laboratoire 67 : où, à qui, comment est-il partagé ?",
       "contexte": "Matrix ne connaît que trois sites (Lyon, Le Havre, Marseille), aucun laboratoire. « 67 » est-il un numéro de bâtiment, un département ? Qui en est propriétaire et exploitant ?",
-      "proposition": "Le laboratoire 67 est une installation exploitée par l’entreprise (ou le groupe), dont l’entité partenaire est utilisateur partenaire ; son site est à ajouter au référentiel de Matrix (demande M-6). Préciser en note la localisation.",
+      "proposition": "Le laboratoire 67 est une installation exploitée par l’entreprise (ou le groupe), dont la Filiale partenaire est utilisateur partenaire ; son site est à ajouter au référentiel de Matrix (demande M-6). Préciser en note la localisation.",
       "alternatives": [
-        "l’entité partenaire est propriétaire et exploitant ; l’entreprise est utilisatrice",
+        "La Filiale partenaire est propriétaire et exploitant ; l’entreprise est utilisatrice",
         "Copropriété ou exploitation commune"
       ],
       "bloque": "L1",
@@ -368,9 +368,9 @@
       "outil": "crucible",
       "groupe": "regles",
       "nature": "question",
-      "titre": "l’entité partenaire dans le laboratoire 67 : coactivité et plan de prévention",
-      "contexte": "Si l’entité partenaire est une autre personne morale, ses interventions relèvent de la coactivité (plan de prévention), que Vigie gère. Vigie suspend déjà les essais d’une zone « essais » pendant une intervention extérieure.",
-      "proposition": "Crucible publie ses réservations (vue pub_reservations) pour que Vigie détecte la coactivité ; le plan de prévention reste dans Vigie ; Crucible affiche son état sur les réservations de l’entité partenaire quand Vigie le publie.",
+      "titre": "La Filiale partenaire dans le laboratoire 67 : coactivité et plan de prévention",
+      "contexte": "Si la Filiale partenaire est une autre personne morale, ses interventions relèvent de la coactivité (plan de prévention), que Vigie gère. Vigie suspend déjà les essais d’une zone « essais » pendant une intervention extérieure.",
+      "proposition": "Crucible publie ses réservations (vue pub_reservations) pour que Vigie détecte la coactivité ; le plan de prévention reste dans Vigie ; Crucible affiche son état sur les réservations de la Filiale partenaire quand Vigie le publie.",
       "alternatives": [
         "Pas de plan de prévention nécessaire (même entité ou personnel commun)",
         "À voir avec le QHSE (note)"
@@ -457,7 +457,7 @@
       "nature": "question",
       "titre": "Qui tranche un conflit ?",
       "contexte": "Tous les conflits ne se valent pas. Un petit décalage sans conséquence n’a pas à remonter à la direction.",
-      "proposition": "Le coordinateur tranche si aucune option ne retarde un jalon critique ; sinon la direction R&D ; pour le laboratoire 67, un désaccord avec l’entité partenaire va au comité commun mensuel. Le référent sécurité a un droit de veto.",
+      "proposition": "Le coordinateur tranche si aucune option ne retarde un jalon critique ; sinon la direction R&D ; pour le laboratoire 67, un désaccord avec la Filiale partenaire va au comité commun mensuel. Le référent sécurité a un droit de veto.",
       "alternatives": [
         "Toujours la direction R&D",
         "Toujours le responsable de l’installation"
@@ -797,11 +797,11 @@
       "outil": "crucible",
       "groupe": "users",
       "nature": "question",
-      "titre": "Comptes des utilisateurs de l’entité partenaire",
-      "contexte": "l’entité partenaire doit pouvoir demander et voir ses créneaux du laboratoire 67.",
-      "proposition": "Comptes Entra du même annuaire si l’entité partenaire y est, sinon invités B2B ; profil « partenaire » limité à son entité et aux installations partagées.",
+      "titre": "Comptes des utilisateurs de la Filiale partenaire",
+      "contexte": "La Filiale partenaire doit pouvoir demander et voir ses créneaux du laboratoire 67.",
+      "proposition": "Comptes Entra du même annuaire si la Filiale partenaire y est, sinon invités B2B ; profil « partenaire » limité à son entité et aux installations partagées.",
       "alternatives": [
-        "Pas de compte : l’entité partenaire passe par le coordinateur",
+        "Pas de compte : la Filiale partenaire passe par le coordinateur",
         "Accès complet comme les équipes de l’entreprise"
       ],
       "bloque": "L1",
@@ -1267,7 +1267,7 @@
       "nature": "question",
       "titre": "Jeu de démonstration",
       "contexte": "Pour développer et montrer l’outil sans données réelles.",
-      "proposition": "Les quatre installations citées avec des moyens, des projets et des essais fictifs, deux entités (l’entreprise, l’entité partenaire), une règle d’exclusion et des conflits ; aucune donnée réelle.",
+      "proposition": "Les quatre installations citées avec des moyens, des projets et des essais fictifs, deux entités (l’entreprise, la Filiale partenaire), une règle d’exclusion et des conflits ; aucune donnée réelle.",
       "alternatives": [
         "Utiliser des données réelles anonymisées"
       ],
@@ -1643,7 +1643,7 @@
       "groupe": "extra",
       "nature": "question",
       "titre": "Sites et filiales lus dans Matrix (CR-060)",
-      "contexte": "Sites et entités étaient saisis dans Crucible ; Matrix connaît désormais le site de Saint-Martin-de-Crau (smc) et la filiale l’entité partenaire (SMC) (M-6).",
+      "contexte": "Sites et entités étaient saisis dans Crucible ; Matrix connaît désormais le site de Saint-Martin-de-Crau (smc) et la Filiale partenaire (SMC) (M-6).",
       "proposition": "L’administrateur relie un site ou une entité de Crucible à un site ou une filiale de Matrix ; son nom (et la ville et le pays d’un site) suit ensuite Matrix ; les sites et filiales de Matrix absents de Crucible sont proposés à l’ajout.",
       "alternatives": [
         "Reprendre les codes de Matrix comme codes de Crucible (renommage)",
@@ -1755,7 +1755,7 @@
       "outil": "crucible",
       "groupe": "data",
       "nature": "donnee",
-      "titre": "Accord avec l’entité partenaire",
+      "titre": "Accord avec la Filiale partenaire",
       "contexte": "S’il existe : quotas, créneaux réservés, priorités, refacturation, contact.",
       "aide": "Résumé de l’accord ou « aucun accord écrit »",
       "bloque": "L2",
@@ -1808,7 +1808,7 @@
       "groupe": "data",
       "nature": "donnee",
       "titre": "Participants au premier atelier",
-      "contexte": "Qui inviter à l’atelier de cadrage (docs/ATELIER-CADRAGE.md) : responsables d’installation, référent sécurité, chefs de projet, représentant de l’entité partenaire, coordinateur.",
+      "contexte": "Qui inviter à l’atelier de cadrage (docs/ATELIER-CADRAGE.md) : responsables d’installation, référent sécurité, chefs de projet, représentant de la Filiale partenaire, coordinateur.",
       "aide": "Nom ; fonction ; entité",
       "bloque": "L0",
       "statut": "ouverte",

@@ -1,5 +1,11 @@
 # Norma — journal des versions
 
+## 3.1.1 — 27 novembre 2026
+
+- **Filiale partenaire** (décision du propriétaire du même jour) : la filiale partenaire de Crucible s'appelle partout
+  « Filiale partenaire », comme dans Matrix et Crucible ; « l'entité partenaire » est remplacé dans `decisions/crucible.json`
+  et `reste-a-faire/crucible.json`.
+
 ## 3.1.0 — 27 novembre 2026
 
 Décisions du propriétaire du même jour : l'outil des équipes d'ingénierie, construit en sortant des éléments d'ingénierie de
