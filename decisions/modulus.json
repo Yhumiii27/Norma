@@ -1,0 +1,576 @@
+{
+  "outil": "modulus",
+  "updated": "2026-11-27",
+  "origine": {
+    "depot": "Yhumiii27/modulus",
+    "fichier": "scripts/questionnaire/questions.json",
+    "commit": "0204c68",
+    "reprise": "Questionnaire « Décisions Modulus » repris le 27 nov. 2026 ; réponses de sa base (collection answers) reprises."
+  },
+  "groupes": {
+    "prio": "À traiter en priorité",
+    "catalogue": "Catalogue, BOM et prix",
+    "affaires": "Affaires, offres et ventes",
+    "cotation": "Cotation des options",
+    "savoir": "Savoir-faire",
+    "droits": "Utilisateurs et droits",
+    "data": "Données à fournir"
+  },
+  "decide": [
+    "P-1 · La partie « machines standard et catalogue » sort de Keystone pour un outil à part : Modulus.",
+    "P-2 · Modulus publie la liste des machines standard à Arche et à Keystone.",
+    "P-3 · À la création d’un CAPEX, la filiale choisit une machine et ses options ; une option absente du catalogue ouvre une demande de cotation avec un questionnaire type.",
+    "P-4 · Une machine standard, avec ou sans options, est liée à une BOM préfaite et à des prix : budget pour Keystone, vente pour Arche.",
+    "P-5 · Modulus garde la trace de ce qui est vendu dans chaque projet et des options développées, pour capitaliser sur ce que l’on sait ou ne sait pas faire.",
+    "P-6 · Charte Nocturne (Norma), thèmes sombre et clair ; règles communes de la suite (Norma)."
+  ],
+  "questions": [
+    {
+      "id": "modulus:D-1",
+      "ref": "D-1",
+      "outil": "modulus",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Les réponses aux besoins machines des CAPEX passent-elles de Keystone à Modulus ?",
+      "contexte": "Aujourd’hui Keystone répond aux besoins machines des CAPEX d’Arche (contrat K-02 : qualification, prix indicatif, devis, offre ferme, projet créé à la commande). Ces réponses portent sur des configurations du catalogue et sur des options cotées, donc sur ce que Modulus tiendra.",
+      "proposition": "Oui : demandes de cotation et réponses dans Modulus (publiées à Arche) ; Keystone ne garde que l’exécution et crée le projet à partir de la configuration vendue.",
+      "alternatives": [
+        "Non : les réponses restent dans Keystone, Modulus ne fournit que le catalogue et les prix"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-3",
+      "ref": "D-3",
+      "outil": "modulus",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Où vivent les clients externes ?",
+      "contexte": "Une affaire porte un client (externe, ou une filiale du groupe pour un CAPEX). Il faut savoir si Modulus tient la fiche client ou lit un autre outil.",
+      "proposition": "Dans Modulus : raison sociale, pays, contacts commerciaux, SIRET / TVA, sans aucune donnée comptable (facturation et comptes restent dans Sage).",
+      "alternatives": [
+        "Lus dans un CRM existant (Modulus ne garde que l’identifiant)",
+        "Lus dans Sage"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "other",
+        "note": "Dans l'ensemble, le groupe fonctionne ainsi : les filiales sont dans un certain nombre de pays (liste à fournir) et travaillent avec les clients miniers pour la fourniture d'explosif (soit en production depuis la filiale puis livraison sur le site minier, soit en installant les équipements de production directement sur le site minier) : c'est la partie gérée par les CAPEX. La création des équipements de production et leur livraison, installation, mise en production et la formation des opérateurs sont le rôle de l'entreprise d'ingénierie. Il y a donc trois cas : 1- la filiale achète à l'entreprise d'ingénierie et exploite les équipements (sur son site ou sur le site minier) et vend la production à un client ; 2- la filiale sert d'intermédiaire et le site minier achète des équipements qu'il exploite lui-même ; 3- un client achète directement un équipement à l'entreprise d'ingénierie. Les clients externes au groupe ne pourront pas avoir accès au logiciel de montage des CAPEX : il faut trouver une solution pour ces cas-là. (Note du propriétaire du 24 nov. 2026, reformulée sans nom d'entreprise.)",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-15",
+      "ref": "D-15",
+      "outil": "modulus",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Qui voit le budget (coût de revient) et la marge ?",
+      "contexte": "Deux prix, jamais mélangés : le budget (interne, pour Keystone) et le prix de vente (pour Arche et les clients). Arche et les filiales ne voient jamais le coût ni la marge.",
+      "proposition": "Chiffreurs, direction commerciale, direction de portefeuille et direction générale ; pas les commerciaux (ils voient le prix de vente et le niveau de marge en feu tricolore).",
+      "alternatives": [
+        "Aussi les commerciaux, en clair",
+        "Seulement la direction commerciale et la direction générale"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-16",
+      "ref": "D-16",
+      "outil": "modulus",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Qui tient la fiche des clients ?",
+      "contexte": "Suite de D-3. Keystone tient déjà les clients, internes (filiales de Matrix) et externes, et les publie (keystone.pub_clients). Modulus aura aussi des prospects, jamais livrés.",
+      "proposition": "Modulus lit les clients de Keystone ; un prospect se crée dans Modulus ; à la commande, le client est créé dans Keystone s'il n'y est pas (par l'API de Keystone).",
+      "alternatives": [
+        "Modulus devient la source des clients, Keystone les lit",
+        "Chacun tient ses clients"
+      ],
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:D-17",
+      "ref": "D-17",
+      "outil": "modulus",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Comment recueillir le besoin d'un client sans accès aux outils (cas 2 et 3) ?",
+      "contexte": "Suite de D-3. Un site minier qui achète par l'intermédiaire d'une filiale (cas 2), ou un client direct de l’entreprise (cas 3), n'a accès ni à Arche ni à Modulus.",
+      "proposition": "Le commercial saisit l'affaire et le questionnaire de cotation dans Modulus ; Modulus produit le questionnaire en PDF à envoyer au client, puis le commercial reporte les réponses ; la filiale intermédiaire peut saisir la demande si elle a un accès Modulus.",
+      "alternatives": [
+        "Formulaire en ligne sécurisé pour le client (lien à usage unique), à valider par la DSI",
+        "La filiale intermédiaire saisit toujours la demande"
+      ],
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:D-5",
+      "ref": "D-5",
+      "outil": "modulus",
+      "groupe": "catalogue",
+      "nature": "question",
+      "titre": "D’où viennent les articles des BOM préfaites ?",
+      "contexte": "Une BOM préfaite liste des articles. Keystone tient déjà un référentiel d’articles (catalogue PLM, derniers prix d’achat).",
+      "proposition": "Du référentiel d’articles de Keystone, lu par la vue keystone.pub_articles ; un article manquant se crée dans Keystone.",
+      "alternatives": [
+        "Un référentiel d’articles propre à Modulus",
+        "Mixte : articles de Keystone, et articles « génériques » propres à Modulus pour chiffrer avant conception"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-6",
+      "ref": "D-6",
+      "outil": "modulus",
+      "groupe": "catalogue",
+      "nature": "question",
+      "titre": "Quelles caractéristiques techniques par type de machine ?",
+      "contexte": "Chaque machine standard porte des caractéristiques (capacité, encombrement, utilités…) qui servent au configurateur, aux règles entre options et au savoir-faire.",
+      "proposition": "Une liste par type, fournie par l’ingénierie ; en attendant : capacité nominale et unité, encombrement (L × l × h), masse, puissance installée, air comprimé, eau.",
+      "alternatives": [
+        "Liste unique pour tous les types"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "other",
+        "note": "On retient ta proposition pour l'instant, nous complèterons les fiches au fur et a mesure de l'évolution de l'outil et du catalogue.",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-7",
+      "ref": "D-7",
+      "outil": "modulus",
+      "groupe": "catalogue",
+      "nature": "question",
+      "titre": "Le budget se calcule-t-il ou se saisit-il ?",
+      "contexte": "Le budget d’une machine ou d’une option peut être calculé (BOM × derniers prix d’achat + heures standard × taux) ou saisi par poste (matière, sous-traitance, ingénierie, atelier, chantier, frais).",
+      "proposition": "Les deux : Modulus propose le budget calculé, le chiffreur peut saisir par poste, l’écart entre les deux est montré.",
+      "alternatives": [
+        "Saisie par poste seulement",
+        "Calcul seulement"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-4",
+      "ref": "D-4",
+      "outil": "modulus",
+      "groupe": "catalogue",
+      "nature": "question",
+      "titre": "Qui valide un prix de vente publié et une remise ?",
+      "contexte": "Une grille de prix ou un prix de vente se publie après validation ; une remise sur une offre aussi, au-delà d’un seuil.",
+      "proposition": "La direction commerciale valide les grilles et les prix ; une remise au-delà de 10 % est validée aussi par la direction générale.",
+      "alternatives": [
+        "La direction commerciale seule, quel que soit le taux",
+        "Seuil différent (préciser en note)"
+      ],
+      "bloque": "L2",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-14",
+      "ref": "D-14",
+      "outil": "modulus",
+      "groupe": "catalogue",
+      "nature": "question",
+      "titre": "Devises de vente",
+      "contexte": "Les prix sont tenus en euros ; certaines affaires se vendent dans une autre devise.",
+      "proposition": "Grilles en euros ; une offre peut être émise dans la devise du client au cours du jour, noté dans l’offre et figé avec elle.",
+      "alternatives": [
+        "Grilles de prix par devise",
+        "Euro seulement"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-2",
+      "ref": "D-2",
+      "outil": "modulus",
+      "groupe": "affaires",
+      "nature": "question",
+      "titre": "Modulus tient-il un pipeline commercial ?",
+      "contexte": "Le suivi des affaires peut aller du simple statut à un CRM complet (prévisions, relances, activités).",
+      "proposition": "Oui, simple : statut, probabilité, montant pondéré, motifs de perte, taux de transformation.",
+      "alternatives": [
+        "Non : pas de pipeline, seulement les affaires et les offres",
+        "Un CRM complet (activités, relances, prévisions), plus tard"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-8",
+      "ref": "D-8",
+      "outil": "modulus",
+      "groupe": "affaires",
+      "nature": "question",
+      "titre": "Une revue d’offre (go / no-go) est-elle obligatoire avant envoi ?",
+      "contexte": "La revue vérifie la marge, les options « jamais fait » ou « à éviter », le délai et la charge de l’ingénierie, puis trace la décision.",
+      "proposition": "Obligatoire au-delà de 150 k€ ou dès qu’une option est « jamais fait » ou « à éviter » ; facultative sinon.",
+      "alternatives": [
+        "Toujours obligatoire",
+        "Jamais obligatoire (proposée seulement)",
+        "Seuil différent (préciser en note)"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-13",
+      "ref": "D-13",
+      "outil": "modulus",
+      "groupe": "affaires",
+      "nature": "question",
+      "titre": "Le client voit-il son offre en ligne ?",
+      "contexte": "Keystone a retiré son portail client : les clients ne voient jamais les outils internes.",
+      "proposition": "Non : l’offre est un PDF envoyé, déposé dans Codex ; pas de portail client.",
+      "alternatives": [
+        "Un portail client en lecture seule, plus tard"
+      ],
+      "bloque": "",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-9",
+      "ref": "D-9",
+      "outil": "modulus",
+      "groupe": "affaires",
+      "nature": "question",
+      "titre": "Quand Keystone renvoie-t-il le coût réel d’un projet ?",
+      "contexte": "Le retour du coût réel par poste, des écarts et du REX nourrit le savoir-faire.",
+      "proposition": "À la clôture du projet, puis une mise à jour à la fin de la garantie.",
+      "alternatives": [
+        "À chaque jalon du projet",
+        "À la clôture seulement"
+      ],
+      "bloque": "L5",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-10",
+      "ref": "D-10",
+      "outil": "modulus",
+      "groupe": "cotation",
+      "nature": "question",
+      "titre": "Un questionnaire de cotation type par quoi ?",
+      "contexte": "Quand une option n’est pas au catalogue, un questionnaire fait comprendre le besoin (produit, cadence, environnement, normes, interfaces, délai, pièces).",
+      "proposition": "Un tronc commun pour toutes les demandes, complété par des questions par type de machine × catégorie d’option, tenues par l’ingénierie.",
+      "alternatives": [
+        "Un seul questionnaire pour tout",
+        "Un questionnaire par type de machine seulement"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "other",
+        "note": "Part sur ta proposition, nous teferons probablement ajuster cela plus tard",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-11",
+      "ref": "D-11",
+      "outil": "modulus",
+      "groupe": "cotation",
+      "nature": "question",
+      "titre": "Délais cibles de réponse à une demande de cotation",
+      "contexte": "Le délai de réponse est suivi, avec relance et échéance au chiffreur.",
+      "proposition": "Indicatif : 5 jours ouvrés ; devis : 15 ; offre ferme : 30.",
+      "alternatives": [
+        "Délais différents (préciser en note)"
+      ],
+      "bloque": "L4",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "other",
+        "note": "Prends ta proposition comme base, fait en sorte que cela soit réglable pour pouvoir l'ajuster a l'avenir",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:D-12",
+      "ref": "D-12",
+      "outil": "modulus",
+      "groupe": "savoir",
+      "nature": "question",
+      "titre": "Règles des niveaux de savoir-faire",
+      "contexte": "Le niveau (maîtrisé, déjà fait, chiffré jamais vendu, vendu pas encore livré, jamais fait, à éviter) se calcule à partir des affaires, ventes et retours de projet.",
+      "proposition": "Maîtrisé = au catalogue et livré au moins 3 fois avec un écart coût réel / budget ≤ 10 % ; à éviter = marqué avec motif, ou écart > 30 %, ou REX « difficulté majeure » ; une option spécifique vendue 2 fois est proposée pour entrer au catalogue.",
+      "alternatives": [
+        "Seuils différents (préciser en note)"
+      ],
+      "bloque": "L6",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:U-1",
+      "ref": "U-1",
+      "outil": "modulus",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Rôles de Modulus",
+      "contexte": "Les droits viennent de Clavis (rôles propres à Modulus, lus dans clavis.pub_acces) ; une personne peut cumuler plusieurs rôles.",
+      "proposition": "Commercial, chiffreur, ingénierie (catalogue, BOM, règles), direction commerciale (validation des prix), lecture, administrateur.",
+      "alternatives": [
+        "Ajouter un rôle « assistante commerciale » (saisie des affaires sans prix)",
+        "Autre découpage (préciser en note)"
+      ],
+      "bloque": "L1",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:U-2",
+      "ref": "U-2",
+      "outil": "modulus",
+      "groupe": "droits",
+      "nature": "question",
+      "titre": "Qui voit une affaire ?",
+      "contexte": "Une affaire porte des prix et des informations client sensibles.",
+      "proposition": "L’équipe de l’affaire (chargé d’affaires, chiffreur, ingénierie désignée), la direction commerciale et la direction générale ; les autres commerciaux ne voient que la liste (client, statut), sans les prix.",
+      "alternatives": [
+        "Tout le service commercial voit tout",
+        "Seulement l’équipe de l’affaire et la direction"
+      ],
+      "bloque": "L3",
+      "statut": "repondue",
+      "reponse": {
+        "choix": "default",
+        "note": "",
+        "date": "2026-11-24",
+        "source": "questionnaire modulus"
+      }
+    },
+    {
+      "id": "modulus:DATA-0",
+      "ref": "DATA-0",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Filiales du groupe et pays",
+      "contexte": "Liste des filiales et de leurs pays (à saisir de préférence dans le référentiel de Matrix, qui fait foi). Modèle : docs/donnees/00-filiales-pays.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-1",
+      "ref": "DATA-1",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Types et machines standard",
+      "contexte": "Ce qui manque ou diffère du catalogue de Keystone (repris automatiquement). Modèle : docs/donnees/01-machines-standard.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-2",
+      "ref": "DATA-2",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Caractéristiques techniques par type",
+      "contexte": "Liste de départ de D-6. Modèle : docs/donnees/02-caracteristiques-par-type.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-3",
+      "ref": "DATA-3",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Options courantes",
+      "contexte": "Options, catégories, prix indicatif, délai. Modèle : docs/donnees/03-options.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-4",
+      "ref": "DATA-4",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Règles entre options",
+      "contexte": "Exclut, impose, obligatoire si, une parmi. Modèle : docs/donnees/04-regles-options.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-5",
+      "ref": "DATA-5",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "BOM préfaites",
+      "contexte": "Machines et options (options en delta), articles par code Keystone. Modèle : docs/donnees/05-bom-standard.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-6",
+      "ref": "DATA-6",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Budgets par poste et taux horaires",
+      "contexte": "Modèle : docs/donnees/06-budgets-et-taux.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-7",
+      "ref": "DATA-7",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Grilles de prix de vente",
+      "contexte": "Modèle : docs/donnees/07-grilles-de-prix.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-8",
+      "ref": "DATA-8",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Clients et prospects",
+      "contexte": "Prospects et contacts commerciaux (les clients connus sont lus dans Keystone). Modèle : docs/donnees/08-clients-et-prospects.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-9",
+      "ref": "DATA-9",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Affaires passées à reprendre",
+      "contexte": "Projets livrés des dernières années, avec leurs options spécifiques et leur coût réel. Modèle : docs/donnees/09-affaires-passees.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L6",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "modulus:DATA-10",
+      "ref": "DATA-10",
+      "outil": "modulus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Questions de cotation",
+      "contexte": "Tronc commun et questions par type × catégorie. Modèle : docs/donnees/10-questions-cotation.csv. Détail : docs/DONNEES.md.",
+      "aide": "Indiquez où trouver la donnée (fichier, outil, personne) ou collez-la ici ; le fichier complet se dépose dans Codex",
+      "bloque": "L4",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

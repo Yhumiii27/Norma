@@ -1,0 +1,27 @@
+{
+  "outil": "vigie",
+  "updated": "2026-11-27",
+  "groupes": {
+    "session": "Questions des sessions",
+    "data": "Données à fournir"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "vigie:VG-N04",
+      "ref": "VG-N04",
+      "outil": "vigie",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Tables hors pgSchema (pgTable réécrit par le migrateur)",
+      "contexte": "REGLES § 4 demande des tables déclarées par pgSchema('vigie').table(…). Vigie garde pgTable : migrateServer() réécrit \"public\". en \"vigie\". (P-02), PGlite reste dans public.",
+      "proposition": "A — Dérogation inscrite dans Norma : la réécriture au migrateur est admise pour Vigie (recommandée).",
+      "alternatives": [
+        "B — Lot dédié : tables déclarées par pgSchema, PGlite repris dans le schéma ; les applications locales étant reportées (27 nov. 2026), la reprise se limite aux bases de démonstration et de développement."
+      ],
+      "bloque": "VG-N04",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

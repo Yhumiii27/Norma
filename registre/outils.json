@@ -1,10 +1,10 @@
 {
-  "description": "Registre des outils de la suite EPC2I : dépôt, schéma et rôle PostgreSQL, ports réservés sur le Mac du propriétaire, connexion par Clavis. Lu par les outils et par Matrix ; une ligne ne se renomme jamais.",
+  "description": "Registre des outils de la suite Atrium : dépôt, schéma et rôle PostgreSQL, ports réservés sur le Mac du propriétaire, connexion par Clavis. Lu par les outils et par Matrix ; une ligne ne se renomme jamais.",
   "outils": [
     {
       "code": "keystone",
       "nom": "Keystone",
-      "role_metier": "Gestion des projets EPC2i (exécution)",
+      "role_metier": "Gestion des projets (exécution)",
       "depot": "Yhumiii27/Keystone",
       "schema": "keystone",
       "role_pg": "keystone_app",
@@ -167,5 +167,12 @@
   ],
   "ports_reserves_hors_outils": [
     5432
-  ]
+  ],
+  "serveur_commun": {
+    "base": "atrium",
+    "hote": "atrium-postgres",
+    "configuration": "/etc/atrium/<outil>.env",
+    "role_sauvegarde": "atrium_sauvegarde",
+    "note": "Noms cibles depuis Norma 3.0 (suite renommée Atrium, 27 novembre 2026). Le serveur commun est renommé par Matrix dans une opération séparée (base, hôte, dossier de configuration, rôle de sauvegarde) : tant que Matrix ne l'a pas annoncée faite, le serveur en service garde ses noms actuels et un outil ne change pas sa connexion. Les schémas et rôles <outil>_app ne changent pas."
+  }
 }

@@ -1,25 +1,25 @@
-# Reste à faire de la solution EPC2I
+# Reste à faire de la solution Atrium
 
-Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 27 novembre 2026. Produite par `npm run reste-a-faire` avec la page `.artifacts/reste-a-faire.html` ; ne pas la modifier à la main.
+Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 27 novembre 2026. Produite par `npm run suivi` avec la page `.artifacts/suivi.html` (« Suivi Atrium ») ; ne pas la modifier à la main.
 
-**Avancement** : 818 faits, 91 en cours, 213 à faire, sur 1122 points.
+**Avancement** : 820 faits, 91 en cours, 224 à faire, sur 1135 points.
 
 ## Sommaire
 
 | Outil | Fait | En cours | À faire | Total | Bloquant production (restants) | À décider (restants) | Mis à jour |
 |---|---:|---:|---:|---:|---:|---:|---|
-| [Keystone](#keystone) | 140 | 28 | 52 | 220 | 14 | 20 | 2026-11-27 |
-| [Codex](#codex) | 64 | 14 | 66 | 144 | 0 | 54 | 2026-11-27 |
-| [Vigie](#vigie) | 299 | 13 | 55 | 367 | 6 | 29 | 2026-11-27 |
-| [Cursus](#cursus) | 179 | 3 | 16 | 198 | 1 | 0 | 2026-11-27 |
-| [Arche](#arche) | 46 | 10 | 2 | 58 | 3 | 3 | 2026-11-27 |
-| [Crucible](#crucible) | 32 | 4 | 3 | 39 | 1 | 1 | 2026-11-27 |
-| [Clavis](#clavis) | 20 | 1 | 6 | 27 | 0 | 0 | 2026-11-27 |
-| [Matrix](#matrix) | 25 | 11 | 5 | 41 | 1 | 2 | 2026-11-27 |
-| [Modulus](#modulus) | 3 | 5 | 2 | 10 | 0 | 0 | 2026-11-27 |
-| [Vector](#vector) | 3 | 0 | 6 | 9 | 0 | 0 | 2026-11-27 |
-| [Norma (socle)](#norma) | 7 | 2 | 0 | 9 | 0 | 0 | 2026-11-27 |
-| **Total** | **818** | **91** | **213** | **1122** | | | |
+| [Keystone](#keystone) | 140 | 28 | 53 | 221 | 14 | 20 | 2026-11-27 |
+| [Codex](#codex) | 64 | 14 | 67 | 145 | 0 | 54 | 2026-11-27 |
+| [Vigie](#vigie) | 299 | 13 | 56 | 368 | 6 | 29 | 2026-11-27 |
+| [Cursus](#cursus) | 179 | 3 | 17 | 199 | 1 | 0 | 2026-11-27 |
+| [Arche](#arche) | 46 | 10 | 3 | 59 | 3 | 3 | 2026-11-27 |
+| [Crucible](#crucible) | 32 | 4 | 4 | 40 | 1 | 1 | 2026-11-27 |
+| [Clavis](#clavis) | 20 | 1 | 7 | 28 | 0 | 0 | 2026-11-27 |
+| [Matrix](#matrix) | 25 | 11 | 7 | 43 | 1 | 3 | 2026-11-27 |
+| [Modulus](#modulus) | 3 | 5 | 3 | 11 | 0 | 0 | 2026-11-27 |
+| [Vector](#vector) | 3 | 0 | 7 | 10 | 0 | 0 | 2026-11-27 |
+| [Norma (socle)](#norma) | 9 | 2 | 0 | 11 | 0 | 0 | 2026-11-27 |
+| **Total** | **820** | **91** | **224** | **1135** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -27,7 +27,7 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 
 ## Keystone
 
-140 faits, 28 en cours, 52 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+140 faits, 28 en cours, 53 à faire. Source : Yhumiii27/Keystone, `docs/reste-a-developper.json` (commit `b24fd0d`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (16 restants, 15 faits)
 
@@ -55,11 +55,11 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
 - **R-177 · Rédiger le guide utilisateur, former par rôle et organiser le support** — *Prochaine étape · non commencé · effort M* · **en cours (Livraison 8)**  
   Il n'existe aucune documentation pour les utilisateurs : le README et docs/ s'adressent aux développeurs. Avant la bêta multi-utilisateur, préparer un guide par rôle (8 profils), des scénarios de recette pour les bêta-testeurs, une formation, un canal de support et un dossier d'exploitation pour la DSI (déploiement, configuration des connecteurs, restauration).
   *Avancement : Livraison 8 : runbook, guides par rôle et scénarios de recette bêta en français ; contacts support, plan de formation et calendrier bêta à compléter. · Attend : Liste des bêta-testeurs et calendrier de la bêta (I-1a) · Sources : I-1a (bêta-testeurs avant production), D-7a (connecteurs configurés par l'IT), 00 §8.15*
-- **R-178 · Fournir et charger les listes de référence réelles d'EPC2i** — *Prochaine étape · attend le responsable produit · effort S* · **en cours (Livraison 8)**  
+- **R-178 · Fournir et charger les listes de référence réelles de l’entreprise** — *Prochaine étape · attend le responsable produit · effort S* · **en cours (Livraison 8)**  
   Les Paramètres (catégories de risques et de coûts, compétences, types de livrables, statuts, lieux de stockage), la grille de taux, les services et les clients viennent des constantes du prototype, et « Rétablir les valeurs par défaut » recharge SETTINGS0. Il faut que la direction fournisse les vraies listes et qu'une reprise les charge, en complément du démarrage sans données de démonstration.
   *Avancement : Livraison 8 : coefficients de production en attente (valeurs provisoires) et fiche de collecte des données de référence ; vraies valeurs attendues de la direction. · Attend : Listes métier validées par la direction (catégories, compétences, taux, services, clients, lieux) · Sources : A-14, A-15, A-10, 10 §1 (Paramètres)*
 - **R-212 · Envoyer en signature électronique (DocuSign) les documents à officialiser avec un client** — *Prochaine étape · attend le responsable produit · effort M*  
-  Le responsable produit (10 nov. 2026, D9-06) : les clients ne voient pas Keystone ; un point à officialiser avec un client (PV, décision) part en signature par DocuSign. Nouvel outil : compte DocuSign d’EPC2i et accord de la DSI ; document signé rangé dans Codex.
+  Le responsable produit (10 nov. 2026, D9-06) : les clients ne voient pas Keystone ; un point à officialiser avec un client (PV, décision) part en signature par DocuSign. Nouvel outil : compte DocuSign de l’entreprise et accord de la DSI ; document signé rangé dans Codex.
   *Attend : Cadrage avec le responsable produit et la DSI (compte DocuSign, documents concernés) · Sources : Questionnaire des décisions en attente (10 nov. 2026)*
 - **R-213 · Portail fournisseur pour recevoir les devis des consultations** — *Prochaine étape · attend le responsable produit · effort M*  
   Le responsable produit (10 nov. 2026, D9-17) : les devis des consultations arrivent par un portail fournisseur. Nouvel outil, à cadrer (accès des fournisseurs, sécurité, lien avec Sage X3).
@@ -77,7 +77,7 @@ Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort 
   Keystone.app lance un serveur local avec sa propre base PGlite sur le port 3000. Avec un serveur hébergé, il faut soit la faire pointer vers l’URL du serveur (fenêtre WebKit seule), soit l’abandonner.
   *Avancement : Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — 31 oct. 2026 : le responsable produit garde le choix web ou application ; l’application macOS sera adaptée comme l’application Windows (R-210) pour pointer vers le serveur hébergé. · Attend : Décision du responsable produit une fois l’hébergement choisi (I-1a) · Sources : I-1a*
 - **R-210 · Application Windows (.exe) à côté de l’accès web** — *Plus tard · non commencé · effort M* · **en cours (Livraison 9)**  
-  Le responsable produit (31 oct. 2026, questionnaire L9-X2) : l’accès web reste la solution pour accéder à Keystone de n’importe où ; une application Windows (.exe), installable par ceux qui le souhaitent, coexiste avec lui pour laisser le choix à l’utilisateur. Fenêtre native (WebView2) sur le serveur Keystone d’EPC2i, connexion Microsoft habituelle, sans serveur local.
+  Le responsable produit (31 oct. 2026, questionnaire L9-X2) : l’accès web reste la solution pour accéder à Keystone de n’importe où ; une application Windows (.exe), installable par ceux qui le souhaitent, coexiste avec lui pour laisser le choix à l’utilisateur. Fenêtre native (WebView2) sur le serveur Keystone de l’entreprise, connexion Microsoft habituelle, sans serveur local.
   *Avancement : Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — 31 oct. 2026 : application construite (C# Windows Forms + WebView2, .NET 10, Keystone.exe autonome win-x64, docs/delivery-9/notes-r210-windows-app.md) ; compilée sous Linux, fabrication à la demande (windows-app.yml). Reste : essai sur un PC Windows avec un serveur hébergé (I-1a), signature de code et mode de diffusion (DSI). · Sources : Questionnaire de la livraison 9, L9-X2 (31 oct. 2026)*
 
 Faits : R-001 Fusionner la livraison 6 dans main ; R-002 Passer de PGlite à un serveur PostgreSQL ; R-006 Mettre en place des tâches planifiées côté serveur ; R-007 Gérer les secrets et la configuration de production ; R-008 Durcir la sécurité HTTP ; R-009 Ajouter journalisation, supervision et alertes ; R-010 Sécuriser les écritures concurrentes en multi-utilisateur ; R-011 Démarrer la production sans données de démonstration ; R-013 Remplacer l’horloge figée au 25 sept. 2026 par l’horloge réelle ; R-015 Notifier les événements clés aux personnes concernées (X-6a) ; R-016 Mettre en place l’intégration continue et versionner les tests de bout en bout ; R-017 Tenir la charge avec de vrais volumes de données ; R-175 Analyser par antivirus les fichiers déposés dans Keystone ; R-176 Ajouter des pages d'erreur et « page introuvable » traduites ; R-199 Rappels d’échéances et rapports programmés (envoi automatique).
@@ -249,7 +249,7 @@ Faits : R-096 Réception refusée : NC fournisseur Vigie pré-remplie et alerte 
   Le responsable produit pense que les numéros d’articles PLM sont attribués par SolidWorks 3DX ; l’ingénierie doit le confirmer, ainsi que le système visé (3DEXPERIENCE ou SolidWorks PDM). Si c’est le cas, la création d’articles dans Keystone devient une reprise en lecture, Keystone n’ajoutant que ses données techniques.
   *Avancement :  10 nov. 2026 (D9-18) : numérotation par un fichier XML sur un serveur local — lire ce fichier d’abord (fichier attendu), puis tester l’hébergement et l’échange avec 3DX. · Attend : Confirmation de l’ingénierie (A-1b, marqué Bloquant production) · Sources : A-1b, E-1a, E-1b, 09 §5.9, DECISIONS.md « À traiter en priorité », DELIVERY-4.md §3*
 
-Faits : R-102 Mettre en place la validation des articles par l’ingénierie ; R-103 Valoriser la nomenclature au prix commandé, sinon dernier achat, sinon catalogue ; R-104 Chiffrer les remplacements d’articles entre deux révisions ; R-105 Prendre la dernière révision figée ou diffusée comme référence des entrées ; R-106 Faire lancer le circuit Codex par « Valider la diffusion » des livrables d’ingénierie ; R-108 P&ID : rechercher l’article d’un repère dans tout le catalogue ; R-109 P&ID : signaler l’écart de révision avec Codex et proposer un ré-import ; R-110 Ne protéger pour le parc que les pièces réellement montées ; R-111 Signaler le doublon possible de la grue EQ-CRN-250T / ASM-RMG-250 ; R-191 Part EPC2i du pack ingénierie et son % de complétude (vue pub_pack_ingenierie).
+Faits : R-102 Mettre en place la validation des articles par l’ingénierie ; R-103 Valoriser la nomenclature au prix commandé, sinon dernier achat, sinon catalogue ; R-104 Chiffrer les remplacements d’articles entre deux révisions ; R-105 Prendre la dernière révision figée ou diffusée comme référence des entrées ; R-106 Faire lancer le circuit Codex par « Valider la diffusion » des livrables d’ingénierie ; R-108 P&ID : rechercher l’article d’un repère dans tout le catalogue ; R-109 P&ID : signaler l’écart de révision avec Codex et proposer un ré-import ; R-110 Ne protéger pour le parc que les pièces réellement montées ; R-111 Signaler le doublon possible de la grue EQ-CRN-250T / ASM-RMG-250 ; R-191 Part ingénierie du pack ingénierie et son % de complétude (vue pub_pack_ingenierie).
 
 ### Qualité, chantier et mise en service (2 restants, 11 faits)
 
@@ -319,9 +319,9 @@ Faits : R-146 Rendre Keystone utilisable sur tablette ; R-148 Afficher les texte
 - **R-172 · Solder les TODO(db) restants (import P&ID, lien CR ↔ activité, nom du responsable)** — *Plus tard · non commencé · effort S* · **en cours (Livraison 8)**  
   La table import_jobs existe désormais : faire passer l’import P&ID par une ImportJob (nouveau type « pid ») au lieu de recalculer le staging depuis le fichier soumis, et mettre à jour le commentaire périmé. Modéliser le lien CR ↔ activité pour retirer la note figée A1250 / CR-008 du tiroir du plan. Afficher partout le nom du responsable au lieu de son code (« SP » sur un projet créé par l’assistant), dans l’export du plan comme à l’écran : la DAL fournit déjà ownerName.
   *Avancement : Livraison 8 : noms des responsables sur le Plan ; le lien CR ↔ activité était R-062 ; l’import P&ID reste suspendu tant que les imports sont coupés (D-7b). · Sources : 11 §3.12 ImportJob, DELIVERY-6.md §6 Minor points, D-7b (imports gelés : l’import P&ID du prototype reste actif)*
-- **R-194 · Socle partagé @epc2i/socle (Keystone et application CAPEX)** — *Plus tard · non commencé · effort L*  
+- **R-194 · Socle partagé @atrium/socle (Keystone et application CAPEX)** — *Plus tard · non commencé · effort L*  
   Extraire de Keystone la coquille, le design Nocturne, l’infrastructure i18n, l’authentification Entra, la piste d’audit, le moteur de validations, les tâches planifiées, la configuration, les journaux et la santé, l’exploitation, en un paquet versionné consommé par Keystone et par l’application CAPEX ; aucun changement de comportement dans Keystone. L’application CAPEX démarre avec une copie du socle, remplacée par le paquet.
-  *Avancement : Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-12 — Arche consommera @epc2i/socle à la place de ses copies. · Attend : MVP de l’application CAPEX stabilisé · Sources : Responsable produit, 22 oct. 2026 (application CAPEX dédiée, DIG-PRODI v4.0), docs/dig-prodi/ARCHITECTURE-CAPEX-KEYSTONE.md*
+  *Avancement : Consigné le 22 oct. 2026 (lien avec l’application CAPEX) ; à valider avant de construire. Demandes d’Arche (dépôt Arche, docs/DEMANDES-KEYSTONE.md et CONTRATS.md, 22 oct. 2026) : K-12 — Arche consommera @atrium/socle à la place de ses copies. · Attend : MVP de l’application CAPEX stabilisé · Sources : Responsable produit, 22 oct. 2026 (application CAPEX dédiée, DIG-PRODI v4.0), docs/dig-prodi/ARCHITECTURE-CAPEX-KEYSTONE.md*
 
 Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Retirer les constantes figées du prototype des écrans et écritures ; R-170 Supprimer les lectures des données du prototype à l’exécution ; R-171 Supprimer le code mort, les doublons et les commentaires périmés.
 
@@ -335,7 +335,7 @@ Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Reti
   *Avancement : Livraison 8 : la saisie des rotations existe désormais dans la fiche chantier (R-118) ; le reste de la proposition attend sa validation. 10 nov. 2026 (D9-35) : voyage lié à un projet créé depuis le planning de Keystone, administratif et médical dans Cursus — à cadrer avec Cursus. · Attend : Validation par le responsable produit ; partage des rôles avec Cursus · Sources : BACKLOG.md §2 P5, DELIVERY-6.md §9*
 - **R-164 · P6 · Offres et chiffrage avant-vente (à valider)** — *À décider · non commencé · effort XL*  
   Proposition : chiffrage depuis les modèles de type de machine, marge, aide au go / no-go et conversion en BL1 à la signature. Dépend des standards par type de machine (R-053).
-  *Avancement :  10 nov. 2026 (D9-36) : remplacée par un logiciel catalogue / module commercial dédié, géré par EPC2i, qui publiera le catalogue dans Arche et Keystone (hors Keystone). · Attend : Validation de la proposition ; standards par type de machine (A-2, L-3a) · Sources : BACKLOG.md §2 P6, A-2, L-3a, L-5a*
+  *Avancement :  10 nov. 2026 (D9-36) : remplacée par un logiciel catalogue / module commercial dédié, géré par l’entreprise, qui publiera le catalogue dans Arche et Keystone (hors Keystone). · Attend : Validation de la proposition ; standards par type de machine (A-2, L-3a) · Sources : BACKLOG.md §2 P6, A-2, L-3a, L-5a*
 - **R-165 · P7 · Outillage et étalonnage (à valider)** — *À décider · non commencé · effort M*  
   Proposition : parc d’outillage, affectation aux chantiers, échéances d’étalonnage et certificats (ISO 9001 §7.1.5). Seule existe la liste des équipements d’un chantier (expédié, location locale ou client, avec confirmation), sans parc, sans étalonnage ni certificat.
   *Avancement :  10 nov. 2026 (D9-37) : abandonnée — outillage mécanique sans étalonnage ; seuls les équipements de laboratoire en ont. · Attend : Validation de la proposition par le responsable produit · Sources : BACKLOG.md §2 P7, DELIVERY-6.md §9*
@@ -348,7 +348,7 @@ Faits : R-167 Corriger isoOfDayOffset pour les décalages négatifs ; R-169 Reti
 
 Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P1 · Relance fournisseurs et inspections usine (à valider) ; R-160 P2 · Conformité CE et dossier technique machine (à valider) ; R-162 P4 · Exposition de change par projet et alertes de couverture (à valider).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 2 faits)
 
 - **R-N01 · Tables déclarées dans le schéma keystone (pgSchema(...).table(...))** — *Prochaine étape · non commencé*  
   Les tables sont déclarées avec pgTable et le migrateur réécrit "public". en "keystone". au lieu de pgSchema(...).table(...) (REGLES § 4).
@@ -356,6 +356,9 @@ Faits : R-158 Cadrer puis construire le module Expédition & transport ; R-159 P
 - **R-N05 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes projets » et « Mes tableaux de bord ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes projets en cours (avancement, alertes, prochain jalon), tâches du jour, approbations en attente, activité récente.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **R-N06 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -363,18 +366,18 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
 
 ## Codex
 
-64 faits, 14 en cours, 66 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
+64 faits, 14 en cours, 67 à faire. Source : Yhumiii27/Codex, `docs/reste-a-faire.md (et docs/avancement-v2.md)` (commit `4296c52`) ; reprise : un item par point numéroté (#### n.) ; état d’après la ligne « Fait le » / « Fait en partie » ; bloc d’origine → priorité et statut. Effort : faible → S, moyen → M, important → L (échelle de Codex).
 
 ### Fonctionnel (20 restants, 19 faits)
 
 - **CX-006 · Modèles : les rattacher aux types de document** — *Prochaine étape · partiel · effort S* · **en cours**  
-  La création ne peut pas partir d'un modèle adapté au type (FON-12). À faire : - un champ « types cibles » sur le document modèle FRM, modifiable dans « Modifier les métadonnées » quand le type est FRM (ou, à défaut, un modèle par défaut par type dans le registre) ; - le filtrage de `data.templates` selon le type choisi dans `NewDocument` ; - la présélection du type quand on choisit un modèle ; - un contrôle serveur dans `createDocument` qui refuse un modèle non prévu pour le type ; - l'option d'exclure le sous-type « Formulaire » de la liste des modèles. Régénérer la migration. Les vrais modèles EPC2I restent à fournir par l'utilisateur ; ceux de la démo n'ont pas de fichier (G06).
+  La création ne peut pas partir d'un modèle adapté au type (FON-12). À faire : - un champ « types cibles » sur le document modèle FRM, modifiable dans « Modifier les métadonnées » quand le type est FRM (ou, à défaut, un modèle par défaut par type dans le registre) ; - le filtrage de `data.templates` selon le type choisi dans `NewDocument` ; - la présélection du type quand on choisit un modèle ; - un contrôle serveur dans `createDocument` qui refuse un modèle non prévu pour le type ; - l'option d'exclure le sous-type « Formulaire » de la liste des modèles. Régénérer la migration. Les vrais modèles de l’entreprise restent à fournir par l'utilisateur ; ceux de la démo n'ont pas de fichier (G06).
   *Avancement : Fait en partie le 17 octobre 2026 : un modèle FRM peut viser un ou plusieurs types (table `template_types`, migration régénérée) ; son propriétaire ou un gestionnaire documentaire (droit Modifier, `mayLinkTemplate` dans src/lib/access.ts) les règle par `setTemplateTypes` (src/lib/actions.ts : contrôle de version, refus sur un document gelé, journalisé comme une modification de métadonnées) depuis la section « Types cibles » de la fiche du modèle ou Administration › Modèles (QMS), qui affiche la colonne. « Nouveau depuis un modèle » range d'abord les modèles du type choisi, puis les autres … · Sources : docs/reste-a-faire.md, point 6 (Développable maintenant › Fonctionnel)*
 - **CX-020 · Modifications simultanées : métadonnées écrasées sans avertissement, brouillon sans réservation** — *Prochaine étape · partiel · effort M* · **en cours**  
   À faire : - une colonne `version` (entier) sur documents, envoyée en champ caché par le dialogue de métadonnées et comparée dans la transaction de updateMeta, avec une erreur `stale` (clé FR/EN) qui invite à recharger ; - une réservation de la révision en brouillon : colonnes `checked_out_by` et `checked_out_at` sur revisions, actions Réserver et Libérer, libération forcée par un gestionnaire, refus du dépôt dans addWorkingVersion pour toute autre personne que le titulaire, mention « Réservé par … » sur la fiche ; - à défaut de réservation, au minimum une « version de base » envoyée par le dialogue de version de travail et un avertissement si une version plus récente existe. C'est compatible avec D-12 : les versions de travail restent conservées. Il faut régénérer la migration (CLAUDE.md).
   *Avancement : Fait en partie le 12 octobre 2026 : détection optimiste, sans réservation : `documents.version`, relevée par la base à chaque modification réelle de la fiche (déclencheur `documents_version`, `src/db/index.ts`) et réservée au cercle de rédaction (D-14), est renvoyée par les dialogues de métadonnées et de lecteurs désignés, et la dernière version de travail montrée par ceux de dépôt et de demande de validation ; `updateMeta`, `setReaders`, `addWorkingVersion` et `requestValidation` refusent sans rien écrire une action partie d'une vue périmée (« Ce document a été modifié entre-temps par … ; … · Sources : docs/reste-a-faire.md, point 20 (Développable maintenant › Fonctionnel)*
 - **CX-070 · Champ « sens entrant / sortant » absent pour les documents externes** — *À décider · attend le responsable produit · effort S*  
-  L'absence est confirmée. D-08 (« Origine et rattachement ») réduit le besoin, puisqu'un document émis par EPC2I est d'origine interne, mais l'utilisateur n'a pas écarté explicitement le champ. Il faut lui demander de le garder ou de l'écarter. Ce n'est pas une question O-xx : elle relève de C11 et G43. S'il est retenu : - une colonne à deux valeurs (entrant, sortant), puis régénérer la migration ; - le dialogue (section Externe) ; - le contrôle dans `validateFields` et dans l'import ; - une facette de recherche ; - éventuellement, une date de réception exigée seulement pour un document entrant.
+  L'absence est confirmée. D-08 (« Origine et rattachement ») réduit le besoin, puisqu'un document émis par l’entreprise est d'origine interne, mais l'utilisateur n'a pas écarté explicitement le champ. Il faut lui demander de le garder ou de l'écarter. Ce n'est pas une question O-xx : elle relève de C11 et G43. S'il est retenu : - une colonne à deux valeurs (entrant, sortant), puis régénérer la migration ; - le dialogue (section Externe) ; - le contrôle dans `validateFields` et dans l'import ; - une facette de recherche ; - éventuellement, une date de réception exigée seulement pour un document entrant.
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 70 (Attend une décision de l'utilisateur › Fonctionnel)*
 - **CX-071 · Documents externes : ni l'édition ni la date d'émission de l'émetteur** — *À décider · attend le responsable produit · effort S*  
   À faire selon la réponse à A17 : - deux champs par révision : « édition / indice de l'émetteur » et « date d'émission de l'émetteur » (chaque révision Codex d'un document externe correspond à une édition) ; - ces champs dans le dialogue de version de travail ou de validation, dans l'import (docs/api.md), dans la recherche (fonction matches de search.ts) et sur la fiche ; - un contrôle de cohérence : la date d'émission de l'émetteur est antérieure ou égale à la date de réception.
@@ -413,7 +416,7 @@ Faits : R-N02 Contraintes de format en base pour chaque colonne ; R-N03 Coque co
   L'absence est réelle, mais le besoin n'est ni exigé par le deck ni confirmé par l'utilisateur : M10 est une question d'audit restée sans réponse, qui ne figure pas parmi O-01 à O-11. Il faut la faire trancher avant de lancer ce chantier coûteux. Si c'est validé : - extraire le texte au dépôt (`stageFile`) et à l'import, et le stocker par version de travail ; - l'indexer (tsvector Postgres sous PGlite) ; - ne renvoyer que les versions que le lecteur peut voir (`readerMaySeeVersion`). L'OCR des documents numérisés reste un point séparé (M09).
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 82 (Attend une décision de l'utilisateur › Fonctionnel)*
 - **CX-083 · Préremplir l'en-tête du fichier créé depuis un modèle** — *À décider · attend le responsable produit · effort L*  
-  Le fichier créé depuis un modèle est une copie brute : ni l'ID, ni la révision, ni le titre ne sont injectés. À faire, si l'utilisateur le confirme : - à la création, puis à chaque nouvelle révision ou version de travail, renseigner dans le DOCX ou le XLSX des propriétés personnalisées ou des contrôles de contenu (ID, titre, révision, statut, propriétaire) ; - outillage ZIP et XML à ajouter ; - des modèles réels EPC2I préparés avec ces champs. Règle à décider avec l'utilisateur : génère-t-on l'en-tête, ou appose-t-on un cartouche sur un rendu PDF (lien avec M12) ? Les modèles de lancement restent aussi à fournir (G06).
+  Le fichier créé depuis un modèle est une copie brute : ni l'ID, ni la révision, ni le titre ne sont injectés. À faire, si l'utilisateur le confirme : - à la création, puis à chaque nouvelle révision ou version de travail, renseigner dans le DOCX ou le XLSX des propriétés personnalisées ou des contrôles de contenu (ID, titre, révision, statut, propriétaire) ; - outillage ZIP et XML à ajouter ; - des modèles réels de l’entreprise préparés avec ces champs. Règle à décider avec l'utilisateur : génère-t-on l'en-tête, ou appose-t-on un cartouche sur un rendu PDF (lien avec M12) ? Les modèles de lancement restent aussi à fournir (G06).
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 83 (Attend une décision de l'utilisateur › Fonctionnel)*
 - **CX-084 · Édition Office en ligne et coédition** — *À décider · attend le responsable produit · effort L*  
   Aujourd'hui, on modifie un fichier en le téléchargeant puis en le redéposant comme version de travail. Correction au point : la coédition ne suppose pas forcément un accès direct à la bibliothèque SharePoint. Un hôte WOPI dans Codex le permettrait aussi (Office pour le web, sous programme partenaire Microsoft, ou Collabora / OnlyOffice). Mais cela créerait des versions hors du modèle de Codex : D-06 veut que SharePoint ne reçoive que le fichier, son nom et sa version, et que Codex fasse foi. Rien n'est à développer tant que l'utilisateur n'a pas dit si l'édition en ligne est nécessaire et n'a pas tranché O-01.
@@ -442,7 +445,7 @@ Faits : CX-001 Liste « Mes demandes » (modification et retrait envoyées à Vi
   Une fois le processus de fin de conservation tranché (M03 : qui valide, quelle preuve) et les durées validées (O-07) : - un circuit de destruction : proposition, puis validation par le droit Détruire, ajouté à `ENFORCED_PERMS`. Il est refusé sous gel juridique, avant l'échéance (`retainUntil`) ou si une révision est ouverte. Il supprime les fichiers dans le stockage (`remove`), efface ou anonymise la fiche en gardant un squelette (ID, type, dates) et laisse au journal un procès-verbal non effaçable ; - une action « Revue à échéance » pour le sort « review » (41 types) : prolonger avec motif et nouvelle échéance, ou archiver ; - une saisie obligatoire du motif de gel juridique, journalisé à la place du code du type (actions.ts:641) ; - l'affichage dans `DueTable` des actions qui correspondent à la colonne « Proposé ». Un motif de gel peut être ajouté dès maintenant, sans attendre M03.
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 90 (Attend une décision de l'utilisateur › Sécurité et conformité)*
 - **CX-091 · Rôle « Audit & conformité » : pas d'accès au journal, aux circuits ni aux documents confidentiels** — *À décider · attend le responsable produit · effort M*  
-  Le rôle peut auditer un document à la fois, et seulement parmi ceux qu'il peut lire. Il n'a ni journal global, ni export, ni détail des circuits terminés, ni accès aux documents Confidentiels et Très confidentiels hors de son département. À demander (M05, ouvert dans docs/audit-deck-epc2i.md:1526-1530) : - qui consulte le journal, et avec quel périmètre (métadonnées seules, ou contenu des confidentiels) ; - combien de temps on garde le journal. Ensuite : - un droit « Auditer » dans PERM_KEYS et la matrice, qui donne en lecture seule le journal et son export, le détail des circuits terminés (listWorkflows, `visible`) et les métadonnées de tous les documents, sans ouvrir les fichiers confidentiels ; - la journalisation de ces consultations ; - une purge ou un archivage du journal selon la durée retenue.
+  Le rôle peut auditer un document à la fois, et seulement parmi ceux qu'il peut lire. Il n'a ni journal global, ni export, ni détail des circuits terminés, ni accès aux documents Confidentiels et Très confidentiels hors de son département. À demander (M05, ouvert dans docs/audit-deck-*.md:1526-1530) : - qui consulte le journal, et avec quel périmètre (métadonnées seules, ou contenu des confidentiels) ; - combien de temps on garde le journal. Ensuite : - un droit « Auditer » dans PERM_KEYS et la matrice, qui donne en lecture seule le journal et son export, le détail des circuits terminés (listWorkflows, `visible`) et les métadonnées de tous les documents, sans ouvrir les fichiers confidentiels ; - la journalisation de ces consultations ; - une purge ou un archivage du journal selon la durée retenue.
   *Attend : Décision de l’utilisateur (O-01 à O-11 de docs/decisions.md ou question de l’audit) · Sources : docs/reste-a-faire.md, point 91 (Attend une décision de l'utilisateur › Sécurité et conformité)*
 - **CX-092 · Droits fins : trois niveaux de confidentialité identiques, tout le Très confidentiel visible des gestionnaires** — *À décider · attend le responsable produit · effort M*  
   À demander, puis à développer : - le sens propre de Public (diffusion sans authentification ?) et de Restreint (diffusion externe désignée), aujourd'hui confondus avec Interne ; - l'accès des gestionnaires et du propriétaire au Très confidentiel : métadonnées seules, ou contenu ? Il faut ensuite aligner le code ou le §5 de modele-cible.md, qui se contredisent aujourd'hui ; - des lecteurs par fonction, groupe, site ou société (O-04 pour les sociétés) ; - un droit de téléchargement distinct de la consultation (aperçu seul).
@@ -536,7 +539,7 @@ Faits : CX-034 Modificateur désigné par Vigie : son droit de rédiger n'est pa
   À faire : 1. Un script de sauvegarde cohérent : dump de la base (`dumpDataDir` de PGlite, serveur arrêté ou mis en pause ; `pg_dump` une fois sur Postgres), plus copie de `files/` au même instant (ou versionnage du stockage objet). 2. Rotation et chiffrement de la sauvegarde. 3. Une procédure de restauration testée. Le script peut s'écrire dès maintenant. La perte de données tolérée, le délai de reprise et le lieu d'hébergement sont à fixer par l'utilisateur (M22, hors liste O-01..O-11).
   *Avancement : Avancé le 2 novembre 2026 (D-28, bibliothèque sur notre serveur) : avec la base sur un serveur PostgreSQL, la base est sauvegardée par le `pg_dump` du serveur commun (dépôt Matrix) et Codex sauvegarde les fichiers (`src/lib/files-backup-core.mjs`, appelé par `backUpNow`, `src/lib/backup.ts`) : chaque fichier référencé copié une fois dans `CODEX_BACKUP_DIR/fichiers/objets/`, vérifié par l'empreinte enregistrée (un fichier altéré n'est pas copié et est signalé), un état JSON par sauvegarde, rotation des états comme les archives puis suppression des copies qu'aucun état ne cite ; « Remettre les … · Sources : docs/reste-a-faire.md, point 48 (Développable maintenant › Exploitation et déploiement)*
 - **CX-049 · Journalisation technique et supervision** — *Prochaine étape · partiel · effort M* · **en cours (Codex#37)**  
-  Ce qui peut se faire maintenant : (1) Écrire un petit module de journal (src/lib/log.ts) qui écrit en JSON sur stdout avec un niveau, un horodatage, un identifiant de requête (x-request-id ou crypto.randomUUID) et, s'il y en a un, le digest. Remplacer les cinq console.error par ce module. (2) Journaliser en warn les refus 401 et 503 de checkBearer, avec la route et l'IP, sans le jeton. (3) Ajouter src/instrumentation.ts avec onRequestError, pour enregistrer toutes les erreurs serveur : rendu, Server Actions et routes. (4) Ajouter GET /api/health, qui exécute un select 1 via getDb() et vérifie l'accès en écriture à FILES_DIR, ou à SharePoint quand ce stockage est actif. Elle répond 200 ou 503 et ne divulgue aucune donnée. Les métriques et les alertes dépendent de la plateforme d'hébergement. Qui héberge et exploite Codex n'a pas été tranché (question 3 de l'audit, docs/audit-deck-epc2i.md:1217-1218). Ce n'est pas une des questions O-01 à O-11, donc ce point n'est pas classé comme bloqué par une décision.
+  Ce qui peut se faire maintenant : (1) Écrire un petit module de journal (src/lib/log.ts) qui écrit en JSON sur stdout avec un niveau, un horodatage, un identifiant de requête (x-request-id ou crypto.randomUUID) et, s'il y en a un, le digest. Remplacer les cinq console.error par ce module. (2) Journaliser en warn les refus 401 et 503 de checkBearer, avec la route et l'IP, sans le jeton. (3) Ajouter src/instrumentation.ts avec onRequestError, pour enregistrer toutes les erreurs serveur : rendu, Server Actions et routes. (4) Ajouter GET /api/health, qui exécute un select 1 via getDb() et vérifie l'accès en écriture à FILES_DIR, ou à SharePoint quand ce stockage est actif. Elle répond 200 ou 503 et ne divulgue aucune donnée. Les métriques et les alertes dépendent de la plateforme d'hébergement. Qui héberge et exploite Codex n'a pas été tranché (question 3 de l'audit, docs/audit-deck-*.md:1217-1218). Ce n'est pas une des questions O-01 à O-11, donc ce point n'est pas classé comme bloqué par une décision.
   *Avancement : 25 nov. 2026 (Codex#37) : les erreurs du navigateur sont envoyées au journal technique ; journal technique `src/lib/log.ts` depuis le 15 oct. 2026 (procédure `docs/exploitation.md`). Reste la supervision. · Sources : docs/reste-a-faire.md, point 49 (Développable maintenant › Exploitation et déploiement)*
 - **CX-050 · Recherche, facettes et listes : filtrer et paginer en SQL plutôt qu'en mémoire** — *Prochaine étape · partiel · effort L* · **en cours**  
   Point confirmé. Correction : le journal est tronqué à 500 lignes à l'écran, mais son export CSV complet existe déjà, en flux avec un curseur (src/app/api/export/audit/route.ts:14-41). Il manque seulement un filtre et une pagination à l'écran. À faire : - traduire les règles de `canRead` (src/lib/access.ts) en conditions SQL, avec jointures sur `document_readers`, les révisions ouvertes, les étapes de circuit et les titulaires de fonction ; - compter les facettes par `GROUP BY` ; - créer un index plein texte (tsvector ou pg_trgm, avec unaccent) sur le titre, l'ID, les alias et les mots-clés ; - paginer par curseur la recherche, l'explorateur, les validations et le journal. Le contenu des fichiers n'est toujours pas indexé (G15). Le volume réel reste inconnu (M18, O-11), mais rien n'empêche de commencer. Ce chantier va de pair avec le passage à Postgres serveur.
@@ -562,7 +565,7 @@ Faits : CX-052 Intégration continue ; CX-053 Docs en retard sur le code ; CX-05
 - **CX-062 · Administration de l'organisation : renommer ou retirer un département ou un site** — *Prochaine étape · partiel · effort M* · **en cours**  
   À faire : - modifier les libellés FR/EN d'un département et le libellé d'un site ; - retirer une valeur par désactivation (colonne active à ajouter, puis migration régénérée) : une valeur inactive disparaît des listes de saisie mais garde son libellé à l'affichage, et validateFields (actions.ts:125-126) refuse une valeur inactive sur un nouveau document ; - fusionner deux départements : réaffecter documents, personnes et titulaires de fonction (scope_value) sans toucher aux ID figés. Le cas des brouillons jamais approuvés reste à trancher, car un reclassement leur donne un nouvel ID (D-10, proposition non confirmée, O-09) ; - journaliser ces opérations (même contrainte audit_log.doc_id NOT NULL que pour le registre). Le changement de code d'un département reste exclu.
   *Avancement : Fait en partie le 15 octobre 2026 : Administration › Organisation a un crayon par département et par site, qui ouvre le dialogue de la valeur (aussi celui de « Nouveau département » et « Nouveau site ») : libellés FR et EN, état actif, « Supprimer ». Actions `updateOrgValue` et `deleteOrgValue` (src/lib/actions.ts), réservées au droit « Administrer », journalisées comme `addOrgValue` (cibles département et site ; création, modification et suppression avec chaque champ avant → après, rendus dans la langue du lecteur). Colonnes `departments.active`, `sites.active`, et libellés FR/EN des sites … · Sources : docs/reste-a-faire.md, point 62 (Développable maintenant › Référentiels et données)*
-- **CX-119 · Charger les vrais modèles EPC2I (FRM-QMS)** — *Prochaine étape · attend le responsable produit · effort S*  
+- **CX-119 · Charger les vrais modèles de l’entreprise (FRM-QMS)** — *Prochaine étape · attend le responsable produit · effort S*  
   Il n'y a rien à développer. Le dépôt passe déjà par Administration › Modèles (bouton « Nouveau modèle », src/app/administration/page.tsx:58) ou par POST /api/import. Il manque la liste et les fichiers Word/Excel des modèles du lancement, à fournir par l'utilisateur. Les 4 modèles fictifs seront ensuite à retirer de la démonstration. Le préremplissage de l'en-tête des fichiers (ID, révision), évoqué dans A22, n'est pas demandé.
   *Attend : Données de l’utilisateur · Sources : docs/reste-a-faire.md, point 119 (Attend des données de l'utilisateur › Référentiels et données)*
 - **CX-120 · Conservation « clôture de l'exercice » fixée au 31 décembre** — *Prochaine étape · attend le responsable produit · effort S*  
@@ -638,7 +641,7 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
   Option 1 : signer avec une identité stable, choisie par une variable (`CODEX_SIGN_IDENTITY`). Ce peut être un certificat de signature de code auto-signé, créé une fois dans le Trousseau (Assistant de certification), ou un Developer ID si l'utilisateur en a un. Si l'identité est absente, le script revient à la signature ad hoc. Aucun certificat ni aucune clé ne doit entrer dans le dépôt : `.gitignore` exclut déjà `*.p12` et `*.cer`. Option 2, à envisager en complément : demander l'emplacement de téléchargement par `NSSavePanel`, dont le choix par l'utilisateur vaut autorisation, au lieu d'écrire en silence dans `~/Downloads`. Le certificat doit être créé par l'utilisateur sur son Mac.
   *Avancement : Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. · Attend : Une session sur macOS (app Mac, T-02) · Sources : docs/reste-a-faire.md, point 129 (Demande une session sur macOS › App Mac)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 7 faits)
 
 - **CX-N08 · CLAUDE.md cite encore ThemeToggle.tsx supprimé (#35)** — *Prochaine étape · non commencé · effort S*  
   Depuis l'alignement sur la coque commune (Codex#35), src/components/shell/ThemeToggle.tsx n'existe plus (paire langue / affichage de la coque, PrefsStack) ; la section « Conventions » du CLAUDE.md de Codex le cite encore comme bouton d'affichage. Corriger le texte pour renvoyer à la coque (norma/charte/COQUE.md § 4).
@@ -646,6 +649,9 @@ Faits : CX-063 Onglet Projet : remettre le stepper des phases de la maquette ; C
 - **CX-N09 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Documents » et « Mes documents ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Documents récents et à réviser, circuits où je suis valideur, échéances de revue et de conservation, recherche documentaire. Mes approbations = /validations.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **CX-N10 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : CX-N01 Interface par chaînes sources en anglais ; CX-N02 Icônes Phosphor ; CX-N03 Recherche de pages ⌘K ; CX-N04 Formulaires en panneau latéral ; CX-N05 Un dossier par connecteur ; CX-N06 Retirer le correctif local des textes atténués ; CX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -653,7 +659,7 @@ Faits : CX-N01 Interface par chaînes sources en anglais ; CX-N02 Icônes Phosph
 
 ## Vigie
 
-299 faits, 13 en cours, 55 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
+299 faits, 13 en cours, 56 à faire. Source : Yhumiii27/Vigie, `docs/RESTE-A-FAIRE.md` (commit `58217b0`) ; reprise : un item par ligne des tableaux des § 3 à § 18 (référence gardée en alias) ; ✅ → fait, ◐ → en cours, ↪ → fait (remplacé) ; P0 / P1 → bloquant production, P2 → prochaine étape, P3 → plus tard ; classe C2 → à décider, C3 → attend le responsable produit, C4 → attend un système externe. Effort : S < 1 j, M 1–3 j, L 3–10 j, XL > 10 j (échelle de Vigie).
 
 ### Tableau de bord, échéances et navigation (1 restants, 18 faits)
 
@@ -715,7 +721,7 @@ Faits : VG-ACT-01 Rattacher les actions Prévention, Documents et Environnement 
   Protocole écrit exigé pour les transporteurs (R. 4515-4 à 11), signé des deux parties, avec révision.
   *Attend : Décision du responsable produit ou du service QHSE (§ 19) · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-05*
 - **VG-PRV-20 · Plans de prévention reçus des clients** — *À décider · attend le responsable produit · effort L*  
-  Les interventions EPC2i chez les clients ne sont pas suivies.
+  Les interventions de l’entreprise chez les clients ne sont pas suivies.
   *Attend : Keystone · Sources : docs/RESTE-A-FAIRE.md § 6 (Prévention et carte du site), PRV-20*
 - **VG-PRV-23 · Préqualification des entreprises extérieures et contrôle des prérequis avant accès au site** — *À décider · attend le responsable produit · effort L* · **en cours**  
   Préqualification d'une entreprise extérieure (questionnaire, pièces, évaluation, validité) et contrôle automatique des prérequis d'un intervenant avant l'accès au site : accueil sécurité (induction) fait, titres exigés par le type d'intervention ou de permis en cours de validité (PRV-08), pièces de vigilance à jour (PRV-09) ; blocage ou écart tracé à la délivrance du permis ou à l'inspection commune. Niveau marché : avancé (Cority, Ideagen) ; état dans le code : annuaire des entreprises extérieures lié aux seuls plans de prévention. Ajouté le 26/10/2026 (analyse comparative avec les logiciels QHSE du commerce) ; à valider avant de développer.
@@ -882,7 +888,7 @@ Faits : VG-IMP-02 ~~Import du personnel Lucca~~ — caduc (D01, décision CV-10 
 
 - **VG-PRD-14 · Application Mac client du serveur** — *Plus tard · partiel · effort M* · **en cours**  
   L'application Mac doit pouvoir ouvrir l'URL du serveur central au lieu de localhost:3200.
-  *Avancement : Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — ◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write com.epc2i.vigie VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le … · Sources : docs/RESTE-A-FAIRE.md § 14 (Production et exploitation), PRD-14*
+  *Avancement : Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — ◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write <identifiant de l’application Vigie> VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le … · Sources : docs/RESTE-A-FAIRE.md § 14 (Production et exploitation), PRD-14*
 
 Faits : VG-PRD-01 Hébergement et empaquetage ; VG-PRD-02 Sauvegarde, restauration et chiffrement ; VG-PRD-03 Mode démonstration explicite (VIGIE_DEMO) ; VG-PRD-04 Base de production sans jeu de démonstration ; VG-PRD-05 PGlite ou PostgreSQL ; VG-PRD-06 Règles et tests de migration ; VG-PRD-07 URL publique des QR codes ; VG-PRD-12 Tâches planifiées ; VG-PRD-08 Numéros de référence sûrs ; VG-PRD-09 Configuration centralisée ; VG-PRD-10 Journalisation serveur ; VG-PRD-11 Supervision et santé ; VG-PRD-13 Stockage des pièces jointes ; VG-PRD-15 Documentation d'exploitation.
 
@@ -933,7 +939,7 @@ Faits : VG-UX-01 Navigation mobile ; VG-UX-02 Formulaire terrain : zoom iOS, cib
 
 Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances CSE / CSSCT ; VG-CNF-03 Bilan annuel SSCT ; VG-CNF-05 Contexte et risques du système de management ; VG-CNF-08 Situations d'urgence ; VG-CNF-09 Communication et sensibilisation ; VG-CNF-11 Gestion des changements ; VG-CNF-12 Études HazID (jalon HS 2) ; VG-CNF-13 Études HazOp / AMDEC (jalon HS 3) et registre des recommandations ; VG-CNF-14 PSSR, RSPDI et ASPD : revue de sécurité avant démarrage et quitus (jalons HS 4+5 et HS 6).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (3 restants, 7 faits)
 
 - **VG-N04 · Tables déclarées dans le schéma vigie** — *Prochaine étape · non commencé*  
   Tables en pgTable réécrites vers « vigie » par le migrateur au lieu de pgSchema(...).table(...) (REGLES § 4).
@@ -941,6 +947,9 @@ Faits : VG-CNF-01 Registre des dangers graves et imminents ; VG-CNF-02 Instances
 - **VG-N09 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Événements » et « Plan d’actions ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Tableau de bord QHSE du site choisi : TF1 / TG, jours sans accident, événements récents, actions en retard, échéances de contrôles et d'habilitations. Mes tâches = « À faire » (/a-faire) ; API /api/v1/taches/ en phase 2 (TA-12) ; signatures de terrain jamais décidées à distance.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **VG-N10 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Connexion par Clavis et droits lus dans clavis.pub_acces ; VG-N03 Journal d’audit en ajout seul par déclencheur ; VG-N05 Un dossier par connecteur ; VG-N06 Formulaires en panneau latéral ; VG-N07 Recherche de pages ⌘K ; VG-N08 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -948,7 +957,7 @@ Faits : VG-N01 Interface par chaînes sources et sélecteur FR / EN ; VG-N02 Con
 
 ## Cursus
 
-179 faits, 3 en cours, 16 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
+179 faits, 3 en cours, 17 à faire. Source : Yhumiii27/Cursus, `docs/RESTE_A_FAIRE.md` (commit `e6203e5`) ; reprise : une tâche (case à cocher des sections thématiques) = un item, numérotée CU-nnn dans l’ordre du document ; [x] → fait ; 🔴 → bloquant production, 🟠 → prochaine étape, 🟢 → plus tard. Effort : S < 1 j, M 1–3 j, L > 3 j (échelle de Cursus).
 
 ### Mise en production & sécurité (0 restants, 12 faits)
 
@@ -1050,7 +1059,7 @@ Faits : CU-168 Créer une CI GitHub Actions et figer la version de Node ; CU-169
 
 Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU-179 Protéger npm run reset-demo contre l'effacement d'une base réelle ; CU-180 Résoudre les chemins de l'interface et de la base depuis le code ; CU-181 Fournir un packaging serveur (Docker ou systemd) ; CU-182 Versionner les migrations de schéma ; CU-183 Charger les données par périmètre et ne renvoyer que ce qui change ; CU-184 Structurer les logs et répondre en JSON aux erreurs ; CU-185 Ajouter un point de santé /api/health ; CU-186 Activer la compression et un cache long sur les fichiers statiques ; CU-187 Gérer l'arrêt propre et le délai d'attente SQLite ; CU-188 Découper le bundle client par écran ; CU-189 Retirer du dépôt les deux archives zip de la maquette ; CU-191 Déclarer clés étrangères et contraintes dans le schéma.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (4 restants, 2 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (5 restants, 2 faits)
 
 - **CU-N01 · Interface par chaînes sources et sélecteur FR / EN** — *Prochaine étape · partiel* · **en cours (Cursus#51, #53)**  
   Interface en français sans i18n : pas de chaînes sources anglaises ni de FR / EN (REGLES § 2 et § 7).
@@ -1064,6 +1073,9 @@ Faits : CU-178 Mettre en place sauvegarde, rotation et restauration testée ; CU
 - **CU-N07 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort L*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes temps » et « Mes absences ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mon espace RH : soldes de congés, feuille de temps de la semaine, formations et habilitations à échéance, demandes en cours ; pour un manager, son équipe. Client Vite : modèles purs base-nav.ts / task-rules.ts et HTML de la coque ; titres neutres, absences et santé « sensible » (avis RGPD, TA-10).
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **CU-N08 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1071,7 +1083,7 @@ Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 
 
 ## Arche
 
-46 faits, 10 en cours, 2 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+46 faits, 10 en cours, 3 à faire. Source : Yhumiii27/Arche, `docs/reste-a-developper.json` (commit `bc15602`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (3 restants, 8 faits)
 
@@ -1080,8 +1092,8 @@ Faits : CU-N03 Journal d’audit en ajout seul ; CU-N05 Coque commune Norma 2.0 
   *Avancement : Kit Coolify du serveur commun (deploy/compose.shared.yaml, EXPLOITATION.md § 4.1) essayé en local contre le socle de Matrix : migrations, jeu de démonstration, santé, sauvegarde, partage 70/90/95. Reste : mise en service dans Coolify. 8 nov. 2026 : serveur accepté ; procédure de partage mise à jour (reprise des vues par Matrix, 14-reprise-publications.sql, M-18 ; liens M-14, M-15, M-19). · Attend : Matrix (M-1 à M-8) · Sources : docs/DEMANDES-MATRIX.md*
 - **AR-015 · Hébergement en France et choix du serveur de production** — *Bloquant production · attend le responsable produit · effort S* · **en cours**  
   D-11 / C-13 ; même décision que Keystone (I-1a). Analyse comparative du 25 oct. 2026 : l’hébergement en France est le prérequis de tout déploiement réel (les solutions du commerce sont hébergées en SaaS, souvent hors UE) ; à trancher avant toute autre évolution. Priorité suggérée : bloquant, inchangée.
-  *Avancement : 24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, epc2i-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1). 25 nov. 2026 : image en conteneur unique prête pour Coolify (Arche#64) ; reste la mise en ligne. · Attend : Mise en ligne d’Arche sur le serveur commun (responsable produit) · Sources : docs/DECISIONS.md C-13*
-- **AR-038 · Socle partagé @epc2i/socle** — *Plus tard · attend un système externe · effort M* · **en cours (Norma 1.0.0)**  
+  *Avancement : 24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, atrium-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1). 25 nov. 2026 : image en conteneur unique prête pour Coolify (Arche#64) ; reste la mise en ligne. · Attend : Mise en ligne d’Arche sur le serveur commun (responsable produit) · Sources : docs/DECISIONS.md C-13*
+- **AR-038 · Socle partagé @atrium/socle** — *Plus tard · attend un système externe · effort M* · **en cours (Norma 1.0.0)**  
   Remplacer les copies du socle par le paquet (R-194 de Keystone).
   *Avancement : Socle commun Norma adopté (24 nov. 2026) : copie norma/ contrôlée par npm run norma:check (CI), charte Nocturne lue dans norma/charte/nocturne.css (thèmes sombre et clair), bouton d'affichage sombre / clair de Norma. Reste : remplacer src/components/ds par norma/charte/ds et la police par norma/charte/fonts. · Attend : Keystone (R-194) · Sources : docs/SOCLE.md*
 
@@ -1105,7 +1117,7 @@ Faits : AR-021 Dossiers vivants : sections, complétude, versions, figement, emp
   K-01 à K-11. Analyse comparative du 25 oct. 2026 : les intégrations réelles (vues Keystone publiées à la place de la simulation, dépôt Codex, jalons HS lus dans Vigie, données Cursus pour les formations du transfert, CU-02) sont le niveau standard des logiciels CAPEX ; tant qu’elles manquent, Arche fonctionne en mode simulé. Priorité suggérée : prochaine étape, inchangée.
   *Avancement : Côté Arche prêt (mode views, mixte) ; vues à publier par Keystone (R-186 à R-191). · Attend : Keystone (R-185 à R-193) · Sources : docs/DEMANDES-KEYSTONE.md*
 
-Faits : AR-020 Vue pub_capex ; AR-027 Connecteur keystone : simulation, miroir, liens profonds ; AR-028 Besoins machines, réponses EPC2i, passage à « commandé » au G2 ; vue pub_besoins_machines.
+Faits : AR-020 Vue pub_capex ; AR-027 Connecteur keystone : simulation, miroir, liens profonds ; AR-028 Besoins machines, réponses de l’ingénierie, passage à « commandé » au G2 ; vue pub_besoins_machines.
 
 ### Documents (Codex) (2 restants)
 
@@ -1153,11 +1165,14 @@ Faits : AR-035 Ramp-up : saisie journalière, TRS, 30 jours continus, 6 mois ; v
 
 Faits : AR-001 Cadrage de la livraison 0.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 4 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 4 faits)
 
 - **AR-N05 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes CAPEX » et « Portefeuille ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes CAPEX (phase DIG-PRODI, prochain jalon, budget et réalisé), jalons G1 / G2 / G3 à venir, alertes du portefeuille.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **AR-N06 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : AR-N01 Contraintes de format en base pour chaque colonne ; AR-N02 Installation directe sans Docker ; AR-N03 Composants et police pris dans norma/charte ; AR-N04 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1165,7 +1180,7 @@ Faits : AR-N01 Contraintes de format en base pour chaque colonne ; AR-N02 Instal
 
 ## Crucible
 
-32 faits, 4 en cours, 3 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+32 faits, 4 en cours, 4 à faire. Source : Yhumiii27/Crucible, `docs/reste-a-developper.json` (commit `c8a1afa`) ; reprise : copie fidèle. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
 ### Plateforme et mise en production (1 restants, 4 faits)
 
@@ -1218,7 +1233,7 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 ### Cadrage, décisions et données attendues (2 restants, 1 faits)
 
 - **CR-003 · Données à fournir D-1 à D-11** — *Prochaine étape · attend le responsable produit · effort M*  
-  Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord EPC France, historique, origine des 30 %, contrôles, participants à l’atelier.
+  Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord avec l’entité partenaire, historique, origine des 30 %, contrôles, participants à l’atelier.
   *Avancement : Gabarits prêts pour l’atelier : docs/atelier/gabarits-donnees-crucible.xlsx (un onglet par donnée, format de l’import de l’historique pour D-8). · Attend : Responsable produit et équipes R&D · Sources : docs/ATELIER-CADRAGE.md, docs/DECISIONS.md §11, docs/atelier/gabarits-donnees-crucible.xlsx*
 - **CR-002 · Réponses du responsable produit** — *À décider · non commencé · effort S* · **en cours**  
   57 questions du questionnaire « Décisions Crucible ».
@@ -1226,11 +1241,14 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 
 Faits : CR-001 Cadrage (livraison 0).
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 6 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 6 faits)
 
 - **CR-N07 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Planning des moyens » et « Mes besoins d’essais ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Occupation des moyens d'essais de la semaine, mes réservations, conflits et incidents ouverts. Mes approbations = « À décider » (/my/decisions) ; arbitrages et scénarios non décidables à distance.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **CR-N08 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dossier par connecteur ; CR-N03 Rôles jamais pris dans le jeton ; CR-N04 Installation directe sans Docker ; CR-N05 Importer norma/charte/touch.css ; CR-N06 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1238,7 +1256,7 @@ Faits : CR-N01 Contraintes de format en base pour chaque colonne ; CR-N02 Un dos
 
 ## Clavis
 
-20 faits, 1 en cours, 6 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
+20 faits, 1 en cours, 7 à faire. Source : Yhumiii27/Clavis, `docs/PROPOSITION-DROITS.md (lots A à E, DR-1 à DR-6) et CLAUDE.md (« Next »)` (commit `097b49d`) ; reprise : un item par lot, par décision et par point de la suite ; aucun n’est commencé. Effort : non estimé.
 
 ### Gestion des droits (proposition du 24 nov. 2026) (1 restants, 4 faits)
 
@@ -1272,11 +1290,14 @@ Faits : CL-DR1 Copier les droits d'un collègue : ajouter ou remplacer par défa
 
 Faits : CL-S02 Écran d’import CSV de l’annuaire ; CL-S04 Envoi des mots de passe provisoires ; CL-S07 Mise en service sur le serveur commun et en ligne.
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
 
 - **CL-N08 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Annuaire » et « Mes accès ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Pour chacun : mes accès et mes demandes ; pour la DSI : comptes à activer, demandes d'accès, revues et écarts.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **CL-N10 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de page ; CL-N02 Recherche de pages ⌘K ; CL-N03 Boîte aux lettres REQUESTS.md ; CL-N04 Police Inter de la charte ; CL-N05 Composants pris dans @norma/charte/ds ; CL-N06 Installation directe sans Docker ; CL-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1284,7 +1305,7 @@ Faits : CL-N01 Sélecteur FR / EN et bouton d’affichage dans l’en-tête de p
 
 ## Matrix
 
-25 faits, 11 en cours, 5 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
+25 faits, 11 en cours, 7 à faire. Source : Yhumiii27/Matrix, `docs/proposition.md (§ 6 lot 6, § 7), docs/decisions.md, docs/mise-en-service.md, REQUESTS.md` (commit `4c6b688`) ; reprise : écarts E-01 à E-15 (« Fait le » / « Écarté le » → fait), questions ouvertes, demandes acceptées et non faites, mise en service ; les lots 1 à 5 de la feuille de route n’ont pas d’état écrit et ne sont pas repris. Effort : S quelques jours, M une à deux semaines, L plus (échelle de Matrix).
 
 ### Écarts avec le marché (lot 6) (0 restants, 15 faits)
 
@@ -1301,13 +1322,16 @@ Faits : MX-E01 Source unique des référentiels ; MX-E02 Authentification nomina
 
 Faits : MX-M24 M-24 · Purge du journal de Cursus par le rôle dédié cursus_purge ; MX-M25 M-25 · Vector au socle du serveur commun (schéma vector, rôle vector_app).
 
-### Mise en service sur le serveur commun (1 restants, 1 faits)
+### Mise en service sur le serveur commun (2 restants, 1 faits)
 
 - **MX-S01 · Mise en service : appliquer les demandes à traiter de l’écran Publications** — *Bloquant production · non commencé*  
   Lignes 6.1 à 6.13 de la fiche de mise en service (liens d’écriture et publications de Vigie D12 / D13, Crucible M-21, M-19 de Vigie et Codex, Codex CX-01, Cursus lot 16), puis le contrôle final (§ 7) et le passage à FAITE des demandes (§ 8).
   *Attend : Session sur le serveur commun (Administrateur de Matrix) · Sources : docs/mise-en-service.md § 6 à § 8*
+- **MX-N11 · Renommer le serveur commun pour la suite Atrium** — *À décider · attend le responsable produit · effort M*  
+  Opération séparée, annoncée aux outils : base → atrium, hôte → atrium-postgres, dossier de configuration → /etc/atrium/, rôle de sauvegarde → atrium_sauvegarde (noms cibles de registre/outils.json, serveur_commun) ; fichiers .env des outils, sauvegardes et documentation d'installation mis à jour dans la même fenêtre ; schémas et rôles <outil>_app inchangés. Rien n'est supposé fait avant l'annonce de Matrix.
+  *Avancement : Norma 3.0.0 (27 nov. 2026) : noms cibles posés, serveur en service inchangé. · Attend : Fenêtre de l'opération (question matrix:REN-1 du suivi) · Sources : norma/registre/outils.json (serveur_commun), norma/REGLES.md § 9, norma/decisions/matrix.json (REN-1)*
 
-Faits : MX-S02 Redéploiement d’epc2i-postgres limité au socle, et rejeu du socle.
+Faits : MX-S02 Redéploiement d’atrium-postgres limité au socle, et rejeu du socle.
 
 ### Demandes des autres outils (12 restants)
 
@@ -1348,11 +1372,14 @@ Faits : MX-S02 Redéploiement d’epc2i-postgres limité au socle, et rejeu du s
   Demande de Cursus → Matrix du 2026-11-10, statut ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y figurent pas. Tant que Codex n'est pas repris par Matrix, le droit est posé par `90-droits.sql`, dans les 15 minutes par `appliquer-liens.sh`. Passera à FAITE une fois autorisés sur le serveur en service)
   *Avancement : ACCEPTÉE (12/11/2026, accord du propriétaire dans la session de Matrix. Les deux liens `lecture` cursus_app → `codex.pub_types_document` et `codex.pub_documents` sont préparés dans `data/publications-depot.json` : bouton « Autoriser » du bloc « Demandes à traiter » de l'écran Publications, lignes 6.12 et 6.13 de `docs/mise-en-service.md`. Ces liens ne figuraient pas dans la convention. Le droit porte sur toute la vue : Cursus peut lire toutes les colonnes de `pub_documents` (titre, propriétaire, mots-clés…), pas seulement l'identifiant et l'état ; les documents « Très confidentiel » n'y … · Attend : Application sur le serveur commun (docs/mise-en-service.md § 6) · Sources : REQUESTS.md, entrée du 2026-11-10 (Cursus → Matrix)*
 
-### Alignement sur Norma (audit du 24 novembre 2026) (1 restants, 7 faits)
+### Alignement sur Norma (audit du 24 novembre 2026) (2 restants, 7 faits)
 
 - **MX-N08 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Publications » et « Liens entre outils ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : État du serveur commun : outils et publications, publications à appliquer, liens demandés, journal unifié récent. Bloc en HTML (classes coque-base-nav, coque-task-*).
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **MX-N10 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Icônes Phosphor ; MX-N03 Formulaires en panneau latéral ; MX-N04 Variables d’environnement toutes validées au démarrage ; MX-N05 Modulus, Clavis et Matrix dans les listes d’outils ; MX-N06 Délégation de Claude conforme à REGLES § 10 ; MX-N07 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1360,7 +1387,7 @@ Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Ic�
 
 ## Modulus
 
-3 faits, 5 en cours, 2 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
+3 faits, 5 en cours, 3 à faire. Source : Yhumiii27/Modulus, `docs/PLAN.md` (commit `44784fa`) ; reprise : une livraison du plan = un item. Effort : non estimé.
 
 ### Livraisons du plan (6 restants, 2 faits)
 
@@ -1385,11 +1412,14 @@ Faits : MX-N01 Interface par chaînes sources et sélecteur FR / EN ; MX-N02 Ic�
 
 Faits : MO-L0 Livraison 0 — Cadrage ; MO-L1 Livraison 1 — Plateforme.
 
-### Alignement Norma (1 restants, 1 faits)
+### Alignement Norma (2 restants, 1 faits)
 
 - **MO-N02 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes affaires » et « Catalogue ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes affaires (étape, offre en cours, échéance), offres à revoir, dernières publications du catalogue et des prix.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **MO-N03 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1397,7 +1427,7 @@ Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Vector
 
-3 faits, 0 en cours, 6 à faire. Source : Yhumiii27/vector, `docs/PLAN.md` ; reprise : une livraison du plan = un item. Effort : non estimé.
+3 faits, 0 en cours, 7 à faire. Source : Yhumiii27/vector, `docs/PLAN.md` ; reprise : une livraison du plan = un item. Effort : non estimé.
 
 ### Livraisons du plan (5 restants, 2 faits)
 
@@ -1419,11 +1449,14 @@ Faits : MO-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 Faits : VE-L0 Livraison 0 — Cadrage ; VE-L1 Livraison 1 — Socle et interface.
 
-### Alignement Norma (1 restants, 1 faits)
+### Alignement Norma (2 restants, 1 faits)
 
 - **VE-N02 · Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)** — *Prochaine étape · non commencé · effort M*  
   Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes expéditions » et « Demandes d’expédition ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Expéditions en cours (prochaine étape, ETA, retard), demandes à trier, documents manquants, incidents ouverts.
   *Avancement : Norma 2.4.0 (27 nov. 2026). · Sources : norma/charte/COQUE.md § 2 bis, norma/contrats/taches-v1.md, norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md*
+- **VE-N03 · Suite Atrium et cookie atrium-theme (Norma 3.0)** — *Prochaine étape · non commencé · effort S*  
+  Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).
+  *Avancement : Norma 3.0.0 (27 nov. 2026). · Sources : norma/CHANGELOG.md § 3.0.0, norma/charte/ds/theme.ts, norma/registre/outils.json (serveur_commun)*
 
 Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
@@ -1431,9 +1464,9 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
 ## Norma (socle)
 
-7 faits, 2 en cours, 0 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
+9 faits, 2 en cours, 0 à faire. Source : Yhumiii27/Norma, `reste-a-faire/norma.json` ; reprise : tenu directement dans Norma. Effort : S < 2 jours, M ≤ 1 semaine, L ≤ 3 semaines, XL > 3 semaines.
 
-### Socle commun (règles, charte, registre, dépendances) (2 restants, 3 faits)
+### Socle commun (règles, charte, registre, dépendances) (2 restants, 4 faits)
 
 - **NO-008 · Logos des outils dans la charte** — *Prochaine étape · partiel* · **en cours (Norma 2.3.0)**  
   Un logo par outil dans charte/logos, composant ToolLogo de charte/ds pour la marque de la coque, et favicon de chaque outil.
@@ -1442,11 +1475,11 @@ Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
   Même bloc d'entrées de base que Keystone dans tous les outils ; « Mes tâches », « Mes approbations » et cloche de toute la suite (pub_taches réunies par Matrix) ; fiche et décision depuis chaque outil par l'API de l'outil propriétaire avec un jeton de la personne émis par Clavis ; documents par l'aperçu de Codex ; un seul résumé e-mail.
   *Avancement : 27 nov. 2026 : TA-11, TA-15, TA-16 décidées par le propriétaire, les autres réponses proposées confirmées. Norma 2.4.0 livre la phase 1 dans le socle (tronc commun, composants, contrat pub_taches v1) ; adoption par outil : R-N05, CX-N09, AR-N05, VG-N09, CR-N07, CU-N07, CL-N08, MX-N08, MO-N02, VE-N02 ; MX-N09 (réunion) et CL-N09 (jeton, phase 2). · Sources : propositions/TACHES-ET-APPROBATIONS.md, propositions/questionnaire-taches/questions.json, propositions/DEPLOIEMENT-TRONC-COMMUN.md, contrats/taches-v1.md, charte/COQUE.md § 2 bis*
 
-Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus ; NO-007 Coque commune des outils (Norma 2.0).
+Faits : NO-001 Règles communes, charte, registre et dépendances ; NO-002 Textes secondaires AA en thème clair et dépendances de Matrix et Cursus ; NO-007 Coque commune des outils (Norma 2.0) ; NO-010 Suite renommée Atrium, sans appellation de l'entreprise.
 
-### Outils communs (questionnaire, reste à faire) (0 restants, 2 faits)
+### Outils communs (questionnaire, reste à faire) (0 restants, 3 faits)
 
-Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste à faire global de la solution.
+Faits : NO-003 Questionnaire du responsable produit dans le socle ; NO-004 Reste à faire global de la solution ; NO-011 Une seule page de suivi : reste à faire et décisions de toute la suite.
 
 ### Reprise par les outils (0 restants, 2 faits)
 
@@ -1456,19 +1489,30 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 
 - 2026-11-27 — **Keystone** : Norma 2.4.0 : R-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Keystone** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
+- 2026-11-27 — **Keystone** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption R-N06.
 - 2026-11-27 — **Codex** : Norma 2.4.0 : CX-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Codex** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
+- 2026-11-27 — **Codex** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CX-N10.
 - 2026-11-27 — **Vigie** : Norma 2.4.0 : VG-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Vigie** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
+- 2026-11-27 — **Vigie** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VG-N10.
 - 2026-11-27 — **Cursus** : Norma 2.4.0 : CU-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Cursus** : Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026).
+- 2026-11-27 — **Cursus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CU-N08.
 - 2026-11-27 — **Arche** : Norma 2.4.0 : AR-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Arche** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption AR-N06.
 - 2026-11-27 — **Crucible** : Norma 2.4.0 : CR-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Crucible** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CR-N08.
 - 2026-11-27 — **Clavis** : Norma 2.4.0 : CL-N08 (tronc commun des menus) et CL-N09 (échange de jeton RFC 8693, prérequis de la phase 2) ajoutés.
+- 2026-11-27 — **Clavis** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CL-N10.
 - 2026-11-27 — **Matrix** : Norma 2.4.0 : MX-N08 (tronc commun des menus) et MX-N09 (réunion matrix.pub_taches, pub_taches_sources) ajoutés.
+- 2026-11-27 — **Matrix** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MX-N10. MX-N11 : renommage du serveur commun, opération séparée.
 - 2026-11-27 — **Modulus** : Norma 2.4.0 : MO-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Modulus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MO-N03.
 - 2026-11-27 — **Vector** : Norma 2.4.0 : VE-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
+- 2026-11-27 — **Vector** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VE-N03.
 - 2026-11-27 — **Norma (socle)** : Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil.
+- 2026-11-27 — **Norma (socle)** : Norma 3.0.0 : suite renommée Atrium (NO-010) ; page unique « Suivi Atrium » avec les décisions de toute la suite (NO-011) ; un point d'adoption par outil, MX-N11 pour le serveur commun.
 - 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
 - 2026-11-26 — **Codex** : CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun.
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
@@ -1484,12 +1528,12 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-25 — **Arche** : Conteneur unique pour Coolify, derrière son authentification HTTP (Arche#64 ; AR-009, AR-015) ; logo de Norma 2.3.0 dans la coque et en favicon (Arche#65, fusionnée).
 - 2026-11-25 — **Crucible** : Conteneur unique pour Coolify, derrière son authentification HTTP (Crucible#50 ; CR-007) ; logo de Norma 2.3.0 dans la coque et en favicon (Crucible#51, fusionnée).
 - 2026-11-25 — **Clavis** : CL-S07 ajouté et fait : conteneur unique (Clavis#17), Clavis activé sur le serveur commun et en ligne le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Clavis#18, fusionnée).
-- 2026-11-25 — **Matrix** : M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’epc2i-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée).
+- 2026-11-25 — **Matrix** : M-24 (rôle cursus_purge, Matrix#101) et M-25 (schéma vector et rôle vector_app, Matrix#102) faits et appliqués ; watch_paths d’atrium-postgres sur infra/postgres/**, socle rejoué sans écart (MX-S02) ; logo de Norma 2.3.0 dans la coque et en favicon (Matrix#103, fusionnée).
 - 2026-11-25 — **Modulus** : Livraison 1 (bêta) fusionnée (Modulus#6) : MO-L1 et MO-N01 faits, MO-L2 à MO-L6 en cours (écrans sur données fictives, intégrations à venir) ; en ligne sur Coolify (conteneur unique, authentification HTTP) ; logo de Norma 2.3.0 dans la coque et en favicon (Modulus#7, fusionnée).
 - 2026-11-25 — **Vector** : VE-L1 fait : livraison 1 (Vector#1) déployée le 25 nov. 2026 en conteneur unique (Vector#2) ; schéma et rôle vector_app au socle (M-25, Matrix#102) ; logo de Norma 2.3.0 dans la coque et en favicon (Vector#3, fusionnée).
 - 2026-11-25 — **Norma (socle)** : Norma 2.3.0 : logos des outils dans la charte (ToolLogo, favicon), NO-008 ajouté (en cours : Keystone#85, Cursus#47 ouvertes) ; NO-007 fait (coque reprise par les dix outils, Modulus#6 le dernier).
 - 2026-11-24 — **Keystone** : Clavis : le titre affiché suit le rôle accordé dans clavis.pub_acces (il gardait celui de la connexion) — trouvé à la répétition de l'installation.
-- 2026-11-24 — **Keystone** : Norma 1.0.0 adopté (copie norma/, contrôle npm run norma:check en CI, CLAUDE.md importe norma/REGLES.md) ; charte et police Inter lues dans norma/charte (build sans réseau) ; bouton d'affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, data-theme posé au rendu).
+- 2026-11-24 — **Keystone** : Norma 1.0.0 adopté (copie norma/, contrôle npm run norma:check en CI, CLAUDE.md importe norma/REGLES.md) ; charte et police Inter lues dans norma/charte (build sans réseau) ; bouton d'affichage sombre / clair à droite du sélecteur FR / EN (cookie atrium-theme, data-theme posé au rendu).
 - 2026-11-24 — **Keystone** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit b24fd0d) ; écarts de l’audit Norma ajoutés (R-N…).
 - 2026-11-24 — **Keystone** : Audit du design de Norma 2.0 : point R-N03 (coque commune).
 - 2026-11-24 — **Keystone** : Coque commune Norma 2.x fusionnée (Keystone#84) : R-N03 fait ; contraintes de format en base et renvoi à la liste globale fusionnés (Keystone#83) : R-N02 fait ; R-N04 ajouté (écran Plan à 390 px).
@@ -1503,14 +1547,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Vigie** : Vigie#43 fusionnée : VG-N03, VG-N05, VG-N06, VG-N07 faits, VG-N01 en cours (coque traduite, écrans à faire) ; coque Norma 2.x en revue (Vigie#44) : VG-N08 en cours.
 - 2026-11-24 — **Vigie** : Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait.
 - 2026-11-24 — **Cursus** : Repris dans le reste à faire global de Norma 1.2.0 (commit e6203e5) ; écarts de l’audit Norma ajoutés (CU-N…).
-- 2026-11-24 — **Cursus** : Audit du design de Norma 2.0 : point CU-N05 (coque commune).
-- 2026-11-24 — **Cursus** : Contraintes du schéma (Cursus#44, en CI) ; connecteurs rangés par outil (#43) ; journal en ajout seul en attente du responsable produit (conflit avec la purge RGPD).
-- 2026-11-24 — **Cursus** : Coque commune Norma 2.x fusionnée (Cursus#45) : CU-N05 fait ; contraintes du schéma fusionnées (Cursus#44) : CU-191 fait ; CU-N06 ajouté (tableau du tableau de bord RH à 390 px).
-- 2026-11-24 — **Arche** : Une seule base : avec ARCHE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation d'Arche) ; lecture impossible = refus.
-- 2026-11-24 — **Arche** : Norma 1.0.0 : copie du socle commun (norma/, npm run norma:check en CI), Next.js 16.4.6, charte lue dans norma/charte/nocturne.css et bouton d'affichage sombre / clair (cookie epc2i-theme) à droite du sélecteur FR / EN ; audit des règles communes. AR-038 en cours.
-- 2026-11-24 — **Arche** : Repris dans le reste à faire global de Norma 1.2.0 (copie fidèle de docs/reste-a-developper.json au commit bc15602) ; écarts de l’audit Norma ajoutés (AR-N…).
-- 2026-11-24 — **Arche** : Audit du design de Norma 2.0 : point AR-N04 (coque commune).
-- 2026-11-24 — **Arche** : Audit Norma : AR-N01 à AR-N03 faits (Arche#61, #62) ; coque Norma 2.0 en cours (Arche#63 ouverte).
-- 2026-11-24 — **Arche** : Coque commune Norma 2.x fusionnée (Arche#63) : AR-N04 fait.
-- 2026-11-24 — **Crucible** : Une seule base : avec CRUCIBLE_ACCESS_FROM_CLAVIS=on, les rôles accordés par Clavis sont lus dans clavis.pub_acces à la connexion et à chaque requête (un rôle de périmètre compte toujours par une affectation de Crucible) ; lecture impossible = refus.
-- 2026-11-24 — **Crucible** : Norma 1.0.0 adopté : copie du socle commun dans norma/ (règles, charte, registre, dépendances), contrôlée en CI (npm run norma:check), CLAUDE.md importe @norma/REGLES.md ; feuille Nocturne prise dans norma/charte ; bouton d’affichage sombre / clair à droite du sélecteur FR / EN (cookie epc2i-theme, thème posé par le serveur sur <html>, sombre par défaut).

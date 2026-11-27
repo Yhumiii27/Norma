@@ -32,7 +32,7 @@ export type { ToastApi } from './Toast';
 export { useOverlay, useIsClient } from './overlay';
 export type { OverlayOptions } from './overlay';
 export { ThemeToggle } from './ThemeToggle';
-export { THEMES, THEME_COOKIE, DEFAULT_THEME, themeOf, themeCookie } from './theme';
+export { THEMES, THEME_COOKIE, LEGACY_THEME_COOKIE, THEME_COOKIES_READ, DEFAULT_THEME, themeOf, themeFromCookies, themeFromCookieHeader, themeCookie } from './theme';
 export type { Theme } from './theme';
 // Norma 2.0 — coque commune (charte/COQUE.md, classes de charte/coque.css).
 export { AppShell, MobileTopBar, useCoque, COMPACT_MEDIA, SIDEBAR_ID, NAV_TOGGLE_ID, MAIN_ID } from './AppShell';

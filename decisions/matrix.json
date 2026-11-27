@@ -1,0 +1,27 @@
+{
+  "outil": "matrix",
+  "updated": "2026-11-27",
+  "groupes": {
+    "session": "Questions des sessions"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "matrix:REN-1",
+      "ref": "REN-1",
+      "outil": "matrix",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Renommer le serveur commun pour la suite Atrium : quand ?",
+      "contexte": "Norma 3.0.0 pose les noms cibles (base atrium, hôte atrium-postgres, /etc/atrium/, rôle atrium_sauvegarde ; registre/outils.json, serveur_commun). Le serveur en service garde ses noms tant que Matrix n'a pas fait l'opération : fichiers .env de chaque outil, sauvegardes et guide d'installation à reprendre dans la même fenêtre.",
+      "proposition": "Matrix prépare l’opération et la fait dans une fenêtre annoncée, avec les .env des outils dans la même intervention, avant la mise en ligne du pilote.",
+      "alternatives": [
+        "Après le pilote.",
+        "Garder les noms actuels sur le serveur (seule la documentation change)."
+      ],
+      "bloque": "MX-N11",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

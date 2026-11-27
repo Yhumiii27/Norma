@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Norma — reste à faire de la solution : contrôle reste-a-faire/<outil>.json (schéma reste-a-faire/SCHEMA.md) et produit
-// RESTE-A-FAIRE.md (racine de Norma) et .artifacts/reste-a-faire.html (page autonome, à republier comme artefact).
+// RESTE-A-FAIRE.md (racine de Norma). Depuis Norma 3.0, la page publiée est celle d'outils/suivi (« Suivi Atrium », reste à
+// faire et décisions) : `npm run suivi` ; ce script lancé seul écrit encore la page du reste à faire seul (non publiée).
 // Sans dépendance (Node 22+).
 //   npm run reste-a-faire [-- --sortie <page.html>]
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -97,9 +98,9 @@ export function markdown(docs) {
   const tous = docs.flatMap((d) => d.items);
   const t = comptes(tous);
   const maj = docs.map((d) => d.updated).sort().at(-1);
-  w('# Reste à faire de la solution EPC2I');
+  w('# Reste à faire de la solution Atrium');
   w();
-  w(`Liste commune à tous les outils, tenue dans Norma (\`reste-a-faire/<outil>.json\`, schéma \`reste-a-faire/SCHEMA.md\`), mise à jour le ${frDate(maj)}. Produite par \`npm run reste-a-faire\` avec la page \`.artifacts/reste-a-faire.html\` ; ne pas la modifier à la main.`);
+  w(`Liste commune à tous les outils, tenue dans Norma (\`reste-a-faire/<outil>.json\`, schéma \`reste-a-faire/SCHEMA.md\`), mise à jour le ${frDate(maj)}. Produite par \`npm run suivi\` avec la page \`.artifacts/suivi.html\` (« Suivi Atrium ») ; ne pas la modifier à la main.`);
   w();
   w(`**Avancement** : ${t.fait} faits, ${t.en_cours} en cours, ${t.a_faire} à faire, sur ${t.total} points.`);
   w();

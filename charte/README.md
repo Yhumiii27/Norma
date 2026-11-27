@@ -51,11 +51,14 @@ de langue FR / EN, de même taille**, à droite de l'en-tête de chaque page (pr
 - `nocturne.css` porte les deux thèmes : `<html data-theme="light">` redéfinit les variables (rampes inversées, accent
   plus sombre, ombres douces). Un CSS d'outil qui ne prend que des variables passe d'un thème à l'autre sans changement ;
   une couleur en dur se remplace par sa variable.
-- Préférence par personne dans le cookie **`epc2i-theme`** (`dark` | `light`, un an, même nom dans tous les outils) :
-  `ds/theme.ts` (`THEME_COOKIE`, `themeOf`, `themeCookie`).
+- Préférence par personne dans le cookie **`atrium-theme`** (`dark` | `light`, un an, même nom dans tous les outils) :
+  `ds/theme.ts` (`THEME_COOKIE`, `themeFromCookies`, `themeFromCookieHeader`, `themeCookie`). Norma 3.0 : l'ancien nom du
+  cookie d'avant le renommage de la suite (`LEGACY_THEME_COOKIE`) reste **lu** à défaut du nouveau pendant la transition,
+  pour que personne ne perde son réglage ; seul `atrium-theme` est **écrit** (`themeCookie`). À retirer en 4.0.
 - Le serveur lit le cookie et pose `data-theme` sur `<html>` au rendu (pas de flash) :
-  `<html data-theme={themeOf(cookies().get(THEME_COOKIE)?.value)}>`.
-- Le bouton : `ds/HeaderTools.tsx` `ThemeSwitch` (dans `PrefsStack`) ; l'ancien `ds/ThemeToggle.tsx`, gardé jusqu'en 3.0, (icônes lune / soleil, libellés « Dark display » / « Light display » à traduire
+  `const jar = await cookies(); <html data-theme={themeFromCookies((n) => jar.get(n)?.value)}>` (ne plus lire
+  `THEME_COOKIE` seul : l'ancien cookie serait ignoré).
+- Le bouton : `ds/HeaderTools.tsx` `ThemeSwitch` (dans `PrefsStack`) ; l'ancien `ds/ThemeToggle.tsx`, gardé jusqu'en 4.0, (icônes lune / soleil, libellés « Dark display » / « Light display » à traduire
   « Affichage sombre » / « Affichage clair », groupe « Dark / light display » → « Affichage » (pas « Display », déjà pris par d’autres écrans dans Keystone), posé à droite du sélecteur de langue.
   Il change l'attribut et le cookie dans le navigateur, sans aller-retour au serveur.
 - **Contraste en clair** : la rampe neutre est inversée ; un texte en `--color-neutral-500` ou plus clair ne fait que

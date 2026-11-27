@@ -73,6 +73,10 @@
     {
       "date": "2026-11-27",
       "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CU-N08."
     }
   ],
   "items": [
@@ -4612,6 +4616,28 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "CU-N08",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
       }
     }
   ]

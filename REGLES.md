@@ -1,4 +1,4 @@
-# Norma — règles communes de la suite EPC2I
+# Norma — règles communes de la suite Atrium
 
 Ce fichier est la copie que chaque outil garde dans `norma/` (version dans `norma/VERSION`). Le `CLAUDE.md` de l'outil
 l'importe par `@norma/REGLES.md` et n'ajoute que ses propres règles. Une règle commune se change dans le dépôt
@@ -6,9 +6,12 @@ l'importe par `@norma/REGLES.md` et n'ajoute que ses propres règles. Une règle
 
 ## 1. La suite
 
+La suite s'appelle **Atrium** (décision du propriétaire du 27 novembre 2026 ; aucun fichier ne nomme l'entreprise ni une
+ancienne appellation de la suite : l'outil n'est pas approuvé au niveau du groupe).
+
 | Outil | Rôle | Schéma |
 | --- | --- | --- |
-| Keystone | projets EPC2i (exécution) | `keystone` |
+| Keystone | projets (exécution) | `keystone` |
 | Codex | documents (GED) | `codex` |
 | Vigie | QHSE | `vigie` |
 | Cursus | ressources humaines | `cursus` |
@@ -40,16 +43,22 @@ Dépôts, rôles PostgreSQL, ports et variables de connexion : `norma/registre/o
   de test désactivé ou contourné pour obtenir le vert.
 - Aucun secret dans le dépôt ; aucune adresse e-mail personnelle ; un fichier qui nomme des personnes réelles (annuaire)
   reste hors de Git.
-- Rien hors du cahier des charges sans l'accord du propriétaire : un ajout se propose (question de `DECISIONS.md` de
-  l'outil) avant d'être construit.
-- **Reste à faire de la solution** : une seule liste, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma
-  `reste-a-faire/SCHEMA.md`). Après chaque développement : mettre à jour le fichier de l'outil dans Norma (état des points,
-  ligne d'historique, `updated`), lancer `npm run reste-a-faire` dans Norma, ouvrir la PR de Norma, puis republier la page
-  globale `.artifacts/reste-a-faire.html` à la même adresse d’artefact, https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf. Un outil ne tient
-  plus de liste propre : sa documentation renvoie à celle de Norma.
-- **Questionnaire du responsable produit** : par le modèle de Norma (`node norma/outils/questionnaire/build.mjs`, réglé par
-  `scripts/questionnaire/config.json` et `questions.json` de l'outil) ; les réponses (base de l'artefact, collection
-  `answers`) sont relues avant chaque livraison et reportées dans le `DECISIONS.md` de l'outil.
+- Rien hors du cahier des charges sans l'accord du propriétaire : un ajout se propose (question de
+  `decisions/<outil>.json` dans Norma, reportée dans le `DECISIONS.md` de l'outil) avant d'être construit.
+- **Une seule page de suivi pour toute la suite** (décision du propriétaire du 27 novembre 2026) : « Suivi Atrium »,
+  produite par `npm run suivi` dans Norma (`.artifacts/suivi.html`) et republiée à la même adresse d'artefact,
+  https://claude.ai/artifact/Rs7kooJdowShdYUqNS8jQf (capacités `db` et `user`). Elle réunit le reste à faire et les
+  décisions de tous les outils ; un outil ne tient plus de liste ni de questionnaire publié à part.
+  - **Reste à faire** : `reste-a-faire/<outil>.json` (schéma `reste-a-faire/SCHEMA.md`). Après chaque développement :
+    état des points, ligne d'historique, `updated`.
+  - **Décisions** : toute question pour le propriétaire va dans `decisions/<outil>.json` (schéma `decisions/SCHEMA.md`),
+    avec sa proposition par défaut, appliquée tant qu'il n'y a pas d'autre réponse. Le propriétaire répond sur la page ;
+    les réponses (base de l'artefact, collection `answers`, un document par question) sont relues avant chaque livraison,
+    reportées dans `decisions/<outil>.json` (`repondue`, puis `decidee` une fois appliquée) et dans le `DECISIONS.md` de
+    l'outil.
+  - Ensuite : `npm run suivi` et `npm test` dans Norma, PR de Norma, puis republier la page.
+  - Les pages de questionnaire des outils (`node norma/outils/questionnaire/build.mjs`) restent constructibles mais ne
+    sont plus publiées ; leurs questions et les réponses déjà données sont reprises dans `decisions/`.
 
 ## 4. Données : un serveur PostgreSQL commun
 
@@ -112,7 +121,8 @@ Charte et composants : `norma/charte/` (mode d'emploi `norma/charte/README.md`).
 - barre latérale : marque, recherche de pages ⌘K, puis le **tronc commun des menus** (Accueil typé selon l'outil, Mes
   tâches, Mes approbations, puis une ou deux entrées métier, `COQUE.md` § 2 bis), puis les sections par thème ; sélecteur FR / EN et bouton d’affichage sombre / clair
   **empilés, de même taille** (langue au-dessus), dernier élément à droite de l'en-tête de chaque page (barre supérieure
-  sur téléphone), jamais ailleurs (cookie `epc2i-theme`, attribut `data-theme` de `<html>`) ;
+  sur téléphone), jamais ailleurs (cookie `atrium-theme`, l'ancien nom lu à défaut pendant la transition, attribut
+  `data-theme` de `<html>`) ;
 - actions de la page dans l'en-tête (au-delà de trois : menu « Actions ») ; aucun formulaire ouvert dans la page : un
   bouton ouvre un panneau latéral, fermé au succès ;
 - accessibilité : focus visible, contrastes de la charte, bouton à icône seule nommé.
@@ -125,7 +135,11 @@ Une dépendance absente des listes se déclare dans Norma avant d'être utilisé
 ## 9. Exploitation
 
 - Installation directe sur le serveur interne, sans Docker : guide `docs/installation-directe.md` du dépôt Matrix
-  (fichiers `/etc/epc2i/<outil>.env`, services systemd, mandataire HTTPS, sauvegardes).
+  (fichiers `/etc/atrium/<outil>.env`, services systemd, mandataire HTTPS, sauvegardes).
+- Noms du serveur commun (Norma 3.0) : base `atrium`, hôte `atrium-postgres`, configuration `/etc/atrium/`, rôle de
+  sauvegarde `atrium_sauvegarde` (`registre/outils.json`, `serveur_commun`). **Le renommage du serveur en service est une
+  opération séparée de Matrix** : tant qu'elle n'est pas annoncée faite, le serveur garde ses noms actuels et aucun outil
+  ne change sa connexion.
 - Configuration par variables d'environnement validées au démarrage (une variable invalide arrête l'outil) ; toutes
   décrites dans `.env.example`.
 - Ports sur le Mac du propriétaire : ceux du registre. **Ne jamais utiliser ni arrêter le port d'un autre outil.**

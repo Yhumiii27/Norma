@@ -1,0 +1,89 @@
+{
+  "outil": "cursus",
+  "updated": "2026-11-27",
+  "groupes": {
+    "session": "Questions des sessions",
+    "data": "Données à fournir"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "cursus:CU-037-Q1",
+      "ref": "CU-037-Q1",
+      "outil": "cursus",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Dossiers OPCO sans matricule",
+      "contexte": "Les pièces d'un dossier OPCO qui ne se rattachent à aucune personne (pas de matricule) ne peuvent pas suivre le contrat de dépôt de Codex, qui attend une personne.",
+      "proposition": "Elles restent locales dans Cursus.",
+      "alternatives": [
+        "Demander à Codex d’accepter une catégorie « opco » sans personne."
+      ],
+      "bloque": "CU-037",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "cursus:CU-142-Q1",
+      "ref": "CU-142-Q1",
+      "outil": "cursus",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Affecter une équipe entière à un cycle de travail",
+      "contexte": "Les cycles (postes, rotations) se posent aujourd’hui par personne.",
+      "proposition": "Non : affectation par personne seulement.",
+      "alternatives": [
+        "Oui : affecter une équipe entière en une fois."
+      ],
+      "bloque": "CU-142",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "cursus:CU-142-Q2",
+      "ref": "CU-142-Q2",
+      "outil": "cursus",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Nombre maximal de nuits consécutives",
+      "contexte": "Un cycle peut enchaîner des postes de nuit.",
+      "proposition": "Pas de contrôle.",
+      "alternatives": [
+        "Un maximum (préciser en note) avec avertissement.",
+        "Un maximum bloquant."
+      ],
+      "bloque": "CU-142",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "cursus:CU-142-Q3",
+      "ref": "CU-142-Q3",
+      "outil": "cursus",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Prévenir le manager d’un changement de cycle",
+      "contexte": "Un changement de cycle ou un écart est visible à l’écran.",
+      "proposition": "À l'écran seulement.",
+      "alternatives": [
+        "Aussi par e-mail (une fois le transport des e-mails choisi, norma:MAIL-1)."
+      ],
+      "bloque": "CU-142",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "cursus:CU-051-Q1",
+      "ref": "CU-051-Q1",
+      "outil": "cursus",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Astreintes : taux, majorations et codes Sage",
+      "contexte": "Pour valoriser les astreintes : taux d'astreinte, majoration du week-end et des jours fériés, codes de rubrique Sage.",
+      "aide": "Type d’astreinte ; taux ; majoration week-end ; majoration férié ; code Sage",
+      "bloque": "CU-051",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

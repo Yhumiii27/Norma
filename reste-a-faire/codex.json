@@ -74,6 +74,10 @@
     {
       "date": "2026-11-27",
       "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption CX-N10."
     }
   ],
   "items": [
@@ -207,7 +211,7 @@
     {
       "id": "CX-006",
       "title": "Modèles : les rattacher aux types de document",
-      "description": "La création ne peut pas partir d'un modèle adapté au type (FON-12). À faire : - un champ « types cibles » sur le document modèle FRM, modifiable dans « Modifier les métadonnées » quand le type est FRM (ou, à défaut, un modèle par défaut par type dans le registre) ; - le filtrage de `data.templates` selon le type choisi dans `NewDocument` ; - la présélection du type quand on choisit un modèle ; - un contrôle serveur dans `createDocument` qui refuse un modèle non prévu pour le type ; - l'option d'exclure le sous-type « Formulaire » de la liste des modèles. Régénérer la migration. Les vrais modèles EPC2I restent à fournir par l'utilisateur ; ceux de la démo n'ont pas de fichier (G06).",
+      "description": "La création ne peut pas partir d'un modèle adapté au type (FON-12). À faire : - un champ « types cibles » sur le document modèle FRM, modifiable dans « Modifier les métadonnées » quand le type est FRM (ou, à défaut, un modèle par défaut par type dans le registre) ; - le filtrage de `data.templates` selon le type choisi dans `NewDocument` ; - la présélection du type quand on choisit un modèle ; - un contrôle serveur dans `createDocument` qui refuse un modèle non prévu pour le type ; - l'option d'exclure le sous-type « Formulaire » de la liste des modèles. Régénérer la migration. Les vrais modèles de l’entreprise restent à fournir par l'utilisateur ; ceux de la démo n'ont pas de fichier (G06).",
       "category": "fonctionnel",
       "kind": "point_inventaire",
       "priority": "prochaine_etape",
@@ -1295,7 +1299,7 @@
     {
       "id": "CX-049",
       "title": "Journalisation technique et supervision",
-      "description": "Ce qui peut se faire maintenant : (1) Écrire un petit module de journal (src/lib/log.ts) qui écrit en JSON sur stdout avec un niveau, un horodatage, un identifiant de requête (x-request-id ou crypto.randomUUID) et, s'il y en a un, le digest. Remplacer les cinq console.error par ce module. (2) Journaliser en warn les refus 401 et 503 de checkBearer, avec la route et l'IP, sans le jeton. (3) Ajouter src/instrumentation.ts avec onRequestError, pour enregistrer toutes les erreurs serveur : rendu, Server Actions et routes. (4) Ajouter GET /api/health, qui exécute un select 1 via getDb() et vérifie l'accès en écriture à FILES_DIR, ou à SharePoint quand ce stockage est actif. Elle répond 200 ou 503 et ne divulgue aucune donnée. Les métriques et les alertes dépendent de la plateforme d'hébergement. Qui héberge et exploite Codex n'a pas été tranché (question 3 de l'audit, docs/audit-deck-epc2i.md:1217-1218). Ce n'est pas une des questions O-01 à O-11, donc ce point n'est pas classé comme bloqué par une décision.",
+      "description": "Ce qui peut se faire maintenant : (1) Écrire un petit module de journal (src/lib/log.ts) qui écrit en JSON sur stdout avec un niveau, un horodatage, un identifiant de requête (x-request-id ou crypto.randomUUID) et, s'il y en a un, le digest. Remplacer les cinq console.error par ce module. (2) Journaliser en warn les refus 401 et 503 de checkBearer, avec la route et l'IP, sans le jeton. (3) Ajouter src/instrumentation.ts avec onRequestError, pour enregistrer toutes les erreurs serveur : rendu, Server Actions et routes. (4) Ajouter GET /api/health, qui exécute un select 1 via getDb() et vérifie l'accès en écriture à FILES_DIR, ou à SharePoint quand ce stockage est actif. Elle répond 200 ou 503 et ne divulgue aucune donnée. Les métriques et les alertes dépendent de la plateforme d'hébergement. Qui héberge et exploite Codex n'a pas été tranché (question 3 de l'audit, docs/audit-deck-*.md:1217-1218). Ce n'est pas une des questions O-01 à O-11, donc ce point n'est pas classé comme bloqué par une décision.",
       "category": "exploitation_et_deploiement",
       "kind": "point_inventaire",
       "priority": "prochaine_etape",
@@ -1820,7 +1824,7 @@
     {
       "id": "CX-070",
       "title": "Champ « sens entrant / sortant » absent pour les documents externes",
-      "description": "L'absence est confirmée. D-08 (« Origine et rattachement ») réduit le besoin, puisqu'un document émis par EPC2I est d'origine interne, mais l'utilisateur n'a pas écarté explicitement le champ. Il faut lui demander de le garder ou de l'écarter. Ce n'est pas une question O-xx : elle relève de C11 et G43. S'il est retenu : - une colonne à deux valeurs (entrant, sortant), puis régénérer la migration ; - le dialogue (section Externe) ; - le contrôle dans `validateFields` et dans l'import ; - une facette de recherche ; - éventuellement, une date de réception exigée seulement pour un document entrant.",
+      "description": "L'absence est confirmée. D-08 (« Origine et rattachement ») réduit le besoin, puisqu'un document émis par l’entreprise est d'origine interne, mais l'utilisateur n'a pas écarté explicitement le champ. Il faut lui demander de le garder ou de l'écarter. Ce n'est pas une question O-xx : elle relève de C11 et G43. S'il est retenu : - une colonne à deux valeurs (entrant, sortant), puis régénérer la migration ; - le dialogue (section Externe) ; - le contrôle dans `validateFields` et dans l'import ; - une facette de recherche ; - éventuellement, une date de réception exigée seulement pour un document entrant.",
       "category": "fonctionnel",
       "kind": "point_inventaire",
       "priority": "a_decider",
@@ -2158,7 +2162,7 @@
     {
       "id": "CX-083",
       "title": "Préremplir l'en-tête du fichier créé depuis un modèle",
-      "description": "Le fichier créé depuis un modèle est une copie brute : ni l'ID, ni la révision, ni le titre ne sont injectés. À faire, si l'utilisateur le confirme : - à la création, puis à chaque nouvelle révision ou version de travail, renseigner dans le DOCX ou le XLSX des propriétés personnalisées ou des contrôles de contenu (ID, titre, révision, statut, propriétaire) ; - outillage ZIP et XML à ajouter ; - des modèles réels EPC2I préparés avec ces champs. Règle à décider avec l'utilisateur : génère-t-on l'en-tête, ou appose-t-on un cartouche sur un rendu PDF (lien avec M12) ? Les modèles de lancement restent aussi à fournir (G06).",
+      "description": "Le fichier créé depuis un modèle est une copie brute : ni l'ID, ni la révision, ni le titre ne sont injectés. À faire, si l'utilisateur le confirme : - à la création, puis à chaque nouvelle révision ou version de travail, renseigner dans le DOCX ou le XLSX des propriétés personnalisées ou des contrôles de contenu (ID, titre, révision, statut, propriétaire) ; - outillage ZIP et XML à ajouter ; - des modèles réels de l’entreprise préparés avec ces champs. Règle à décider avec l'utilisateur : génère-t-on l'en-tête, ou appose-t-on un cartouche sur un rendu PDF (lien avec M12) ? Les modèles de lancement restent aussi à fournir (G06).",
       "category": "fonctionnel",
       "kind": "point_inventaire",
       "priority": "a_decider",
@@ -2366,7 +2370,7 @@
     {
       "id": "CX-091",
       "title": "Rôle « Audit & conformité » : pas d'accès au journal, aux circuits ni aux documents confidentiels",
-      "description": "Le rôle peut auditer un document à la fois, et seulement parmi ceux qu'il peut lire. Il n'a ni journal global, ni export, ni détail des circuits terminés, ni accès aux documents Confidentiels et Très confidentiels hors de son département. À demander (M05, ouvert dans docs/audit-deck-epc2i.md:1526-1530) : - qui consulte le journal, et avec quel périmètre (métadonnées seules, ou contenu des confidentiels) ; - combien de temps on garde le journal. Ensuite : - un droit « Auditer » dans PERM_KEYS et la matrice, qui donne en lecture seule le journal et son export, le détail des circuits terminés (listWorkflows, `visible`) et les métadonnées de tous les documents, sans ouvrir les fichiers confidentiels ; - la journalisation de ces consultations ; - une purge ou un archivage du journal selon la durée retenue.",
+      "description": "Le rôle peut auditer un document à la fois, et seulement parmi ceux qu'il peut lire. Il n'a ni journal global, ni export, ni détail des circuits terminés, ni accès aux documents Confidentiels et Très confidentiels hors de son département. À demander (M05, ouvert dans docs/audit-deck-*.md:1526-1530) : - qui consulte le journal, et avec quel périmètre (métadonnées seules, ou contenu des confidentiels) ; - combien de temps on garde le journal. Ensuite : - un droit « Auditer » dans PERM_KEYS et la matrice, qui donne en lecture seule le journal et son export, le détail des circuits terminés (listWorkflows, `visible`) et les métadonnées de tous les documents, sans ouvrir les fichiers confidentiels ; - la journalisation de ces consultations ; - une purge ou un archivage du journal selon la durée retenue.",
       "category": "securite_et_conformite",
       "kind": "point_inventaire",
       "priority": "a_decider",
@@ -3093,7 +3097,7 @@
     },
     {
       "id": "CX-119",
-      "title": "Charger les vrais modèles EPC2I (FRM-QMS)",
+      "title": "Charger les vrais modèles de l’entreprise (FRM-QMS)",
       "description": "Il n'y a rien à développer. Le dépôt passe déjà par Administration › Modèles (bouton « Nouveau modèle », src/app/administration/page.tsx:58) ou par POST /api/import. Il manque la liste et les fichiers Word/Excel des modèles du lancement, à fournir par l'utilisateur. Les 4 modèles fictifs seront ensuite à retirer de la démonstration. Le préremplissage de l'en-tête des fichiers (ID, révision), évoqué dans A22, n'est pas demandé.",
       "category": "referentiels_et_donnees",
       "kind": "point_inventaire",
@@ -3712,6 +3716,28 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "CX-N10",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
       }
     }
   ]

@@ -1,0 +1,564 @@
+{
+  "outil": "ingenium",
+  "updated": "2026-11-27",
+  "nom": "Outil d'ingénierie (à créer)",
+  "origine": {
+    "depot": "— (dépôt à créer)",
+    "fichier": "cadrage ingenierie/QUESTIONS.json",
+    "commit": null,
+    "reprise": "Questionnaire de cadrage du 27 nov. 2026, jamais publié seul."
+  },
+  "groupes": {
+    "prio": "À décider en premier",
+    "perimetre": "Périmètre : ce qui sort de Keystone",
+    "personnes": "Utilisateurs, rôles et pilote",
+    "interface": "Menus et écrans",
+    "transition": "Transition depuis Keystone",
+    "data": "Données à fournir"
+  },
+  "decide": [
+    "27 novembre 2026 — certains éléments d'ingénierie sortent de Keystone pour un outil dédié aux équipes d'ingénierie ; rien n'est construit avant les réponses.",
+    "27 novembre 2026 — menus de base de chaque outil : Accueil propre à l'outil, Mes tâches (liste, kanban, calendrier), Mes approbations, puis un ou deux menus propres à l'outil.",
+    "CV-06 de Vigie (5 novembre 2026) — les demandes et ordres de modification (ECR / ECO) sont tenus dans Vigie.",
+    "Codex héberge tous les documents ; les autres outils n'en gardent que les références.",
+    "24 novembre 2026 — le catalogue machines, les options et les BOM standard passent de Keystone à Modulus.",
+    "M-17, M-18, M-19 de Matrix : lecture par les vues pub_ (définies par Matrix), écriture par l'API ou une fonction pub_ de l'outil propriétaire.",
+    "Connexion et droits par Clavis ; PostgreSQL seul ; règles communes de Norma."
+  ],
+  "questions": [
+    {
+      "id": "ingenium:ING-01",
+      "ref": "ING-01",
+      "outil": "ingenium",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Nom de l'outil",
+      "contexte": "Les outils de la suite portent un mot latin court : Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis, Matrix, Modulus, Vector. Le nom donne aussi le code du registre de Norma, le schéma PostgreSQL, le rôle <code>_app, les clés de rôles dans Clavis et le dépôt (PERIMETRE.md § 1).",
+      "proposition": "Ingenium (« talent, invention », racine d'« ingénieur ») : code ingenium, schéma ingenium, rôle ingenium_app, dépôt Yhumiii27/ingenium.",
+      "alternatives": [
+        "Fabrica (« atelier, art de bâtir »).",
+        "Forma (« forme, plan, modèle »)."
+      ],
+      "bloque": "phase 0",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-02",
+      "ref": "ING-02",
+      "outil": "ingenium",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Création du dépôt GitHub",
+      "contexte": "Claude ne crée pas de dépôt : le propriétaire l'a fait pour Modulus et Vector. Le dépôt doit exister et être ajouté à l'environnement avant toute livraison.",
+      "proposition": "Le propriétaire crée le dépôt privé Yhumiii27/<nom> (minuscules, branche main, vide), puis l'ajoute aux sessions ; la première session y pose le cadrage (docs/spec, DECISIONS.md, DEMANDES.md), puis la livraison 1.",
+      "alternatives": [
+        "Claude prépare le contenu dans une branche d'un autre dépôt en attendant (Norma, propositions/) et le recopie à la création.",
+        "Nom de dépôt avec majuscule (Yhumiii27/Ingenium), comme Keystone et Arche."
+      ],
+      "bloque": "phase 0",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-03",
+      "ref": "ING-03",
+      "outil": "ingenium",
+      "groupe": "prio",
+      "nature": "question",
+      "titre": "Calendrier par rapport à la livraison 9 de Keystone",
+      "contexte": "La livraison 9 de Keystone est en cours. Plusieurs points restants touchent l'ingénierie (R-035 PDM, R-101 / R-214 référentiel articles, R-102 validation, R-106 circuit Codex, R-107 exports natifs, R-108, R-109, R-111). Les construire dans Keystone puis les déplacer ferait le travail deux fois (ANALYSE.md § 4).",
+      "proposition": "Gel des fonctions d'ingénierie dans Keystone dès aujourd'hui : ces points passent à la liste du nouvel outil ; la livraison 9 continue sur le reste ; phase 0 et livraison 1 du nouvel outil tout de suite, en parallèle.",
+      "alternatives": [
+        "Finir d'abord la livraison 9 de Keystone (ingénierie comprise), puis lancer le nouvel outil.",
+        "Lancer le nouvel outil après le pilote de Keystone (R-001, R-011), sans geler Keystone."
+      ],
+      "bloque": "phase 0",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-04",
+      "ref": "ING-04",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Registre d'ingénierie (Synthèse et quatre disciplines)",
+      "contexte": "Écrans eng, eng-process, eng-meca, eng-elec, eng-auto de Keystone : entrées par révision, livrables jusqu'à la diffusion, listes générées, contrôles de cohérence, changements, assistant d'import ; 10 tables eng_* (ANALYSE.md § 2.1). L'assistant ne lit aujourd'hui aucun fichier (R-107).",
+      "proposition": "Sort en entier vers le nouvel outil, avec la lecture réelle des exports natifs EPLAN, TIA Portal et SolidWorks (R-107) construite là.",
+      "alternatives": [
+        "Sort, mais sans lecture des exports natifs pour l'instant (assistant manuel).",
+        "Reste dans Keystone ; le nouvel outil ne fait que le P&ID et le référentiel technique."
+      ],
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-05",
+      "ref": "ING-05",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Validation P&ID",
+      "contexte": "Écran pid : repères, rattachement à la nomenclature, étapes de validation jusqu'au bon pour construction, import de liste ; tables pid_sheets, pid_tags, pid_validation_steps (ANALYSE.md § 2.2). Le CP ne l'a pas dans sa navigation aujourd'hui.",
+      "proposition": "Sort vers le nouvel outil ; Keystone garde seulement la couverture P&ID affichée sur la fiche projet.",
+      "alternatives": [
+        "Reste dans Keystone."
+      ],
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-06",
+      "ref": "ING-06",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Référentiel des articles (PLM)",
+      "contexte": "Écran plm : articles, équivalents, structures, pièces d'usure et de rechange, validation par l'ingénierie (R-102). keystone.pub_articles est lu par Vigie, Modulus, Vector. Restent ouverts A-1b (3DX maître ?) et D9-18 (numérotation par un fichier XML local).",
+      "proposition": "Le référentiel technique sort vers le nouvel outil, qui porte aussi le connecteur 3DX / PDM et la lecture du fichier XML ; Keystone garde ses données d'achat (dernier prix, prix d'achat catalogue) et le stock, rattachés par la référence ART-… ; « Nouvel article » dans Keystone devient « Demander un article ».",
+      "alternatives": [
+        "Le référentiel reste dans Keystone ; le nouvel outil le lit.",
+        "3DX devient le seul maître : le nouvel outil n'en est qu'un miroir en lecture, enrichi de l'export, du code HS et des pièces d'usure.",
+        "Tout le référentiel (prix d'achat compris) sort vers le nouvel outil."
+      ],
+      "bloque": "phase 2 articles",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-07",
+      "ref": "ING-07",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Nomenclature projet (BOM)",
+      "contexte": "project_bom_lines est lue par 8 modules de Keystone (achats : manquants à commander ; budget ; parc ; P&ID ; équipements ; import ; expéditions) et par Vigie (effectivité des ECO) et Vector (colisage) via keystone.pub_nomenclatures (ANALYSE.md § 2.4). C'est l'étape la plus risquée.",
+      "proposition": "La nomenclature d'ingénierie (structure, quantités, révisions, repères, équipements) est tenue dans le nouvel outil et publiée sous le même contrat ; Keystone la lit dans un miroir de même forme et garde valorisation, manquants, commandes de rechange, contrôle colisage et configuration livrée ; bascule en dernier.",
+      "alternatives": [
+        "La nomenclature reste dans Keystone ; le nouvel outil la lit et n'écrit que par l'API de Keystone.",
+        "Deux nomenclatures : d'ingénierie (EBOM) dans le nouvel outil, d'achat (MBOM) dans Keystone, avec un passage explicite de l'une à l'autre."
+      ],
+      "bloque": "phase 2 nomenclature",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-08",
+      "ref": "ING-08",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Point de départ de la nomenclature d'un projet",
+      "contexte": "Modulus tient les BOM préfaites des machines standard et options et la configuration vendue, figée à la commande. Aujourd'hui la nomenclature d'un projet Keystone part de rien.",
+      "proposition": "À la création d'un projet, le nouvel outil propose de copier la BOM figée de la configuration vendue (vue de Modulus à demander) ; l'ingénierie la complète ensuite ; l'écart avec la BOM vendue est calculé et montré.",
+      "alternatives": [
+        "Pas de copie : la nomenclature part de rien, comme aujourd'hui.",
+        "Copie de la BOM standard de la machine du catalogue, sans tenir compte des options vendues."
+      ],
+      "bloque": "livraison 3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-09",
+      "ref": "ING-09",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Plans et connecteur PDM / 3DEXPERIENCE",
+      "contexte": "Écran drawings : miroir simulé du coffre SolidWorks PDM (13 plans en démonstration). R-035 (synchronisation chaque heure, aperçu PDF, « Ouvrir dans PDM ») attend le système externe et la DSI.",
+      "proposition": "Le miroir des plans et le connecteur PDM / 3DX sortent vers le nouvel outil ; Keystone montre le lien d'un plan depuis la fiche article.",
+      "alternatives": [
+        "Le miroir reste dans Keystone."
+      ],
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-10",
+      "ref": "ING-10",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Registre des interfaces",
+      "contexte": "Écran interfaces : IF-nn par projet, côté ingénierie électrique / mécanique / process / automatisme / site, donnée attendue, date de besoin, reçue le (ANALYSE.md § 2.7). Utilisé par le CP et le responsable ingénierie.",
+      "proposition": "Sort vers le nouvel outil (les données attendues sont des entrées d'ingénierie) ; le CP le lit et reçoit les échéances dans Mes tâches.",
+      "alternatives": [
+        "Reste dans Keystone (outil de pilotage contractuel du CP) ; le nouvel outil le lit.",
+        "Coupé en deux : interfaces techniques dans le nouvel outil, interfaces « site » dans Keystone."
+      ],
+      "bloque": "phase 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-11",
+      "ref": "ING-11",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Conformité CE et dossier technique machine (R-160)",
+      "contexte": "Cartes CE de Keystone (ce_checklist_items, ce_files, un dossier par équipement). Le règlement Machines (UE) 2023/1230 s'applique le 20 janvier 2027.",
+      "proposition": "Sort vers le nouvel outil, mais seulement une fois sa phase 2 prête ; d'ici là il reste dans Keystone, sans rien retarder avant l'échéance du 20 janvier 2027.",
+      "alternatives": [
+        "Reste dans Keystone pour de bon (état « dossier complet » nécessaire à la mise en service).",
+        "Sort dès la livraison 2 du nouvel outil, quelle que soit l'échéance."
+      ],
+      "bloque": "phase 2 CE",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-12",
+      "ref": "ING-12",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Pack ingénierie (critère G2 d'Arche)",
+      "contexte": "keystone.pub_pack_ingenierie (contrat K-08) est lue par Arche pour le critère « Pack ingénierie > 80 % » du jalon G2. La liste type par type de machine est provisoire (C-9).",
+      "proposition": "Le pack (liste type et mesure) sort vers le nouvel outil, publié sous le même contrat ; Arche bascule sa lecture.",
+      "alternatives": [
+        "Reste dans Keystone."
+      ],
+      "bloque": "phase 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-13",
+      "ref": "ING-13",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Ordres et demandes de modification (ECO / ECR)",
+      "contexte": "Tenus dans Vigie depuis CV-06 (5 novembre 2026). Keystone en garde un miroir et dépose les clés « englead » et « pm » par vigie.pub_signaler_avancement_eco.",
+      "proposition": "Restent dans Vigie ; le nouvel outil reprend la clé « englead » et l'ouverture d'une demande (ECR) depuis un article, un plan ou une nomenclature, par les fonctions pub_ de Vigie ; la clé « pm » reste dans Keystone.",
+      "alternatives": [
+        "Le module ECR / ECO passe de Vigie au nouvel outil (revient sur CV-06).",
+        "Rien ne change : la clé « englead » reste dans Keystone."
+      ],
+      "bloque": "phase 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-14",
+      "ref": "ING-14",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Sécurité machine de conception (AMDEC, HazOp machine, zonage ATEX)",
+      "contexte": "R-192 de Keystone ; Vigie tient les études de sécurité des procédés (vigie.pub_etudes_securite).",
+      "proposition": "Les études restent dans Vigie ; le nouvel outil les lit et les montre sur le projet et sur le dossier CE.",
+      "alternatives": [
+        "L'AMDEC machine de conception est tenue dans le nouvel outil ; HazOp et ATEX restent dans Vigie."
+      ],
+      "bloque": "plus tard",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-15",
+      "ref": "ING-15",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Revues de conception (ajout)",
+      "contexte": "Aucun objet « revue de conception » dans Keystone (seulement les étapes de validation P&ID et la revue d'un livrable client). C'est un ajout au périmètre repris.",
+      "proposition": "Ajouter les revues de conception (préliminaire, détaillée, P&ID) : participants, constats, actions, clôture ; constats d'une revue = actions dans Mes tâches.",
+      "alternatives": [
+        "Pas de revues de conception pour l'instant.",
+        "Revues de conception, mais les actions sont des actions QSE de Vigie."
+      ],
+      "bloque": "livraison 3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-16",
+      "ref": "ING-16",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "ITP, réserves et mise en service",
+      "contexte": "Écrans itp et commissioning de Keystone (qualité et CP) ; Q-6a donne la saisie des résultats à la qualité et au responsable ingénierie.",
+      "proposition": "Restent dans Keystone ; le responsable ingénierie y saisit ses résultats ; le nouvel outil lit l'état des systèmes (vue à demander, facultative).",
+      "alternatives": [
+        "Le plan ITP (points d'inspection par système) est défini dans le nouvel outil ; la saisie des résultats reste dans Keystone."
+      ],
+      "bloque": "plus tard",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-17",
+      "ref": "ING-17",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Charge par discipline",
+      "contexte": "Heures, affectations et plan de charge restent dans Keystone et Cursus. Les bureaux d'études voudront voir leur charge.",
+      "proposition": "Lecture seule dans le nouvel outil de la charge par discipline et par projet, d'après keystone.pub_affectations (vue existante).",
+      "alternatives": [
+        "Rien sur la charge dans le nouvel outil."
+      ],
+      "bloque": "livraison 3",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-18",
+      "ref": "ING-18",
+      "outil": "ingenium",
+      "groupe": "perimetre",
+      "nature": "question",
+      "titre": "Lien avec Crucible (essais R&D)",
+      "contexte": "Crucible planifie les moyens d'essais ; un besoin d'essai naît souvent d'une étude d'ingénierie.",
+      "proposition": "Plus tard : un besoin d'essai se demande depuis le nouvel outil par l'API de Crucible ; rien dans la première version.",
+      "alternatives": [
+        "Dès la livraison 3."
+      ],
+      "bloque": "plus tard",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-19",
+      "ref": "ING-19",
+      "outil": "ingenium",
+      "groupe": "personnes",
+      "nature": "question",
+      "titre": "Rôles de l'outil (lus dans Clavis, cumulables)",
+      "contexte": "Keystone n'a qu'un rôle d'ingénierie (englead) ; les ingénieurs de discipline et projeteurs sont « member » et ne voient aucun écran d'ingénierie (ANALYSE.md § 5).",
+      "proposition": "Responsable ingénierie, ingénieur de discipline, projeteur / dessinateur, gestionnaire documentaire d'ingénierie, lecteur (CP, qualité, achats, logistique, direction), administrateur ; portée par projet et par discipline (PERIMETRE.md § 2).",
+      "alternatives": [
+        "Trois rôles seulement : responsable ingénierie, ingénieur, lecteur.",
+        "Les mêmes rôles, plus un « responsable de discipline » par discipline (process, mécanique, électrique, automatisme)."
+      ],
+      "bloque": "livraison 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-20",
+      "ref": "ING-20",
+      "outil": "ingenium",
+      "groupe": "personnes",
+      "nature": "question",
+      "titre": "Qui valide la diffusion d'un livrable d'ingénierie",
+      "contexte": "Aujourd'hui « Valider la diffusion » est réservée au CP ou au directeur (P-7c) et doit lancer le circuit Codex (R-106).",
+      "proposition": "Le responsable ingénierie propose la diffusion dans le nouvel outil ; le circuit du type de document dans Codex fait foi ; l'étape du CP s'y trouve et se décide depuis Mes approbations (de Keystone ou du nouvel outil).",
+      "alternatives": [
+        "Le responsable ingénierie diffuse seul ; le CP est informé.",
+        "Comme aujourd'hui : le CP valide dans Keystone."
+      ],
+      "bloque": "phase 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-21",
+      "ref": "ING-21",
+      "outil": "ingenium",
+      "groupe": "personnes",
+      "nature": "question",
+      "titre": "Équipe pilote",
+      "contexte": "Le nouvel outil doit être essayé par de vrais utilisateurs avant de reprendre les écritures (TRANSITION.md phase 1).",
+      "proposition": "Un projet réel en études, avec ses quatre disciplines (process, mécanique, électrique, automatisme) et son responsable ingénierie ; d'abord en lecture, puis en écriture objet par objet.",
+      "alternatives": [
+        "Une seule discipline (par exemple l'automatisme) sur tous ses projets.",
+        "Le bureau d'études d'une seule filiale ou d'un seul site."
+      ],
+      "bloque": "phase 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-22",
+      "ref": "ING-22",
+      "outil": "ingenium",
+      "groupe": "personnes",
+      "nature": "question",
+      "titre": "Code projet affiché",
+      "contexte": "NEW-SYS-1 de Keystone : les équipes d'ingénierie utilisent le code #000, l'analytique le code XXX000 ; la réconciliation (R-022) attend le propriétaire.",
+      "proposition": "Le nouvel outil affiche en premier le code #000 des bureaux d'études, puis le code de Keystone ; la clé d'échange reste le code de Keystone publié dans pub_projets.",
+      "alternatives": [
+        "Le code de Keystone seulement, comme les autres outils."
+      ],
+      "bloque": "livraison 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-23",
+      "ref": "ING-23",
+      "outil": "ingenium",
+      "groupe": "interface",
+      "nature": "question",
+      "titre": "Contenu de l'Accueil",
+      "contexte": "Décision du 27 novembre 2026 : chaque outil a un Accueil propre à son métier.",
+      "proposition": "« Ma discipline » : entrées bloquantes, livrables à diffuser cette semaine, contrôles ouverts, repères non rattachés, articles à valider, clés d'ECO attendues ; puis une carte par projet de l'équipe (avancement des livrables, couverture P&ID, pack).",
+      "alternatives": [
+        "Un tableau de bord par projet seulement (pas de vue par discipline).",
+        "La liste Mes tâches en page d'accueil."
+      ],
+      "bloque": "livraison 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-24",
+      "ref": "ING-24",
+      "outil": "ingenium",
+      "groupe": "interface",
+      "nature": "question",
+      "titre": "Menus propres à l'outil",
+      "contexte": "Décision du 27 novembre 2026 : après Accueil, Mes tâches et Mes approbations, un ou deux menus propres à l'outil.",
+      "proposition": "« Mes projets » (projets de l'équipe d'ingénierie de la personne) et « Référentiel technique » (articles, structures, plans) ; puis les sections métier Projet, Référentiel technique, Administration (PERIMETRE.md § 6).",
+      "alternatives": [
+        "« Mes projets » et « Mes livrables ».",
+        "« Mes projets » seulement."
+      ],
+      "bloque": "livraison 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-25",
+      "ref": "ING-25",
+      "outil": "ingenium",
+      "groupe": "interface",
+      "nature": "question",
+      "titre": "Mes tâches : quelles tâches",
+      "contexte": "Mes tâches a trois vues (liste, kanban, calendrier). Les tâches d'ingénierie (entrée à confirmer, contrôle à fermer, livrable à produire, repère à rattacher, article à compléter) naissent dans le nouvel outil ; les activités du planning restent dans Keystone.",
+      "proposition": "Les tâches du nouvel outil, calculées depuis ses objets, plus des tâches libres ; kanban par état (à faire, en cours, en revue, fait), calendrier par échéance ; les tâches des autres outils s'y ajoutent quand matrix.pub_taches existera (proposition Norma TA).",
+      "alternatives": [
+        "Les tâches de Keystone (activités du planning de la personne) lues en plus dès la livraison 1.",
+        "Pas de tâches libres : seulement celles calculées."
+      ],
+      "bloque": "livraison 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-26",
+      "ref": "ING-26",
+      "outil": "ingenium",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Méthode de reprise des données de Keystone",
+      "contexte": "Le nouvel outil ne peut lire Keystone que par des vues pub_ définies par Matrix (M-17, M-18). Les tables d'ingénierie de Keystone ne sont pas publiées aujourd'hui (sauf pub_articles, pub_nomenclatures, pub_pack_ingenierie, partiels).",
+      "proposition": "Vues de reprise temporaires keystone.pub_reprise_* (un seul lecteur, retirées après l'import), import unique et journalisé par objet, à blanc puis appliqué.",
+      "alternatives": [
+        "Un export JSON par l'API de Keystone (/api/v1/transfer/engineering), sans vue temporaire.",
+        "Pas de reprise : le nouvel outil démarre vide sur les nouveaux projets ; les projets en cours restent dans Keystone jusqu'à leur fin."
+      ],
+      "bloque": "phase 1",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-27",
+      "ref": "ING-27",
+      "outil": "ingenium",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Keystone après la transition",
+      "contexte": "Modulus : l'écran du catalogue de Keystone devient une lecture avec un lien vers Modulus. Vector : l'écran Expéditions devient une lecture de Vector.",
+      "proposition": "Synthèse, disciplines, P&ID, plans, interfaces retirés de la navigation (avancement lu sur la fiche projet, lien profond) ; Articles et Nomenclature gardés en lecture avec les colonnes d'achat de Keystone ; tables retirées par une nouvelle migration après le retrait des vues par Matrix.",
+      "alternatives": [
+        "Tous les écrans gardés en lecture seule dans Keystone.",
+        "Tables gardées en archive dans Keystone (pas de suppression), écrans retirés."
+      ],
+      "bloque": "phase 4",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-28",
+      "ref": "ING-28",
+      "outil": "ingenium",
+      "groupe": "transition",
+      "nature": "question",
+      "titre": "Socle technique copié",
+      "contexte": "Norma : on copie la plateforme d'un outil, jamais ses modules métier (origine notée dans docs/SOCLE.md). Modulus est le plus récent (Vector → Clavis), avec la coque Norma 2.3.",
+      "proposition": "Socle copié de Modulus main (connexion Clavis, droits lus dans clavis.pub_acces, coque, i18n, journal, tâches planifiées).",
+      "alternatives": [
+        "Socle copié de Keystone (plus proche des écrans repris, mais plus lourd et encore sur PGlite en développement).",
+        "Socle copié de Vector."
+      ],
+      "bloque": "phase 0",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-D1",
+      "ref": "ING-D1",
+      "outil": "ingenium",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Disciplines, référents et effectifs",
+      "contexte": "Une ligne par discipline : code, libellé, rôle du référent (pas de nom ici), nombre d'ingénieurs et de projeteurs, outils utilisés.",
+      "aide": "process ; Process ; responsable process ; 4 ingénieurs ; 2 projeteurs ; AutoCAD P&ID, Excel\n…",
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-D2",
+      "ref": "ING-D2",
+      "outil": "ingenium",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Règles de cohérence entre disciplines",
+      "contexte": "Une ligne par règle : disciplines concernées, ce qui est comparé, gravité (bloquante ou non). Keystone en a 6 de démonstration.",
+      "aide": "process ↔ électrique ; puissance des moteurs de la liste process = bilan de puissance ; bloquante\n…",
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-D3",
+      "ref": "ING-D3",
+      "outil": "ingenium",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Exemples d'exports natifs (EPLAN, TIA Portal, SolidWorks, AutoCAD P&ID)",
+      "contexte": "Pour construire la lecture réelle des listes (R-107) : un fichier anonymisé par outil et par type de liste, et où ils sont déposés (Codex).",
+      "aide": "EPLAN ; liste des matériels ; .xlsx ; référence Codex …\nTIA Portal ; table des variables API ; .xlsx ; …",
+      "bloque": "livraison 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-D4",
+      "ref": "ING-D4",
+      "outil": "ingenium",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Liste type réelle du pack ingénierie (C-9)",
+      "contexte": "Par type de machine : familles, poids (total 100 %), nombre minimal de pièces attendues. La liste actuelle est provisoire (5 familles à 20 %).",
+      "aide": "EMP ; pid 25 % (1) ; bom 25 % (1) ; layout 20 % (1) ; electrique 20 % (2) ; analyse_fonctionnelle 10 % (1)\n…",
+      "bloque": "phase 2",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "ingenium:ING-D5",
+      "ref": "ING-D5",
+      "outil": "ingenium",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Fichier XML de numérotation des articles (D9-18) et système maître (A-1b)",
+      "contexte": "Le fichier XML (anonymisé) ou sa structure, son emplacement sur le serveur local, et la réponse de l'ingénierie : 3DEXPERIENCE ou SolidWorks PDM attribue-t-il les numéros ?",
+      "aide": "Système maître : …\nEmplacement du fichier : …\nStructure : <article ref=… />",
+      "bloque": "phase 2 articles",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

@@ -55,11 +55,11 @@
     },
     {
       "date": "2026-10-22",
-      "text": "Livraison 4 : besoins machines (catalogue, soumission, retrait, commande au Go G2), vue pub_besoins_machines, connecteur Keystone (miroir, simulation, mode mixte, synchronisation), suivi des projets EPC2i, critères G2 / K3 / G3 ; kit Coolify testé de bout en bout en CI."
+      "text": "Livraison 4 : besoins machines (catalogue, soumission, retrait, commande au Go G2), vue pub_besoins_machines, connecteur Keystone (miroir, simulation, mode mixte, synchronisation), suivi des projets Keystone, critères G2 / K3 / G3 ; kit Coolify testé de bout en bout en CI."
     },
     {
       "date": "2026-10-22",
-      "text": "Kit Coolify du serveur commun : deploy/compose.shared.yaml (migrate, app, worker sur le réseau coolify, base epc2i-postgres), authentification HTTP de la bêta par un middleware Traefik dans les étiquettes, runbook EXPLOITATION.md § 4 (ressource, variables, contrôles, partage 70/90/95)."
+      "text": "Kit Coolify du serveur commun : deploy/compose.shared.yaml (migrate, app, worker sur le réseau coolify, base atrium-postgres), authentification HTTP de la bêta par un middleware Traefik dans les étiquettes, runbook EXPLOITATION.md § 4 (ressource, variables, contrôles, partage 70/90/95)."
     },
     {
       "date": "2026-10-22",
@@ -67,7 +67,7 @@
     },
     {
       "date": "2026-10-22",
-      "text": "Livraison 5, lot 5a : jalons HS déclarés par le SSE groupe, registre des autorisations, pack ingénierie (part filiale et part EPC2i lue dans Keystone), engagé / réalisé mensuel et import CSV, courbe en S avec SPI, CPI, EAC et écart d’incertitude ; critères HS, autorisations, pack et travaux des jalons évalués."
+      "text": "Livraison 5, lot 5a : jalons HS déclarés par le SSE groupe, registre des autorisations, pack ingénierie (part filiale et part ingénierie lue dans Keystone), engagé / réalisé mensuel et import CSV, courbe en S avec SPI, CPI, EAC et écart d’incertitude ; critères HS, autorisations, pack et travaux des jalons évalués."
     },
     {
       "date": "2026-10-22",
@@ -99,7 +99,7 @@
     },
     {
       "date": "2026-10-24",
-      "text": "Retours du pilote (4) : WBS et Gantt du CAPEX (tâches sous les lots ou au niveau du CAPEX, jalons, lots à leurs mois prévus, projets EPC2i en une barre de synthèse, jalons du cycle) ; « Planning des CAPEX » dans les portefeuilles groupe et filiale, une barre de synthèse par CAPEX."
+      "text": "Retours du pilote (4) : WBS et Gantt du CAPEX (tâches sous les lots ou au niveau du CAPEX, jalons, lots à leurs mois prévus, projets Keystone en une barre de synthèse, jalons du cycle) ; « Planning des CAPEX » dans les portefeuilles groupe et filiale, une barre de synthèse par CAPEX."
     },
     {
       "date": "2026-10-24",
@@ -223,7 +223,7 @@
     },
     {
       "date": "2026-11-24",
-      "text": "Norma 1.0.0 : copie du socle commun (norma/, npm run norma:check en CI), Next.js 16.4.6, charte lue dans norma/charte/nocturne.css et bouton d'affichage sombre / clair (cookie epc2i-theme) à droite du sélecteur FR / EN ; audit des règles communes. AR-038 en cours."
+      "text": "Norma 1.0.0 : copie du socle commun (norma/, npm run norma:check en CI), Next.js 16.4.6, charte lue dans norma/charte/nocturne.css et bouton d'affichage sombre / clair (cookie atrium-theme) à droite du sélecteur FR / EN ; audit des règles communes. AR-038 en cours."
     },
     {
       "date": "2026-11-24",
@@ -248,6 +248,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : AR-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption AR-N06."
     }
   ],
   "items": [
@@ -551,7 +555,7 @@
       "evidence": [],
       "progress": {
         "state": "en_cours",
-        "note": "24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, epc2i-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1). 25 nov. 2026 : image en conteneur unique prête pour Coolify (Arche#64) ; reste la mise en ligne.",
+        "note": "24 oct. 2026 : déploiement automatique prêt (workflow Deploy → webhook Coolify, ou Auto Deploy de Coolify ; EXPLOITATION.md § 4.4). Reste le serveur (hébergement en France, C-13). 8 nov. 2026 : le responsable produit accepte le serveur commun déjà en service (Coolify, atrium-postgres) ; reste la mise en ligne d’Arche (EXPLOITATION.md § 4.1). 25 nov. 2026 : image en conteneur unique prête pour Coolify (Arche#64) ; reste la mise en ligne.",
         "delivery": null
       }
     },
@@ -819,7 +823,7 @@
     },
     {
       "id": "AR-028",
-      "title": "Besoins machines, réponses EPC2i, passage à « commandé » au G2 ; vue pub_besoins_machines",
+      "title": "Besoins machines, réponses de l’ingénierie, passage à « commandé » au G2 ; vue pub_besoins_machines",
       "description": "Livraison 4.",
       "category": "besoins_machines",
       "kind": "fonction",
@@ -879,7 +883,7 @@
       "progress": {
         "state": "fait",
         "delivery": "L5",
-        "note": "Synthèse du CAPEX, maturité des études (pack pondéré, parts filiale et EPC2i, tendance hebdomadaire), écart d’incertitude, courbe en S, SPI / CPI / EAC, portefeuilles groupe / zone / filiale ; à valider sur le jeu de démo par le responsable produit."
+        "note": "Synthèse du CAPEX, maturité des études (pack pondéré, parts filiale et ingénierie, tendance hebdomadaire), écart d’incertitude, courbe en S, SPI / CPI / EAC, portefeuilles groupe / zone / filiale ; à valider sur le jeu de démo par le responsable produit."
       }
     },
     {
@@ -1043,7 +1047,7 @@
     },
     {
       "id": "AR-038",
-      "title": "Socle partagé @epc2i/socle",
+      "title": "Socle partagé @atrium/socle",
       "description": "Remplacer les copies du socle par le paquet (R-194 de Keystone).",
       "category": "plateforme_production",
       "kind": "socle",
@@ -1266,7 +1270,7 @@
     {
       "id": "AR-047",
       "title": "Import des réalisés et des engagements depuis l’ERP (Sage) par API",
-      "description": "Rapprochement automatique de l’engagé (commandes) et du réalisé (factures) des lots hors EPC2i depuis Sage, par API ou extraction planifiée, avec une table de correspondance compte / lot et un journal des rejets ; l’import CSV manuel du CDG reste disponible. Arche n’a aujourd’hui que l’import CSV manuel (N-14). Analyse comparative du 25 oct. 2026 : standard du marché par fichier, avancé par connecteur ; priorité suggérée : à décider.",
+      "description": "Rapprochement automatique de l’engagé (commandes) et du réalisé (factures) des lots hors ingénierie interne depuis Sage, par API ou extraction planifiée, avec une table de correspondance compte / lot et un journal des rejets ; l’import CSV manuel du CDG reste disponible. Arche n’a aujourd’hui que l’import CSV manuel (N-14). Analyse comparative du 25 oct. 2026 : standard du marché par fichier, avancé par connecteur ; priorité suggérée : à décider.",
       "category": "capex_cycle",
       "kind": "integration",
       "priority": "prochaine_etape",
@@ -1534,6 +1538,28 @@
         "state": "a_faire",
         "delivery": null,
         "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "AR-N06",
+      "title": "Suite Atrium et cookie atrium-theme (Norma 3.0)",
+      "description": "Reprendre Norma 3.0.0 : plus aucune appellation de l'ancienne suite dans les fichiers de l'outil (documentation, interface, commentaires ; la suite s'appelle Atrium, l'entreprise n'est plus nommée) ; le serveur lit le thème par themeFromCookies (nouveau cookie atrium-theme, ancien nom lu à défaut pendant la transition) et n'écrit que atrium-theme ; les tests de l'outil qui citent l'ancien nom de cookie sont repris. Les noms du serveur commun (base, hôte, /etc, rôle de sauvegarde) ne changent qu'après l'opération de Matrix (MX-N10).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "S",
+      "sources": [
+        "norma/CHANGELOG.md § 3.0.0",
+        "norma/charte/ds/theme.ts",
+        "norma/registre/outils.json (serveur_commun)"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 3.0.0 (27 nov. 2026)."
       }
     }
   ]

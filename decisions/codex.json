@@ -1,0 +1,90 @@
+{
+  "outil": "codex",
+  "updated": "2026-11-27",
+  "groupes": {
+    "session": "Questions des sessions",
+    "data": "Données à fournir"
+  },
+  "decide": [],
+  "questions": [
+    {
+      "id": "codex:O-12",
+      "ref": "O-12",
+      "outil": "codex",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Réservation d'un brouillon",
+      "contexte": "Faut-il qu'une personne du cercle de rédaction puisse réserver la révision en brouillon d'un document (« Réserver » / « Libérer », mention « Réservé par … depuis … »), de sorte que seule elle y dépose une version de travail ? Aujourd'hui : détection optimiste (un dépôt depuis une vue périmée est refusé, les deux versions sont gardées, D-12). Sans réponse, rien n'est construit.",
+      "proposition": "(a) Non : garder la seule détection optimiste.",
+      "alternatives": [
+        "(b) Oui, réservation exclusive : dépôt refusé aux autres, libération par le titulaire, à la demande d’approbation, ou de force par un gestionnaire documentaire (motif obligatoire, journalisée).",
+        "(c) Oui, réservation indicative : la mention prévient sans refuser le dépôt."
+      ],
+      "bloque": "CX-020",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "codex:O-12-delai",
+      "ref": "O-12-delai",
+      "outil": "codex",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Réservation d'un brouillon : durée au-delà de laquelle elle tombe d'elle-même",
+      "contexte": "Seulement si (b) ou (c) est retenu à O-12.",
+      "proposition": "Aucune durée : libération forcée seulement.",
+      "alternatives": [
+        "Une durée (préciser en note, par exemple 5 jours ouvrés)."
+      ],
+      "bloque": "O-12",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "codex:O-12-eco",
+      "ref": "O-12-eco",
+      "outil": "codex",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Réservation d'un brouillon et modificateur désigné par un ECO",
+      "contexte": "Seulement si (b) ou (c) est retenu à O-12 : la réservation du propriétaire peut-elle écarter le modificateur désigné par un ECO de Vigie ?",
+      "proposition": "Non : l'ECO l'emporte.",
+      "alternatives": [
+        "Oui : la réservation l’emporte, le modificateur attend la libération."
+      ],
+      "bloque": "O-12",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "codex:DPE-1",
+      "ref": "DPE-1",
+      "outil": "codex",
+      "groupe": "data",
+      "nature": "donnee",
+      "titre": "Durées de conservation des catégories du dossier du personnel",
+      "contexte": "Cursus dépose les pièces justificatives dans Codex (type DPE, catégories). Chaque catégorie doit porter sa durée de conservation, validée par le DPO.",
+      "aide": "Catégorie ; durée ; point de départ (fin de contrat, date de la pièce…)",
+      "bloque": "CU-037",
+      "statut": "ouverte",
+      "reponse": null
+    },
+    {
+      "id": "codex:DPE-2",
+      "ref": "DPE-2",
+      "outil": "codex",
+      "groupe": "session",
+      "nature": "question",
+      "titre": "Chiffrement au repos des fichiers du dossier du personnel",
+      "contexte": "Les fichiers sont stockés sur le serveur interne (D-28). Le dossier du personnel porte des données personnelles : faut-il chiffrer les fichiers au repos (clé hors du dépôt), et pour quelles catégories ?",
+      "proposition": "Oui pour les catégories du dossier du personnel, clé posée par la DSI sur le serveur ; les autres documents restent en clair sur le disque protégé.",
+      "alternatives": [
+        "Chiffrer tous les fichiers de Codex.",
+        "Ne rien chiffrer : protection par le disque et les droits du système."
+      ],
+      "bloque": "CU-037",
+      "statut": "ouverte",
+      "reponse": null
+    }
+  ]
+}

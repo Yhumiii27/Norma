@@ -1,0 +1,357 @@
+<title>Suivi Atrium</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Suivi de la suite Atrium (Norma, outils/suivi) : une seule page pour tous les outils. En tête, une carte par outil
+   (questions à décider, points restants ; un clic filtre l'outil), puis trois onglets : « À décider » (questions ouvertes,
+   réponse enregistrée dans la base de l'artefact, collection answers), « Décidé » (réponses et décisions), « Reste à faire »
+   (points de reste-a-faire/<outil>.json). Couleurs : Nocturne (outils/pages/nocturne-page.css), sombre et clair. */
+__NOCTURNE__
+.tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+.tool { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; color: var(--text); font: inherit; cursor: pointer; display: grid; gap: 6px; min-width: 0; }
+.tool[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.tool .n { font-weight: 600; overflow-wrap: anywhere; }
+.tool .k { font: 500 12px var(--font-data); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tool .q { font: 500 12px var(--font-data); color: var(--accent); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--raise); overflow: hidden; display: flex; }
+.bar > i { display: block; height: 100%; }
+.bar > i.f { background: var(--ok); } .bar > i.c { background: var(--warn); } .bar > i.a { background: var(--accent); }
+.total { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.big { font: 600 20px var(--font-data); font-variant-numeric: tabular-nums; }
+.status { font-size: 12.5px; color: var(--muted); }
+.status.warn { color: var(--warn); }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.tab { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 8px; padding: 7px 14px; font: inherit; font-weight: 500; cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.tab .c { font-family: var(--font-data); font-size: 12px; margin-left: 6px; opacity: .85; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 8px 0; }
+.filters input[type=search], .filters select { background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; min-width: 0; }
+.filters input[type=search] { flex: 1 1 220px; }
+.seg { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.chk { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted); }
+.shown { color: var(--muted); font-size: 12.5px; margin-left: auto; }
+.tool-h { margin: 14px 0 0; font-size: 18px; font-weight: 600; }
+.tool-meta { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; }
+.cat-h { margin: 8px 0 0; font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+.list { display: grid; gap: 10px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 10px; min-width: 0; }
+.card.prio { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.qid { font: 500 12px var(--font-data); color: var(--accent); white-space: nowrap; }
+.qt { font-weight: 600; font-size: 15px; flex: 1 1 280px; min-width: 0; overflow-wrap: anywhere; }
+.ctx { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.prop { background: var(--accent-soft); border-radius: 8px; padding: 10px 12px; overflow-wrap: anywhere; }
+.prop b { color: var(--accent); font-weight: 600; }
+.ans { background: var(--ok-soft); border-radius: 8px; padding: 10px 12px; overflow-wrap: anywhere; }
+.ans b { color: var(--ok); font-weight: 600; }
+.opts { display: grid; gap: 6px; }
+.opt { display: flex; gap: 10px; align-items: flex-start; padding: 7px 10px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; overflow-wrap: anywhere; }
+.opt:hover { background: var(--raise); }
+.opt input { margin-top: 3px; accent-color: var(--accent); flex: none; }
+.opt.sel { border-color: var(--accent); background: var(--accent-soft); }
+textarea { width: 100%; min-height: 64px; resize: vertical; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
+textarea.big-area { min-height: 120px; font-family: var(--font-data); font-size: 12.5px; }
+.saved { font-size: 12px; color: var(--muted); min-height: 1em; }
+details.change > summary { cursor: pointer; color: var(--accent); font-size: 12.5px; }
+details.change[open] > summary { margin-bottom: 8px; }
+.decided { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 12px 16px; }
+.decided summary { cursor: pointer; font-weight: 600; }
+.decided ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+details.it { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 0; min-width: 0; }
+details.it > summary { list-style: none; cursor: pointer; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+details.it > summary::-webkit-details-marker { display: none; }
+details.it[open] > summary { border-bottom: 1px solid var(--line); }
+.id { font: 500 12px var(--font-data); color: var(--accent); white-space: nowrap; }
+.tt { font-weight: 600; flex: 1 1 280px; min-width: 0; overflow-wrap: anywhere; }
+.it.done .tt { color: var(--muted); font-weight: 500; }
+.body { padding: 10px 14px 14px; display: grid; gap: 8px; overflow-wrap: anywhere; }
+.body p { margin: 0; }
+.meta { color: var(--muted); font-size: 12.5px; }
+.meta b { color: var(--text); font-weight: 500; }
+.more { justify-self: start; }
+.hist { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 12px 16px; }
+.hist summary { cursor: pointer; font-weight: 600; }
+.hist ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+[hidden] { display: none !important; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Suite Atrium · Norma · mis à jour le __UPDATED__</div>
+    <h1>Suivi Atrium</h1>
+    <p class="lede">Tous les outils au même endroit : les questions qui attendent votre réponse, ce qui est décidé, et le reste à faire. Chaque question porte la proposition par défaut (★), appliquée tant qu’il n’y a pas d’autre réponse ; vos réponses sont enregistrées à mesure et relues par Claude avant chaque livraison. Choisissez un outil pour ne voir que lui.</p>
+  </header>
+
+  <section class="total" aria-label="Avancement">
+    <span class="big" id="tq"></span>
+    <span class="big" id="tr"></span>
+    <span class="status" id="status">Connexion à l’enregistrement…</span>
+  </section>
+
+  <section class="tools" id="tools" aria-label="Outils"></section>
+
+  <div class="tabs" role="tablist" aria-label="Vue">
+    <button type="button" class="tab" role="tab" id="tab-ouvertes" aria-controls="v-ouvertes" data-v="ouvertes">À décider<span class="c" id="c-ouvertes"></span></button>
+    <button type="button" class="tab" role="tab" id="tab-decide" aria-controls="v-decide" data-v="decide">Décidé<span class="c" id="c-decide"></span></button>
+    <button type="button" class="tab" role="tab" id="tab-raf" aria-controls="v-raf" data-v="raf">Reste à faire<span class="c" id="c-raf"></span></button>
+  </div>
+
+  <div class="filters" role="toolbar" aria-label="Filtrer">
+    <input type="search" id="q" placeholder="Rechercher (mot, identifiant)…" aria-label="Rechercher">
+    <select id="fo" aria-label="Outil"></select>
+    <span class="seg" id="fe" role="group" aria-label="État" hidden></span>
+    <select id="fp" aria-label="Priorité" hidden></select>
+    <label class="chk" id="onlyOpenWrap"><input type="checkbox" id="onlyOpen"> Sans réponse seulement</label>
+    <span class="shown" id="shown" aria-live="polite"></span>
+  </div>
+
+  <section id="v-ouvertes" role="tabpanel" aria-labelledby="tab-ouvertes"><div id="list-ouvertes" class="list"></div></section>
+  <section id="v-decide" role="tabpanel" aria-labelledby="tab-decide" hidden><div id="list-decide" class="list"></div></section>
+  <section id="v-raf" role="tabpanel" aria-labelledby="tab-raf" hidden>
+    <div id="list-raf" class="list"></div>
+    <details class="hist" style="margin-top:16px">
+      <summary>Dernières mises à jour</summary>
+      <ul id="hist"></ul>
+    </details>
+  </section>
+</div>
+
+<script>
+const OUTILS = __OUTILS__;
+const ITEMS = __ITEMS__;
+const QUESTIONS = __QUESTIONS__;
+const HIST = __HISTORIQUE__;
+const LIB = __LIBELLES__;
+const PAGE = 150;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fold = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const byCode = Object.fromEntries(OUTILS.map((o) => [o.code, o]));
+const PORD = Object.keys(LIB.priorites);
+for (const x of ITEMS) x.k = fold([x.id, x.t, x.d, x.n, x.w, ...(x.a || []), ...(x.src || [])].join(' '));
+for (const q of QUESTIONS) q.s = fold([q.id, q.t, q.c, q.p, ...(q.alts || []), q.b, q.r?.note].join(' '));
+
+// Réponses vivantes (base de l'artefact) : { [id]: { choice, note, updatedAt } }.
+const answers = {};
+let canWrite = true, dbRef = null;
+
+const state = { v: 'ouvertes', q: '', o: 'all', e: 'open', p: 'all', onlyOpen: false, limit: PAGE };
+try { Object.assign(state, JSON.parse(localStorage.getItem('suivi-filtres') || '{}'), { limit: PAGE, q: '' }); } catch (_) {}
+if (['#ouvertes', '#decide', '#raf'].includes(location.hash)) state.v = location.hash.slice(1);
+const remember = () => { try { localStorage.setItem('suivi-filtres', JSON.stringify({ v: state.v, o: state.o, e: state.e, p: state.p, onlyOpen: state.onlyOpen })); } catch (_) {} };
+
+// --- Décisions ---------------------------------------------------------------------------------------------------------
+const live = (q) => answers[q.id];
+const hasLive = (q) => { const a = live(q); return !!a && (q.k === 'donnee' ? !!(a.note || '').trim() : !!a.choice); };
+const discussed = (q) => (hasLive(q) ? live(q).choice === 'discuss' : q.r?.choix === 'discuss');
+/** Onglet « À décider » : ouverte dans son fichier (même répondue ici, jusqu'à sa reprise par Claude), ou « À discuter ». */
+const inOpenTab = (q) => q.st === 'ouverte' || discussed(q);
+const answeredHere = (q) => hasLive(q) && live(q).choice !== 'discuss';
+/** Attend encore une réponse : dans l'onglet « À décider » sans réponse donnée ici. */
+const isOpen = (q) => inOpenTab(q) && !answeredHere(q);
+function optionsOf(q) {
+  if (q.k === 'donnee') return [];
+  return [{ key: 'default', label: '★ Retenir la proposition' }, ...q.alts.map((a, i) => ({ key: 'alt' + (i + 1), label: a })), { key: 'other', label: 'Autre réponse (préciser en note)' }, { key: 'discuss', label: 'À discuter' }];
+}
+function choiceLabel(q, choix) {
+  if (choix === 'donnee') return 'donnée fournie';
+  if (choix === 'default') return '★ ' + q.p;
+  if (/^alt\d+$/.test(choix)) return q.alts[+choix.slice(3) - 1] ?? choix;
+  return choix === 'other' ? 'Autre réponse' : choix === 'discuss' ? 'À discuter' : choix || '—';
+}
+const current = (q) => (hasLive(q) ? live(q) : q.r ? { choice: q.r.choix === 'donnee' ? null : q.r.choix, note: q.r.note } : {});
+
+function questionCard(q, inDecided) {
+  const a = current(q);
+  const dis = canWrite ? '' : 'disabled';
+  const o = byCode[q.o];
+  const tags = [
+    q.b ? `<span class="tag">Bloque ${esc(q.b)}</span>` : '',
+    answeredHere(q) ? '<span class="tag done">Répondu ici</span>' : (q.r?.choix === 'discuss' || live(q)?.choice === 'discuss') ? '<span class="tag disc">À discuter</span>' : '',
+    q.st === 'decidee' ? '<span class="tag ok">Décidée</span>' : q.st === 'repondue' ? '<span class="tag ok">Répondue</span>' : '',
+  ].join('');
+  const opts = optionsOf(q).map((x) => `<label class="opt ${a.choice === x.key ? 'sel' : ''}"><input type="radio" name="q-${esc(q.id)}" value="${x.key}" ${a.choice === x.key ? 'checked' : ''} ${dis}><span>${esc(x.label)}</span></label>`).join('');
+  const form = `${q.k === 'donnee' ? '' : `<div class="opts" role="radiogroup" aria-label="Réponse ${esc(q.id)}">${opts}</div>`}
+    <textarea data-id="${esc(q.id)}" class="${q.k === 'donnee' ? 'big-area' : ''}" placeholder="${esc(q.k === 'donnee' ? (q.h || 'Collez ou saisissez les données ici') : 'Note (facultative)')}" aria-label="Note ${esc(q.id)}" ${dis}>${esc(a.note || '')}</textarea>
+    <div class="saved" data-saved="${esc(q.id)}"></div>`;
+  const recorded = q.r ? `<div class="ans"><b>${q.st === 'decidee' ? 'Décidé' : 'Réponse'}</b> — ${esc(choiceLabel(q, q.r.choix))}${q.r.note ? `<br>${esc(q.r.note)}` : ''}<br><span class="meta">${esc(q.r.date)} · ${esc(q.r.source)}</span></div>` : '';
+  const liveLine = inDecided && hasLive(q) ? `<div class="ans"><b>Réponse donnée ici</b> — ${esc(choiceLabel(q, live(q).choice || 'donnee'))}${live(q).note ? `<br>${esc(live(q).note)}` : ''}</div>` : '';
+  return `<article class="card ${q.gr === 'prio' && isOpen(q) ? 'prio' : ''}" data-id="${esc(q.id)}">
+    <div class="head"><span class="qid">${esc(o?.nom || q.o)} · ${esc(q.ref)}</span><span class="qt">${esc(q.t)}</span>${tags}</div>
+    <p class="ctx">${esc(q.c)}</p>
+    ${q.k === 'donnee' || (inDecided && q.r?.choix === 'default') ? '' : `<div class="prop"><b>★ Proposition</b> — ${esc(q.p)}</div>`}
+    ${recorded}${liveLine}
+    ${inDecided ? `<details class="change"><summary>Revenir sur cette réponse</summary>${form}</details>` : form}
+  </article>`;
+}
+
+function matchQ(q) {
+  if (state.o !== 'all' && q.o !== state.o) return false;
+  if (state.v === 'ouvertes' && state.onlyOpen && hasLive(q)) return false;
+  const s = fold(state.q.trim());
+  return !s || s.split(/\s+/).every((w) => q.s.includes(w));
+}
+function renderQuestions(view) {
+  const pool = QUESTIONS.filter((q) => (view === 'ouvertes' ? inOpenTab(q) : !inOpenTab(q)) && matchQ(q));
+  const list = $('list-' + view);
+  if (state.v === view) $('shown').textContent = `${pool.length} question${pool.length > 1 ? 's' : ''}`;
+  let html = '';
+  for (const o of OUTILS) {
+    const xs = pool.filter((q) => q.o === o.code);
+    const decide = view === 'decide' && o.decide.length && (state.o === 'all' || state.o === o.code) && !state.q.trim();
+    if (!xs.length && !decide) continue;
+    html += `<h2 class="tool-h">${esc(o.nom)}</h2>`;
+    if (o.dorigine?.reprise) html += `<p class="tool-meta">${esc(o.dorigine.reprise)}</p>`;
+    if (decide) html += `<details class="decided"><summary>Déjà décidé (${o.decide.length})</summary><ul>${o.decide.map((d) => `<li>${esc(d)}</li>`).join('')}</ul></details>`;
+    for (const [g, label] of Object.entries(o.groupes)) {
+      const ys = xs.filter((q) => q.gr === g);
+      if (ys.length) html += `<h3 class="cat-h">${esc(label)} (${ys.length})</h3>` + ys.map((q) => questionCard(q, view === 'decide')).join('');
+    }
+  }
+  list.innerHTML = html || `<p class="empty">${view === 'ouvertes' ? 'Aucune question à décider dans ce filtre.' : 'Rien de décidé dans ce filtre.'}</p>`;
+  list.querySelectorAll('input[type=radio]').forEach((r) => r.addEventListener('change', () => save(r.name.slice(2), { choice: r.value })));
+  list.querySelectorAll('textarea').forEach((t) => {
+    const id = t.dataset.id;
+    let timer = null;
+    const flush = () => { clearTimeout(timer); timer = null; if ((current(QBY[id]).note || '') !== t.value) save(id, { note: t.value }); };
+    t.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(flush, 900); });
+    t.addEventListener('blur', flush);
+  });
+}
+const QBY = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
+
+const queues = {};
+function save(id, patch) {
+  const q = QBY[id];
+  const cur = current(q);
+  const next = { choice: q.k === 'donnee' ? null : cur.choice || null, note: cur.note || '', ...patch, updatedAt: new Date().toISOString() };
+  answers[id] = next;
+  renderCounts();
+  const el = () => document.querySelector(`[data-saved="${CSS.escape(id)}"]`);
+  if (!dbRef) { if (el()) el().textContent = 'Non enregistré : l’enregistrement n’est pas disponible dans cette vue.'; return; }
+  if (el()) el().textContent = 'Enregistrement…';
+  queues[id] = (queues[id] || Promise.resolve()).then(() => dbRef.doc(id).set(next)).then(
+    () => { if (el()) el().textContent = 'Enregistré'; },
+    (err) => { if (el()) el().textContent = err && (err.code === 'invalid_argument' || err.code === 'permission_denied') ? 'Vous ne pouvez pas modifier les réponses.' : 'Échec de l’enregistrement, réessayez.'; },
+  );
+  if (patch.choice) document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"] .opt`).forEach((o) => o.classList.toggle('sel', o.querySelector('input').checked));
+}
+
+// --- Reste à faire -----------------------------------------------------------------------------------------------------
+function counts(xs) { const c = { total: xs.length, fait: 0, en_cours: 0, a_faire: 0 }; for (const x of xs) c[x.g]++; return c; }
+function matchItem(x) {
+  if (state.o !== 'all' && x.o !== state.o) return false;
+  if (state.e === 'open' ? x.g === 'fait' : state.e !== 'all' && x.g !== state.e) return false;
+  if (state.p !== 'all' && x.p !== state.p) return false;
+  const q = fold(state.q.trim());
+  return !q || q.split(/\s+/).every((w) => x.k.includes(w));
+}
+function itemHtml(x) {
+  const etat = x.g === 'fait' ? '<span class="tag ok">fait</span>' : x.g === 'en_cours' ? '<span class="tag warn">en cours</span>' : '<span class="tag">à faire</span>';
+  const pri = x.g !== 'fait' && x.p === 'bloquant_production' ? `<span class="tag bad">${esc(LIB.priorites[x.p])}</span>` : `<span class="tag">${esc(LIB.priorites[x.p])}</span>`;
+  const meta = [`<b>Statut</b> ${esc(LIB.statuts[x.s])}`, x.e ? `<b>Effort</b> ${esc(x.e)}` : '', x.l ? `<b>Livraison</b> ${esc(x.l)}` : '', x.a.length ? `<b>Alias</b> ${esc(x.a.join(', '))}` : ''].filter(Boolean).join(' · ');
+  return `<details class="it ${x.g === 'fait' ? 'done' : ''}"><summary><span class="id">${esc(x.id)}</span><span class="tt">${esc(x.t)}</span>${pri}${etat}</summary>
+    <div class="body"><p>${esc(x.d)}</p>
+    ${x.n ? `<p class="meta"><b>Avancement</b> ${esc(x.n)}</p>` : ''}
+    ${x.w ? `<p class="meta"><b>Attend</b> ${esc(x.w)}</p>` : ''}
+    <p class="meta">${meta}</p>
+    <p class="meta"><b>Sources</b> ${esc(x.src.join(' ; '))}</p></div></details>`;
+}
+function renderRaf() {
+  const shown = ITEMS.filter(matchItem);
+  if (state.v === 'raf') $('shown').textContent = `${shown.length} point${shown.length > 1 ? 's' : ''}`;
+  if (!shown.length) { $('list-raf').innerHTML = '<p class="empty">Aucun point dans ce filtre.</p>'; return; }
+  let html = '', n = 0;
+  for (const o of OUTILS) {
+    const xs = shown.filter((x) => x.o === o.code);
+    if (!xs.length || n >= state.limit) continue;
+    html += `<h2 class="tool-h">${esc(o.nom)}</h2><p class="tool-meta">${xs.length} point${xs.length > 1 ? 's' : ''} dans ce filtre · mis à jour le ${esc(o.updated)}${o.origine.fichier ? ` · source ${esc(o.origine.depot || '')} ${esc(o.origine.fichier)}` : ''}${o.echelle ? ` · effort : ${esc(o.echelle)}` : ''}</p>`;
+    for (const [cat, lib] of Object.entries(o.categories)) {
+      const ys = xs.filter((x) => x.c === cat).sort((a, b) => (a.g === 'fait') - (b.g === 'fait') || PORD.indexOf(a.p) - PORD.indexOf(b.p) || a.id.localeCompare(b.id));
+      if (!ys.length || n >= state.limit) continue;
+      const take = ys.slice(0, state.limit - n);
+      n += take.length;
+      html += `<h3 class="cat-h">${esc(lib)} (${ys.length})</h3>` + take.map(itemHtml).join('');
+    }
+  }
+  if (shown.length > n) html += `<button type="button" class="chip more" id="more">Afficher ${Math.min(PAGE, shown.length - n)} de plus (${shown.length - n} restants)</button>`;
+  $('list-raf').innerHTML = html;
+  $('more')?.addEventListener('click', () => { state.limit += PAGE; renderRaf(); });
+}
+
+// --- Commun ------------------------------------------------------------------------------------------------------------
+function renderCounts() {
+  const open = QUESTIONS.filter(isOpen);
+  const here = QUESTIONS.filter((q) => q.st === 'ouverte' && answeredHere(q)).length;
+  const c = counts(ITEMS);
+  $('tq').textContent = `${open.length} questions à décider · ${here} répondues ici`;
+  $('tr').textContent = `${c.a_faire + c.en_cours} points restants sur ${c.total}`;
+  $('c-ouvertes').textContent = open.length;
+  $('c-decide').textContent = QUESTIONS.filter((q) => !inOpenTab(q)).length;
+  $('c-raf').textContent = c.a_faire + c.en_cours;
+  $('tools').innerHTML = OUTILS.map((o) => {
+    const k = counts(ITEMS.filter((x) => x.o === o.code));
+    const qs = QUESTIONS.filter((q) => q.o === o.code);
+    const qo = qs.filter(isOpen).length;
+    const bar = k.total ? `<div class="bar" aria-hidden="true"><i class="f" style="width:${100 * k.fait / k.total}%"></i><i class="c" style="width:${100 * k.en_cours / k.total}%"></i></div>` : '<div class="bar" aria-hidden="true"></div>';
+    return `<button type="button" class="tool" data-o="${esc(o.code)}" aria-pressed="${state.o === o.code}" aria-label="${esc(o.nom)} : ${qo} questions à décider, ${k.total - k.fait} points restants">
+      <span class="n">${esc(o.nom)}</span>${bar}<span class="q">${qo} à décider · ${qs.length - qo} réglées</span><span class="k">${k.total ? `${k.total - k.fait} restants · ${k.fait} faits` : 'pas de reste à faire'}</span></button>`;
+  }).join('');
+  $('tools').querySelectorAll('.tool').forEach((b) => b.addEventListener('click', () => { state.o = state.o === b.dataset.o ? 'all' : b.dataset.o; state.limit = PAGE; remember(); syncControls(); render(); }));
+}
+
+function renderControls() {
+  $('fo').innerHTML = `<option value="all">Tous les outils</option>` + OUTILS.map((o) => `<option value="${esc(o.code)}">${esc(o.nom)}</option>`).join('');
+  $('fp').innerHTML = `<option value="all">Toutes priorités</option>` + PORD.map((p) => `<option value="${p}">${esc(LIB.priorites[p])}</option>`).join('');
+  const etats = [['open', 'Restants'], ['a_faire', 'À faire'], ['en_cours', 'En cours'], ['fait', 'Faits'], ['all', 'Tous']];
+  $('fe').innerHTML = etats.map(([k, l]) => `<button type="button" class="chip" data-e="${k}">${l}</button>`).join('');
+  $('fe').querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { state.e = b.dataset.e; state.limit = PAGE; remember(); syncControls(); render(); }));
+  $('fo').addEventListener('change', (e) => { state.o = e.target.value; state.limit = PAGE; remember(); syncControls(); render(); });
+  $('fp').addEventListener('change', (e) => { state.p = e.target.value; state.limit = PAGE; remember(); render(); });
+  $('onlyOpen').addEventListener('change', (e) => { state.onlyOpen = e.target.checked; remember(); render(); });
+  let t = null;
+  $('q').addEventListener('input', (e) => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; state.limit = PAGE; render(); }, 150); });
+  document.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => { state.v = b.dataset.v; remember(); try { history.replaceState(null, '', '#' + state.v); } catch (_) {} syncControls(); render(); }));
+  syncControls();
+}
+function syncControls() {
+  if (!byCode[state.o]) state.o = 'all';
+  $('fo').value = state.o; $('fp').value = state.p; $('onlyOpen').checked = !!state.onlyOpen;
+  $('fe').querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.e === state.e)));
+  $('tools').querySelectorAll('.tool').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.o === state.o)));
+  document.querySelectorAll('.tab').forEach((b) => { b.setAttribute('aria-selected', String(b.dataset.v === state.v)); b.tabIndex = b.dataset.v === state.v ? 0 : -1; });
+  for (const v of ['ouvertes', 'decide', 'raf']) $('v-' + v).hidden = v !== state.v;
+  $('fe').hidden = $('fp').hidden = state.v !== 'raf';
+  $('onlyOpenWrap').hidden = state.v !== 'ouvertes';
+}
+function render() {
+  renderCounts();
+  if (state.v === 'raf') renderRaf(); else renderQuestions(state.v);
+}
+
+$('hist').innerHTML = HIST.map((h) => `<li>${esc(h.date)} — <b>${esc(h.nom)}</b> : ${esc(h.text)}</li>`).join('');
+renderCounts();
+renderControls();
+render();
+
+(async () => {
+  const db = window.claude ? await window.claude.use('db') : null;
+  const user = window.claude ? await window.claude.use('user') : null;
+  if (!db) { $('status').textContent = 'Lecture seule : l’enregistrement n’est pas disponible dans cette vue (ouvrez la page connecté pour répondre).'; $('status').classList.add('warn'); return; }
+  const w = user ? await user.can('data.write') : null;
+  if (w === false) { canWrite = false; $('status').textContent = 'Lecture seule : seul le responsable produit répond.'; render(); }
+  dbRef = db.collection('answers');
+  let first = true;
+  const timer = setTimeout(() => { if (first) { $('status').textContent = 'Les réponses enregistrées tardent à venir : rechargez la page si elles n’apparaissent pas.'; $('status').classList.add('warn'); } }, 10000);
+  dbRef.onSnapshot((snap) => {
+    clearTimeout(timer);
+    for (const d of snap.docs) answers[d.id] = d.data();
+    if (canWrite) { $('status').textContent = 'Vos réponses sont enregistrées à mesure.'; $('status').classList.remove('warn'); }
+    // Re-render on the first delivery, or for other viewers' changes, never under a field being typed in.
+    if (first || !document.activeElement || document.activeElement.tagName !== 'TEXTAREA') render(); else renderCounts();
+    first = false;
+  }, () => { clearTimeout(timer); $('status').textContent = 'Connexion à l’enregistrement perdue : rechargez la page.'; $('status').classList.add('warn'); });
+})();
+</script>
