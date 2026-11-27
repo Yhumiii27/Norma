@@ -70,6 +70,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : CX-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
     }
   ],
   "items": [
@@ -3156,7 +3160,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 121"
@@ -3182,7 +3186,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 122"
@@ -3208,7 +3212,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 123"
@@ -3234,7 +3238,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 124"
@@ -3260,7 +3264,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 125"
@@ -3286,7 +3290,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 126"
@@ -3312,7 +3316,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 127"
@@ -3338,7 +3342,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 128"
@@ -3364,7 +3368,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "aliases": [
         "point 129"
