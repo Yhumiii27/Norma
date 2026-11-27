@@ -258,7 +258,7 @@
     {
       "id": "CR-003",
       "title": "Données à fournir D-1 à D-11",
-      "description": "Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord avec l’entité partenaire, historique, origine des 30 %, contrôles, participants à l’atelier.",
+      "description": "Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord avec la Filiale partenaire, historique, origine des 30 %, contrôles, participants à l’atelier.",
       "category": "cadrage_decisions",
       "kind": "donnees",
       "priority": "prochaine_etape",
@@ -683,7 +683,7 @@
     {
       "id": "CR-074",
       "title": "Refacturation interne : tarifs par moyen et par entité, coût des heures réservées et réelles, relevés par projet",
-      "description": "P2, avancé (QReserve, Agilent iLab). Grille tarifaire par moyen et par entité (laboratoire 67 partagé avec l’entité partenaire), valorisation des heures réservées et réalisées, relevé de refacturation par projet et par période, export vers la comptabilité. Aujourd’hui Crucible ne connaît que le coût d’acquisition de l’installation et la valeur de la capacité inoccupée (P-8).",
+      "description": "P2, avancé (QReserve, Agilent iLab). Grille tarifaire par moyen et par entité (laboratoire 67 partagé avec la Filiale partenaire), valorisation des heures réservées et réalisées, relevé de refacturation par projet et par période, export vers la comptabilité. Aujourd’hui Crucible ne connaît que le coût d’acquisition de l’installation et la valeur de la capacité inoccupée (P-8).",
       "category": "aleas_pilotage",
       "kind": "fonction",
       "priority": "a_decider",

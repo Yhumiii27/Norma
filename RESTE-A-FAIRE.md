@@ -1234,7 +1234,7 @@ Faits : CR-081 Résultats d’essais et cahier de laboratoire (ELN) rattachés �
 ### Cadrage, décisions et données attendues (2 restants, 1 faits)
 
 - **CR-003 · Données à fournir D-1 à D-11** — *Prochaine étape · attend le responsable produit · effort M*  
-  Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord avec l’entité partenaire, historique, origine des 30 %, contrôles, participants à l’atelier.
+  Moyens, règles d’exclusion, types d’essai, substitutions, projets et besoins, personnes, accord avec la Filiale partenaire, historique, origine des 30 %, contrôles, participants à l’atelier.
   *Avancement : Gabarits prêts pour l’atelier : docs/atelier/gabarits-donnees-crucible.xlsx (un onglet par donnée, format de l’import de l’historique pour D-8). · Attend : Responsable produit et équipes R&D · Sources : docs/ATELIER-CADRAGE.md, docs/DECISIONS.md §11, docs/atelier/gabarits-donnees-crucible.xlsx*
 - **CR-002 · Réponses du responsable produit** — *À décider · non commencé · effort S* · **en cours**  
   57 questions du questionnaire « Décisions Crucible ».
