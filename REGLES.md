@@ -81,6 +81,12 @@ Dépôts, rôles PostgreSQL, ports et variables de connexion : `norma/registre/o
   ou `execution`, raison), jamais comme une copie de données.
 - Un connecteur vit dans `src/server/integrations/<outil>/` : miroir en lecture seule, file d'envoi, liens profonds vers
   l'outil propriétaire. Une source illisible est un état affiché (« source indisponible »), jamais une erreur de page.
+- **Tâches et approbations de toute la suite** (Norma 2.4, décision du propriétaire du 27 novembre 2026) : chaque outil
+  publie ses tâches et approbations ouvertes dans `<outil>.pub_taches` (contrat commun `contrats/taches-v1.md`), Matrix
+  les réunit dans `matrix.pub_taches`, et chaque outil la lit pour « Mes tâches », « Mes approbations » et ses pastilles.
+  Fiche et décision passent par l'API de l'outil propriétaire (`/api/v1/taches/…`), qui refait tous ses contrôles ; la
+  décision depuis un autre outil (phase 2) attend l'échange de jeton de Clavis. Jamais une donnée de santé ni une donnée
+  personnelle sensible dans un titre publié.
 
 ## 6. Connexion et droits : Clavis
 
@@ -103,7 +109,8 @@ Charte et composants : `norma/charte/` (mode d'emploi `norma/charte/README.md`).
 - **ce qui est commun est au même endroit dans tous les outils** : la coque (barre latérale, en-tête de page, actions,
   barre d'outils, panneau latéral, barre supérieure sur téléphone), ses mesures et l'échelle des textes suivent
   `norma/charte/COQUE.md` (classes `coque.css`, composants `charte/ds`) ; un écart se propose dans Norma ;
-- barre latérale par thème, recherche de pages ⌘K sous la marque ; sélecteur FR / EN et bouton d’affichage sombre / clair
+- barre latérale : marque, recherche de pages ⌘K, puis le **tronc commun des menus** (Accueil typé selon l'outil, Mes
+  tâches, Mes approbations, puis une ou deux entrées métier, `COQUE.md` § 2 bis), puis les sections par thème ; sélecteur FR / EN et bouton d’affichage sombre / clair
   **empilés, de même taille** (langue au-dessus), dernier élément à droite de l'en-tête de chaque page (barre supérieure
   sur téléphone), jamais ailleurs (cookie `epc2i-theme`, attribut `data-theme` de `<html>`) ;
 - actions de la page dans l'en-tête (au-delà de trois : menu « Actions ») ; aucun formulaire ouvert dans la page : un

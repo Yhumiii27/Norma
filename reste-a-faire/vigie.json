@@ -1,7 +1,7 @@
 {
   "outil": "vigie",
   "generated": "2026-10-10",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Vigie",
@@ -69,6 +69,10 @@
     {
       "date": "2026-11-26",
       "text": "VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : VG-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
     }
   ],
   "items": [
@@ -9942,6 +9946,28 @@
         "state": "fait",
         "delivery": "Vigie#44",
         "note": "Coque commune Norma 2.1 appliquée (Vigie#44, 24/11/2026)."
+      }
+    },
+    {
+      "id": "VG-N09",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Événements » et « Plan d’actions ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Tableau de bord QHSE du site choisi : TF1 / TG, jours sans accident, événements récents, actions en retard, échéances de contrôles et d'habilitations. Mes tâches = « À faire » (/a-faire) ; API /api/v1/taches/ en phase 2 (TA-12) ; signatures de terrain jamais décidées à distance.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]

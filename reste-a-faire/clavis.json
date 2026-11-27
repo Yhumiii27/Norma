@@ -1,7 +1,7 @@
 {
   "outil": "clavis",
   "generated": "2026-11-24",
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Clavis",
@@ -44,6 +44,10 @@
     {
       "date": "2026-11-25",
       "text": "CL-S07 ajouté et fait : conteneur unique (Clavis#17), Clavis activé sur le serveur commun et en ligne le 25 nov. 2026 ; logo de Norma 2.3.0 dans la coque et en favicon (Clavis#18, fusionnée)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : CL-N08 (tronc commun des menus) et CL-N09 (échange de jeton RFC 8693, prérequis de la phase 2) ajoutés."
     }
   ],
   "items": [
@@ -586,6 +590,50 @@
         "state": "fait",
         "delivery": "Clavis#15",
         "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "id": "CL-N08",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Annuaire » et « Mes accès ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Pour chacun : mes accès et mes demandes ; pour la DSI : comptes à activer, demandes d'accès, revues et écarts.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "CL-N09",
+      "title": "Échange de jeton pour les décisions entre outils (Norma 2.4, phase 2)",
+      "description": "Échange de jeton RFC 8693 (contrats/taches-v1.md § 5) : jeton de rafraîchissement à la connexion (12 h, révoqué à la déconnexion, au départ, au retrait de l'accès) ; grant token-exchange par le secret client de l'outil A → JWT pour l'outil B (aud = B, sub = oid = personne_id, act.sub = A, scope taches:lire | taches:decider, 5 min) ; registre « A peut demander un jeton pour B » ; journal de chaque émission. Prérequis de la décision à distance (TA-4, confirmée le 27 nov. 2026).",
+      "category": "suite",
+      "kind": "fonction",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "L",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]

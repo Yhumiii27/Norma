@@ -1,5 +1,40 @@
 # Norma — journal des versions
 
+## 2.4.0 — 27 novembre 2026
+
+Décision du propriétaire : « le tronc commun des menus n'est pas disponible sur tous les sites. Je veux dans ce tronc commun
+les menus suivants : 1- Accueil ; 2- Mes tâches (sous le même format que Teams, un affichage en liste, un en kanban et un en
+calendrier) ; 3- Mes approbations. […] les tâches et approbations doivent montrer toutes les tâches et toutes les
+approbations qu'un utilisateur a même si la provenance est d'un autre outil. » Elle tranche TA-11, TA-15 et TA-16 ; le
+propriétaire a confirmé le même jour la réponse proposée pour TA-1 à TA-10, TA-12, TA-13 et TA-14
+(`propositions/TACHES-ET-APPROBATIONS.md` § 7 bis).
+
+- **Tronc commun des menus** (`charte/COQUE.md` § 2 bis) : premier bloc de la barre latérale, sous ⌘K — Accueil (typé selon
+  l'outil : contenu fixé pour les dix outils), Mes tâches, Mes approbations, puis une ou deux entrées métier par outil
+  (tableau § 2 bis.3) ; mêmes place, ordre, icônes Phosphor (`House`, `CheckSquare`, `Stamp`) et libellés partout ;
+  pastilles = tâches et approbations ouvertes de toute la suite.
+- **Composants** `charte/ds` : `BaseNav` (rendu) et `base-nav.ts` (modèle pur : `BASE_ENTRIES`, `TOOL_BASE`, `baseNav`,
+  `activeEntry`, `baseNavProblems`) ; `MyTasks` — liste groupée et triable, kanban À faire · En cours · En attente · Fait
+  (déplacement seulement par une transition ouverte par l'outil propriétaire, boutons clavier), calendrier mois / semaine ;
+  `MyApprovals` — filtres outil, type, échéance ; Approuver / Refuser seulement quand la décision peut être prise ici ;
+  `TaskSource`, `DueText`, `StateTag`, `OpenInTool`, `SourcesBanner` ; règles pures `task-rules.ts` ; français des
+  libellés `taches-fr.ts` (`TACHES_FR`). Données par les props, rien n'est chargé par la charte.
+- `coque.css` : classes `.coque-base-nav`, `.coque-task-*`, `.coque-kanban-*`, `.coque-cal-*`, `.coque-appr-*`,
+  `.coque-sr-only` (variables seulement) ; ≤ 1024 px, le kanban défile en largeur.
+- **Contrat** `contrats/taches-v1.md` (nouveau dossier distribué aux outils) : `<outil>.pub_taches` v1 (24 colonnes),
+  `matrix.pub_taches` et `matrix.pub_taches_sources` (Matrix), échange de jeton RFC 8693 chez Clavis (prérequis de la
+  phase 2), `GET /api/v1/taches/{tache_id}` et `POST /api/v1/taches/{tache_id}/decision` (motif, version, clé
+  d'idempotence, contrôles et journal de l'outil propriétaire, codes 401 à 503), phases 1 à 3. `REGLES.md` § 5 et § 7.
+- Plan de déploiement `propositions/DEPLOIEMENT-TRONC-COMMUN.md` (par outil, pilote Keystone + Codex + Arche) ;
+  questionnaire `questionnaire-taches` : questions marquées décidées.
+- Tests `test/taches.test.mjs` : tronc commun pour chaque outil du registre, colonnes du contrat = `PUB_TACHES_COLUMNS`,
+  règles des vues (échéances, tri, kanban, calendrier), décisions possibles ici, traduction française de chaque libellé.
+- **Reste à faire** : NO-009 en cours ; un point d'adoption par outil (R-N05, CX-N09, AR-N05, VG-N09, CR-N07, CU-N07,
+  CL-N08, MX-N08, MO-N02, VE-N02), MX-N09 (réunion `matrix.pub_taches`), CL-N09 (échange de jeton).
+- **Version mineure** : rien n'est retiré ni changé dans les exports existants ; un outil reprend la copie (`copier`) sans
+  changer son code et passe `verifier`. L'adoption du tronc commun est suivie par outil dans le reste à faire, comme les
+  logos de 2.3.0.
+
 ## 2.3.0 — 25 novembre 2026
 
 Logos des outils, validés par le propriétaire (page de proposition du 25 novembre 2026).

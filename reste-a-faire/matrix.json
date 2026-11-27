@@ -1,7 +1,7 @@
 {
   "outil": "matrix",
   "generated": "2026-10-26",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Matrix",
@@ -53,6 +53,10 @@
     {
       "date": "2026-11-26",
       "text": "Demande lot 16 de Codex traitée côté dépôt (Matrix#106) ; appliquées sur le serveur : codex.pub_documents, pub_revisions_document, pub_validations ; pub_journal après la migration 0006 de Codex."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : MX-N08 (tronc commun des menus) et MX-N09 (réunion matrix.pub_taches, pub_taches_sources) ajoutés."
     }
   ],
   "items": [
@@ -947,6 +951,50 @@
         "state": "fait",
         "delivery": "Matrix#100",
         "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "id": "MX-N08",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Publications » et « Liens entre outils ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : État du serveur commun : outils et publications, publications à appliquer, liens demandés, journal unifié récent. Bloc en HTML (classes coque-base-nav, coque-task-*).",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
+      }
+    },
+    {
+      "id": "MX-N09",
+      "title": "Réunion matrix.pub_taches et matrix.pub_taches_sources (Norma 2.4)",
+      "description": "Construire matrix.pub_taches, réunion (UNION ALL) des <outil>.pub_taches lisibles et conformes au contrat taches v1, sur le modèle de journal_unifie (vue absente ou hors contrat laissée de côté, réunion reconstruite, rejouable), et matrix.pub_taches_sources (outil, etat ok | absente | hors_contrat | illisible, verifie_le, message) ; un seul lien lecture matrix.pub_taches par outil ; appliquer chaque <outil>.pub_taches demandée. Décision TA-1 (27 nov. 2026).",
+      "category": "demandes_outils",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]

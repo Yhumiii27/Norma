@@ -1,7 +1,7 @@
 {
   "outil": "norma",
   "generated": "2026-11-24",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Norma",
@@ -43,6 +43,10 @@
     {
       "date": "2026-11-26",
       "text": "Proposition « menus de base communs, tâches et approbations dans toute la suite » (NO-009) : relevé des dix outils, cible, phases, questionnaire TA-1 à TA-16 ; rien n'est construit."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil."
     }
   ],
   "items": [
@@ -221,23 +225,33 @@
     },
     {
       "id": "NO-009",
-      "title": "Menus de base communs, tâches et approbations dans toute la suite",
+      "title": "Tronc commun des menus, tâches et approbations dans toute la suite",
       "description": "Même bloc d'entrées de base que Keystone dans tous les outils ; « Mes tâches », « Mes approbations » et cloche de toute la suite (pub_taches réunies par Matrix) ; fiche et décision depuis chaque outil par l'API de l'outil propriétaire avec un jeton de la personne émis par Clavis ; documents par l'aperçu de Codex ; un seul résumé e-mail.",
       "category": "socle",
-      "kind": "proposition",
-      "priority": "a_decider",
-      "status": "bloque_attente_proprietaire",
-      "waiting_on": "Réponses du propriétaire au questionnaire TA-1 à TA-16",
+      "kind": "fonction",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "",
       "effort": "XL",
       "sources": [
         "propositions/TACHES-ET-APPROBATIONS.md",
-        "propositions/questionnaire-taches/questions.json"
+        "propositions/questionnaire-taches/questions.json",
+        "propositions/DEPLOIEMENT-TRONC-COMMUN.md",
+        "contrats/taches-v1.md",
+        "charte/COQUE.md § 2 bis"
       ],
-      "evidence": [],
+      "evidence": [
+        "charte/ds/base-nav.ts",
+        "charte/ds/BaseNav.tsx",
+        "charte/ds/MyTasks.tsx",
+        "charte/ds/MyApprovals.tsx",
+        "charte/ds/task-rules.ts",
+        "test/taches.test.mjs"
+      ],
       "progress": {
-        "state": "a_faire",
-        "delivery": null,
-        "note": "Proposition et questionnaire du 26 nov. 2026 ; phases 0 à 5, pilote proposé Keystone + Codex + Arche."
+        "state": "en_cours",
+        "delivery": "Norma 2.4.0",
+        "note": "27 nov. 2026 : TA-11, TA-15, TA-16 décidées par le propriétaire, les autres réponses proposées confirmées. Norma 2.4.0 livre la phase 1 dans le socle (tronc commun, composants, contrat pub_taches v1) ; adoption par outil : R-N05, CX-N09, AR-N05, VG-N09, CR-N07, CU-N07, CL-N08, MX-N08, MO-N02, VE-N02 ; MX-N09 (réunion) et CL-N09 (jeton, phase 2)."
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "outil": "modulus",
   "generated": "2026-11-24",
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "branch": "main",
   "origine": {
     "depot": "Yhumiii27/Modulus",
@@ -30,6 +30,10 @@
     {
       "date": "2026-11-25",
       "text": "Livraison 1 (bêta) fusionnée (Modulus#6) : MO-L1 et MO-N01 faits, MO-L2 à MO-L6 en cours (écrans sur données fictives, intégrations à venir) ; en ligne sur Coolify (conteneur unique, authentification HTTP) ; logo de Norma 2.3.0 dans la coque et en favicon (Modulus#7, fusionnée)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : MO-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
     }
   ],
   "items": [
@@ -212,6 +216,28 @@
         "state": "fait",
         "delivery": "PR Modulus#6",
         "note": "Livraison 1 construite sur la coque commune de Norma 2.1 (AppShell, PageHeader, PrefsStack), fusionnée le 25 nov. 2026."
+      }
+    },
+    {
+      "id": "MO-N02",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Mes affaires » et « Catalogue ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Mes affaires (étape, offre en cours, échéance), offres à revoir, dernières publications du catalogue et des prix.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]

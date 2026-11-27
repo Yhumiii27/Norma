@@ -1,7 +1,7 @@
 {
   "outil": "crucible",
   "generated": "2026-10-22",
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "branch": "claude/lucid-dirac-7bdq6x",
   "origine": {
     "depot": "Yhumiii27/Crucible",
@@ -202,6 +202,10 @@
     {
       "date": "2026-11-25",
       "text": "Conteneur unique pour Coolify, derrière son authentification HTTP (Crucible#50 ; CR-007) ; logo de Norma 2.3.0 dans la coque et en favicon (Crucible#51, fusionnée)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Norma 2.4.0 : CR-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
     }
   ],
   "items": [
@@ -1031,6 +1035,28 @@
         "state": "fait",
         "delivery": "Crucible#49",
         "note": "Coque alignée sur Norma 2.x, fusionnée le 24 nov. 2026."
+      }
+    },
+    {
+      "id": "CR-N07",
+      "title": "Tronc commun des menus et Mes tâches / Mes approbations (Norma 2.4)",
+      "description": "Reprendre Norma 2.4.0 : tronc commun de la barre latérale (BaseNav : Accueil typé selon l'outil, Mes tâches, Mes approbations, puis « Planning des moyens » et « Mes besoins d’essais ») ; « Mes tâches » en liste, kanban et calendrier (MyTasks) et « Mes approbations » (MyApprovals) montrant toutes les tâches et approbations de la personne dans la suite (matrix.pub_taches), lien profond vers l'outil propriétaire ; projection taches_publiees, requête de référence pub_taches et demande de publication à Matrix ; accueil typé : Occupation des moyens d'essais de la semaine, mes réservations, conflits et incidents ouverts. Mes approbations = « À décider » (/my/decisions) ; arbitrages et scénarios non décidables à distance.",
+      "category": "alignement_norma",
+      "kind": "alignement_norma",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "",
+      "effort": "M",
+      "sources": [
+        "norma/charte/COQUE.md § 2 bis",
+        "norma/contrats/taches-v1.md",
+        "norma/propositions/DEPLOIEMENT-TRONC-COMMUN.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": "Norma 2.4.0 (27 nov. 2026)."
       }
     }
   ]
