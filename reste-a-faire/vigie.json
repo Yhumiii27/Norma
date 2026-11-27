@@ -73,6 +73,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : VG-N09 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
     }
   ],
   "items": [
@@ -7761,7 +7765,7 @@
       "description": "L'application Mac doit pouvoir ouvrir l'URL du serveur central au lieu de localhost:3200.",
       "category": "production_et_exploitation",
       "kind": "element",
-      "priority": "prochaine_etape",
+      "priority": "plus_tard",
       "status": "partiel",
       "waiting_on": "",
       "effort": "M",
@@ -7772,7 +7776,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": null,
-        "note": "◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write com.epc2i.vigie VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le …"
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — ◐ Partiel (24/10/2026, paquet 8) — livré : mode client du serveur central dans l'application Mac (`desktop-app/Sources/AppConfig.swift`, `ServerController.swift` : `defaults write com.epc2i.vigie VigieServerURL https://…` ou `VIGIE_SERVER_URL` à la construction ; aucun serveur local, sonde de `/api/sante`, origine du serveur seule admise dans la fenêtre, connexion Entra ID dans la fenêtre, « Serveur Vigie injoignable » avec « Réessayer ») ; aucune configuration côté serveur ; documentation (`desktop-app/README.md`, `docs/EXPLOITATION.md` § 2). Reste : construction et essai sous macOS (le …"
       },
       "aliases": [
         "PRD-14"

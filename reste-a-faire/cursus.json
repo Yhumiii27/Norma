@@ -69,6 +69,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : CU-N07 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
     }
   ],
   "items": [
@@ -3847,7 +3851,7 @@
       "description": "Cursus n'est accessible que par le site web adapté aux petits écrans : pas d'application installée, pas de notifications sur le téléphone, et rien ne fonctionne sans réseau (ateliers, chantiers, déplacements). Fournir une application mobile (PWA installable d'abord, puis application native si besoin) couvrant demandes et validations d'absence, saisie du jour ou pointage, relevés et convocations, avec notifications et saisie hors ligne synchronisée au retour du réseau. Attente du marché : standard (Factorial, Lucca). *Ajoutée le 26/10/2026 (analyse comparative) ; à valider avant de développer : une PWA (manifeste, service worker, file de synchronisation) couvre la plupart des usages sans magasin d'applications.*",
       "category": "ergonomie_accessibilite",
       "kind": "tache",
-      "priority": "prochaine_etape",
+      "priority": "plus_tard",
       "status": "non_commence",
       "waiting_on": "",
       "effort": "L",
@@ -3858,7 +3862,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "details": {
         "preuves": "client/index.html (aucun manifeste) · grep -i \"service.worker\\|manifest\\|offline\" client → aucun résultat · client/src/layout/Shell.tsx (navigation mobile seulement)"
@@ -4433,7 +4437,7 @@
       "progress": {
         "state": "a_faire",
         "delivery": null,
-        "note": ""
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard."
       },
       "details": {
         "preuves": "desktop/CursusApp.swift:70, :76-83"

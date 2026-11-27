@@ -366,6 +366,10 @@
     {
       "date": "2026-11-27",
       "text": "Norma 2.4.0 : R-N05 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite)."
+    },
+    {
+      "date": "2026-11-27",
+      "text": "Applications locales (Mac, Windows, mobile native) reportées à plus tard : interface web uniquement pour le démarrage (propriétaire, 27 nov. 2026)."
     }
   ],
   "items": [
@@ -922,7 +926,7 @@
       ],
       "progress": {
         "state": "a_faire",
-        "note": "31 oct. 2026 : le responsable produit garde le choix web ou application ; l’application macOS sera adaptée comme l’application Windows (R-210) pour pointer vers le serveur hébergé.",
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — 31 oct. 2026 : le responsable produit garde le choix web ou application ; l’application macOS sera adaptée comme l’application Windows (R-210) pour pointer vers le serveur hébergé.",
         "delivery": null
       }
     },
@@ -6396,7 +6400,7 @@
       "description": "Le responsable produit (31 oct. 2026, questionnaire L9-X2) : l’accès web reste la solution pour accéder à Keystone de n’importe où ; une application Windows (.exe), installable par ceux qui le souhaitent, coexiste avec lui pour laisser le choix à l’utilisateur. Fenêtre native (WebView2) sur le serveur Keystone d’EPC2i, connexion Microsoft habituelle, sans serveur local.",
       "category": "plateforme_production",
       "kind": "fonction_manquante",
-      "priority": "prochaine_etape",
+      "priority": "plus_tard",
       "status": "non_commence",
       "waiting_on": "",
       "effort": "M",
@@ -6409,7 +6413,7 @@
       "progress": {
         "state": "en_cours",
         "delivery": "Livraison 9",
-        "note": "31 oct. 2026 : application construite (C# Windows Forms + WebView2, .NET 10, Keystone.exe autonome win-x64, docs/delivery-9/notes-r210-windows-app.md) ; compilée sous Linux, fabrication à la demande (windows-app.yml). Reste : essai sur un PC Windows avec un serveur hébergé (I-1a), signature de code et mode de diffusion (DSI)."
+        "note": "Reporté (propriétaire, 27 nov. 2026) : interface web uniquement pour le démarrage ; les applications locales (Mac, Windows, mobile native) viendront beaucoup plus tard. — 31 oct. 2026 : application construite (C# Windows Forms + WebView2, .NET 10, Keystone.exe autonome win-x64, docs/delivery-9/notes-r210-windows-app.md) ; compilée sous Linux, fabrication à la demande (windows-app.yml). Reste : essai sur un PC Windows avec un serveur hébergé (I-1a), signature de code et mode de diffusion (DSI)."
       }
     },
     {
