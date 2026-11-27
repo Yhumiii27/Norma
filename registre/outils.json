@@ -1,5 +1,5 @@
 {
-  "description": "Registre des outils de la suite Atrium : dépôt, schéma et rôle PostgreSQL, ports réservés sur le Mac du propriétaire, connexion par Clavis. Lu par les outils et par Matrix ; une ligne ne se renomme jamais.",
+  "description": "Registre des outils de la suite Atrium : dépôt, schéma et rôle PostgreSQL, ports réservés sur le Mac du propriétaire, connexion par Clavis. Lu par les outils et par Matrix ; une ligne ne se renomme jamais. « domaine » (facultatif) : adresse publique HTTPS de l'outil dans Coolify, quand elle est réservée.",
   "outils": [
     {
       "code": "keystone",
@@ -163,6 +163,24 @@
         "droits": "VECTOR_ACCESS_FROM_CLAVIS=on"
       },
       "langue_commits": "en"
+    },
+    {
+      "code": "ingenium",
+      "nom": "Ingenium",
+      "role_metier": "Ingénierie : registre des disciplines, P&ID, référentiel technique des articles, nomenclatures d'ingénierie, plans, pack et dossier technique",
+      "depot": "Yhumiii27/ingenium",
+      "schema": "ingenium",
+      "role_pg": "ingenium_app",
+      "ports": {
+        "dev": 4000,
+        "tests": 4010
+      },
+      "clavis": {
+        "emetteur": "ENTRA_ISSUER",
+        "droits": "INGENIUM_ACCESS_FROM_CLAVIS=on"
+      },
+      "langue_commits": "en",
+      "domaine": "ingenium.projectdirection.fr"
     }
   ],
   "ports_reserves_hors_outils": [

@@ -1,7 +1,7 @@
 # Norma — socle commun de la suite Atrium
 
 Ce qui doit être identique dans tous les outils (Keystone, Codex, Vigie, Cursus, Arche, Crucible, Clavis, Matrix,
-Modulus, Vector) vit ici, une seule fois :
+Modulus, Vector, Ingenium) vit ici, une seule fois :
 
 | Chemin | Contenu |
 | --- | --- |

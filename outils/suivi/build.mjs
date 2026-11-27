@@ -15,8 +15,8 @@ const RACINE = path.resolve(ici, '..', '..');
 const TEMPLATE = path.join(ici, 'page.template.html');
 const PALETTE = path.join(ici, '..', 'pages', 'nocturne-page.css');
 
-/** Outils pas encore au registre, qui ont déjà des questions (cadrage). */
-export const OUTILS_A_VENIR = { ingenium: "Outil d'ingénierie (à créer)" };
+/** Outils pas encore au registre, qui ont déjà des questions (cadrage). Vide depuis 3.1.0 : Ingenium est au registre. */
+export const OUTILS_A_VENIR = {};
 export const STATUTS_DECISION = { ouverte: 'à décider', repondue: 'répondue', decidee: 'décidée' };
 export const NATURES = ['question', 'donnee'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;

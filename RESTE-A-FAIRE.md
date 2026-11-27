@@ -2,7 +2,7 @@
 
 Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`, schéma `reste-a-faire/SCHEMA.md`), mise à jour le 27 novembre 2026. Produite par `npm run suivi` avec la page `.artifacts/suivi.html` (« Suivi Atrium ») ; ne pas la modifier à la main.
 
-**Avancement** : 820 faits, 91 en cours, 224 à faire, sur 1135 points.
+**Avancement** : 820 faits, 92 en cours, 236 à faire, sur 1148 points.
 
 ## Sommaire
 
@@ -18,8 +18,9 @@ Liste commune à tous les outils, tenue dans Norma (`reste-a-faire/<outil>.json`
 | [Matrix](#matrix) | 25 | 11 | 7 | 43 | 1 | 3 | 2026-11-27 |
 | [Modulus](#modulus) | 3 | 5 | 3 | 11 | 0 | 0 | 2026-11-27 |
 | [Vector](#vector) | 3 | 0 | 7 | 10 | 0 | 0 | 2026-11-27 |
+| [Ingenium](#ingenium) | 0 | 1 | 12 | 13 | 0 | 4 | 2026-11-27 |
 | [Norma (socle)](#norma) | 9 | 2 | 0 | 11 | 0 | 0 | 2026-11-27 |
-| **Total** | **820** | **91** | **224** | **1135** | | | |
+| **Total** | **820** | **92** | **236** | **1148** | | | |
 
 Priorité, statut et effort suivent le schéma commun ; l’échelle d’effort et la règle de reprise de chaque outil sont rappelées dans sa section. Les points faits sont listés sans leur description.
 
@@ -1460,6 +1461,60 @@ Faits : VE-L0 Livraison 0 — Cadrage ; VE-L1 Livraison 1 — Socle et interface
 
 Faits : VE-N01 Coque commune Norma 2.0 (langue et affichage à la même place).
 
+<a id="ingenium"></a>
+
+## Ingenium
+
+0 faits, 1 en cours, 12 à faire. Source : Yhumiii27/ingenium, `docs/PLAN.md` ; reprise : une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée. Effort : S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10.
+
+### Livraisons du plan (6 restants)
+
+- **IN-L0 · Livraison 0 — Cadrage** — *Prochaine étape · partiel · effort S* · **en cours (PR de cadrage d'Ingenium)**  
+  Spécification docs/spec/00–06 (vision, périmètre et frontière, rôles, menus, modèle de données, échanges, transition hors de Keystone), DECISIONS.md, PLAN.md, DEMANDES.md (brouillons), DONNEES.md, CLAUDE.md, copie de Norma.
+  *Avancement : Dépôt créé le 27 nov. 2026 ; cadrage en PR (brouillon). · Attend : Lecture du cadrage par le propriétaire ; réponses ING-03 à ING-28 · Sources : docs/PLAN.md, livraison 0*
+- **IN-L1 · Livraison 1 — Plateforme** — *Prochaine étape · non commencé · effort L*  
+  Socle copié de Modulus main (docs/SOCLE.md) : PostgreSQL seul, schéma ingenium, connexion par Clavis et droits lus dans clavis.pub_acces, coque commune et logo, tronc commun (Accueil « Ma discipline », Mes tâches liste / kanban / calendrier, Mes approbations, Mes projets, Référentiel technique), i18n, journal en ajout seul, tâches planifiées, jeu de démonstration fictif aligné sur celui de Keystone, CI.
+  *Attend : Livraison 0 lue ; ING-19, ING-23 à ING-25, ING-28 · Sources : docs/PLAN.md, livraison 1*
+- **IN-L2 · Livraison 2 — Registre d'ingénierie, P&ID et plans** — *Prochaine étape · attend le responsable produit · effort XL*  
+  Disciplines, entrées, livrables jusqu'à la diffusion, listes générées, contrôles de cohérence, changements, assistant d'import ; validation P&ID (feuilles, repères, étapes, import) ; miroir des plans PDM. D'abord en lecture des données de Keystone (vues de reprise), puis écritures objet par objet.
+  *Attend : ING-04, ING-05, ING-09, ING-26 ; vues de reprise (Keystone, Matrix) · Sources : docs/PLAN.md, livraison 2*
+- **IN-L3 · Livraison 3 — Référentiel technique et nomenclature d'ingénierie** — *Plus tard · attend le responsable produit · effort XL*  
+  Articles (données techniques, validation, équivalents, structures, pièces d'usure et de rechange), nomenclature d'ingénierie rattachée aux équipements ; publications ingenium.pub_articles et pub_nomenclatures sous les contrats de Keystone.
+  *Attend : ING-06, ING-07, ING-08 ; A-1b, D9-18 et R-185 de Keystone · Sources : docs/PLAN.md, livraison 3*
+- **IN-L4 · Livraison 4 — Pack ingénierie, interfaces, dossier CE, revues** — *Plus tard · attend le responsable produit · effort L*  
+  Pack ingénierie (contrat K-08 d'Arche), registre des interfaces, dossier technique et conformité CE, revues de conception si retenues.
+  *Attend : ING-10, ING-11, ING-12, ING-15 ; liste type réelle du pack (ING-D4) · Sources : docs/PLAN.md, livraison 4*
+- **IN-L5 · Livraison 5 — Bascule des lecteurs et retrait dans Keystone** — *Plus tard · non commencé · effort L*  
+  Arche, Vigie, Modulus, Vector et Keystone lisent les vues d'Ingenium ; Matrix retire les vues de Keystone ; Keystone retire ses écrans d'ingénierie (nouvelle migration).
+  *Attend : Livraisons 2 à 4 ; ING-27 · Sources : docs/PLAN.md, livraison 5, docs/spec/06-transition.md*
+
+### Mise en service (3 restants)
+
+- **IN-S01 · Mise en service : application Coolify et adresse** — *Prochaine étape · attend le responsable produit · effort S*  
+  Application Coolify (Dockerfile, conteneur unique comme Modulus) sur ingenium.projectdirection.fr, derrière l'authentification HTTP de Coolify pendant la bêta.
+  *Attend : Propriétaire : création de l'application dans Coolify · Sources : docs/PLAN.md, mise en service*
+- **IN-S02 · Mise en service : rôle ingenium_app et schéma ingenium** — *Prochaine étape · attend le responsable produit · effort S*  
+  Créés par Matrix sur le serveur commun (aucune migration ne crée de schéma) ; liens de lecture de la livraison 1.
+  *Attend : Brouillon DI-M1 de docs/DEMANDES.md, « validé » du propriétaire · Sources : docs/DEMANDES.md, DI-M1*
+- **IN-S03 · Mise en service : application ingenium dans Clavis** — *Prochaine étape · attend le responsable produit · effort S*  
+  Rôles Ingenium.* au catalogue de Clavis, profils, client OpenID Connect (npm run oidc:client).
+  *Attend : Brouillon DI-C1 de docs/DEMANDES.md, « validé » du propriétaire ; ING-19 · Sources : docs/DEMANDES.md, DI-C1*
+
+### Points repris de Keystone (selon ING-03) (4 restants)
+
+- **IN-R035 · Brancher SolidWorks PDM / 3DEXPERIENCE (plans, aperçus)** — *À décider · attend un système externe · effort L*  
+  Point R-035 de Keystone, à construire dans Ingenium si ING-03 et ING-09 gardent leur réponse par défaut ; reste dans keystone.json jusque-là.
+  *Attend : ING-03, ING-09 ; accès PDM / 3DX validé par la DSI · Sources : reste-a-faire/keystone.json, R-035, docs/spec/06-transition.md*
+- **IN-R101 · Trancher qui est maître du référentiel articles** — *À décider · attend le responsable produit · effort M*  
+  Point R-101 de Keystone (A-1b) : 3DX / PDM ou l'outil ; conditionne la livraison 3.
+  *Attend : ING-03, ING-06 ; A-1b · Sources : reste-a-faire/keystone.json, R-101*
+- **IN-R107 · Lire les exports natifs EPLAN, TIA Portal et SolidWorks** — *À décider · attend le responsable produit · effort XL*  
+  Point R-107 de Keystone : l'assistant d'import ne lit aujourd'hui aucun fichier ; exemples attendus (ING-D3).
+  *Attend : ING-03, ING-04 ; données ING-D3 · Sources : reste-a-faire/keystone.json, R-107*
+- **IN-R214 · Lire le fichier XML de numérotation des articles** — *À décider · attend le responsable produit · effort M*  
+  Point R-214 de Keystone (D9-18) : numérotation par un fichier XML sur un serveur local, échange avec 3DX.
+  *Attend : ING-03, ING-06 ; données ING-D5 · Sources : reste-a-faire/keystone.json, R-214*
+
 <a id="norma"></a>
 
 ## Norma (socle)
@@ -1511,8 +1566,10 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-27 — **Modulus** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption MO-N03.
 - 2026-11-27 — **Vector** : Norma 2.4.0 : VE-N02 ajouté (tronc commun des menus, Mes tâches / Mes approbations de toute la suite).
 - 2026-11-27 — **Vector** : Norma 3.0.0 : suite renommée Atrium, cookie atrium-theme (ancien nom lu à défaut) ; point d'adoption VE-N03.
+- 2026-11-27 — **Ingenium** : Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR.
 - 2026-11-27 — **Norma (socle)** : Norma 2.4.0 : tronc commun des menus (Accueil typé, Mes tâches en liste / kanban / calendrier, Mes approbations), contrat contrats/taches-v1.md, plan de déploiement ; NO-009 en cours, un point d'adoption par outil.
 - 2026-11-27 — **Norma (socle)** : Norma 3.0.0 : suite renommée Atrium (NO-010) ; page unique « Suivi Atrium » avec les décisions de toute la suite (NO-011) ; un point d'adoption par outil, MX-N11 pour le serveur commun.
+- 2026-11-27 — **Norma (socle)** : Norma 3.1.0 : Ingenium (ingénierie) inscrit au registre, à REGLES § 1, aux logos et au tronc commun des menus ; reste à faire reste-a-faire/ingenium.json ; ING-01 et ING-02 décidées.
 - 2026-11-26 — **Codex** : CX-047 et CX-049 avancés (Codex#37) ; demande lot 16 de Cursus traitée (CX-R07, Codex#38, D-32 à confirmer) ; CX-N01 : premiers écrans traduits (Codex#39).
 - 2026-11-26 — **Codex** : CX-N01 fait (Codex#41) ; image Docker corrigée : `norma/` ajouté au contexte du build (Codex#40) ; le redéploiement attend l’application des migrations 0005 et 0006 sur le serveur commun.
 - 2026-11-26 — **Vigie** : VG-N01 : tous les écrans en chaînes sources anglaises (Vigie#47, #48, #49) ; icônes du signalement installable au logo de Norma 2.3.0 (Vigie#46).
@@ -1545,5 +1602,3 @@ Faits : NO-005 Arche, Crucible et Modulus passent au questionnaire commun ; NO-0
 - 2026-11-24 — **Vigie** : Audit du design de Norma 2.0 : point VG-N08 (coque commune).
 - 2026-11-24 — **Vigie** : Paquets R2 et R3 constatés dans la liste (Vigie#41) ; Clavis (VG-N02) ; HAB-06 et IMP-02 clos sans objet ; adoption de la liste globale (Vigie#42).
 - 2026-11-24 — **Vigie** : Vigie#43 fusionnée : VG-N03, VG-N05, VG-N06, VG-N07 faits, VG-N01 en cours (coque traduite, écrans à faire) ; coque Norma 2.x en revue (Vigie#44) : VG-N08 en cours.
-- 2026-11-24 — **Vigie** : Coque commune Norma 2.1 fusionnée (Vigie#44) : VG-N08 fait.
-- 2026-11-24 — **Cursus** : Repris dans le reste à faire global de Norma 1.2.0 (commit e6203e5) ; écarts de l’audit Norma ajoutés (CU-N…).

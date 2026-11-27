@@ -2,8 +2,8 @@
 
 Toutes les questions posées au responsable produit, pour toute la suite Atrium, au même endroit : un fichier par outil,
 `decisions/<code>.json` (codes du registre `registre/outils.json`), plus `norma.json` (le socle et la suite) et un fichier
-par outil à venir qui a déjà des questions (`ingenium.json`, l'outil d'ingénierie en cadrage ; liste `OUTILS_A_VENIR` de
-`outils/suivi/build.mjs`). Contrôlé par `validerDecisions` (rejoué par `npm test` et `npm run suivi`, qui refuse de
+par outil à venir qui a déjà des questions (liste `OUTILS_A_VENIR` de `outils/suivi/build.mjs`, vide depuis 3.1.0 :
+Ingenium, en cadrage, est au registre). Contrôlé par `validerDecisions` (rejoué par `npm test` et `npm run suivi`, qui refuse de
 produire la page au moindre écart). La page `.artifacts/suivi.html` en est produite avec le reste à faire.
 
 ## Fichier

@@ -99,7 +99,7 @@ un filet (`.coque-base-nav`). Rendu par `BaseNav` (`ds/BaseNav.tsx`) d'après le
 | 3 | Mes approbations / My approvals | `Stamp` | `/my/approvals` | approbations ouvertes de la personne dans toute la suite |
 | 4–5 | une ou deux entrées propres au métier (§ 2 bis.3) | voir le tableau | voir le tableau | selon l'outil |
 
-- **Même place, même ordre, mêmes icônes, mêmes libellés** dans les dix outils ; les trois premières entrées sont
+- **Même place, même ordre, mêmes icônes, mêmes libellés** dans les onze outils ; les trois premières entrées sont
   toujours visibles (une personne sans tâche voit une liste vide, jamais une entrée absente). Les entrées métier suivent
   les droits de l'outil (`hidden`).
 - Chemin : un outil qui a déjà une route la garde (`paths`, ex. Vigie `{ tasks: '/a-faire' }`, Codex
@@ -130,6 +130,7 @@ et approbations) qui renvoie à Mes tâches. Contenu (`TOOL_BASE[outil].home`) :
 | Matrix | état du serveur commun : outils et publications, publications à appliquer, liens demandés, journal unifié récent |
 | Modulus | mes affaires (étape, offre en cours, échéance), offres à revoir, dernières publications du catalogue et des prix |
 | Vector | expéditions en cours (prochaine étape, ETA, retard), demandes à trier, documents manquants, incidents |
+| Ingenium | « Ma discipline » : entrées attendues bloquantes, livrables à diffuser cette semaine, contrôles de cohérence ouverts, repères P&ID non rattachés, articles à valider ; par projet de l'équipe, avancement des livrables, couverture P&ID et pack ingénierie |
 
 ### 2 bis.3 Entrées propres au métier (une ou deux par outil)
 
@@ -148,6 +149,7 @@ Choisies le 27 novembre 2026 d'après le relevé de la proposition (§ 1) : l'ob
 | Matrix | Publications (`Database`, `/publications`) | Liens entre outils (`FlowArrow`, `/liens`) | les deux décisions que porte Matrix (M-18, M-17) |
 | Modulus | Mes affaires (`Handshake`, `/my/deals`) | Catalogue (`Cube`, `/catalogue`) | l'affaire suivie par le commercial et le catalogue des machines standard |
 | Vector | Mes expéditions (`Truck`, `/my/shipments`) | Demandes d'expédition (`PaperPlaneTilt`, `/requests`) | l'expédition suivie et la file des demandes à trier |
+| Ingenium | Mes projets (`FolderUser`, `/my/projects`) | Référentiel technique (`Gear`, `/reference`) | les projets de l'équipe d'ingénierie de la personne, et les articles, structures et plans que créent les bureaux d'études |
 
 Une entrée métier se change dans Norma (`ds/base-nav.ts` et ce tableau), jamais dans un outil seul.
 

@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { charger } from '../outils/reste-a-faire/build.mjs';
-import { ID, chargerDecisions, choixPermis, comptesDecisions, page, validerDecisions } from '../outils/suivi/build.mjs';
+import { ID, OUTILS_A_VENIR, chargerDecisions, choixPermis, comptesDecisions, page, validerDecisions } from '../outils/suivi/build.mjs';
 
 // Norma 3.0 — page unique « Suivi Atrium » : reste à faire et décisions de toute la suite.
 const racine = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -13,10 +13,10 @@ const question = (o = {}) => ({ id: 'arche:Q-1', ref: 'Q-1', outil: 'arche', gro
   proposition: 'Oui', alternatives: ['Non'], bloque: '', statut: 'ouverte', reponse: null, ...o });
 const fichier = (questions, o = {}) => ({ outil: 'arche', updated: '2026-11-27', groupes: { prio: 'À traiter en priorité' }, decide: [], questions, ...o });
 
-test('un fichier decisions/ par outil du registre, Norma et l’outil d’ingénierie ; ids uniques dans la suite', () => {
+test('un fichier decisions/ par outil du registre, Norma et les outils à venir ; ids uniques dans la suite', () => {
   const docs = chargerDecisions(racine);
   const registre = JSON.parse(readFileSync(path.join(racine, 'registre/outils.json'), 'utf8')).outils.map((o) => o.code);
-  assert.deepEqual(docs.map((d) => d.outil).sort(), [...registre, 'ingenium', 'norma'].sort());
+  assert.deepEqual(docs.map((d) => d.outil).sort(), [...registre, 'norma', ...Object.keys(OUTILS_A_VENIR)].sort());
   const ids = docs.flatMap((d) => d.questions.map((q) => q.id));
   assert.equal(new Set(ids).size, ids.length);
   for (const id of ids) assert.match(id, ID, `${id} : identifiant de document de la base`);

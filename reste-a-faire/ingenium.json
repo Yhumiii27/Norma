@@ -1,0 +1,300 @@
+{
+  "outil": "ingenium",
+  "generated": "2026-11-27",
+  "updated": "2026-11-27",
+  "branch": "main",
+  "origine": {
+    "depot": "Yhumiii27/ingenium",
+    "fichier": "docs/PLAN.md",
+    "commit": null,
+    "reprise": "une livraison du plan = un point ; points ouverts de Keystone qui suivraient l'ingénierie (ING-03), gardés aussi dans keystone.json tant qu'ING-03 n'est pas décidée"
+  },
+  "echelle_effort": "S ≤ 2 jours de session, M 3 à 5, L 6 à 10, XL > 10",
+  "categories": {
+    "livraisons": "Livraisons du plan",
+    "mise_en_service": "Mise en service",
+    "reprise_keystone": "Points repris de Keystone (selon ING-03)"
+  },
+  "history": [
+    {
+      "date": "2026-11-27",
+      "text": "Outil inscrit au registre (Norma 3.1.0) ; dépôt Yhumiii27/ingenium créé par le propriétaire ; livraison 0 (cadrage) en PR."
+    }
+  ],
+  "items": [
+    {
+      "id": "IN-L0",
+      "title": "Livraison 0 — Cadrage",
+      "description": "Spécification docs/spec/00–06 (vision, périmètre et frontière, rôles, menus, modèle de données, échanges, transition hors de Keystone), DECISIONS.md, PLAN.md, DEMANDES.md (brouillons), DONNEES.md, CLAUDE.md, copie de Norma.",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "prochaine_etape",
+      "status": "partiel",
+      "waiting_on": "Lecture du cadrage par le propriétaire ; réponses ING-03 à ING-28",
+      "effort": "S",
+      "sources": [
+        "docs/PLAN.md, livraison 0"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "en_cours",
+        "delivery": "PR de cadrage d'Ingenium",
+        "note": "Dépôt créé le 27 nov. 2026 ; cadrage en PR (brouillon)."
+      }
+    },
+    {
+      "id": "IN-L1",
+      "title": "Livraison 1 — Plateforme",
+      "description": "Socle copié de Modulus main (docs/SOCLE.md) : PostgreSQL seul, schéma ingenium, connexion par Clavis et droits lus dans clavis.pub_acces, coque commune et logo, tronc commun (Accueil « Ma discipline », Mes tâches liste / kanban / calendrier, Mes approbations, Mes projets, Référentiel technique), i18n, journal en ajout seul, tâches planifiées, jeu de démonstration fictif aligné sur celui de Keystone, CI.",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "prochaine_etape",
+      "status": "non_commence",
+      "waiting_on": "Livraison 0 lue ; ING-19, ING-23 à ING-25, ING-28",
+      "effort": "L",
+      "sources": [
+        "docs/PLAN.md, livraison 1"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-L2",
+      "title": "Livraison 2 — Registre d'ingénierie, P&ID et plans",
+      "description": "Disciplines, entrées, livrables jusqu'à la diffusion, listes générées, contrôles de cohérence, changements, assistant d'import ; validation P&ID (feuilles, repères, étapes, import) ; miroir des plans PDM. D'abord en lecture des données de Keystone (vues de reprise), puis écritures objet par objet.",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "prochaine_etape",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-04, ING-05, ING-09, ING-26 ; vues de reprise (Keystone, Matrix)",
+      "effort": "XL",
+      "sources": [
+        "docs/PLAN.md, livraison 2"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-L3",
+      "title": "Livraison 3 — Référentiel technique et nomenclature d'ingénierie",
+      "description": "Articles (données techniques, validation, équivalents, structures, pièces d'usure et de rechange), nomenclature d'ingénierie rattachée aux équipements ; publications ingenium.pub_articles et pub_nomenclatures sous les contrats de Keystone.",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-06, ING-07, ING-08 ; A-1b, D9-18 et R-185 de Keystone",
+      "effort": "XL",
+      "sources": [
+        "docs/PLAN.md, livraison 3"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-L4",
+      "title": "Livraison 4 — Pack ingénierie, interfaces, dossier CE, revues",
+      "description": "Pack ingénierie (contrat K-08 d'Arche), registre des interfaces, dossier technique et conformité CE, revues de conception si retenues.",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-10, ING-11, ING-12, ING-15 ; liste type réelle du pack (ING-D4)",
+      "effort": "L",
+      "sources": [
+        "docs/PLAN.md, livraison 4"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-L5",
+      "title": "Livraison 5 — Bascule des lecteurs et retrait dans Keystone",
+      "description": "Arche, Vigie, Modulus, Vector et Keystone lisent les vues d'Ingenium ; Matrix retire les vues de Keystone ; Keystone retire ses écrans d'ingénierie (nouvelle migration).",
+      "category": "livraisons",
+      "kind": "livraison",
+      "priority": "plus_tard",
+      "status": "non_commence",
+      "waiting_on": "Livraisons 2 à 4 ; ING-27",
+      "effort": "L",
+      "sources": [
+        "docs/PLAN.md, livraison 5",
+        "docs/spec/06-transition.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-S01",
+      "title": "Mise en service : application Coolify et adresse",
+      "description": "Application Coolify (Dockerfile, conteneur unique comme Modulus) sur ingenium.projectdirection.fr, derrière l'authentification HTTP de Coolify pendant la bêta.",
+      "category": "mise_en_service",
+      "kind": "exploitation",
+      "priority": "prochaine_etape",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Propriétaire : création de l'application dans Coolify",
+      "effort": "S",
+      "sources": [
+        "docs/PLAN.md, mise en service"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-S02",
+      "title": "Mise en service : rôle ingenium_app et schéma ingenium",
+      "description": "Créés par Matrix sur le serveur commun (aucune migration ne crée de schéma) ; liens de lecture de la livraison 1.",
+      "category": "mise_en_service",
+      "kind": "integration",
+      "priority": "prochaine_etape",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Brouillon DI-M1 de docs/DEMANDES.md, « validé » du propriétaire",
+      "effort": "S",
+      "sources": [
+        "docs/DEMANDES.md, DI-M1"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-S03",
+      "title": "Mise en service : application ingenium dans Clavis",
+      "description": "Rôles Ingenium.* au catalogue de Clavis, profils, client OpenID Connect (npm run oidc:client).",
+      "category": "mise_en_service",
+      "kind": "integration",
+      "priority": "prochaine_etape",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "Brouillon DI-C1 de docs/DEMANDES.md, « validé » du propriétaire ; ING-19",
+      "effort": "S",
+      "sources": [
+        "docs/DEMANDES.md, DI-C1"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "IN-R035",
+      "title": "Brancher SolidWorks PDM / 3DEXPERIENCE (plans, aperçus)",
+      "description": "Point R-035 de Keystone, à construire dans Ingenium si ING-03 et ING-09 gardent leur réponse par défaut ; reste dans keystone.json jusque-là.",
+      "category": "reprise_keystone",
+      "kind": "integration",
+      "priority": "a_decider",
+      "status": "bloque_systeme_externe",
+      "waiting_on": "ING-03, ING-09 ; accès PDM / 3DX validé par la DSI",
+      "effort": "L",
+      "sources": [
+        "reste-a-faire/keystone.json, R-035",
+        "docs/spec/06-transition.md"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "R-035"
+      ]
+    },
+    {
+      "id": "IN-R101",
+      "title": "Trancher qui est maître du référentiel articles",
+      "description": "Point R-101 de Keystone (A-1b) : 3DX / PDM ou l'outil ; conditionne la livraison 3.",
+      "category": "reprise_keystone",
+      "kind": "decision_a_appliquer",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-03, ING-06 ; A-1b",
+      "effort": "M",
+      "sources": [
+        "reste-a-faire/keystone.json, R-101"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "R-101"
+      ]
+    },
+    {
+      "id": "IN-R107",
+      "title": "Lire les exports natifs EPLAN, TIA Portal et SolidWorks",
+      "description": "Point R-107 de Keystone : l'assistant d'import ne lit aujourd'hui aucun fichier ; exemples attendus (ING-D3).",
+      "category": "reprise_keystone",
+      "kind": "fonction",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-03, ING-04 ; données ING-D3",
+      "effort": "XL",
+      "sources": [
+        "reste-a-faire/keystone.json, R-107"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "R-107"
+      ]
+    },
+    {
+      "id": "IN-R214",
+      "title": "Lire le fichier XML de numérotation des articles",
+      "description": "Point R-214 de Keystone (D9-18) : numérotation par un fichier XML sur un serveur local, échange avec 3DX.",
+      "category": "reprise_keystone",
+      "kind": "integration",
+      "priority": "a_decider",
+      "status": "bloque_attente_proprietaire",
+      "waiting_on": "ING-03, ING-06 ; données ING-D5",
+      "effort": "M",
+      "sources": [
+        "reste-a-faire/keystone.json, R-214"
+      ],
+      "evidence": [],
+      "progress": {
+        "state": "a_faire",
+        "delivery": null,
+        "note": ""
+      },
+      "aliases": [
+        "R-214"
+      ]
+    }
+  ]
+}

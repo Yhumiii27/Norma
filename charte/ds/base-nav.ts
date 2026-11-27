@@ -10,7 +10,7 @@ export type BaseEntryId = 'home' | 'tasks' | 'approvals';
 export type BaseIcon =
   | 'House' | 'CheckSquare' | 'Stamp' | 'FolderUser' | 'Gauge' | 'Books' | 'FileText' | 'Siren' | 'ListChecks' | 'Clock'
   | 'CalendarX' | 'SquaresFour' | 'CalendarDots' | 'Flask' | 'TreeStructure' | 'Key' | 'Database' | 'FlowArrow' | 'Handshake'
-  | 'Cube' | 'Truck' | 'PaperPlaneTilt';
+  | 'Cube' | 'Truck' | 'PaperPlaneTilt' | 'Gear';
 
 export interface BaseEntryDef {
   id: string;
@@ -32,7 +32,7 @@ export const BASE_ENTRIES: readonly (BaseEntryDef & { id: BaseEntryId })[] = [
 /** Names of the tools (proper nouns, never translated), as in registre/outils.json. */
 export const TOOL_NAMES: Readonly<Record<ToolCode, string>> = {
   keystone: 'Keystone', codex: 'Codex', vigie: 'Vigie', cursus: 'Cursus', arche: 'Arche', crucible: 'Crucible',
-  clavis: 'Clavis', matrix: 'Matrix', modulus: 'Modulus', vector: 'Vector',
+  clavis: 'Clavis', matrix: 'Matrix', modulus: 'Modulus', vector: 'Vector', ingenium: 'Ingenium',
 };
 
 /** At most two business entries after the common three (« un ou deux menus »). */
@@ -115,6 +115,13 @@ export const TOOL_BASE: Readonly<Record<ToolCode, ToolBase>> = {
     extras: [
       { id: 'myshipments', label: 'My shipments', fr: 'Mes expéditions', icon: 'Truck', path: '/my/shipments' },
       { id: 'requests', label: 'Shipment requests', fr: 'Demandes d’expédition', icon: 'PaperPlaneTilt', path: '/requests' },
+    ],
+  },
+  ingenium: {
+    home: 'Ma discipline : entrées attendues bloquantes, livrables à diffuser cette semaine, contrôles de cohérence ouverts, repères P&ID non rattachés, articles à valider ; par projet de l’équipe, avancement des livrables, couverture P&ID et pack ingénierie.',
+    extras: [
+      { id: 'myprojects', label: 'My projects', fr: 'Mes projets', icon: 'FolderUser', path: '/my/projects' },
+      { id: 'reference', label: 'Technical reference', fr: 'Référentiel technique', icon: 'Gear', path: '/reference' },
     ],
   },
 };
